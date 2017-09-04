@@ -174,7 +174,7 @@ A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
 ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 (09:31:06 Arecibo
 local time) in Beam 0 (the central beam) of the \gls{alfa}
 receiver\footnote{http://www.naic.edu/alfa/} (Figure
-\ref{fig:beam0_dynamic_spec}). ALFABURST was processing 56 MHz of bandwidth
+\ref{fig:beam0_dynamic_spec_wide}). ALFABURST was processing 56 MHz of bandwidth
 between 1457 MHz and 1513 MHz. The \gls{snr} of this pulse is maximized (10.46)
 when the pulse is dedispersed with a \gls{dm} of 293 and the 256 microsecond
 resolution is decimated by a factor of 16 to 4 ms time resolution. The
@@ -185,6 +185,17 @@ drifting gain baseline at the cost of removing some of the overall pulse power,
 particularly at low DM. The bright, narrow-band signal at approximately $t=0.1$
 seconds is locally generated \gls{rfi} which we will cover later in this
 section.
+
+\begin{figure*}
+    % notebooks/ALFABURST_events.ipynb
+    \includegraphics[width=1.0\linewidth]{figures/D20161204_buf23_Beam0_wide.pdf}
+    \caption{Detected FRB-like event in beam 0 of ALFA. The characteristic dip
+    before and after the event is due to zero-DM removal which is part of the
+    ALFABURST RFI exciser. The strong, narrowband, repeating signal is due to a
+    local RFI source.
+    }
+    \label{fig:beam0_dynamic_spec_wide}
+\end{figure*}
 
 \begin{figure*}
     \centering
@@ -425,18 +436,19 @@ routinely used to monitor the local \gls{rfi} environment.
     \label{fig:pll_spectrum}
 \end{figure}
 %
-The exact physical process which generated these apparently dispersed pulses is
-not perfectly well known. But, the picture is that the \gls{alfa} receiver was
-out of the main focus, likely picking up reflections from the dome, leading to
-an increase in the system temperature. An \gls{rfi} monitoring program was being
-run on an instrument not included in the telescope SCRAM data. This instrument
-introduced the narrowband \gls{rfi} due to changing of a \gls{lo}, and possibly
-the broadband \gls{rfi}. With high certainty, we can classify this as a local
-event which created the appearance of an \gls{frb}.  In isolation, and the
-one-off, transient nature of FRBs make the initial Beam 0 detection look very
-reasonable. It is only with an extended study of the meta-data, earlier-in-time
-evolution of the band, and use of multiple beams to confirm that this is indeed
-not an FRB of astronomical origin.
+The exact physical process which generated is additonal system noise is not
+perfectly well known.  An \gls{rfi} monitoring program was being run on an
+instrument not included in the telescope SCRAM data. This instrument introduced
+the narrowband \gls{rfi} due to changing of a \gls{lo}.  The \gls{alfa} receiver
+was out of the main focus, likely picking up reflections from the dome, leading
+to an increase in the system temperature.  This increase caused some part of the
+analogue chain, likely an amplifier, to operate beyond it's linear response
+region and produce broadband oscillations.  With high certainty, we can classify
+this as a local event which created the appearance of an \gls{frb}.  In
+isolation, and the one-off, transient nature of FRBs make the initial Beam 0
+detection look very reasonable. It is only with an extended study of the
+meta-data, earlier-in-time evolution of the band, and use of multiple beams to
+confirm that this is indeed not an FRB of astronomical origin.
 
 \section{Low-SNR False-Positive Detections}
 \label{sec:low_snr}
@@ -549,13 +561,20 @@ threshold.
 
 % TODO:
 % decision tree
-% important tests:
-%   bandpass check
-%   telescope status
+
+% TODO:
+% multi-site observations
+% increase in bandwidth
+% raw voltage data, at least undecimated power spectra
+% online data
+% dispersion fit
+% dm-space plot
+% diagnostics:
 %   negative DM statistics
-%   previous in time events
-%   high time/freq resolution dynamic spectrum
-%   dm-space plot
+%   telescope status
+%   bandpass model and SEFD
+%   gain variations
+%   previous-in-time data
 
 Current surveys typically search out to extreme \glspl{dm}, in the case of
 ALFABURST we search out to a \gls{dm} of 10000 as the additional computational
