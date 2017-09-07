@@ -119,15 +119,16 @@ ALFABURST Team
 % How was the study done?
 % What is the main take away message?
 % What can be said about these results, and how does this affect future work?
-The one-off nature of most Fast Radio Bursts (FRBs) requires extra scrutiny in
-reporting an astrophysical FRB and triggering automated follow-ups with a
-telescope network.  The ALFABURST commensal FRB survey at Arecibo Observatory
-has been in operation since June 2015. In that time a number of false-positive
-events, which on initial inspect appear to be FRB-like, have been found to be of
-local origin. Here we report on one such event as an example of the difficult
-challenge of fully automating an FRB search. We discuss observational and
-post-processing techniques which are useful to further automate an FRB search
-survey.
+The one-off nature of most Fast Radio Bursts (FRBs) requires extra scrutiny when
+reporting an astrophysical FRB and triggering automated follow-ups with
+telescope networks.  In a search for rare signals in a noisy system the number
+of false-positive detections is based on the detection threshold and signal
+filters. In FRB searches the common approach is to test a series of dispersion
+trials, and threshold for peaks above a signal-to-noise threshold.  We present
+examples of false-positive events that occur in these searches, which on initial
+inspection appear to be FRB-like, but are found to be due to instrumentational
+noise and radio frequency interference (RFI). We discuss post-processing
+analysis and data which should be provded when reporting a detection.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -141,36 +142,55 @@ radio continuum: transients -- methods: observational
 \section{Introduction}
 \label{sec:intro}
 
-% TODO: state the FRBs are astrophysical, the repeater, multiple telescope,
-% multiple band detections have proved that
+The consensus today is that \glspl{frb} are extra-galactic in origin, yet the
+emission model is not known. This consenus has been built from the reporting of
+detections with multiple telescopes, at different frequencies, using different
+instrumentation. The repeater FRB121102 has been localized to a region of dwarf
+galaxy using VLBI. Bursts from FRB121102 have been detected up to 8 GHz. Bright
+bursts are regularly detected with ASKAP and Molonglo. 
+
+To detect these rare events automated, GPU-accerlated software pipleines are
+used to extensively search a broad range of \gls{dm} trials, pulse widths, and
+starting times. The de-dispersed time series is then thresholded, any peaks
+above a minimum \gls{snr} are reported as potential detections. The number of
+potential detections is usually overwhelming due to \gls{rfi} and gain
+variations. Initially, potential detections were reviewed by a human. But, with
+the wealth of data it has become a significant time effort to do so. Further,
+our understanding of the expected detections has allowed the development of
+filters and models to select out and prioritize individual events.
+
+We expect a number of false-positives to pass automted post-processing detection
+tests, as we would like to severely limit the potential for type-II errors in
+our classifier by accepting a number of type-I errors. Once the number of
+potential detections has been filters to a reasonable size, they are then
+reviewed by a human. This creates a challenge of automating the triggering of
+follow-up signalling to other telescopes. Either there will be an excess of
+false-positive triggers but with a short delay between detection and triggering.
+Or, a non-automated, expert examination of the event is required to verify,
+creating a delay in any follow-up.
+
+Besides deciding to do a fast follow-up of a potential FRB source, there is an
+challenge of determining how robust the detection is. As these sources are rare
+and generally appear not to repeat (all besides FRB121102) there is a issue
+of verifiability. There are known anthropogenic sources that appear FRB-like
+\citep{2011ApJ...727...18B}. In this paper we present other examples of FRB-like
+sources which we show to be terrestrial in origin after further investigation.
+When reporting a detection of an astrophysical FRB it is necessary to provide
+not just the observational data but additional telescope data to provide a
+robust statement about the source origin.
+
+\section{An example of a FRB-like Signal detected with ALFABURST}
+\label{sec:D20161204}
+
 In the two years of the initial ALFABURST survey\citep{2017ApJS..228...21C} over
 125k 8-second windows have been recorded in which our \gls{frb} search pipeline
 detected an event above the minimum \gls{snr} detection threshold. The vast
 majority of these events have been due to \gls{rfi}, some of the events are due
-to bright single pulses of known pulsars. Sorting through these false positive
-events is the main focus of our post-processing methods. Most of the events are
+to bright single pulses of known pulsars. Most of the events are
 clearly \gls{rfi} which are classified with an automated classifier model. A
 small number of windows contain FRB-like events which only on further inspection
 of the data, the telescope operation status, and contextual information is it
 clear that these events are from local sources.
-
-We expect a number of false-positives to pass our post-processing detection
-tests, as we would like to severely limit the potential for type-II errors in our
-classifier by accepting a number of type-I errors. So far, all false-positives
-we have detected are explainable as relating to the telescope or \gls{rfi} by
-examining the observing situation after the fact. This creates a challenge of
-automating the triggering of follow-up signalling to other telescopes. Either
-there will be an excess of false-positive triggers but with a short delay
-between detection and triggering. Or, a non-automated, expert examination of the
-event is required to verify, creating a delay in any follow-up.
-
-In this letter, we report on FRB-like signals detected with our ALFABURST system,
-and discuss how we have improved our post-processing pipeline and observing
-system to handle unexpected, but explainable signals. These improvements are
-valuable to incorporate into any \gls{frb} search survey.
-
-\section{An example of a FRB-like Signal detected with ALFABURST}
-\label{sec:D20161204}
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
 ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 (09:31:06 Arecibo
@@ -189,7 +209,7 @@ seconds is locally generated \gls{rfi} which we will cover later in this
 section.
 
 \begin{figure*}
-    % notebooks/ALFABURST_events.ipynb
+    % ASLXLAP07:notebooks/ALFABURST_events.ipynb
     \includegraphics[width=1.0\linewidth]{figures/D20161204_buf23_Beam0_wide.pdf}
     \caption{Detected FRB-like event in beam 0 of ALFA. The characteristic dip
     before and after the event is due to zero-DM removal which is part of the
@@ -455,15 +475,40 @@ confirm that this is indeed not an FRB of astronomical origin.
 \section{Low-SNR False-Positive Detections}
 \label{sec:low_snr}
 
-% TODO:
-% low SNR events, due to sudden changes in the noise statistics, expect to
-% detect a few of these based in the minimum SNR, what is the time scale for an
-% SNR 6 event? these events are due to turrent movement, add flag to filter out
-% figure: DM - t plot
+As the automated search pipeline is setup to do an extensive search in DM
+trails, pulse width, and starting time it is reasonable to expect a large number
+of low-SNR false-detections.  FRB surveys tend to have a significant minimum SNR
+cut-off (6-10) due to the large number of false-postive detections at low SNRs.
+In the ALFABURST and ARTEMIS surveys the minimum SNR cut-off is set to 10.
 
-% TODO: mention that multiple promising events have been detected with Arecibo,
-% only after follow-up was it clear that the detection was due to a local
-% effect.
+Low-SNR detections are regularly detected even with high mimimum SNR cut-off.
+For example, on July 30, 2015 an apparently 10-sigma event with a DM of 1370 was
+detected (Figure \ref{fig:D20150730}). The pulse can barely be seen in the
+spectrogram, but in the DM-space plot there is a compact peak centred at a DM of
+1370. This event is suspicion because the D20161204 event discussed earlier only
+has a slightly higher SNR but is visable in the spectrogram. The solution is
+that the actual SNR of this event is approximately 6. The SNR of 10 reported is
+based on a longer running average computed in the automated pipeline. Looking
+only locally in time there is an increase in system noise, leading to a reduced
+SNR. The increase is system noise is because the receiver turret began rotating
+in this period while the ALFA receiver was still active.
+
+% notebooks/ALFABURST_events.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/D20150730_buf23_Beam6_dmtrial.pdf}
+    \caption{DM-space plot and time series of a high DM event with reported SNR
+    above 10-sigma on July 30, 2015. After re-analysis and review of the
+    telescope metadata it was determined that this event was due to local system
+    noise.
+    }
+    \label{fig:D20150730}
+\end{figure}
+
+The reported detection of a pulse from FRB121102 with APERTIF \citep{Atel10693}
+was at an SNR around 4. In a blind survey across different sky positions and DM
+trials this would not be a significant detection. But, the sky position and
+SNR-maximized DM of the repeater is known, thus a lower SNR detection may be
+reasonable to report.
 
 \section{Detected RADAR Event with ARTEMIS}
 \label{sec:LOFAR_RADAR}
@@ -621,7 +666,7 @@ to discount as not being of extra-terrestrial origin. It is neccessary to report
 all of these events and to provide as much evidence as possible to explain the
 origin of such events.
 
-\section{Verification Checks}
+\section{Verification Tests}
 
 The one-off nature of \glspl{frb} makes it essential that when reporting on a
 detection or triggering a follow-up observation that significant due-diligence
@@ -629,24 +674,38 @@ is done in order to verify a positive detection as much as possible. Over the
 past decade of \gls{frb} surveys a number of techniques have been developed to
 efficiently filter for dispersed pulses. The vast majority of events are flagged
 by \gls{rfi} excisers and setting a sufficiently high minimum \gls{snr}
-threshold. 
+threshold. This has the effect of creating potential false-negative events (i.e.
+FRBs classified as RFI), but is not useful with false-positive detections. The
+mystery and rarity of FRBs makes it difficult to differntiate astrophysical FRBs
+from local sources based on the dynamic spectrum alone. Thus, additional
+information on the observing system should be used to provide robustness to the
+detection.
 
-% TODO:
-% decision tree
-
-% TODO:
-% multi-site observations
-% increase in bandwidth
-% raw voltage data, at least undecimated power spectra
+% detection robustness
 % online data
-% dispersion fit
-% dm-space plot
-% diagnostics:
-%   negative DM statistics
-%   telescope status
-%   bandpass model and SEFD
-%   gain variations
-%   previous-in-time data
+
+% -> many FRBs have this on FRBCAT
+% minimum detection requirements:
+%   SNR maximized DM, time and freq resolution
+%   filterbank covering the extent of the pulse (online)
+%   scipt/guide to recreate detection
+%   astronomical pointing
+
+% desirable requirements:
+%   filterbank +/- multiple minutes of event
+%   expected and observed bandpass model, SEFD/gain variations
+%   telescope observing status +/- multiple minutes of event
+%   telescope local pointing
+%   DM-space plot (with negative DMs)
+%   dispersion fit
+%   raw voltage data, at least undecimated power spectra
+
+% exemplary requirements:
+%   multi-site observations
+%   increased bandwidth (BL C-band obs)
+%   interferometric visibilities
+
+\subsection{Negative DM Sampling}
 
 Current surveys typically search out to extreme \glspl{dm}, in the case of
 ALFABURST we search out to a \gls{dm} of 10000 as the additional computational
