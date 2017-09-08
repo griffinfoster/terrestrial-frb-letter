@@ -75,6 +75,7 @@
 \newacronym{sefd}{SEFD}{System Equivalent Flux Density}
 \newacronym{snr}{SNR}{Signal-to-Noise Ratio}
 \newacronym{sps}{SPS}{Single Pulse Search}
+\newacronym{vlbi}{VLBI}{Very-Long Baseline Interferometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -128,7 +129,7 @@ trials, and threshold for peaks above a signal-to-noise threshold.  We present
 examples of false-positive events that occur in these searches, which on initial
 inspection appear to be FRB-like, but are found to be due to instrumentational
 noise and radio frequency interference (RFI). We discuss post-processing
-analysis and data which should be provded when reporting a detection.
+analysis and data which should be provided when reporting a detection.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -142,14 +143,19 @@ radio continuum: transients -- methods: observational
 \section{Introduction}
 \label{sec:intro}
 
+% TODO:
+%frb narrative: here are some odd FRB like things, here are some odd reported
+%FRBs, it is hard to know if they are real and a ~10% false-positive rate is
+%probably fine, but bursts need to be fully reported
+
 The consensus today is that \glspl{frb} are extra-galactic in origin, yet the
-emission model is not known. This consenus has been built from the reporting of
+emission model is not known. This consensus has been built from the reporting of
 detections with multiple telescopes, at different frequencies, using different
 instrumentation. The repeater FRB121102 has been localized to a region of dwarf
 galaxy using VLBI. Bursts from FRB121102 have been detected up to 8 GHz. Bright
 bursts are regularly detected with ASKAP and Molonglo. 
 
-To detect these rare events automated, GPU-accerlated software pipleines are
+To detect these rare events automated, GPU-accelerated software pipelines are
 used to extensively search a broad range of \gls{dm} trials, pulse widths, and
 starting times. The de-dispersed time series is then thresholded, any peaks
 above a minimum \gls{snr} are reported as potential detections. The number of
@@ -159,7 +165,7 @@ the wealth of data it has become a significant time effort to do so. Further,
 our understanding of the expected detections has allowed the development of
 filters and models to select out and prioritize individual events.
 
-We expect a number of false-positives to pass automted post-processing detection
+We expect a number of false-positives to pass automated post-processing detection
 tests, as we would like to severely limit the potential for type-II errors in
 our classifier by accepting a number of type-I errors. Once the number of
 potential detections has been filters to a reasonable size, they are then
@@ -291,16 +297,6 @@ isolated in time, with a fairly compact representation in DM-space. The event
 would be detected with significant \gls{snr} at higher \gls{dm} trials due to
 the wide width of the pulse, but peaks at a \gls{dm} trial of 293.
 
-% notebooks/ALFABURST_events.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/D20161204_dmtrials_buf23_Beam0.pdf}
-%    \caption{DM vs. time plot of for a 1.5 second window centred on the December
-%    4th event in beam 0. The SNR peaks at a DM of 293. There is a significant
-%    detection at larger DM trials due to the width of the pulse.
-%    }
-%    \label{fig:dm_time}
-%\end{figure}
-%
 \begin{figure}
     \centering
     % notebooks/ALFABURST_events.ipynb
@@ -458,7 +454,7 @@ routinely used to monitor the local \gls{rfi} environment.
     \label{fig:pll_spectrum}
 \end{figure}
 %
-The exact physical process which generated is additonal system noise is not
+The exact physical process which generated is additional system noise is not
 perfectly well known.  An \gls{rfi} monitoring program was being run on an
 instrument not included in the telescope SCRAM data. This instrument introduced
 the narrowband \gls{rfi} due to changing of a \gls{lo}.  The \gls{alfa} receiver
@@ -475,18 +471,19 @@ confirm that this is indeed not an FRB of astronomical origin.
 \section{Low-SNR False-Positive Detections}
 \label{sec:low_snr}
 
-As the automated search pipeline is setup to do an extensive search in DM
+As the automated search pipeline is setup to do an extensive search in \gls{dm}
 trails, pulse width, and starting time it is reasonable to expect a large number
-of low-SNR false-detections.  FRB surveys tend to have a significant minimum SNR
-cut-off (6-10) due to the large number of false-postive detections at low SNRs.
-In the ALFABURST and ARTEMIS surveys the minimum SNR cut-off is set to 10.
+of low-SNR false-detections.  \gls{frb} surveys tend to have a significant
+minimum \gls{snr} cut-off (6-10) due to the large number of false-positive
+detections at low \glspl{snr}.  In the ALFABURST and ARTEMIS surveys the minimum
+SNR cut-off is set to 10.
 
-Low-SNR detections are regularly detected even with high mimimum SNR cut-off.
+Low-SNR detections are regularly detected even with high minimum SNR cut-off.
 For example, on July 30, 2015 an apparently 10-sigma event with a DM of 1370 was
 detected (Figure \ref{fig:D20150730}). The pulse can barely be seen in the
 spectrogram, but in the DM-space plot there is a compact peak centred at a DM of
 1370. This event is suspicion because the D20161204 event discussed earlier only
-has a slightly higher SNR but is visable in the spectrogram. The solution is
+has a slightly higher SNR but is visible in the spectrogram. The solution is
 that the actual SNR of this event is approximately 6. The SNR of 10 reported is
 based on a longer running average computed in the automated pipeline. Looking
 only locally in time there is an increase in system noise, leading to a reduced
@@ -531,7 +528,7 @@ ms in width.
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/LOFAR_dynamic.pdf}
     \caption{A dispersed pulse detected by the automated ARTEMIS search
-    pipeline. The dispresed pulse only appears over a narrow band of just over 1
+    pipeline. The dispersed pulse only appears over a narrow band of just over 1
     MHz.
     }
     \label{fig:lofar_dynamic}
@@ -596,7 +593,21 @@ about the event. If we are willing to allow an automated VOevent trigger where
 we expect a number of false-positives then we can except the rare \gls{rfi}
 trigger.
 
+\subsection{Frequency-Modulated RADAR}
+
+% TODO:
+% Linear Frequency Modulated Pulse Waveforms
+% https://en.wikipedia.org/wiki/Pulse_compression
+% http://www.radartutorial.eu/02.basics/Stepped%20Chirp%20Radar.en.html
+% google: radar chirp l band, radar chirp quadratic, stepped chirp l band
+% stepped chirp waveform
+
 \section{Previously Reported FRBs}
+
+% TODO:
+% FRB110703: dodgy filterbank
+% FRB110523, FRB121102, FRB150807, FRB160317, FRB160410, FRB160608, FRB170107,
+% FBR170827 data missing from FRBCAT
 
 Given that systematic effects and \gls{rfi} can produce apparent \glspl{frb} it
 is useful to look back at previously reported \glspl{frb} that don't fit the
@@ -613,7 +624,7 @@ maximizes the detection SNR, but, by using a DM of 852 (Figure
 \ref{fig:FRB130729}) the double-peak structure can be seen more evident. BY
 using this lower \gls{dm} the pulse width of the two components can be seen to
 be much more narrow than the reported $\sim16$ ms.  The two components are
-seperated by approximately 10 ms, with the second component appearing only about
+separated by approximately 10 ms, with the second component appearing only about
 half as wide in bandwidth compared to the first.
 
 % FRB130729
@@ -622,7 +633,7 @@ half as wide in bandwidth compared to the first.
     \includegraphics[width=1.0\linewidth]{figures/FRB130729.pdf}
     \caption{FRB130729 dedispersed with a DM of 852, this is different from the
     SNR-maximized DM of 861. Using this DM shows that the detected FRB has two
-    components distinct components seperated by approximately 10 ms. Data is
+    components distinct components separated by approximately 10 ms. Data is
     presented at the native recorded resolution of 64 $\mu$s, 390 kHz convolved
     with a Gaussian smoothing filter of size 512 $\mu$s, 3.125 MHz.
     }
@@ -637,7 +648,7 @@ concentrated between 1240 MHz and 1270 MHz. This small fractional bandwidth is
 not too different from the ARTEMIS event we have reported earlier.  If this
 component is removed, for example if the observation was at a slightly different
 frequency, or smaller bandwidth, the detected \gls{snr} drops below 10.
-Further, many anthropogentic radio transmitters are circularly polarized. But,
+Further, many anthropogenic radio transmitters are circularly polarized. But,
 it could also be that there is a plasma lensing effect
 \citep{2017ApJ...842...35C} which has been used to explain the variable spectral
 index and bandwidth of FRB121102, and FRB140514 is indeed astrophysical.
@@ -656,13 +667,13 @@ index and bandwidth of FRB121102, and FRB140514 is indeed astrophysical.
 
 \subsection{False-Positive Reporting}
 
-During a search for anomolous signals it should be expected that there are a
-number of events reported which are false positives. Such as perytons
+During a search for anomalous signals it should be expected that there are a
+number of events reported which are false positives. Such as Perytons
 \citep{2011ApJ...727...18B} and the events reported in earlier sections. Events
 such as FRB130729 and FRB140514 are on the edge of verifiability. They do not
 fit the classic \gls{frb} model but given the available observing and system
-information, and lack of an external, anthropogentic explaination they are hard
-to discount as not being of extra-terrestrial origin. It is neccessary to report
+information, and lack of an external, anthropogenic explanation they are hard
+to discount as not being of extra-terrestrial origin. It is necessary to report
 all of these events and to provide as much evidence as possible to explain the
 origin of such events.
 
@@ -670,49 +681,86 @@ origin of such events.
 
 The one-off nature of \glspl{frb} makes it essential that when reporting on a
 detection or triggering a follow-up observation that significant due-diligence
-is done in order to verify a positive detection as much as possible. Over the
+is done in order to verify a true-positive detection as much as possible. Over the
 past decade of \gls{frb} surveys a number of techniques have been developed to
 efficiently filter for dispersed pulses. The vast majority of events are flagged
 by \gls{rfi} excisers and setting a sufficiently high minimum \gls{snr}
 threshold. This has the effect of creating potential false-negative events (i.e.
 FRBs classified as RFI), but is not useful with false-positive detections. The
-mystery and rarity of FRBs makes it difficult to differntiate astrophysical FRBs
+mystery and rarity of FRBs makes it difficult to differentiate astrophysical FRBs
 from local sources based on the dynamic spectrum alone. Thus, additional
 information on the observing system should be used to provide robustness to the
 detection.
 
-% detection robustness
-% online data
+% TODO: detection robustness
 
-% -> many FRBs have this on FRBCAT
-% minimum detection requirements:
-%   SNR maximized DM, time and freq resolution
-%   filterbank covering the extent of the pulse (online)
-%   scipt/guide to recreate detection
-%   astronomical pointing
+\subsection{Minimum Reporting}
 
-% desirable requirements:
-%   filterbank +/- multiple minutes of event
-%   expected and observed bandpass model, SEFD/gain variations
-%   telescope observing status +/- multiple minutes of event
-%   telescope local pointing
-%   DM-space plot (with negative DMs)
-%   dispersion fit
-%   raw voltage data, at least undecimated power spectra
+At a minimum, a reasonable detection should be reported with the observed data
+made publicly available.  This allows independent verification, and can be used
+as input data sets to test pipeline development.  This is different from other
+transient detections in that astronomical pointing and observing frequency is
+sufficient to do a follow-up observation. If \glspl{frb} are indeed one-off
+event, then the observed data is the only available data. A minimum reporting
+should include:
 
-% exemplary requirements:
-%   multi-site observations
-%   increased bandwidth (BL C-band obs)
-%   interferometric visibilities
+\begin{enumerate}
+    \item Filterbank which fully encompasses the extent of the dispersed pulse.
+    \item Time and frequency resolutions, DM, and start time of detection.
+    \item Dedispered time series.
+    \item Astronomical pointing, observing frequency, and other telescope
+    observing parameters.
+    \item A list (or guide) of software and parameters used to generate
+    detections and plots.
+\end{enumerate}
 
-\subsection{Negative DM Sampling}
+These requirements are typically included in past reported \gls{frb} detections.
+The last point, a guide on which software was used is often not reported.
+Different software and data formats can have slightly different results, such as
+the reported \gls{snr} or time definition.  FRBCAT \citep{2016PASA...33...45P}
+provides a well curated repository for this information. 
+
+\subsection{Desirable Reporting}
+
+As has been shown in the previous section there instrumentational and RFI
+sources which can produce the apperance of \glspl{frb}. Minimum reporting is
+insufficient for these non-astrophysical detections. These detection were only
+excluded with additional understanding of the telescope and observing status.
+Primarily this would be to expand the reported data in time before and after the
+detected event. Desirable reporting would include:
+
+\begin{enumerate}
+    \item Filterbank data which not only encompasses the detected pulse, but
+    includes data over a longer time span, e.g. a few minutes before and after
+    the detection. If multiple feeds were in use, data from all feeds should be
+    made available.
+    \item An expected bandpass model, and bandpass model during detection. And,
+    the measured gain variation over the observation.
+    \item Telescope observing parameters and pointing over the observation,
+    including the local (altitude, azimuth) pointing.
+    \item A DM-space plot of the detection, along with a negative DM-space
+    sampling.
+    \item A dispersion fit to the pulse.
+\end{enumerate}
+
+Reporting of the bandpass and gain variations, along with a long time data set
+allows the state of the telescope to be understood. A deviation from normal
+operation, e.g. analogue electronics going into non-linear states, has the
+potential to produce spurious events which on a small time-scale can look
+FRB-like.
+
+A DM-space plot provides a useful diagnostic to protect against observation
+bias. An ideal detection, such as in Figure \ref{fig:dm_time_B1859}, should
+appear compact in this space, with no other detections at different trial DMs.
+
+\subsubsection{Negative DM Sampling}
 
 Current surveys typically search out to extreme \glspl{dm}, in the case of
 ALFABURST we search out to a \gls{dm} of 10000 as the additional computational
 cost is minimum. If the \gls{dm}-redshift relation is approximately correct,
-searching to such high \glspl{dm} is sufficent to sample out to the very early
-universe. We expect an astrophysical source to be despersed by a positive
-\gls{dm} value. As such we do not search for negatively despersed pulses. But,
+searching to such high \glspl{dm} is sufficient to sample out to the very early
+universe. We expect an astrophysical source to be dispersed by a positive
+\gls{dm} value. As such we do not search for negatively dispersed pulses. But,
 \gls{rfi} does show up as both positive and negative dedispersion detections
 (Figure \ref{fig:beamo0_80s}). As the dedispersion search is no longer
 computationally limited it would be possible to search the negative \gls{dm}
@@ -721,24 +769,36 @@ positive versus negative detections to quantify the amount of \gls{rfi} during a
 detection. The full negative \gls{dm} space would not need to be searched, a
 regular sampling of the space would be sufficient.
 
-% TODO: considerations for automated follow-up/VOevents
+\subsubsection{Dispersion Fitting}
 
-% TODO: considerations for releasing FRB event data as they are one-off events that
-% require extra scrutiny
+% TODO: how to do a dispersion fit
 
-% TODO:
-% future developments in FRB surveys require additional layers of processing.
-% large surveys will produce an abundance of false positives. it is cumbersome
-% to follow up events now. in the future it will be impossible. additional
-% layers should prioritize events by how interesting they are
+\subsection{Future Observational Methods}
 
-% Linear Frequency Modulated Pulse Waveforms
-% https://en.wikipedia.org/wiki/Pulse_compression
-% http://www.radartutorial.eu/02.basics/Stepped%20Chirp%20Radar.en.html
-% google: radar chirp l band, radar chirp quadratic, stepped chirp l band
-% stepped chirp waveform
+Beyond detection of more \glspl{frb}, the goals of current surveys are to
+localize the source to host galaxies, and detect pulses across broader
+bandwidths across the radio spectrum.
 
-% https://heasarc.gsfc.nasa.gov/cgi-bin/Tools/xTime/xTime.pl
+Localization requires the use of interferometric arrays. In the case of a
+compact array, a high-time resolution correlation matrix is recorded. And, in
+the case of \gls{vlbi} the raw complex voltages are recorded, which can be used
+to perform coherent dedispersion resulting in a higher resolution (time and
+frequency) dynamic spectrum of the pulses.  Related, multi-site coordinated
+observations would remove most, if not all, instrumentational and RFI sources of
+false-positive detections.
+
+Pulses from FRB121102 have been detected across a 4 GHz band (4 - 8 GHz)
+\citep{atel10675}. Such wide bands show the pulse structure goes beyond the
+bandwidth of known source of \gls{rfi} (e.g. modulated RADAR).
+Along with the reported detections, the complex voltage data
+has been made available.
+
+Detection of \glspl{frb} at multiple frequencies not only adds to the scientific
+understanding of the sources, but also help to verify that they are
+astrophysical.  Due to historical development of receivers for pulsar searches,
+most \glspl{frb} have been detected at L-band frequencies. Though, FRB110523
+detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
+at UHF frequencies.  Only FRB121102 has been detected above L-band.
 
 \section{Conclusion}
 
@@ -746,12 +806,30 @@ regular sampling of the space would be sufficient.
 as so far no follow-up observations have been able to verify a source using a
 different telescope or observing frequency, except in the case of FRB121102
 which is known to repeat. Thus, it is necessary to provide reasonable evidence
-for an extra-terrestiral origin when reporting a detection. 
+for an astrophysical origin when reporting a detection. 
+
+As the size and number of \gls{frb} surveys continues to increase, one expects
+an increase in the number of false-positive detections, even as rejection models
+are improved. There is a narrow line between true, astrophysical \glspl{frb} and
+false-positive events. Ancillary evidence of the telescope state and observation
+provide robust evidence for a true-positive detection. 
+
+Though many previously reported \gls{frb} detections have provided sufficient
+data and telescope information, more can be provided to present a stronger case
+for the astrophysical nature of the detection. Any reported detection at the
+minimum should make the observation publicly accessible. Further, as
+observing with any radio telescope requires high expert knowledge, it is useful
+for the expert observer to include a statement of the telescope status at the
+time of a detection.
+
+Current and future surveys which search across large fractional bandwidths, and
+localize with interferometric observations will provide further evidence to
+associate an \gls{frb} detection with an astrophysical source.
 
 Reporting of false-positive events, even if the source is not explained, helps
 to improve the robustness of search pipelines against systematics and \gls{rfi}.
 Reporting these events also help improve the case for \glspl{frb} being of
-extra-terrestrial origin, just as the explaination for perytons
+astrophysical origin, just as the explanation for Perytons
 \citep{2015MNRAS.451.3933P} removed doubt about detections using Parkes.
 
 Jupyter notebooks and the filterbanks files are hosted on our
