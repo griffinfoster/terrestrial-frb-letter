@@ -76,6 +76,7 @@
 \newacronym{snr}{SNR}{Signal-to-Noise Ratio}
 \newacronym{sps}{SPS}{Single Pulse Search}
 \newacronym{vlbi}{VLBI}{Very-Long Baseline Interferometry}
+\newacronym{xao}{XAO}{Xinjiang Astronomical Observatory}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -84,8 +85,15 @@
 \title[Verification Tests for FRB Detections]{Verification Tests for FRB
 Detections}
 
-\author[ALFABURST Team]{
-ALFABURST Team
+% Aris Karastergiou
+% KJ Lee
+\author[G. Foster et al.]{
+Griffin Foster,$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk}
+\\
+% List of institutions
+$^{1}$University of Oxford, Sub-Department of Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, United Kingdom\\
+$^{2}$Department of Astronomy, University of California, Berkeley, 501 Campbell
+Hall \#3411, Berkeley, CA, 94720, USA\\
 }
 %% The list of authors, and the short list which is used in the headers.
 %% If you need two or more lines of authors, add an extra line using \newauthor
@@ -602,6 +610,72 @@ trigger.
 % google: radar chirp l band, radar chirp quadratic, stepped chirp l band
 % stepped chirp waveform
 
+\section{XAO Repeating Event}
+
+The 25-m Nanshan Telescope at \gls{xao} is currently running an FRB survey. The
+survey covers over 300 MHz at L-band, sampling at $64 \; \mu s$ resolution. On
+November 18, 2016 hundreds of bright, dispersed pulses were detected with the
+system. These pulses varied in SNR, but had the same SNR-maximized DM of $531.8
+\textrm{cm}^{-3} \textrm{pc}$. The pulses show a distinct double peak ($\sim 2$
+ms width) seperated by $\sim 3$ ms (Figure \ref{fig:xao_dynamic}). The pulse is
+only apparent in a about a quarter of the band.
+
+% watermark:/home/griffin/data/XAO/coadd_pulses.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/XAO_pulse_dynamic.pdf}
+    \caption{Example of a detected pulse with the Nanshan Radio Telescope at XAO
+    which is SNR maximized at a dedispersion of 531.8. Hundreds of such pulses
+    were detected over a period of a few days. The orange bars represent regions
+    that have had significant constant-in-time RFI removed.
+    }
+    \label{fig:xao_dynamic}
+\end{figure}
+
+No pointing is reported here as the pulses were seen at different pointings
+across the sky. Most were detected at a low altitude pointing angle, but some
+were detected with the dish pointed close to zenith.
+
+A periodicity search was run on the observation, a periodicity of $\sim 1.7$ was
+found, but the residuals were significantly higher than that of residuals from a
+typical pulsar periodicity search. This along with the pointing variability
+rules out a pulsar, or an astronomical source in general.
+
+A thorough search of possible local sources, such as new equipment, vehicles,
+and aircraft was preformed. No obvious candidate was found. A dispersion
+relation parameter estimation found that pulses deviate from a $\nu^{-2}$
+relation by $1.5 \sigma$. This can be seen by aligning the pulses, and summing
+them together (Figure \ref{fig:xao_summed}). A $\nu^{-2}$ dedispersion with DM
+531.8 produces a broadband pulse with an S-shaped structure not seen in the
+individual pulses. There is also apparent regular, narrow-band frequency
+modulation in the pulse structure. This broad-band structure is due to
+non-linearly frequency modulation. This type of modulation is used in chirped
+RADAR systems, though it is not as common as linear frequency modulation.
+
+% watermark:/home/griffin/data/XAO/coadd_pulses.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/XAO_summed_dynamic.pdf}
+    \caption{The dynamic spectrum of 182 high-SNR pulses detected with the
+    Nanshan Radio Telescope summed together.  The low-level, non-linear
+    frequency modulation can be seen across the band. The orange bars represent
+    regions that have had significant constant-in-time RFI removed.
+    }
+    \label{fig:xao_summed}
+\end{figure}
+
+Detection of multiple pulses at different beam pointings indicates the source
+may be directly illuminating the feed. The source is likely not due to system
+electronics because of the complex frequency modulation. The likely source of
+these pulses is a local transmitter. Had only a single pulse been detected with
+the telescope, for example if the source was weaker, or the telescope was only
+sensitive to the highest SNR event, it would be difficult to show that the event
+was due to RFI. Multiple reported \glspl{frb} do not cover the entire observing
+band. This has been explained by various astronomical effects (scintillation,
+plasma lenses). It would be reasonable to report a single pulse as an \gls{frb}.
+
+The source was only detected over the course of a day, and the origin remains
+unknown.  Observations a XAO continue, with an interest is observing in November
+2017 to see if the signal returns on an annual schedule.
+
 \section{Previously Reported FRBs}
 
 % TODO:
@@ -710,6 +784,8 @@ should include:
     \item Dedispered time series.
     \item Astronomical pointing, observing frequency, and other telescope
     observing parameters.
+    \item For a multi-beam system, filterbanks of each beam covering the extent
+    of the pulse.
     \item A list (or guide) of software and parameters used to generate
     detections and plots.
 \end{enumerate}
@@ -718,7 +794,7 @@ These requirements are typically included in past reported \gls{frb} detections.
 The last point, a guide on which software was used is often not reported.
 Different software and data formats can have slightly different results, such as
 the reported \gls{snr} or time definition.  FRBCAT \citep{2016PASA...33...45P}
-provides a well curated repository for this information. 
+provides a well-curated repository for this information. 
 
 \subsection{Desirable Reporting}
 
