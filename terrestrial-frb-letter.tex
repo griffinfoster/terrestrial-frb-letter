@@ -95,19 +95,6 @@ $^{1}$University of Oxford, Sub-Department of Astrophysics, Denys Wilkinson Buil
 $^{2}$Department of Astronomy, University of California, Berkeley, 501 Campbell
 Hall \#3411, Berkeley, CA, 94720, USA\\
 }
-%% The list of authors, and the short list which is used in the headers.
-%% If you need two or more lines of authors, add an extra line using \newauthor
-%\author[K. T. Smith et al.]{
-%Keith T. Smith,$^{1}$\thanks{E-mail: mn@ras.org.uk (KTS)}
-%A. N. Other,$^{2}$
-%Third Author$^{2,3}$
-%and Fourth Author$^{3}$
-%\\
-%% List of institutions
-%$^{1}$Royal Astronomical Society, Burlington House, Piccadilly, London W1J 0BQ, UK\\
-%$^{2}$Department, Institution, Street Address, City Postal Code, Country\\
-%$^{3}$Another Department, Different Institution, Street Address, City Postal Code, Country
-%}
 
 % These dates will be filled out by the publisher
 \date{Accepted XXX. Received YYY; in original ZZZ}
@@ -624,9 +611,10 @@ only apparent in a about a quarter of the band.
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/XAO_pulse_dynamic.pdf}
     \caption{Example of a detected pulse with the Nanshan Radio Telescope at XAO
-    which is SNR maximized at a dedispersion of 531.8. Hundreds of such pulses
-    were detected over a period of a few days. The orange bars represent regions
-    that have had significant constant-in-time RFI removed.
+    which is SNR maximized at a dedispersion of $531.8 \; \textrm{cm}^{-3}
+    \textrm{pc}$. Hundreds of such pulses were detected over a period of a few
+    days. The orange bars represent regions that have had significant
+    constant-in-time RFI removed.
     }
     \label{fig:xao_dynamic}
 \end{figure}
@@ -677,11 +665,7 @@ unknown.  Observations a XAO continue, with an interest is observing in November
 2017 to see if the signal returns on an annual schedule.
 
 \section{Previously Reported FRBs}
-
-% TODO:
-% FRB110703: dodgy filterbank
-% FRB110523, FRB121102, FRB150807, FRB160317, FRB160410, FRB160608, FRB170107,
-% FBR170827 data missing from FRBCAT
+\label{sec:previous_frbs}
 
 Given that systematic effects and \gls{rfi} can produce apparent \glspl{frb} it
 is useful to look back at previously reported \glspl{frb} that don't fit the
@@ -693,13 +677,14 @@ optimized for.
 \cite{2016MNRAS.460L..30C} reported detection of FRB130729 along with four other
 \glspl{frb} from the HTRU survey. They note that flux only appears in the lower
 half of the band, has a double peak structure, and is potentially due to
-terrestrial \gls{rfi}.  They report a \gls{dm} of 861 for FRB130729, this
-maximizes the detection SNR, but, by using a DM of 852 (Figure
-\ref{fig:FRB130729}) the double-peak structure can be seen more evident. BY
-using this lower \gls{dm} the pulse width of the two components can be seen to
-be much more narrow than the reported $\sim16$ ms.  The two components are
-separated by approximately 10 ms, with the second component appearing only about
-half as wide in bandwidth compared to the first.
+terrestrial \gls{rfi}.  They report a \gls{dm} of $861 \; \textrm{cm}^{-3}
+\textrm{pc}$ for FRB130729, this maximizes the detection SNR, but, by using a DM
+of $852 \; \textrm{cm}^{-3} \textrm{pc}$ (Figure \ref{fig:FRB130729}) the
+double-peak structure can be seen more evident. BY using this lower \gls{dm} the
+pulse width of the two components can be seen to be much more narrow than the
+reported $\sim16$ ms.  The two components are separated by approximately 10 ms,
+with the second component appearing only about half as wide in bandwidth
+compared to the first.
 
 % FRB130729
 % aslxlap07:/local/griffin/data/FRB/FRB130729/FRB130729.ipynb
@@ -794,7 +779,16 @@ These requirements are typically included in past reported \gls{frb} detections.
 The last point, a guide on which software was used is often not reported.
 Different software and data formats can have slightly different results, such as
 the reported \gls{snr} or time definition.  FRBCAT \citep{2016PASA...33...45P}
-provides a well-curated repository for this information. 
+provides a well-curated repository for this information. The atypical
+\glspl{frb} shown in Section \ref{sec:previous_frbs} are from the online data
+repositories linked in FRBCAT. Most reported \glspl{frb} detected with Parkes
+have publicly accessible data repositories which meet the reporting requirements
+stated above. As of this writing, there is no publicly available data for
+approximately a quarter of the reported \glspl{frb}. Upon publication of a
+detection, this data shuold be made available.
+% FRB110703: dodgy filterbank
+% FRB110523, FRB121102, FRB150807, FRB160317, FRB160410, FRB160608, FRB170107,
+% FBR170827 data missing from FRBCAT
 
 \subsection{Desirable Reporting}
 
