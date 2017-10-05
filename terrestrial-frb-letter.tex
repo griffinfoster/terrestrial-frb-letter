@@ -308,7 +308,7 @@ the wide width of the pulse, but peaks at a \gls{dm} trial of 293.
     \begin{subfigure}[t]{0.5\textwidth}
         \centering\captionsetup{width=.95\linewidth}
         \includegraphics[width=1.0\textwidth]{figures/B1859_dmtrials.pdf}
-        \caption{DM vs. time plot of a brigth single pulse from B1859+03 which
+        \caption{DM vs. time plot of a bright single pulse from B1859+03 which
         has a DM of 402 and pulse width of 11 ms (W50).
         }
         \label{fig:dm_time_B1859}
@@ -558,13 +558,27 @@ occurred with a time decimation factor of 20, the native resolution is $327.68
 \mu s$, resulting in a decimated time resolution of 20 ms. By plotting the event
 at a higher time resolutions (Figure \ref{fig:lofar_dynamic_high}) we can see
 there is a distinct repeating pattern in time not previously apparent. This is a
-linearly frequency modulated signal used for pulse compression in RADAR. In
-RADAR observations the bandwidth of the transmitter provides information on the
-range and direction of a target. A narrow band RADAR transmitter can be used to
-approximate a larger bandwidth by modulating the frequency of the transmitted
-pulse. There are a number of allocated usages in this band which could be the
-source of this RADAR pulse \citep{ofcom2017}.  As the RADAR signal is a
-dispersed pulse we would expect to detect such signals with ARTEMIS.
+linearly frequency modulated signal used for pulse compression in RADAR.
+
+% Linear Frequency Modulated Pulse Waveforms
+% https://en.wikipedia.org/wiki/Pulse_compression
+% http://www.radartutorial.eu/02.basics/Stepped%20Chirp%20Radar.en.html
+% google: radar chirp l band, radar chirp quadratic, stepped chirp l band
+% stepped chirp waveform
+In RADAR observations the bandwidth of the transmitter provides information on
+the range and direction of a target. A narrow band RADAR transmitter can be used
+to approximate a larger bandwidth by modulating the frequency of the transmitted
+pulse. The narrow band (in frequency) pulse is stepped in frequency across a
+transmission band. Between each step the pulse is not transmitted, resulting in
+the gaps in time between pulses in Figure \ref{fig:lofar_dynamic_high}. Linear
+frequency modulation is the most typical form of chirp compression, but
+non-linear methods are also used. A windowing function can be applied to the
+pulse which can produce quadratic frequency modulations.  There are a number of
+allocated usages in this band which could be the source of this RADAR pulse
+\citep{ofcom2017}. As RADAR is used for commercial and military, most of these
+signal specifications and modulations are proprietary. We as astronomers likely
+will not have access to this type of information.  This adds the extra step of
+verifying a source is astrophysical when reporting an \gls{frb}.
 %
 % notebooks/LOFAR_RADAR.ipynb
 \begin{figure}
@@ -576,35 +590,28 @@ dispersed pulse we would expect to detect such signals with ARTEMIS.
     \label{fig:lofar_dynamic_high}
 \end{figure}
 %
-Verification of this event was straight forward by examining the high-time and
-frequency resolution data to see the pulsed nature of the event. The frequency
-allocation and the use of standard RADAR techniques across the radio band is a
-clear indicator of the origin of this event. The challenge comes in the
-verification and automated signalling if the desire is to run the system in
-real-time with immediate follow-up with additional telescopes. The RADAR event
-occurs rarely and there is no obvious detection filter automate. Expert
+As the RADAR signal is a dispersed pulse we would expect to detect such signals
+with ARTEMIS.  Verification of this event was straight forward by examining the
+high-time and frequency resolution data to see the pulsed nature of the event.
+The frequency allocation and the use of standard RADAR techniques across the
+radio band is a clear indicator of the origin of this event. The challenge comes
+in the verification and automated signalling if the desire is to run the system
+in real-time with immediate follow-up with additional telescopes. The RADAR
+event occurs rarely and there is no obvious detection filter automate. Expert
 knowledge in radio signals and visual acuity are necessary to make a decision
 about the event. If we are willing to allow an automated VOevent trigger where
 we expect a number of false-positives then we can except the rare \gls{rfi}
 trigger.
 
-\subsection{Frequency-Modulated RADAR}
-
-% TODO:
-% Linear Frequency Modulated Pulse Waveforms
-% https://en.wikipedia.org/wiki/Pulse_compression
-% http://www.radartutorial.eu/02.basics/Stepped%20Chirp%20Radar.en.html
-% google: radar chirp l band, radar chirp quadratic, stepped chirp l band
-% stepped chirp waveform
-
 \section{XAO Repeating Event}
+\label{sec:xao_event}
 
 The 25-m Nanshan Telescope at \gls{xao} is currently running an FRB survey. The
 survey covers over 300 MHz at L-band, sampling at $64 \; \mu s$ resolution. On
 November 18, 2016 hundreds of bright, dispersed pulses were detected with the
 system. These pulses varied in SNR, but had the same SNR-maximized DM of $531.8
 \textrm{cm}^{-3} \textrm{pc}$. The pulses show a distinct double peak ($\sim 2$
-ms width) seperated by $\sim 3$ ms (Figure \ref{fig:xao_dynamic}). The pulse is
+ms width) separated by $\sim 3$ ms (Figure \ref{fig:xao_dynamic}). The pulse is
 only apparent in a about a quarter of the band.
 
 % watermark:/home/griffin/data/XAO/coadd_pulses.ipynb
@@ -793,7 +800,7 @@ detection, this data shuold be made available.
 \subsection{Desirable Reporting}
 
 As has been shown in the previous section there instrumentational and RFI
-sources which can produce the apperance of \glspl{frb}. Minimum reporting is
+sources which can produce the appearance of \glspl{frb}. Minimum reporting is
 insufficient for these non-astrophysical detections. These detection were only
 excluded with additional understanding of the telescope and observing status.
 Primarily this would be to expand the reported data in time before and after the
