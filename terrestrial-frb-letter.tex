@@ -153,7 +153,7 @@ has been built from the reporting of detections with multiple telescopes, at
 different frequencies, using different instrumentation.  FRB121102 has been
 localized to a region of a dwarf galaxy using VLBI
 \citep{2017ApJ...834L...7T,2017Natur.541...58C}.  Bursts from FRB121102 have
-been detected up to 8 GHz \citep{atel10675}.  Bright bursts are regularly
+been detected up to 8~GHz \citep{atel10675}.  Bright bursts are regularly
 detected with ASKAP and Molonglo
 \citep{2017ApJ...841L..12B,2017MNRAS.468.3746C,atel10693}. 
 
@@ -838,6 +838,8 @@ from local sources based on the dynamic spectrum alone. Thus, additional
 information on the observing system should be used to provide robustness to the
 detection.
 
+% every FRB paper starts out with a definition, make that the fundamental
+% checklist. which FRBs fail or succeed?
 % TODO: what are questions that can be answered? aristotlian catagorization
 % Check list of items:
 %   broadband? scattered? multiple components?
@@ -950,6 +952,22 @@ sufficient.
 
 \subsubsection{Dispersion Fitting}
 
+FRB surveys, by design, search for broadband signals which follow a $\nu^{-2}$
+dispersion relation. The incoherent dedispersion operation aligns frequency
+subbands based on a such a frequency-dependent time delay. The dynamic spectrum
+is averaged in frequency to produce a time series. Peaks above a threshold S/N
+are recorded as possible detections. But, such a detection is not necessarily
+maximized in S/N with at the cold plasma dispersion index ($\alpha = -2$). The
+frequency-dependent delay of a dispersed pulse can be modelled as
+%
+\begin{equation}
+\Delta t = A \, (\nu_1^{\alpha} - \nu_2^{\alpha}) + \Delta t_0,
+\end{equation}
+%
+where $A$ is the scaling amplitude, for $\alpha = -2$, $A = {\rm DM}$, $\nu_1$
+is the reference frequency (usually taken to be the highest frequency subband),
+and $\nu_2$ is the observing frequency of a subband.
+
 % TODO: write up on how to do a dispersion fit
 % select dynamic spectrum around pulse
 % decimate in time or frequency and/or apply a Gaussian low-pass filter
@@ -960,6 +978,14 @@ sufficient.
 %   alpha = -2
 %   DM = SNR maximized DM
 % weighted fit
+
+To produce a reasonable fit and error estimate of the dispersion index
+sufficient power needs to be present across a large enough fractional bandwidth.
+For example, system such as ALFABURST and ARTEMIS have narrow fractional
+bandwidth ($0.05$) which is in sufficient to differentiate between a linear
+chirp ($\alpha = -1$) and a cold-plasma dispersed pulse. Similary, this is the
+case for a potential FRB that is only detected at significant S/N in a small
+fractional bandwidth (e.g. FRB140514).
 
 \subsection{Future Observational Methods}
 
