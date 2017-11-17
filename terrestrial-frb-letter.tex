@@ -120,13 +120,13 @@ broadband, appearing wider than the receiver bandwidth, narrow-in-time, and
 highly dispersed, following a $\nu^{-2}$ relation.  But, some FRBs appear
 band-limited, show apparent scintillation, complex frequency-dependent
 structure, or multi-component pulse shapes.  In a search for rare signals in a
-noisy system the number of false-positive detections is based on the detection
+noisy system, the number of false-positive detections is based on the detection
 threshold and signal filters.  Such searches should find a number of
 false-positive events.  We present examples of false-positive events that occur
 in multiple searches, which on initial inspection appear to be FRB-like, but are
 found to be due to instrumentational variations, noise, and radio frequency
 interference (RFI).  Differentiating these false-positive detections from
-astrophysical events required knowledge and tests beyond performing a
+astrophysical events requires knowledge and tests beyond performing a
 thresholded pulse detection.  We discuss post-detection analysis, verification
 tests, and data sets which should be provided when reporting a detection.
 \end{abstract}
@@ -967,6 +967,16 @@ frequency-dependent delay of a dispersed pulse can be modelled as
 where $A$ is the scaling amplitude, for $\alpha = -2$, $A = {\rm DM}$, $\nu_1$
 is the reference frequency (usually taken to be the highest frequency subband),
 and $\nu_2$ is the observing frequency of a subband.
+
+To perform the fit the pulse signal needs to be seperated from the noise. This
+can be done with various methods. A simple method is to pick the peak flux value
+or each subband, that position corresponds to a delay and the flux value is used
+as a weight. A more advanced method would be to find the position peak after
+correlating the subband with a Gaussian pulse with a width similar to the
+detected pulse. In any method, it is useful to exclude subbands where the pulse
+is at a low S/N, and limit the maximum delay region to near the predicted
+$\nu^{-2}$ delay. The initial parameters for the fit are set to be the original
+$\nu^{-2}$ detection parameters.
 
 % TODO: write up on how to do a dispersion fit
 % select dynamic spectrum around pulse
