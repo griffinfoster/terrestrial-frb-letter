@@ -45,6 +45,7 @@
 \usepackage[xindy]{glossaries}
 \glsdisablehyper
 \usepackage{subcaption}
+\usepackage{tabularx}
 \captionsetup{compatibility=false}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -633,8 +634,6 @@ number of false-positive triggers.
 \section{XAO Repeating Event}
 \label{sec:xao_event}
 
-% TODO: edits and expansion from KJ and team
-
 The 25-m Nanshan Telescope at \gls{xao} is currently running an FRB survey. The
 survey covers over 300~MHz at L-band, sampling at $64 \; \mu s$ resolution. On
 November 18, 2016 hundreds of bright, dispersed pulses were detected with the
@@ -759,6 +758,66 @@ is useful to look back at previously reported \glspl{frb} that don't fit the
 ideal broad-band, single component structure that detection pipelines are
 optimized for.
 
+% every FRB paper starts out with a definition, make that the fundamental
+% checklist. which FRBs fail or succeed?
+% TODO: what are questions that can be answered? aristotlian catagorization
+% Check list of items:
+%   broadband? scattered? multiple components?
+%   multi-beam system
+%   variation from the average bandpass
+%   pointing? near the horizon?
+%   repeats? repeats at different pointings?
+%   resolved in time and frequency?
+%   dispersion index fit
+% Table of reported FRBs and events from this paper
+
+% TODO: references
+\begin{table*}
+\centering
+\begin{tabular}{ r l l r r }
+Name      & Telescope & DM (pc~cm$^{-3}$)& Width (ms) & SNR  \\
+\hline
+FRB010125 & Parkes  & $790 \pm 3$        &  9.4 	&	17   \\ 
+FRB010621 & Parkes  & $745 \pm 10$       &  7		&	16.3 \\
+FRB010724 & Parkes  & $375$              &  5		&	23   \\ 
+FRB090625 & Parkes  & $899.55 \pm 0.01$  &  1.92	&	30   \\ 
+FRB110220 & Parkes  & $944.38 \pm 0.05$  &  5.6		&	49   \\ 
+FRB110523 & GBT     & $623.3 \pm 0.06$   &  1.73	&	42   \\ 
+FRB110626 & Parkes  & $723 \pm 0.3$      &  1.4		&	11   \\ 
+FRB110703 & Parkes  & $1103.6 \pm 0.7$   &  4.3		&	16   \\ 
+FRB120127 & Parkes  & $553.3 \pm 0.3$    &  1.1		&	11   \\ 
+FRB121002 & Parkes  & $1629.18 \pm 0.02$ &  5.44	&	16   \\ 
+FRB121102 & Arecibo & $557 \pm 2$        &  3		&	14   \\ 
+FRB130626 & Parkes  & $952.4 \pm 0.1$    &  1.98	&	21   \\ 
+FRB130628 & Parkes  & $469.88 \pm 0.01$  &  0.64	&	29   \\ 
+FRB130729 & Parkes  & $861 \pm 2$        &  15.61	&	14   \\ 
+FRB131104 & Parkes  & $779 \pm 1$        &  2.08	&	30   \\ 
+FRB140514 & Parkes  & $562.7 \pm 0.6$    &  2.8		&	16   \\ 
+FRB150215 & Parkes  & $1105.6 \pm 0.8$   &  2.88	&	19   \\ 
+FRB150418 & Parkes  & $776.2 \pm 0.5$    &  0.8		&	39   \\ 
+FRB150610 & Parkes  & $1593.9 \pm 0.6$   &  2		&	18   \\ 
+FRB150807 & Parkes  & $266.5 \pm 0.1$    &  0.35	&	     \\ 
+FRB151206 & Parkes  & $1909.8 \pm 0.6$   &  3		&	10   \\ 
+FRB151230 & Parkes  & $960.4 \pm 0.5$    &  4.4		&	17   \\ 
+FRB160102 & Parkes  & $2596.1 \pm 0.3$   &  3.4		&	16   \\ 
+FRB160317 & UTMOST  & $1165 \pm 11$      &  21		&	13   \\ 
+FRB160410 & UTMOST  & $278 \pm 3$        &  4		&	13   \\ 
+FRB160608 & UTMOST  & $682 \pm 7$        &  9		&	12   \\ 
+FRB170107 & ASKAP   & $609.5 \pm 0.5$    &  2.6		&	16   \\ 
+FRB170827 & UTMOST  & $176.4 \pm 0$      &  0.4		&	90   \\ 
+FRB170922 & UTMOST  & $1111$             &  26		&	22   \\
+\hline
+B1859+03  & Arecibo & $402.080$          &  11      &   20   \\ % high-DM pulsar
+D20161204 & Arecibo & $293$              &  20      &   10   \\
+D20150730 & Arecibo & $1370$             &          &    6   \\
+ARTEMIS RADAR & LOFAR-UK & $85$          &  20      &        \\
+XAO Repeater & XAO  & $531.8$            &  2       &        \\
+Perytons  & Parkes  &                    &          &        \\
+\end{tabular}
+\caption{Blabla}
+\label{tbl:frbs}
+\end{table*}
+
 \subsection{FRB130729}
 
 \cite{2016MNRAS.460L..30C} reported detection of FRB130729 along with four other
@@ -837,19 +896,6 @@ mystery and rarity of FRBs makes it difficult to differentiate astrophysical FRB
 from local sources based on the dynamic spectrum alone. Thus, additional
 information on the observing system should be used to provide robustness to the
 detection.
-
-% every FRB paper starts out with a definition, make that the fundamental
-% checklist. which FRBs fail or succeed?
-% TODO: what are questions that can be answered? aristotlian catagorization
-% Check list of items:
-%   broadband? scattered? multiple components?
-%   multi-beam system
-%   variation from the average bandpass
-%   pointing? near the horizon?
-%   repeats? repeats at different pointings?
-%   resolved in time and frequency?
-%   dispersion index fit
-% Table of reported FRBs and events from this paper
 
 \subsection{Minimum Reporting}
 
@@ -953,12 +999,18 @@ sufficient.
 \subsubsection{Dispersion Fitting}
 
 FRB surveys, by design, search for broadband signals which follow a $\nu^{-2}$
-dispersion relation. The incoherent dedispersion operation aligns frequency
-subbands based on a such a frequency-dependent time delay. The dynamic spectrum
-is averaged in frequency to produce a time series. Peaks above a threshold S/N
-are recorded as possible detections. But, such a detection is not necessarily
-maximized in S/N with at the cold plasma dispersion index ($\alpha = -2$). The
-frequency-dependent delay of a dispersed pulse can be modelled as
+cold plasma dispersion relation. A distant astrophysical pulse should follow
+this relation, and any deviation from this relation is strong evidence for the
+signal being artifically generated, e.g. the XAO repeating event in Section
+\ref{sec:xao_event}. This dispersion relation can be tested on the dynamic
+spectrum of a potential FRB.
+
+The incoherent dedispersion operation aligns frequency subbands based on such a
+frequency-dependent time delay. The dynamic spectrum is averaged in frequency to
+produce a time series. Peaks above a threshold S/N are recorded as possible
+detections. But, such a detection is not necessarily maximized in S/N with at
+the cold plasma dispersion index ($\alpha = -2$). The frequency-dependent delay
+of a dispersed pulse can be modelled as
 %
 \begin{equation}
 \Delta t = A \, (\nu_1^{\alpha} - \nu_2^{\alpha}) + \Delta t_0,
@@ -968,9 +1020,9 @@ where $A$ is the scaling amplitude, for $\alpha = -2$, $A = {\rm DM}$, $\nu_1$
 is the reference frequency (usually taken to be the highest frequency subband),
 and $\nu_2$ is the observing frequency of a subband.
 
-To perform the fit the pulse signal needs to be seperated from the noise. This
+To perform the fit, the pulse signal needs to be seperated from the noise. This
 can be done with various methods. A simple method is to pick the peak flux value
-or each subband, that position corresponds to a delay and the flux value is used
+of each subband, that position corresponds to a delay and the flux value is used
 as a weight. A more advanced method would be to find the position peak after
 correlating the subband with a Gaussian pulse with a width similar to the
 detected pulse. In any method, it is useful to exclude subbands where the pulse
@@ -978,24 +1030,20 @@ is at a low S/N, and limit the maximum delay region to near the predicted
 $\nu^{-2}$ delay. The initial parameters for the fit are set to be the original
 $\nu^{-2}$ detection parameters.
 
-% TODO: write up on how to do a dispersion fit
-% select dynamic spectrum around pulse
-% decimate in time or frequency and/or apply a Gaussian low-pass filter
-% find significant events within a time delay threshold for each subband
-% power law model
-% initial parameter guess:
-%   dedisperse with nu-2 index to find start time
-%   alpha = -2
-%   DM = SNR maximized DM
-% weighted fit
-
 To produce a reasonable fit and error estimate of the dispersion index
 sufficient power needs to be present across a large enough fractional bandwidth.
 For example, system such as ALFABURST and ARTEMIS have narrow fractional
-bandwidth ($0.05$) which is in sufficient to differentiate between a linear
+bandwidth ($\sim 0.05$) which is insufficient to differentiate between a linear
 chirp ($\alpha = -1$) and a cold-plasma dispersed pulse. Similary, this is the
 case for a potential FRB that is only detected at significant S/N in a small
 fractional bandwidth (e.g. FRB140514).
+
+If the complex voltages are captured during a detection a better dispersion
+relation fit can be performed by doing coherent dedispersion. It is often not
+practical to store all the unaccumulated voltages during a survey. But, either
+detection triggers or short-term storage of the complex voltages be useful for
+this test which provides strong evidence for the astrophysical nature of a
+pulse.
 
 \subsection{Future Observational Methods}
 
