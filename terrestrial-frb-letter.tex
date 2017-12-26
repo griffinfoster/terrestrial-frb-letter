@@ -201,15 +201,16 @@ there is high confidence in the likelihood of a true-positive.
 \section{An example of a FRB-like Signal detected with ALFABURST}
 \label{sec:D20161204}
 
-In the two years of the initial ALFABURST survey \citep{2017ApJS..228...21C} over
-200k 8.4-second windows have been recorded in which our \gls{frb} search pipeline
-detected an event above the minimum \gls{snr} detection threshold. The vast
-majority of these events have been due to \gls{rfi}, some of the events are due
-to bright single pulses of known pulsars. Most of the events are
-clearly \gls{rfi} which are classified with an automated classifier model. A
-small number of windows contain FRB-like events which only on further inspection
-of the data, the telescope operation status, and contextual information is it
-clear that these events are from local sources.
+In the two years of the initial ALFABURST survey
+\citep{doi:10.1093/mnras/stx3038} over 200k 8.4-second windows have been
+recorded in which our \gls{frb} search pipeline detected an event above the
+minimum \gls{snr} detection threshold. The vast majority of these events have
+been due to \gls{rfi}, some of the events are due to bright single pulses of
+known pulsars. Most of the events are clearly \gls{rfi} which are classified
+with an automated classifier model. A small number of windows contain FRB-like
+events which only on further inspection of the data, the telescope operation
+status, and contextual information is it clear that these events are from local
+sources.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
 ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 (09:31:06
@@ -218,10 +219,10 @@ receiver\footnote{http://www.naic.edu/alfa/} (Figure
 \ref{fig:beam0_dynamic_spec_wide}). ALFABURST was processing 56~MHz of
 bandwidth between 1457~MHz and 1513~MHz. The \gls{snr} of this pulse is
 maximized (10.46) when the pulse is dedispersed with a \gls{dm} of
-293~pc~cm$^{-3}$ and the 256~$\mu$s resolution is decimated by a factor of 16 to
-a time resolution of 4~ms. The dedispered time series shows an approximately 20~ms
-\gls{fwhm} pulse. The dip before and after the pulse is due to the DM-zero
-removal (i.e. the moving average is subtracted) during pulse detection
+293~pc~cm$^{-3}$ and the 256~$\mu$s resolution is decimated by a factor of 16
+to a time resolution of 4~ms. The dedispered time series shows an approximately
+20~ms \gls{fwhm} pulse. The dip before and after the pulse is due to the
+DM-zero removal (i.e. the moving average is subtracted) during pulse detection
 \citep{2009MNRAS.395..410E}. This is a simple way to remove a drifting gain
 baseline at the cost of removing some of the overall pulse power, particularly
 at low DM trials. The bright, narrow-band signal at approximately $t=0.1$
@@ -804,17 +805,17 @@ FRB160317 & UTMOST  & $1165 \pm 11$      &  21		&	13   \\
 FRB160410 & UTMOST  & $278 \pm 3$        &  4		&	13   \\ 
 FRB160608 & UTMOST  & $682 \pm 7$        &  9		&	12   \\ 
 FRB170107 & ASKAP   & $609.5 \pm 0.5$    &  2.6		&	16   \\ 
-FRB170827 & UTMOST  & $176.4 \pm 0$      &  0.4		&	90   \\ 
+FRB170827 & UTMOST  & $176.4$            &  0.4		&	90   \\ 
 FRB170922 & UTMOST  & $1111$             &  26		&	22   \\
 \hline
 B1859+03  & Arecibo & $402.080$          &  11      &   20   \\ % high-DM pulsar
 D20161204 & Arecibo & $293$              &  20      &   10   \\
-D20150730 & Arecibo & $1370$             &          &    6   \\
+D20150730 & Arecibo & $1370$             &  0.5     &    6   \\
 ARTEMIS RADAR & LOFAR-UK & $85$          &  20      &        \\
-XAO Repeater & XAO  & $531.8$            &  2       &        \\
-Perytons  & Parkes  &                    &          &        \\
+XAO Repeater & XAO  & $531.8$            &  2       &   10>  \\
+Perytons  & Parkes  & $\sim400$          &  18.5    &   10>  \\
 \end{tabular}
-\caption{Blabla}
+\caption{Previously reported FRBs and terrestrial events discussed in this work.}
 \label{tbl:frbs}
 \end{table*}
 
@@ -986,8 +987,6 @@ such as those in Section \ref{sec:D20161204}. And, the array can be used to
 localize the sky position. A detection could still be due to an RFI source local to
 the array, though the physical seperation of the elements and interferometric
 techniques could be used to determine if the source is in the near field.
-
-% interferometric arrays
 
 \subsubsection{Low-SNR Follow-up Search}
 
