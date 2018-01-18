@@ -121,19 +121,19 @@ Hall \#3411, Berkeley, CA, 94720, USA\\
 % What is the main take away message?
 % What can be said about these results, and how does this affect future work?
 The one-off nature of most Fast Radio Bursts (FRBs) requires extra scrutiny when
-reporting such a detection as astrophysical.  The prototypical FRB is a
-broadband \cM{signal}, appearing wider than the receiver bandwidth, narrow-in-time, and
-highly dispersed, following a $\nu^{-2}$ relation.  But, some FRBs appear
+reporting such detections as astrophysical.  The prototypical FRB is a
+broadband \cM{signal}, appearing over a frequency range wider than the receiver bandwidth, 
+narrow-in-time, and highly dispersed, following a $\nu^{-2}$ relation.  But, some FRBs appear
 band-limited, show apparent scintillation, complex frequency-dependent
 structure, or multi-component pulse shapes.  In a search for rare signals in a
-noisy system, the number of false-positive detections is based on the detection
+noisy data set, the number of false-positive detections is based on the detection
 threshold and signal filters.  Such searches should find a number of
 false-positive events.  We present examples of false-positive events that occur
 in multiple searches, which on initial inspection appear to be FRB-like, but are
-found to be due to instrumentational variations, noise, and radio frequency
-interference (RFI).  Differentiating \cM{between} these false-positive detections from
+found to be due to instrumental variations, noise, and radio frequency
+interference (RFI).  Differentiating these false-positive detections from
 astrophysical events\cM{,} requires knowledge and tests beyond performing a
-thresholded pulse detection.  We discuss post-detection analysis, verification
+thresholded single-pulse detection.  We discuss post-detection analysis, verification
 tests, and data sets which should be provided when reporting \cM{an FRB} detection.
 \end{abstract}
 
@@ -151,44 +151,39 @@ radio continuum: transients -- methods: observational
 %narrative: here are some odd FRB like things, here are some odd reported
 %FRBs, it is hard to know if they are real and a ~10% false-positive rate is
 %probably fine, but bursts need to be fully reported
-The origin of \glspl{frb} continue to be a mystery since they were first
+The origin of \glspl{frb} continues to be a mystery since they were first
 reported \citep{2007Sci...318..777L} and as a catalogue of detections \cM{is
 building} up over the years.  The consensus today is that \glspl{frb} are
-extra-galactic in origin, yet the emission model is not known.  This consensus
+extra-galactic in origin, yet the emission mechanism is not known.  This consensus
 has been built \cM{developed?} from the reporting of detections with multiple telescopes, at
 different frequencies, using different instrumentation.  FRB121102 has been
-localized to a region of a dwarf galaxy using VLBI \cM{write out?}
-\citep{2017ApJ...834L...7T,2017Natur.541...58C}.  Bursts from FRB121102 have
-been detected up to 8~GHz \citep{atel10675}. \cM{are you committed to past perfect tense? I would just do past.} Bright bursts are regularly
-detected with ASKAP and Molonglo
-\citep{2017ApJ...841L..12B,2017MNRAS.468.3746C,atel10693}.
+localized to a star forming region in a dwarf galaxy using very long baseline interferometry (VLBI) \cM{write out?} \citep{2017ApJ...834L...7T,2017Natur.541...58C}.  Bursts from FRB121102 have
+been detected up to 8~GHz \citep{atel10675}. \cM{are you committed to past perfect tense? I would just do past.} Bright bursts are regularly detected with ASKAP and Molonglo \citep{2017ApJ...841L..12B,2017MNRAS.468.3746C,atel10693}.
 
 The prototypical \gls{frb} is broad-band, appearing to be broader than most
 receivers used in surveys. \cM{I'm not sure prototypical is a safe word to refer to FRBs, maybe initial/majority?} The pulse is narrow-in-time, on the order of a few
 milliseconds in width, with a single component structure. The pulse is highly
-dispersed, following a $\nu^{-2}$ relation. And, appears to be a one-off event.
+dispersed, following a $\nu^{-2}$ relation and appears to be a one-off event 
 (only FRB121102 is known to repeat \citep{2016Natur.531..202S}).  Though, not
 all reported detections appear to follow this prototypical form. Many show
 complex frequency-dependent structure and are possibly band limited. The pulse
-width varies due \cM{to} either the emission process or \cM{\sout{to} \sout{intermediate}} \cM{propagation?} effects such as
-scattering. \cM{perhaps worth mentioning interstellar and intergalactic here?}
+width varies due \cM{to} either the emission process or \cM{\sout{to} \sout{intermediate}} \cM{propagation?} effects such as scattering. \cM{perhaps worth mentioning interstellar and intergalactic here?}
 
 To detect these rare events, automated GPU-accelerated software pipelines are
 used to extensively search \cM{ah! this is the error I was trying to find a name for. You should not separate 'to' and 'search'} a broad range of \gls{dm} trials, pulse widths, and
 starting times. The de-dispersed time series is then thresholded \cM{and} any peaks
 above a minimum \gls{snr} \cM{I think S/N is preferred, because of the clash with supernova rem.} are reported as potential detections. The number of
 potential detections is usually overwhelming due to \gls{rfi} and system gain
-variations. Initially, potential detections were reviewed by a human. But, with
-the wealth of data it has become a significant time effort to do so. Further,
-our understanding of the expected detections has allowed the development of
+variations. Initially, potential detections were reviewed manually. But, with
+the amount of data acquired in recent surveys, it has become a significant time effort to do so. Further,
+our understanding of the expected signal properties has allowed the development of
 filters and models to select \cM{\sout{out}} and prioritize individual events.
 
-As these sources are rare
-and generally appear not to repeat (all besides FRB121102)\cM{,} there is a issue
-of verifiability. There are known anthropogenic sources that appear FRB-like
-\citep{2011ApJ...727...18B}. In this paper we present other examples of FRB-like
+As these sources are rare and generally appear not to repeat (all besides FRB121102)\cM{,} 
+there is an issue of verifiability. There are known anthropogenic sources that appear FRB-like
+\citep{2011ApJ...727...18B}. In this paper, we present other examples of FRB-like
 sources which, after further investigation, we show to be non-astrophysical.
-When reporting a detection of an astrophysical FRB\cM{,} it is necessary to provide
+When reporting a detection of an FRB\cM{,} it is necessary to provide
 not just the observational data but additional telescope data to provide a
 robust statement about the source origin.
 
@@ -196,25 +191,23 @@ We expect a number of false-positives to pass automated post-processing detectio
 tests, as we would like to severely limit the potential for type-II errors in
 our classifier by accepting a number of type-I errors. \cM{stick to false-pos?} Once the number of
 potential detections has been filtered to a reasonable size, they are then
-reviewed by a human. This creates a challenge of automating the triggering of
+reviewed manually. This creates a challenge of automating the triggering of
 follow-up \cM{\sout{signalling to} by} other telescopes. Either there will be an excess of
 false-positive triggers but with a short delay between detection and triggering.
 Or, a non-automated, expert examination of the event is required to verify,
 creating a delay in any follow-up. Automated follow-up should be triggered when
 there is high confidence in the likelihood of a true-positive.
 
-\section{An example of a FRB-like Signal detected with ALFABURST}
+\section{An example of an FRB-like Signal detected with ALFABURST}
 \label{sec:D20161204} \cM{a mix of tenses in this section, starts past perfect, then present then past... etc. Maybe that's ok, but I tend to stick to one.}
 
-In the two years of the initial ALFABURST \cM{seems a bit odd for ALFABURST to feature so prominently but no be in the abstract} survey \citep{2017ApJS..228...21C} over
+In the two years of the initial ALFABURST \cM{seems a bit odd for ALFABURST to feature so prominently but no be in the abstract} survey \citep{2017ApJS..228...21C}, over
 200k 8.4-second windows \cM{data windows?} have been recorded in which our \gls{frb} search pipeline
-detected an event above the minimum \gls{snr} detection threshold. The vast
-majority of these events have been due to \gls{rfi}, \cM{while other \sout{some of the events}} are due
-to bright single pulses of known pulsars. Most of the events are
+detected an event above the minimum \gls{snr} detection threshold of 10 \citep{2018MNRAS.474.3847F}. 
+The vast majority of these events have been due to \gls{rfi} and instrumental variations, \cM{while others \sout{some of the events}} are due to bright single pulses of known pulsars. Most of the events are
 clearly \gls{rfi} \cM{repetitive} which are classified with an automated classifier model. A
 small number of windows contain FRB-like events which only on further inspection
-of the data, the telescope operation status, and contextual information is it
-clear that these events are from local sources.
+of the data, the telescope operation status, and contextual information revealed, are from local sources.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
 ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 (09:31:06
@@ -225,8 +218,8 @@ bandwidth between 1457~MHz and 1513~MHz. The \gls{snr} of this pulse is
 maximized (10.46) when the pulse is dedispersed with a \gls{dm} of
 293~pc~cm$^{-3}$ and the 256~$\mu$s resolution is decimated by a factor of 16 to
 a time resolution of 4~ms. The dedispered time series shows an approximately 20~ms
-\gls{fwhm} pulse. The dip before and after the pulse is due to the DM-zero
-removal (i.e. the moving average is subtracted - \cM{move this info into next sentence?}) during pulse detection
+\gls{fwhm} pulse. The dip before and after the pulse is due to the zero-DM filtering
+(i.e. the moving average is subtracted - \cM{move this info into next sentence?}) during pulse detection
 \citep{2009MNRAS.395..410E}. This is a simple way to remove a drifting gain
 baseline at the cost of removing some of the overall pulse power, particularly
 at low DM trials. The bright, narrow-band signal at approximately $t=0.1$
