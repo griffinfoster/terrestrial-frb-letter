@@ -81,8 +81,6 @@
 \newacronym{vlbi}{VLBI}{Very-Long Baseline Interferometry}
 \newacronym{xao}{XAO}{Xinjiang Astronomical Observatory}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title of the paper, and the short title which is used in the headers.
@@ -110,7 +108,7 @@ $^{5}$Center for Gravitational Waves and Cosmology, West Virginia University, Ch
 \date{Accepted XXX. Received YYY; in original ZZZ}
 
 % Enter the current year, for the copyright statements etc.
-\pubyear{2017}
+\pubyear{2018}
 
 % Don't change these lines
 \begin{document}
@@ -118,14 +116,23 @@ $^{5}$Center for Gravitational Waves and Cosmology, West Virginia University, Ch
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
 \maketitle
 
-% TODO:
-% restructure paper
-% comments
-% test software, run on previous frbs
-% leon oostrum (apertif confidence)
-% sent to simon, jon
-% TODO: a mix of tenses in this section, starts past perfect, then present then past... etc. Maybe that's ok, but I tend to stick to one.
-% TODO: drop figure titles
+% TODO: The Great Restructure
+% 1. Introduction
+% 2. False-Positive FRB Detections
+%   a. ALFA non-linear response
+%   b. ALFA low-SNR
+%   c. LOFAR RADAR
+%   d. XAO RADAR
+% 3. Verification Criteria
+%   a. prototypical FRBs
+%   b. detailed list of criteria
+%   c. table of critera for FRBs, false-positives, pulsars
+%   d. cases and odd FRBs
+%   e. analysis of previous detections and criteria, reporting time scales
+% 4. Detection Reporting and Future Observational Methods
+
+% TODO: test software, run on previous frbs
+% TODO: sent to simon, jon, leon oostrum (apertif confidence)
 
 % Abstract of the paper
 \begin{abstract}
@@ -136,20 +143,20 @@ $^{5}$Center for Gravitational Waves and Cosmology, West Virginia University, Ch
 % What can be said about these results, and how does this affect future work?
 The one-off nature of most Fast Radio Bursts (FRBs) requires extra scrutiny when
 reporting such detections as astrophysical.  The prototypical FRB is a broadband
-signal, appearing over a frequency range wider than the receiver bandwidth,
-narrow-in-time, and highly dispersed, following a $\nu^{-2}$ relation.  But,
-some FRBs appear band-limited, show apparent scintillation, complex
-frequency-dependent structure, or multi-component pulse shapes.  In a search for
-rare signals in a noisy data set, the number of false-positive detections is
-based on the detection threshold and signal filters.  Such searches should find
-a number of false-positive events.  We present examples of false-positive events
-that occur in multiple searches, which on initial inspection appear to be
-FRB-like, but are found to be due to instrumental variations, noise, and radio
-frequency interference (RFI).  Differentiating these false-positive detections
-from astrophysical events, requires knowledge and tests beyond performing a
-thresholded single-pulse detection.  We discuss post-detection analysis,
-verification tests, and data sets which should be provided when reporting an FRB
-detection.
+signal, appearing to occur over a frequency range wider than the receiver
+bandwidth, narrow-in-time, and highly dispersed, following a $\nu^{-2}$
+relation.  But, some FRBs appear band-limited, show apparent scintillation,
+complex frequency-dependent structure, or multi-component pulse shapes.  In a
+search for rare signals in a noisy data set, the number of false-positive
+detections is based on the detection threshold and signal filters.  Such
+searches should find a number of false-positive events.  We present examples of
+false-positive events that occur in multiple searches, which on initial
+inspection appear to be FRB-like, but are found to be due to instrumental
+variations, noise, and radio frequency interference (RFI).  Differentiating
+these false-positive detections from astrophysical events, requires knowledge
+and tests beyond performing a thresholded single-pulse detection.  We discuss
+post-detection analysis, verification tests, and data sets which should be
+provided when reporting an FRB detection.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -163,20 +170,16 @@ radio continuum: transients -- methods: observational
 \section{Introduction}
 \label{sec:intro}
 
-%narrative: here are some odd FRB like things, here are some odd reported
-%FRBs, it is hard to know if they are real and a ~10% false-positive rate is
-%probably fine, but bursts need to be fully reported
-
 The origin of \glspl{frb} continues to be a mystery since they were first
-reported \citep{2007Sci...318..777L}.  The consensus today is that \glspl{frb}
-are extra-galactic in origin, yet the emission mechanism is not known.  This
-consensus has developed from the reporting of detections with multiple
-telescopes, at different frequencies, using different instrumentation.
-FRB121102 has been localized to a star forming region in a dwarf galaxy using
-gls{vlbi} \citep{2017ApJ...834L...7T,2017Natur.541...58C}.  Bursts from
-FRB121102 have been detected up to 8~GHz \citep{atel10675}. Bright bursts are
-regularly detected with ASKAP and Molonglo
-\citep{2017ApJ...841L..12B,2017MNRAS.468.3746C,atel10693}.
+reported \citep{2007Sci...318..777L}. The \gls{dm} associated with the reported
+events indicate they are occur well beyond our galaxy, possibly at cosmological
+distances. They appear to be extremely bright, short duration events yet their
+emission mechanism is not known.  This consensus has developed from the
+reporting of detections with multiple telescopes, at different frequencies,
+using different instrumentation. \glspl{frb} are difficult to detect as they
+require high-gain telescopes which typically have a small beam size, such that
+despite many thousands of observing hours only, a few dozen have been reported
+as of this writing \citep{2016PASA...33...45P}.
 
 The prototypical \gls{frb} is broad-band, appearing to be broader than most
 receivers used in surveys. The pulse is narrow-in-time, on the order of a few
@@ -186,56 +189,79 @@ dispersed, following a $\nu^{-2}$ relation and appears to be a one-off event
 all reported detections appear to follow this prototypical form. Many show
 complex frequency-dependent structure and are possibly band limited. The pulse
 width varies due to either the emission process or propagation effects such as
-scattering.
-% TODO: perhaps worth mentioning interstellar and intergalactic here?
-
-% TODO: reference varying shapes of FRB121102
+scattering from the \gls{ism} and \gls{igm}.
 
 These rare events are detected by automated GPU-accelerated software pipelines
 that extensively search a broad range of \gls{dm} trials, pulse widths, and
-starting times.  The de-dispersed time series is then thresholded and any
+starting times.  The de-dispersed time series is then thresholded, any
 peaks above a minimum \gls{snr} are reported as potential detections. The number
 of potential detections is usually overwhelming due to \gls{rfi} and system gain
 variations. Initially, potential detections were reviewed manually. But, with
 the amount of data acquired in recent surveys, it has become a significant time
 effort to do so. Further, our understanding of the expected signal properties
 has allowed the development of filters and models to select and prioritize
-individual events.
+individual events \citep{2018MNRAS.474.3847F}.
 
-As these sources are rare and generally appear not to repeat (all besides
-FRB121102), there is an issue of verifiability. There are known anthropogenic
-sources that appear FRB-like \citep{2011ApJ...727...18B}. In this paper, we
-present other examples of FRB-like sources which, after further investigation,
-we show to be non-astrophysical.  When reporting a detection of an FRB, it is
-necessary to provide not just the observational data but additional telescope
-data to provide a robust statement about the source origin.
+As these sources are rare and generally appear not to repeat (except FRB121102),
+there is an issue of verifiability. There is significant \gls{rfi} detectable at
+all radio observatories, and there are known anthropogenic sources that appear
+FRB-like \citep{2011ApJ...727...18B}.  Given the significant number of \gls{dm}
+trials and high-time resolution of the spectra in a typical survey there are a
+large number of false-positives which pass the automated post-processing
+detection tests.  This is by design, as we would like to severely limit the
+potential for false-negatives (type-II errors) in our detection pipelines by
+accepting a number of false-positives (type-I errors).  But, given the large
+sampling of the parameter search space it can be difficult, if not impossible to
+differentiate between a true, astrophysical \gls{frb} (true-positive) and a
+`terrestrial' \gls{frb} (false-positive) due to \gls{rfi}, systematics, or other
+local effects. As the survey time increase the likelihood of detecting such a
+false-positive will increase. To counter false detection of `terrestrial'
+\glspl{frb}, verification criteria can be tested when reporting a detection.
 
-We expect a number of false-positives to pass automated post-processing
-detection tests, as we would like to severely limit the potential for
-false-negatives (type-II errors) in our classifier by accepting a number of
-false-positives (type-I errors). Once the number of potential detections has
-been filtered to a reasonable size, they are then reviewed manually. This
-creates a challenge of automating the triggering of follow-up with other
-telescopes. Either there will be an excess of false-positive triggers but with a
-short delay between detection and triggering.  Or, a non-automated, expert
-examination of the event is required to verify, creating a delay in any
-follow-up. Automated follow-up should be triggered when there is high confidence
-in the likelihood of a true-positive.
+In this paper, we present other examples of FRB-like sources which, after
+further investigation, we show to be non-astrophysical. Using these and
+previously reported \glspl{frb}, we develop a set of criteria to test detections
+against and discuss the data, in addition to the detected dynamic spectrum, that
+can be reported to provide a robust statement about an \gls{frb} detection.
 
-\section{An example of an FRB-like Signal detected with ALFABURST}
+\section{False-Positive FRB Detections}
+\label{sec:false-pos}
+
+During an \gls{frb} search survey there will be a significant number of
+false-positive detections. The rate of these detections is set by the minimum
+\gls{snr} threshold, the parameter search space, and the terrestrial environment
+of the observatory. We use the term `terrestrial' to encompass multiple effects:
+anthropogenic radio signal, variations in the observing system, and natural
+signals from within the solar system.
+
+Most false-positive events are filtered out with filters and classifier models.
+The remaining events are commonly examined by eye as expert human knowledge
+appears to be the best way to classify an detection but limitations in time do
+not allow for all events to classified this way. On inspection, true
+astrophysical events and terrestrial events can be difficult to differentiate
+even by the expert.  These terrestrial events, indeed, should appear like
+astrophysical \glspl{frb} as they have passed the detection pipeline tests. By
+further investigation of the telescope state it is often possible to determine
+the origin of an event. Though not always, this leads to the precarious nature
+of reporting an \gls{frb} as astrophysical.  In this section we present examples
+of such events which on initial inspection appear to be astrophysical, but after
+further investigation prove to be terrestrial in origin.
+
+\subsection{ALFA Gain Response}
 \label{sec:D20161204}
 
 % TODO: shorten this section
 % TODO: seems a bit odd for ALFABURST to feature so prominently but no be in the abstract
-In the two years of the initial ALFABURST survey \citep{2017ApJS..228...21C},
-over 200k 8.4-second data windows have been recorded in which our \gls{frb}
-search pipeline detected an event above the minimum \gls{snr} detection
-threshold of 10 \citep{2018MNRAS.474.3847F}.  The vast majority of these events
-have been due to \gls{rfi} and instrumental variations, while others are due to
-bright single pulses of known pulsars. Most of these events are are classified
-with an automated classifier model. A small number of windows contain FRB-like
-events which only on further inspection of the data, the telescope operation
-status, and contextual information revealed, are from local sources.
+In the two years of the initial ALFABURST survey \citep{2017ApJS..228...21C,
+2018MNRAS.474.3847F}, over 200k 8.4-second data windows have been recorded in
+which the \gls{frb} search pipeline detected an event above the minimum
+\gls{snr} detection threshold of 10.  The vast
+majority of these events were due to \gls{rfi} and instrumental variations,
+while others were due to bright single pulses of known pulsars. Most of these
+events were corretly classified with an automated classifier model. A small number of
+windows contain FRB-like events which only on further inspection of the data,
+the telescope operation status, and contextual information revealed, are from
+local sources.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
 ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 (09:31:06 Arecibo
@@ -253,7 +279,6 @@ baseline at the cost of removing some of the overall pulse power, particularly
 at low DM trials. The bright, narrow-band signal at approximately $t=0.1$
 seconds is locally generated \gls{rfi} which we cover later in this section.
 
-% TODO: remove sinc function?
 \begin{figure*}
     % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
     \includegraphics[width=1.0\linewidth]{figures/D20161204_buf23_Beam0_wide.pdf}
@@ -511,7 +536,7 @@ astrophysical. It is only with an extended study of the meta-data,
 earlier-in-time evolution of the band, and use of multiple beams to confirm that
 this is not an FRB of astronomical origin.
 
-\section{Low-S/N False-Positive Detections}
+\subsection{Low-S/N False-Positive Detections}
 \label{sec:low_snr}
 
 As the automated search pipeline is set up to do an extensive search in \gls{dm}
@@ -554,7 +579,7 @@ a detection.  As the parameter space (DM trials, pulse width range) and number
 of observations grow we expect to see an increase in the number of
 high-\gls{snr}, false-poisitive events.
 
-\section{Detected RADAR Event with ARTEMIS}
+\subsection{Detected RADAR Event with ARTEMIS}
 \label{sec:LOFAR_RADAR}
 
 ARTEMIS \citep{2015MNRAS.452.1254K} is  an \gls{frb} search survey, similar to
@@ -653,7 +678,7 @@ in the instrument, radio signals and visual acuity were necessary to identify
 this rare RADAR event.  Automating this process is difficult, so if we desire an
 automated VOevent trigger, we should expect a number of false-positive triggers.
 
-\section{XAO Repeating Event}
+\subsection{XAO Repeating Event}
 \label{sec:xao_event}
 
 The 25-m Nanshan Telescope at \gls{xao} is currently running an FRB survey. The
@@ -773,8 +798,9 @@ the logistic function.
 %unknown.  Observations a XAO continue, with an interest in observing in November
 %2017 to see if the signal returns on an annual schedule.
 
-\section{Previously Reported FRBs}
-\label{sec:previous_frbs}
+
+\section{Verification Criteria}
+\label{sec:verify_crit}
 
 Given that systematic effects and \gls{rfi} can produce apparent \glspl{frb} it
 is useful to look back at previously reported \glspl{frb} that don't fit the
@@ -905,7 +931,7 @@ to discount as not being of astrophysical origin. It is necessary to report
 all of these events and to provide as much evidence as possible to explain the
 origin of such events.
 
-\section{Verification Tests}
+\section{Detection Reporting and Future Observational Methods}
 
 % TODO: decision tree
 % TODO: reference varying shapes of FRB121102
@@ -1113,6 +1139,18 @@ Such wide bands show the pulse structure goes beyond the bandwidth of known
 source of \gls{rfi} (e.g. modulated RADAR).
 
 \section{Conclusion}
+
+%narrative: here are some odd FRB like things, here are some odd reported
+%FRBs, it is hard to know if they are real and a ~10% false-positive rate is
+%probably fine, but bursts need to be fully reported
+
+% TODO: follow text
+%This creates a challenge of automating the triggering of follow-up with other
+%telescopes. Either there will be an excess of false-positive triggers but with a
+%short delay between detection and triggering.  Or, a non-automated, expert
+%examination of the event is required to verify, creating a delay in any
+%follow-up. Automated follow-up should be triggered when there is high confidence
+%in the likelihood of a true-positive.
 
 \glspl{frb} are unique astronomical sources from an observational point of view
 as so far no follow-up observations have been able to verify a source using a
