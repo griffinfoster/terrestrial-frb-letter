@@ -119,23 +119,6 @@ $^{5}$Center for Gravitational Waves and Cosmology, West Virginia University, Ch
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
 \maketitle
 
-% TODO: The Great Restructure
-% 1. Introduction
-% 2. False-Positive FRB Detections
-%   a. ALFA non-linear response
-%   b. ALFA low-SNR
-%   c. LOFAR RADAR
-%   d. XAO RADAR
-% 3. Verification Criteria
-%   a. prototypical FRBs
-%   b. detailed list of criteria; make a notebook
-%   c. table/heat map of critera for FRBs, false-positives, pulsars; notebook
-%   for each frb, and an output to form the heatmap from
-%   d. cases and odd FRBs
-%   e. analysis of previous detections and criteria, reporting time scales
-% 4. Detection Reporting and Future Observational Methods
-
-% TODO: test software, run on previous frbs
 % TODO: sent to simon, jon, leon oostrum (apertif confidence)
 
 % Abstract of the paper
@@ -308,17 +291,6 @@ due to the zero-DM filtering (i.e. the moving average is subtracted) during
 pulse detection \citep{2009MNRAS.395..410E}. This is a simple way to remove a
 drifting gain baseline at the cost of removing some of the overall pulse power,
 particularly at low DM trials.
-
-%\begin{figure*}
-%    % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
-%    \includegraphics[width=1.0\linewidth]{figures/D20161204_buf23_Beam0_wide.pdf}
-%    \caption{Detected FRB-like event in Beam 0 of ALFA. The characteristic dip
-%    before and after the event is due to zero-DM removal which is part of the
-%    ALFABURST RFI exciser. The strong, narrowband, repeating signal is due to a
-%    local RFI source.
-%    }
-%    \label{fig:beam0_dynamic_spec_wide}
-%\end{figure*}
 
 On initial inspection, this event looks like a promising new astrophysical
 \gls{frb}. The flux density of the event can be computed with the radiometer
@@ -783,17 +755,17 @@ interferometric and beamformed arrays are leading to new survey and
 observational modes. These arrays will provide further tests in for confidence
 in a detection that single dishes can not.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Criteria}
 
-The verification criteria can be seperated in groups relating to the detected
+The verification criteria can be separated in groups relating to the detected
 pulse shape and dispersion characteristics, data quality around the time of the
 detected pulse, and telescope state.
 
+\subsubsection{Pulse Shape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TODO: criterion justification
 % TODO: make a template notebook
-
-\subsubsection{Pulse Shape}
 
 \paragraph{Signal to Noise:}
 
@@ -846,6 +818,8 @@ measured characteristic scintillation bandwidth?
 
 Where full Stokes parameters measured for the pulse? Does the pulse show
 polarization characteristics? Can a rotation measure be fit to the pulse?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Dispersion}
 
@@ -935,8 +909,6 @@ pulse detected on individual baselines?
 Was the pulse detected on a multi-site observation campaign? If so, was the
 pulse detected at multiple sites?
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \subsection{Previous Detections}
 
 % heat map of critera for FRBs, false-positives, pulsars
@@ -947,14 +919,14 @@ pulse detected at multiple sites?
 % red: good evidence for terrestiral origin (critical)
 % gray: not valid criterion
 
-% cases and odd FRBs:
-% prototypical frbs
-% odd: FRB130729, FRB140514, FRB150807
-% FRB121102
-% pulsar
-% alfaburst gain
-% lofar radar
-% xao repeater
+% cases:
+%   prototypical frbs
+%   odd: FRB130729, FRB140514, FRB150807
+%   FRB121102
+%   pulsar
+%   alfaburst gain
+%   lofar radar
+%   xao repeater
 
 % analysis of previous detections and criteria, reporting time scales
 % not all criteria can be checked or verified, but having a standard
@@ -1059,23 +1031,8 @@ pulse detected at multiple sites?
 %    \label{fig:FRB140514}
 %\end{figure}
 
-\section{Detection Reporting and Future Observational Methods}
+\section{Detection Reporting}
 
-%\subsection{False-Positive Reporting}
-%
-%During a search for anomalous signals it should be expected that there are a
-%number of events reported which are false positives. Such as Perytons
-%\citep{2011ApJ...727...18B} and the events reported in earlier sections. Events
-%such as FRB130729 and FRB140514 are on the edge of verifiability. They do not
-%fit the classic \gls{frb} model but given the available observing and system
-%information, and lack of an external, anthropogenic explanation they are hard
-%to discount as not being of astrophysical origin. It is necessary to report
-%all of these events and to provide as much evidence as possible to explain the
-%origin of such events.
-
-%% TODO: decision tree
-%% TODO: reference varying shapes of FRB121102
-%
 %The one-off nature of \glspl{frb} makes it essential that when reporting on a
 %detection or triggering a follow-up observation that significant due-diligence
 %is done in order to verify a true-positive detection as much as possible. Over the
@@ -1088,9 +1045,9 @@ pulse detected at multiple sites?
 %from local sources based on the dynamic spectrum alone. Thus, additional
 %information on the observing system should be used to provide robustness to the
 %detection.
-%
-%\subsection{Minimum Reporting}
-%
+
+\subsection{Minimum Reporting}
+
 %At a minimum, a reasonable detection should be reported with the observed data
 %made publicly available.  This allows independent verification, and can be used
 %as input data sets to test pipeline development.  This is different from other
@@ -1126,9 +1083,9 @@ pulse detected at multiple sites?
 %% FRB110523, FRB121102, FRB150807, FRB160317, FRB160410, FRB160608, FRB170107,
 %% FBR170827
 %% FRB150807: bright, maybe RFI
-%
-%\subsection{Desirable Reporting}
-%
+
+\subsection{Desirable Reporting}
+
 %As has been shown in the previous section there are instrumentational and RFI
 %sources which can produce the appearance of \glspl{frb}. Minimum reporting is
 %insufficient for these non-astrophysical detections. These detection were only
@@ -1161,8 +1118,53 @@ pulse detected at multiple sites?
 %A DM-space plot provides a useful diagnostic to protect against observation
 %bias. An ideal detection, such as in Figure \ref{fig:dm_time_B1859}, should
 %appear compact in this space, with no other detections at different trial DMs.
+
+\subsection{False-Positive Reporting}
+
+%During a search for anomalous signals it should be expected that there are a
+%number of events reported which are false positives. Such as Perytons
+%\citep{2011ApJ...727...18B} and the events reported in earlier sections. Events
+%such as FRB130729 and FRB140514 are on the edge of verifiability. They do not
+%fit the classic \gls{frb} model but given the available observing and system
+%information, and lack of an external, anthropogenic explanation they are hard
+%to discount as not being of astrophysical origin. It is necessary to report
+%all of these events and to provide as much evidence as possible to explain the
+%origin of such events.
+
+% TODO: reference varying shapes of FRB121102
+
+\section{Future Observational Methods}
+
+%% Automated/VOevent issues:
+%%Verification becomes challenging when the desire is to run the system in
+%%real-time with immediate follow-up with additional telescopes.  Expert knowledge
+%%in the instrument, radio signals and visual acuity were necessary to identify
+%%this rare RADAR event.  Automating this process is difficult, so if we desire an
+%%automated VOevent trigger, we should expect a number of false-positive triggers.
 %
-%\subsubsection{Multi-site Observations}
+%Beyond detection of more \glspl{frb}, the goals of current surveys are to
+%localize the source to host galaxies, and detect pulses across broader
+%bandwidths across the radio spectrum.
+%
+%Localization requires the use of interferometric arrays. In the case of a
+%compact array, a high-time resolution correlation matrix is recorded. And, in
+%the case of \gls{vlbi} the raw complex voltages are recorded, which can be used
+%to perform coherent dedispersion resulting in a higher resolution (time and
+%frequency) dynamic spectrum of the pulses.  Related, multi-site coordinated
+%observations would remove most, if not all, instrumentational and RFI sources of
+%false-positive detections.
+%
+%Detection of \glspl{frb} at multiple frequencies not only adds to the scientific
+%understanding of the sources, but also help to verify that they are
+%astrophysical.  Due to historical development of receivers for pulsar searches,
+%most \glspl{frb} have been detected at L-band frequencies. Though, FRB110523
+%detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
+%at UHF frequencies.  Only FRB121102 has been detected above L-band.  Pulses from
+%FRB121102 have been detected across a 4 GHz band (4 - 8~GHz) \citep{atel10675}.
+%Such wide bands show the pulse structure goes beyond the bandwidth of known
+%source of \gls{rfi} (e.g. modulated RADAR).
+
+%\subsection{Multi-site Observations}
 %
 %Clear evidence for an FRB to be of astrophysical origin is the simultaneous
 %detection of signal with telescopes at multiple sites. Multiple detectors, such
@@ -1178,7 +1180,7 @@ pulse detected at multiple sites?
 %localize the sky position. A detection could still be due to an RFI source local to
 %the array, though the physical seperation of the elements and interferometric
 %techniques could be used to determine if the source is in the near field.
-%
+
 %\subsubsection{Low-\gls{snr} Follow-up Search}
 %
 %Once a potential detection has been made at a given minimum \gls{snr} threshold,
@@ -1187,7 +1189,7 @@ pulse detected at multiple sites?
 %Preferably this search would be over the entire observation. This test will
 %serve to show whether there are additional events, similar to the XAO events,
 %just below the minimum threshold, or this is a true outlier event.
-%
+
 %\subsubsection{Negative DM Sampling}
 %
 %%Our choice
@@ -1220,7 +1222,7 @@ pulse detected at multiple sites?
 %quantify the amount of \gls{rfi} during a detection. The full negative \gls{dm}
 %space would not need to be searched, a regular sampling of the space would be
 %sufficient.
-%
+
 %\subsubsection{Dispersion Fitting}
 %
 %FRB surveys, by design, search for broadband signals which follow a $\nu^{-2}$
@@ -1269,37 +1271,6 @@ pulse detected at multiple sites?
 %detection triggers or short-term storage of the complex voltages be useful for
 %this test which provides strong evidence for the astrophysical nature of a
 %pulse.
-%
-%\subsection{Future Observational Methods}
-%
-%% Automated/VOevent issues:
-%%Verification becomes challenging when the desire is to run the system in
-%%real-time with immediate follow-up with additional telescopes.  Expert knowledge
-%%in the instrument, radio signals and visual acuity were necessary to identify
-%%this rare RADAR event.  Automating this process is difficult, so if we desire an
-%%automated VOevent trigger, we should expect a number of false-positive triggers.
-%
-%Beyond detection of more \glspl{frb}, the goals of current surveys are to
-%localize the source to host galaxies, and detect pulses across broader
-%bandwidths across the radio spectrum.
-%
-%Localization requires the use of interferometric arrays. In the case of a
-%compact array, a high-time resolution correlation matrix is recorded. And, in
-%the case of \gls{vlbi} the raw complex voltages are recorded, which can be used
-%to perform coherent dedispersion resulting in a higher resolution (time and
-%frequency) dynamic spectrum of the pulses.  Related, multi-site coordinated
-%observations would remove most, if not all, instrumentational and RFI sources of
-%false-positive detections.
-%
-%Detection of \glspl{frb} at multiple frequencies not only adds to the scientific
-%understanding of the sources, but also help to verify that they are
-%astrophysical.  Due to historical development of receivers for pulsar searches,
-%most \glspl{frb} have been detected at L-band frequencies. Though, FRB110523
-%detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
-%at UHF frequencies.  Only FRB121102 has been detected above L-band.  Pulses from
-%FRB121102 have been detected across a 4 GHz band (4 - 8~GHz) \citep{atel10675}.
-%Such wide bands show the pulse structure goes beyond the bandwidth of known
-%source of \gls{rfi} (e.g. modulated RADAR).
 
 \section{Conclusion}
 
