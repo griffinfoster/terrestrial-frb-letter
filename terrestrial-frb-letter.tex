@@ -75,6 +75,7 @@
 \newacronym{pll}{PLL}{Phased-locked Loop}
 \newacronym{rfi}{RFI}{Radio-frequency Interference}
 \newacronym{rrat}{RRAT}{Rotating Radio Transient}
+\newacronym{rm}{RM}{Rotation Measure}
 \newacronym{ska}{SKA}{Square Kilometre Array}
 \newacronym{sefd}{SEFD}{System Equivalent Flux Density}
 \newacronym{snr}{S/N}{Signal-to-Noise Ratio}
@@ -764,7 +765,6 @@ detected pulse, and telescope state.
 \subsubsection{Pulse Shape}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TODO: criterion justification
 % TODO: make a template notebook
 
 \paragraph{Signal to Noise:}
@@ -774,94 +774,153 @@ Is this \gls{snr} above the minimum survey threshold? The actual \gls{snr} could
 be different from the reported \gls{snr} as in the Section \ref{sec:low_snr}
 detection because of differences in the noise statistics time-scale.
 
-\paragraph{Implied Boresight Flux:}
+\paragraph{Boresight Flux:}
 
 What is the implied flux based on the detection \gls{snr} and telescope
 sensitivity assuming the detection occurred at boresight? Is this within the
-range of previously reported fluxes?
-%what is the current range?
-%FRB150807 128Jy
+range of previously reported fluxes? The majority of reported \glspl{frb} have
+an implied boresight flux between $0.2-2$~Jy, there is a tail of bright
+\glspl{frb} up to 128~Jy (FRB150807). Extremely bright \glspl{frb} (>~kJy) are
+not expected based on the extensive previous non-detection results from low
+sensitivity, large sky coverage surveys. Though, extremely bright \glspl{frb}
+can not be completely discounted.
 
 \paragraph{Pulse Width:}
 
 What is the pulse width of the dedispersed, and frequency-collapsed pulse? Is it
-within the range of previously reported widths?
-%what is the current range?
+within the range of previously reported widths? Reported widths range from
+hundreds of microseconds (FRB150807, FRB170827) up to tens of milliseconds
+(FRB170922, FRB160317). The lower pulse width limit is based on the time
+resolution of the instrumentation, and the pulses may indeed by more narrow than
+the reported width. There maybe astrophysical \glspl{frb} with wider pulse
+widths, but most historical surveys have had a maximum time-binning scale on the
+order of tens of milliseconds. FRB121102 shows a wide range of pulse shapes and
+widths \citep{2018Natur.553..182M,atel10675}.
+% TODO: is there an coherency timescale argument for an upper limit?
 
 \paragraph{Multi-component:}
 
 Are there multiple components to the pulse? How many components are there? Does
-this differ by changing the dedispersion DM?
-%FRB130729
+this differ by changing the dedispersion DM? Most \glspl{frb} appear as single
+component pulses. But, a few, such as FRB130729 and some bursts from FRB121102,
+show multiple components which can lead to differences in the `optimal' DM
+\citep{2018Natur.553..182M}.
+% TODO: how is multi-component pulses useful to verification?
 
-\paragraph{Apparently Broad-band:}
+\paragraph{Broad-band:}
 
 Does the pulse appear to go beyond the observing band? At both the high and low
-frequency edges?
-%FRB140514
+frequency edges? A pulse which extends across the full observing band fits the
+prototypical \gls{frb} model. If the receiver has a significant fractional
+observing bandwidth then a pulse which extends across the band is evidence for
+an astrophysical origin compared as opposed to band-limited \gls{rfi} such as
+RADAR (Sections \ref{sec:LOFAR_RADAR}, \ref{sec:xao_event}). Though, an
+astrophysical \gls{frb} could be band limited, as bursts from FRB121102 appear
+to be. Or, the steep spectral index of the pulse and the limited sensitivity of
+the receive mean that pulse flux drops below the system noise.
 
-\paragraph{Apparent Spectral Index:}
+\paragraph{Spectral Index:}
 
-Is there a measurable apparent spectral index?
+Is there a measurable apparent spectral index? Decomposing the instrumental
+response from the astrophysical spectral response is difficult.  As the position
+of a detected pulse within the primary beam, there will be a frequency-dependent
+response which will induce spectral colorization in a broadband source, leading
+to a wide range of apparent spectral indicies beyond that of a astrophysical
+source. 
+% TODO: how is spectral index useful to verification?
 
-\paragraph{Apparently Scattered:}
+\paragraph{Scattering:}
 
 Does the pulse appear to have a scattering tail? Can a scattering model be fit
-to the pulse? If so, what is the scattering time scale?
+to the pulse? If so, what is the scattering time scale? Apparent scattering
+would be evidence in favour of the pulse source being astrophysical as a local
+source should not show scattering.
+% TODO: Marisa, can you make this point stronger?
+% TODO: reference FRB
 
-\paragraph{Apparent Scintillation:}
+\paragraph{Scintillation:}
 
-Does the dynamic spectrum show apparent scintillation? What is the
-measured characteristic scintillation bandwidth?
+Does the dynamic spectrum show apparent scintillation? What is the measured
+characteristic scintillation bandwidth? Similar to scattering, apparent
+scintillation is evidence in favour of an astrophysical source. Though, as seen
+in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear
+similar to scintillation.
+% TODO: Marisa, can you make this point stronger? how does the scintillation
+% bandwidth scale?
+% TODO: reference FRB
 
 \paragraph{Polarization Characteristics:}
 
-Where full Stokes parameters measured for the pulse? Does the pulse show
+Were full Stokes parameters measured for the pulse? Does the pulse show
 polarization characteristics? Can a rotation measure be fit to the pulse?
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Multiple \glspl{frb} have been reported to be polarized.  FRB121102 appears to
+be linearly polarized once the extreme \gls{rm} is corrected for
+\citep{2018Natur.553..182M}.  \gls{rfi} has complex polarization
+characteristics, such as Phase-shift keying, as a way of encoding information.
+These encodings schemes will appear different from polarized astrophysical
+sources.
+% TODO: was the GBT one circularlly polarized
 
 \subsubsection{Dispersion}
 
-\paragraph{Complex Voltage Data:}
-
-Was complex-voltage data recorded to allow for coherent dedispersion?
-
-\paragraph{S/N-maximized DM Fit:}
+\paragraph{\gls{snr}-maximized DM Fit:}
 
 What is the \gls{snr}-maximized \gls{dm}? How does this compare to Galactic DM
 model along the line of sight? Is it well in excess of the Galactic
-contribution?
+contribution? This is a standard test to differentiate between a Galactic and
+extragalactic source. If the ratio of measured \gls{dm} to Galactic model
+\gls{dm} is at least a factor of two then the source is likely extragalactic.
+Otherwise the source is likely a pulsar or \gls{rrat} within the Galaxy.
 
 \paragraph{Component-optimized DM Fit:}
 
 If there are multiple components, what is the `component-optimized' DM, how does
-it differ from the \gls{snr}-maximized DM?
-% FRB121102 nature
+it differ from the \gls{snr}-maximized DM? When there are multiple components to
+a pulse the choice of DM can results in different frequency-averaged pulses such
+as in FRB130729 in which the choice of DM can result in a single component or
+multi-component pulse profile. 
 
 \paragraph{Dispersion Relation:}
 
-Does the pulse follow a cold plasma $\nu^{-2}$ dispersion relation?
+Does the pulse follow a cold plasma $\nu^{-2}$ dispersion relation? This is a
+important criterion. If there is sufficient \gls{snr} in individual
+time-frequency bins across a significant fractional bandwidth of the dynamic
+spectrum then a dispersion relation fit showing a $\nu^{-2}$ relation is
+evidence for a dispersed, nature source. Conversely, a fit that diverges from
+$\nu^{-2}$ is good evidence for a artificial source (Section
+\ref{sec:xao_event}).
 
 \paragraph{DM Space:}
 
 In a DM space search (positive and negative DM trials) are there other
-high-\gls{snr} events nearby in time to the detected pulse?
+high-\gls{snr} events nearby in time to the detected pulse? If there are few
+other events above during the time window then that is evidence for a true
+detection. But, if there are events seen at similar \gls{snr}, especially in a
+negative DM space search, then it could be that the \gls{rfi} environment has
+changed leading to an increase in flase-positive events.
 
 \subsubsection{Extended Timescale Observations}
 
 \paragraph{Repeating Events:}
 
 Does the pulse repeat at different times? Were follow-up observations performed?
-Or, was a lower-\gls{snr} search performed around the detected \gls{dm} in the
+Was a lower-\gls{snr} search performed around the detected \gls{dm} in the
 survey data? If the source does repeat, what was the time scale? And, did it
-occur at different telescope pointings?
+occur at different telescope pointings? Most \glspl{frb} appear to be one-off
+events, but if the source does repeat this it can be localized or verified with
+another telescope. If the source repeats at different points like the \gls{xao}
+event then the source can be labelled as terrestrial.
 
 \paragraph{RFI Environment:}
 
 Was the \gls{rfi} environment drastically different during the pulse detection
 compared to typical observations? What was the effective band width of the
-receiver after \gls{rfi} flagging?
+receiver after \gls{rfi} flagging? If the \gls{rfi} environment was drastically
+different there could be an increase in the number of false-positive events,
+likely seen in the DM-space trial test. Or, the reduced bandwidth can limit a
+$\nu^{-2}$ dispersion relation fit. An excess in \gls{rfi} during a detection
+compared to the typical \gls{rfi} environment reduces the confidence in an
+astrophysical detection.
 
 \subsubsection{Telescope Characteristics}
 
@@ -874,40 +933,69 @@ system in order to test this criterion with due diligence.
 
 \paragraph{Bandpass Variation:}
 
-Does the bandpass during the pulse appear similar to the expected bandpass seen in
-typical observations?
+Does the bandpass during the pulse appear similar to the expected bandpass seen
+in typical observations? Most search pipelines apply a bandpass correction to
+normalize the noise variance. This can hide any changes in the measured bandpass
+response. The first indication that the electronics were not functioning
+correctly in the ALFABURST event (Section \ref{sec:D20161204}) was the change in
+bandpass response.
 
 \paragraph{Gain Stability:}
 
 Does the gain show similar variance over a window of time around the pulse
-compared to the gain variation seen in typical observations?
+compared to the gain variation seen in typical observations? Similar to bandpass
+normalization, a high-pass filter is often applied in a search pipeline to
+reduce long-term gain variations. This may be hiding a difference in gain
+variation during a pulse detection. The gain stability of a system during the
+detection of a pulse should be similar to the stability on a longer time scale
+around the pulse.
 
 \paragraph{Altitude-Azimuth Pointing:}
 
 Where was the telescope pointing in the local reference? Was it near the horizon
-or known \gls{rfi} sources?
+or known \gls{rfi} sources? Weak \gls{rfi} sources on the horizon are picked up
+by the high forward gain of dishes. And, strong \gls{rfi} sources can still be
+picked up in the side and back-lobes of the beam, or directly illuminate the
+feed.
 
 \paragraph{Multi-beam:}
 
 Is the receiver a multi-beam system? Was the pulse detected in multiple beams?
-If so, is there a difference in \gls{snr} between beams?
+If so, is there a difference in \gls{snr} between beams? FRB010724 was detected
+in multiple beams of the Parkes multi-beam receiver, but at different
+sensitivities indicating that the source, though extremely bright, was localized
+to a position in the sky. Perytons were also detected with the Parkes multi-beam
+receiver but in all beams at similar sensitivities indicating the source was
+local.
 
 \paragraph{Tied-array Beam:}
 
 Was the pulse detected with a \gls{tab} using an array of elements? If so, was
 the pulse seen in individual elements? Where multiple \glspl{tab} active during
-the observation? If so, was the pulse seen in multiple beams?
+the observation? If so, was the pulse seen in multiple beams? This is a similar
+criterion to the multi-beam criterion to indicate if the source is localized to
+a position on the sky or local. If the individual element data then subsets of
+elements can be combined to show the source was detected in most elements rather
+than just in one or a few.
 
 \paragraph{Interferometric Array:}
 
 Was the pulse detected while baseline correlations were recorded in an
 interferometric mode? Was the pulse localized within the primary beam? Is the
-pulse detected on individual baselines?
+pulse detected on individual baselines? Interferometric detection of a pulse
+provides strong evidence by removing element auto-correlation effects. Though,
+local \gls{rfi} will persist, synthesis imaging can be sued to localize the
+source.
 
 \paragraph{Multi-site Observations:}
 
 Was the pulse detected on a multi-site observation campaign? If so, was the
-pulse detected at multiple sites?
+pulse detected at multiple sites? Multi-site detection is very strong evidence
+for a pulse being astrophysical. Experiments to detect rare, transient events,
+such as LIGO, use multi-site observations to completely remove local
+systematics.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Previous Detections}
 
@@ -1085,6 +1173,9 @@ pulse detected at multiple sites?
 %% FRB150807: bright, maybe RFI
 
 \subsection{Desirable Reporting}
+
+%\paragraph{Complex Voltage Data:}
+%to allow for coherent dedispersion, higher time resolution, phase
 
 %As has been shown in the previous section there are instrumentational and RFI
 %sources which can produce the appearance of \glspl{frb}. Minimum reporting is
