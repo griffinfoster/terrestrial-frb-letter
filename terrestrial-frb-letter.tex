@@ -1046,31 +1046,41 @@ systematics.
     \label{fig:heat_map}
 \end{figure*}
 
-% TODO: reference fig:heat_map
+For reference, we have re-analyzed the previous reported \glspl{frb} (Figure
+\ref{fig:heat_map}) based on the available literature and public data. The left
+columns of Figure \ref{fig:heat_map} indicate the criteria test result, and the
+right columns are the availability of public data.
 
-% No public data?
-% FRB110703: dodgy filterbank
-% FRB110523, FRB121102, FRB150807, FRB160317, FRB160410, FRB160608, FRB170107,
-% FBR170827
+Included in Figure \ref{fig:heat_map} is the results for the various detections
+discussed in Section \ref{sec:false-pos} and a pulsar (B1859+03). In all these
+case there is at least one failure.  The LOFAR RADAR event shows artificial
+high-resolution structure.  Perytons and the XAO repeater fail the dispersion
+relation test and repeat at different telescope pointings. The ALFA gain
+variation has multiple negative test results relating to the system response
+compared to the expected response.  The low \gls{snr} event does not have a
+single critical test failure but an accumulation of negative results.  No single
+test is sufficient to decide that an event is terrestrial. But, given enough
+tests a strong case can be made to classify all these events as terrestrial.
 
 % cases:
-%   prototypical frbs
-%   odd: FRB130729, FRB140514, FRB150807
+%   prototypical frbs: 150807, 130626
+%   odd: FRB130729, FRB140514
 %   FRB121102
-%   pulsar
-%   alfaburst gain
-%   lofar radar
-%   xao repeater
-%   perytons
+
+% FRB110523 No GBT public data?
+
+% FRB110703: dodgy filterbank
 
 % FRB 121102: based on the complete observation including follow-ups. the only
 % truly known astrophysical frb
 % reference varying shapes of FRB121102
+% what would happen if an odd pulse was first seen from 121102?
 
-% FRB 130729: indicators that it is terrestrial as stated in the initial
-% detection
+% FRB 130626: prototypical
 
-% FRB150807: bright, maybe RFI
+% FRB 150807: extremely bright. but gaussian, consistent spectral index, fits
+% dispersion relation. missing data from other beams. thermal noise and
+% normalization presented. prototypical FRB and thorough analysis
 
 % FRB 171209: no data or dynamic spectrum reported
 
@@ -1078,57 +1088,62 @@ systematics.
 % not all criteria can be checked or verified, but having a standard
 % allows for better experiment design
 
-%\subsection{FRB130729}
-%
-%\cite{2016MNRAS.460L..30C} reported detection of FRB130729 along with four other
-%\glspl{frb} from the HTRU survey. They note that flux only appears in the lower
-%half of the band, has a double peak structure, and is potentially due to
-%terrestrial \gls{rfi}.  They report a \gls{dm} of 861~pc~cm$^{-3}$ for
-%FRB130729, this maximizes the detection \gls{snr}, but, by using a DM of
-%852~pc~cm$^{-3}$ (Figure \ref{fig:FRB130729}) the double-peak structure can be
-%seen more evident. By using this lower \gls{dm} the pulse width of the two
-%components can be seen to be much more narrow than the reported $\sim 16$~ms.
-%The two components are separated by approximately 10~ms, with the second
-%component appearing only about half as wide in bandwidth compared to the first. 
-%
-%% FRB130729
-%% aslxlap07:/local/griffin/data/FRB/FRB130729/FRB130729.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/FRB130729.pdf}
-%    \caption{FRB130729 dedispersed with a DM of 852~pc~cm$^{-3}$, this is
-%    different from the \gls{snr}-maximized DM of 861~pc~cm$^{-3}$. Using this DM shows
-%    that the detected FRB has two components distinct components separated by
-%    approximately 10~ms. Data is presented at the native recorded resolution of
-%    64~$\mu$s, 390~kHz convolved with a Gaussian smoothing filter of size
-%    512~$\mu$s, 3.125~MHz.
-%    }
-%    \label{fig:FRB130729}
-%\end{figure}
+\subsubsection{FRB 130729}
 
-%\subsection{FRB140514}
-%
-%Detection of FRB140514 was reported in \citep{2015MNRAS.447..246P} and was
-%reported to have significant circular polarization. But, the flux is primarily
-%concentrated between 1240~MHz and 1270~MHz. This small fractional bandwidth is
-%not too different from the ARTEMIS event we have reported earlier.  If this
-%component is removed, for example if the observation was at a slightly different
-%frequency, or smaller bandwidth, the detected \gls{snr} drops below 10.
-%Further, many anthropogenic radio transmitters are circularly polarized. But,
-%it could also be that there is a plasma lensing effect
-%\citep{2017ApJ...842...35C} which has been used to explain the variable spectral
-%index and bandwidth of FRB121102, and FRB140514 is indeed astrophysical.
-%
-%% FRB140514
-%% aslxlap07:/local/griffin/data/FRB/FRB140514/FRB140514.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/FRB140514.pdf}
-%    \caption{The flux of FRB140514 is concentrated in a few, narrow fractional
-%    bandwidth regions, primarily centred around 1260~MHz.  Data is presented at
-%    the native recorded resolution of 64~$\mu$s, 390~kHz convolved with a
-%    Gaussian smoothing filter of size 512~$\mu$s, 3.125~MHz.
-%    }
-%    \label{fig:FRB140514}
-%\end{figure}
+\cite{2016MNRAS.460L..30C} reported detection of FRB130729 along with four other
+\glspl{frb} from the HTRU survey. They note that flux only appears in the lower
+half of the band, has a double peak structure, and is potentially due to
+terrestrial \gls{rfi}.  They report a \gls{dm} of 861~pc~cm$^{-3}$ for
+FRB130729, this maximizes the detection \gls{snr}, but, by using a DM of
+852~pc~cm$^{-3}$ (Figure \ref{fig:FRB130729}) the double-peak structure can be
+seen more evident. By using this lower \gls{dm} the pulse width of the two
+components can be seen to be more narrow than the reported $\sim 16$~ms.
+The two components are separated by approximately 10~ms, with the second
+component appearing only about half as wide in bandwidth compared to the first. 
+
+The limited bandwidth and repeating structure of the event can be taken as
+evidence that it is a signal from an artificial source. The pulse shows a sharp
+cut-off in flux for both components around 1260~MHz. The limited bandwidth of
+the pulse does not allow for a confident dispersion relation fit. An alternative
+explanation is that this is a signal from a band-limited RADAR. Though, it is
+not possible to show with model is correct from the available data.
+
+% FRB130729
+% aslxlap07:/local/griffin/data/FRB/FRB130729/FRB130729.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/FRB130729.pdf}
+    \caption{FRB130729 dedispersed with a DM of 852~pc~cm$^{-3}$, this is
+    different from the \gls{snr}-maximized DM of 861~pc~cm$^{-3}$.  The detected
+    FRB has two distinct components separated by approximately 10~ms. Data is
+    presented at the native recorded resolution of 64~$\mu$s, 390~kHz convolved
+    with a Gaussian smoothing filter of size 512~$\mu$s, 3.125~MHz.
+    }
+    \label{fig:FRB130729}
+\end{figure}
+
+\subsubsection{FRB 140514}
+
+Detection of FRB140514 was reported in \citep{2015MNRAS.447..246P} and was
+reported to have significant circular polarization. The flux is primarily
+concentrated between 1240~MHz and 1270~MHz. This small fractional bandwidth is
+insufficient to fit a dispersion relation. Taking additional components to be
+part of the burst at higher frequencies such as the structure around 1325~MHz
+results in a dispersion which does not follow an $\alpha=-2$ relation. The
+band-limited nature of the pulse and the apparent frequency modulation similar
+to the XAO repeating sources indicate the event might be due to a similar
+artificial source.
+
+% FRB140514
+% aslxlap07:/local/griffin/data/FRB/FRB140514/FRB140514.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/FRB140514.pdf}
+    \caption{Dynamic spectrum of FRB140514 dedispersed with a DM of
+    563~pc~cm$^{-3}$.  Data is presented at the native recorded resolution of
+    64~$\mu$s, 390~kHz convolved with a Gaussian smoothing filter of size
+    512~$\mu$s, 3.125~MHz.
+    }
+    \label{fig:FRB140514}
+\end{figure}
 
 \section{Detection Reporting}
 \label{sec:detect_report}
@@ -1223,7 +1238,7 @@ take more time and effort, updates and retraction events can be sent.
 \subsection{False-Positive Reporting}
 
 During a search for anomalous signals it should be expected that there are a
-number of events reported which are false positives. Such as Perytons
+number of events reported which are false positives such as Perytons
 \citep{2011ApJ...727...18B} and the events reported in Section
 \ref{sec:false-pos}.  Events such as FRB130729 and FRB140514 fail a number of
 criteria. They do not fit the classic \gls{frb} model but given the available
