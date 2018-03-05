@@ -538,10 +538,6 @@ def produce_tauspectrum(freqMHz,taus,tauserr):
     freqGHz = freqGHz[np.nonzero(tauserr)]
     freqMHz = freqMHz[np.nonzero(tauserr)]
     
-    print "see:"
-    print tauserr
-    print taus
-    
     powout = powmod.fit(taus,powparstau,x=freqGHz,weights=1/(np.power(tauserr,2)))
     
     print(fit_report(powout.params))
