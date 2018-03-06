@@ -746,7 +746,11 @@ between groups and instruments. These standards are usually set in order to
 compare a new detection in reference to a prototypical \gls{frb} which is broad
 band, dispersed following a $\nu^{-2}$ relation in excess of the Galactic line
 of sight, and narrow in pulse width such as FRB130626
-\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}).
+\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This follows the
+prototype theory of categorization \citep{ROSCH1976382} which follows that
+certain examples of a category are more prototypical than others. A category
+will contain examples which deviate from the prototypical as the prototype is an
+exaggeration of features deemed characteristic to the category.
 
 % FRB130626
 % aslxlap07:/local/griffin/data/FRB/FRB130626/FRB130626.ipynb
@@ -770,6 +774,14 @@ This list of criteria has primarily developed for single dish surveys.  Use of
 interferometric and beamformed arrays are leading to new survey and
 observational modes. These arrays will provide further tests in for confidence
 in a detection that single dishes can not.
+
+No reported \gls{frb} thus far reported based on the available evidence can be
+categorized as terrestrial, though multiple \glspl{frb} deviate significantly
+from the prototypical. All reported \glspl{frb} except FRB 121102 have not been
+checked against all available criteria tests. With more complete information
+each of the reported \glspl{frb} would be better categorized.
+
+% TODO: also assuming a prototypical observation
 
 \subsection{Criteria}
 
@@ -831,6 +843,7 @@ show multiple components which can lead to differences in the `optimal' DM
 % TODO: how is multi-component pulses useful to verification?
 % better to be a single component than a complex multi-component pulse (positive
 % vs. neutral). large gaps or a repreating structure such as RADAR is negative
+% Deviates from the prototypical
 
 \paragraph{Broad-band:}
 
@@ -874,7 +887,7 @@ in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear
 similar to scintillation.
 % TODO: Marisa, can you make this point stronger? how does the scintillation
 % bandwidth scale?
-% TODO: reference FRB
+% TODO: reference FRB, FRB 180301
 
 \paragraph{Polarization Characteristics:}
 
@@ -886,7 +899,7 @@ be linearly polarized once the extreme \gls{rm} is corrected for
 characteristics, such as Phase-shift keying, as a way of encoding information.
 These encodings schemes will appear different from polarized astrophysical
 sources.
-% TODO: was the GBT one circularlly polarized?
+% TODO: was the GBT one circularlly polarized? FRB140514 i think
 
 \subsubsection{Dispersion}
 
@@ -915,7 +928,8 @@ time-frequency bins across a significant fractional bandwidth of the dynamic
 spectrum then a dispersion relation fit showing a $\nu^{-2}$ relation is
 evidence for a dispersed, nature source. Conversely, a fit that diverges from
 $\nu^{-2}$ is good evidence for a artificial source (Section
-\ref{sec:xao_event}).
+\ref{sec:xao_event}). An F-test between a $\nu^{-2}$ relation model and
+other models is a statistically significant method to compare models.
 
 \paragraph{DM Space:}
 
@@ -1085,8 +1099,6 @@ tests a strong case can be made to classify all these events as terrestrial.
 % FRB 170107: ASKAP, very bright, no data
 
 % FRB 171209: no data or dynamic spectrum reported
-
-% TODO: https://en.wikipedia.org/wiki/Prototype_theory
 
 \subsubsection{FRB 130729}
 
