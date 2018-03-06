@@ -586,15 +586,13 @@ pulsed nature of the event.
 \subsection{XAO Repeating Event}
 \label{sec:xao_event}
 
-% TODO:
-% likely RADAR for tracking a geostationary satelite launch
+% RADAR for tracking a geostationary satelite launch?
 % extreme range distance 0-~30000km based on time delay
 % repeating nature to keep constant track
 % once-off nature means it happened only once
-% USAF list
-% 
 % Jiuquan Satellite Launch Center not far from XAO. unreported satellite launch?
 %
+% Likely answer:
 % shenzhou 11 landed in inner mongolia on november 2018, around 2:15 pm china
 % time
 % first pulse: 2016-11-18 02:24:24.958 UTC
@@ -658,10 +656,9 @@ illuminating the feed. The source is likely not due to system electronics
 because of the complex frequency modulation but rather due to a local
 transmitter.
 
-The Nanshan L-band receiver is a single pixel system. It could be
-that a multi-beam system such as the Parkes Multi-beam or ALFA would detection
-these events in many of the beams, and the event could be classified as
-terrestrial.
+The Nanshan L-band receiver is a single pixel system. It could be that a
+multi-beam system such as the Parkes Multi-beam or ALFA would detection these
+events in many of the beams, and the event could be classified as terrestrial.
 
 Had only a single pulse been detected, for example if the source was weaker, or
 the telescope was only sensitive to the highest \gls{snr} event, it would be
@@ -811,7 +808,8 @@ the reported width. There maybe astrophysical \glspl{frb} with wider pulse
 widths, but most historical surveys have had a maximum time-binning scale on the
 order of tens of milliseconds. FRB121102 shows a wide range of pulse shapes and
 widths \citep{2018Natur.553..182M,atel10675}.
-% TODO: is there an coherency timescale argument for an upper limit?
+% TODO: is there an coherency timescale argument for an upper limit? scattering
+% can expand the width but would expect to see a tail then
 
 \paragraph{High-resolution Structure:}
 
@@ -1062,19 +1060,21 @@ single critical test failure but an accumulation of negative results.  No single
 test is sufficient to decide that an event is terrestrial. But, given enough
 tests a strong case can be made to classify all these events as terrestrial.
 
+% TODO:
 % cases:
 %   prototypical frbs: 150807, 130626
-%   odd: FRB130729, FRB140514
-%   FRB121102
+% analysis of previous detections and criteria
+% reporting time scales
+% not all criteria can be checked or verified, but having a standard
+% allows for better experiment design
 
-% FRB110523 No GBT public data?
+% FRB 090625: prototypical with potential scattering
 
-% FRB110703: dodgy filterbank
+% FRB 110523 No GBT public data?
 
-% FRB 121102: based on the complete observation including follow-ups. the only
-% truly known astrophysical frb
-% reference varying shapes of FRB121102
-% what would happen if an odd pulse was first seen from 121102?
+% FRB 110703: dodgy filterbank
+
+% FRB 121002: two components, wide pulses
 
 % FRB 130626: prototypical
 
@@ -1082,11 +1082,11 @@ tests a strong case can be made to classify all these events as terrestrial.
 % dispersion relation. missing data from other beams. thermal noise and
 % normalization presented. prototypical FRB and thorough analysis
 
+% FRB 170107: ASKAP, very bright, no data
+
 % FRB 171209: no data or dynamic spectrum reported
 
-% analysis of previous detections and criteria, reporting time scales
-% not all criteria can be checked or verified, but having a standard
-% allows for better experiment design
+% TODO: https://en.wikipedia.org/wiki/Prototype_theory
 
 \subsubsection{FRB 130729}
 
@@ -1123,15 +1123,17 @@ not possible to show with model is correct from the available data.
 
 \subsubsection{FRB 140514}
 
-Detection of FRB140514 was reported in \citep{2015MNRAS.447..246P} and was
-reported to have significant circular polarization. The flux is primarily
-concentrated between 1240~MHz and 1270~MHz. This small fractional bandwidth is
-insufficient to fit a dispersion relation. Taking additional components to be
-part of the burst at higher frequencies such as the structure around 1325~MHz
-results in a dispersion which does not follow an $\alpha=-2$ relation. The
-band-limited nature of the pulse and the apparent frequency modulation similar
-to the XAO repeating sources indicate the event might be due to a similar
-artificial source.
+Detection of FRB140514 was reported in \citep{2015MNRAS.447..246P}.  The event
+was reported to have significant circular polarization, though this is not
+necessarily an indication of an astrophysical source as many artificial
+transmitters are circularly polarized.  The flux was primarily concentrated
+between 1240~MHz and 1270~MHz (Figure \ref{fig:FRB140514}). This small
+fractional bandwidth is insufficient to fit a dispersion relation. Taking
+additional components to be part of the burst at higher frequencies such as the
+structure around 1325~MHz results in a dispersion which does not follow an
+$\alpha=-2$ relation. The band-limited nature of the pulse and the apparent
+frequency modulation similar to the XAO repeating sources indicate the event
+might be due to a similar artificial source. 
 
 % FRB140514
 % aslxlap07:/local/griffin/data/FRB/FRB140514/FRB140514.ipynb
@@ -1144,6 +1146,22 @@ artificial source.
     }
     \label{fig:FRB140514}
 \end{figure}
+
+\subsubsection{FRB 121102}
+
+The only verified \gls{frb} is the repeating source FRB121102. Events have been
+detected with multiple telescopes, at different observing frequencies, and the
+source has been localized with interferometric observations. The pulse
+characteristics of the source are often band-limited, composed of multiple
+components, and vary signficiantly in spectral index. They vary significantly
+from the prototypical \gls{frb} pulse shape and thus are considered neutral
+evidence for an astrophysical source even though the locaction of the source is
+known to be astrophysical. %ref: spitler et al, vishal
+% TODO
+% FRB 121102: based on the complete observation including follow-ups. the only
+% truly known astrophysical frb
+% reference varying shapes of FRB121102
+% what would happen if an odd pulse was first seen from 121102?
 
 \section{Detection Reporting}
 \label{sec:detect_report}
@@ -1187,6 +1205,9 @@ independent pipelines.  A minimum reporting should include:
 %completeness of data publically available.
 % TODO: comment on the data that has been made available. make statement about
 % color scheme used
+% Parkes: good data but missing instrument analysis
+% FRB 171209: no data or dynamic spectrum reported
+% FRB 150807: missing beams but good analysis
 
 These requirements are typically met in previously reported \gls{frb}
 detections. Though, often the public data has been normalized, which is useful
