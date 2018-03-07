@@ -1219,7 +1219,7 @@ independent pipelines.  A minimum reporting should include:
 %The right columns of Figure \ref{fig:heat_map} show the type and
 %completeness of data publically available.
 % TODO: comment on the data that has been made available. make statement about
-% color scheme used
+% color scheme used, or maybe drop the right column
 % Parkes: good data but missing instrument analysis
 % FRB 171209: no data or dynamic spectrum reported
 % FRB 150807: missing beams but good analysis
@@ -1344,14 +1344,6 @@ network that can have the same pointing are needed at a time.
 
 \section{Conclusion}
 
-% TODO: follow text
-%This creates a challenge of automating the triggering of follow-up with other
-%telescopes. Either there will be an excess of false-positive triggers but with a
-%short delay between detection and triggering.  Or, a non-automated, expert
-%examination of the event is required to verify, creating a delay in any
-%follow-up. Automated follow-up should be triggered when there is high confidence
-%in the likelihood of a true-positive.
-
 From an observational point of view, \glspl{frb} are unique astronomical sources
 as so far no follow-up observations have been able to verify a source using a
 different telescope or observing frequency, except in the case of FRB121102
@@ -1374,29 +1366,33 @@ events will become more difficult.  Further, it could be that most astrophysical
 FRB121102. Which would indicate that some of the criteria must be relaxed,
 making the differentiation more difficult still.  This should warrant the drive
 towards interferometric and multi-site observations, complex-voltage data
-recorders, and standard verification of the observing system.
+recorders, subband pulse searches, and standard reporting of the observing
+system.
+
+Detection reporting incurs an economic cost in observing time, resources, and
+human effort. Though, there is a scientific cost to delayed reporting as
+follow-up observations could detect further pulses or multi-wavelength
+observations could reveal an unknown counterpart to the radio pulse. An initial
+detection will not be able to be verified against many of the criteria presented
+here. But basic tests such as \gls{snr}, dispersion relation, and telescope
+state can be automated to determine an initial detection `importance' in a
+VO-Event trigger. This importance factor can then be adjusted accordingly as
+more criteria are tested.
 
 Reporting of false-positive events, even if the source is not explained, helps
 to improve the robustness of search pipelines against systematics and \gls{rfi}.
-Reporting these events also help improve the case for \glspl{frb} being of
+Reporting these events also helps to improve the case for \glspl{frb} being of
 astrophysical origin, just as the explanation for Perytons
-\citep{2015MNRAS.451.3933P} removed doubt about detections using Parkes.
-
-%Though many previously reported \gls{frb} detections have provided sufficient
-%data and telescope information, more can be provided to present a stronger case
-%for the astrophysical nature of the detection. Any reported detection at the
-%minimum should make the observation publicly accessible. Further, as
-%observing with any radio telescope requires high expert knowledge, it is useful
-%for the expert observer to include a statement of the telescope status at the
-%time of a detection.
-%
-%Current and future surveys which search across large fractional bandwidths, and
-%localize with interferometric observations will provide further evidence to
-%associate an \gls{frb} detection with an astrophysical source.
+\citep{2015MNRAS.451.3933P} removed doubt about detections using Parkes. An
+attempt should be made to make the raw data, either unprocessed filterbank or
+complex-voltage data, available to be used in independent verification and
+testing on search pipelines.
 
 Jupyter notebooks of the verification tests and terrestrial \glspl{frb} are
 hosted on our public git
 repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % TODO: make XAO, ALFA gain, LOFAR RADAR, ALFA S/N, pulsar data available
 % TODO: sent to simon, jon, leon oostrum (apertif confidence)
