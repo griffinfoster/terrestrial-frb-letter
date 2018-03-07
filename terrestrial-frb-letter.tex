@@ -67,9 +67,11 @@
 \newacronym{frb}{FRB}{Fast Radio Burst}
 \newacronym{fwhm}{FWHM}{Full-Width at Half-Maximum}
 \newacronym{gbt}{GBT}{Greenbank Telescope}
+\newacronym{htru}{HTRU}{High-Time Resolution Universe}
 \newacronym{if}{IF}{Intermediate Frequency}
 \newacronym{igm}{IGM}{Intergalactic Medium}
 \newacronym{ism}{ISM}{Interstellar Medium}
+\newacronym{ligo}{LIGO}{Laser Interferometer Gravitational-Wave Observatory}
 \newacronym{lo}{LO}{Local Oscillator}
 \newacronym{nip}{NIP}{Non-image Processing}
 \newacronym{pll}{PLL}{Phased-locked Loop}
@@ -92,8 +94,6 @@
 %and Verification Tests}
 \title[FRB Verification Criteria and Reporting]{FRB Verification Criteria and Reporting}
 
-% Aris Karastergiou
-% KJ Lee
 \author[G. Foster et al.]{
 Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
 Marisa Geyer$^{3}$,
@@ -353,7 +353,7 @@ similar to that of a single pulse from a high DM pulsar such as PSR B1859+03
 
 The telescope was pointed at a fixed Dec (+15:11:28.34) and drifting in RA
 (event detected at RA=14:42:26.18), i.e. a fixed (alt, az) pointing during the
-event. No known pulsar or RRAT with a similar DM is nearby at this pointing.
+event. No known pulsar or \gls{rrat} with a similar DM is nearby at this pointing.
 
 Logs provide the first indication that this event is due to a local source.  As
 ALFABURST is a commensal observation survey the search pipeline regularly checks
@@ -775,13 +775,20 @@ interferometric and beamformed arrays are leading to new survey and
 observational modes. These arrays will provide further tests in for confidence
 in a detection that single dishes can not.
 
+Included in the criteria are tests to verify the telescope was functioning as
+expected. This is to say that there is a prototypical observation for each
+telescope and receiver system which the observing system during a detection can
+be compared against. The prototypical \gls{frb} defines a telescope-independent
+category which events can be compared against. But, verification of an
+observation requires the expert knowledge of the observer and telescope
+operators. This is a difficult set of criteria to verify independently, and
+should be done explicitly when reporting on a detection.
+
 No reported \gls{frb} thus far reported based on the available evidence can be
 categorized as terrestrial, though multiple \glspl{frb} deviate significantly
 from the prototypical. All reported \glspl{frb} except FRB 121102 have not been
 checked against all available criteria tests. With more complete information
 each of the reported \glspl{frb} would be better categorized.
-
-% TODO: also assuming a prototypical observation
 
 \subsection{Criteria}
 
@@ -839,11 +846,9 @@ Are there multiple components to the pulse? How many components are there? Does
 this differ by changing the dedispersion DM? Most \glspl{frb} appear as single
 component pulses. But, a few, such as FRB130729 and some bursts from FRB121102,
 show multiple components which can lead to differences in the `optimal' DM
-\citep{2018Natur.553..182M}.
-% TODO: how is multi-component pulses useful to verification?
-% better to be a single component than a complex multi-component pulse (positive
-% vs. neutral). large gaps or a repreating structure such as RADAR is negative
-% Deviates from the prototypical
+\citep{2018Natur.553..182M}. Pulses from FRB121102 often contain multiple
+components, as such it deviates from the prototypical. But, as FRB121102 is
+known to be astrophysical, this criteria can not invalidate a detection.
 
 \paragraph{Broad-band:}
 
@@ -1028,13 +1033,12 @@ provides strong evidence by removing element auto-correlation effects. Though,
 local \gls{rfi} will persist, synthesis imaging can be sued to localize the
 source.
 
-% DONE
 \paragraph{Multi-site Observations:}
 
 Was the pulse detected on a multi-site observation campaign? If so, was the
 pulse detected at multiple sites? Multi-site detection is very strong evidence
 for a pulse being astrophysical. Experiments to detect rare, transient events,
-such as LIGO, use multi-site observations to completely remove local
+such as \gls{ligo}, use multi-site observations to completely remove local
 systematics.
 
 \subsection{Previous Detections}
@@ -1103,7 +1107,7 @@ tests a strong case can be made to classify all these events as terrestrial.
 \subsubsection{FRB 130729}
 
 \cite{2016MNRAS.460L..30C} reported detection of FRB130729 along with four other
-\glspl{frb} from the HTRU survey. They note that flux only appears in the lower
+\glspl{frb} from the \gls{htru} survey. They note that flux only appears in the lower
 half of the band, has a double peak structure, and is potentially due to
 terrestrial \gls{rfi}.  They report a \gls{dm} of 861~pc~cm$^{-3}$ for
 FRB130729, this maximizes the detection \gls{snr}, but, by using a DM of
@@ -1147,6 +1151,8 @@ $\alpha=-2$ relation. The band-limited nature of the pulse and the apparent
 frequency modulation similar to the XAO repeating sources indicate the event
 might be due to a similar artificial source. 
 
+% TODO: FRB180301
+
 % FRB140514
 % aslxlap07:/local/griffin/data/FRB/FRB140514/FRB140514.ipynb
 \begin{figure}
@@ -1165,9 +1171,9 @@ The only verified \gls{frb} is the repeating source FRB121102. Events have been
 detected with multiple telescopes, at different observing frequencies, and the
 source has been localized with interferometric observations. The pulse
 characteristics of the source are often band-limited, composed of multiple
-components, and vary signficiantly in spectral index. They vary significantly
+components, and vary significantly in spectral index. They vary significantly
 from the prototypical \gls{frb} pulse shape and thus are considered neutral
-evidence for an astrophysical source even though the locaction of the source is
+evidence for an astrophysical source even though the location of the source is
 known to be astrophysical. %ref: spitler et al, vishal
 % TODO
 % FRB 121102: based on the complete observation including follow-ups. the only
@@ -1254,10 +1260,12 @@ the source repeats or if there is an anomalously high number of events at
 different DMs.
 
 Complex voltages, though difficult to capture, provide valuable insight.
-Coherent dedispersion can be done to increase the detection sensitivity. The
-time and frequency resolution can be adjusted to look for structure. If multiple
-sites or elements are used the signals can be correlated for coincidence
-detection and localization.
+Coherent dedispersion can be done to increase the detection sensitivity as in
+the case of FRB180301 \citep{atel11376} which revealed an apparently narrow-band
+detection to have low-level flux across a larger band. The time and frequency
+resolution can be adjusted to look for structure. If multiple sites or elements
+are used the signals can be correlated for coincidence detection and
+localization.
 
 Not all verification criteria need to be or can even be checked, but an effort
 should be made in to do so. In the VOEvent trigger standard for \glspl{frb}
@@ -1271,7 +1279,7 @@ take more time and effort, updates and retraction events can be sent.
 \subsection{False-Positive Reporting}
 
 During a search for anomalous signals it should be expected that there are a
-number of events reported which are false positives such as Perytons
+number of events reported which are false-positives such as Perytons
 \citep{2011ApJ...727...18B} and the events reported in Section
 \ref{sec:false-pos}.  Events such as FRB130729 and FRB140514 fail a number of
 criteria. They do not fit the classic \gls{frb} model but given the available
@@ -1290,7 +1298,7 @@ discussed in Section \ref{sec:detect_report} and additional observing methods.
 
 The simultaneous detection of signal with telescopes at multiple sites would be
 clear evidence for an astrophysical \gls{frb}.  Multi-site detectors, such as in
-LIGO, are essential for false-positive rejection. Coordinating telescope
+\gls{ligo}, are essential for false-positive rejection. Coordinating telescope
 observations in logistically difficult, for example many FRB surveys run
 commensally during targeted observations, but would prove invaluable in
 reporting detections. Telescopes do not need to be observing at the same
@@ -1312,7 +1320,14 @@ most \glspl{frb} have been detected at L-band frequencies. Though, FRB110523
 detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
 at UHF frequencies.  Only FRB121102 has been detected above L-band
 \citep{atel10675}.  Such wide bands show the pulse structure goes beyond the
-bandwidth of known source of \gls{rfi} (e.g. modulated RADAR).
+bandwidth of known source of \gls{rfi} (e.g. modulated RADAR). 
+
+Multiple \glspl{frb} (e.g. FBR121102, FRB140514, FRB180301) have now been
+detected which are not broad band, possibly due to the pulse progenitor,
+lensing, or scintillation. It is likely that further narrow-band \glspl{frb}
+exist is past survey data but do not pass the detection threshold. A pulse
+search over subbands could reveal further detections as the \gls{snr} would
+increase.
 
 An ideal \gls{frb} search experiment would consist of at least three stations
 geographically separated to reduce common \gls{rfi} and allow for localization.
@@ -1332,36 +1347,44 @@ network that can have the same pointing are needed at a time.
 
 \section{Conclusion}
 
-%%narrative: here are some odd FRB like things, here are some odd reported
-%%FRBs, it is hard to know if they are real and a ~10% false-positive rate is
-%%probably fine, but bursts need to be fully reported
-%
-%% TODO: follow text
-%%This creates a challenge of automating the triggering of follow-up with other
-%%telescopes. Either there will be an excess of false-positive triggers but with a
-%%short delay between detection and triggering.  Or, a non-automated, expert
-%%examination of the event is required to verify, creating a delay in any
-%%follow-up. Automated follow-up should be triggered when there is high confidence
-%%in the likelihood of a true-positive.
-%
-%\glspl{frb} are unique astronomical sources from an observational point of view
-%as so far no follow-up observations have been able to verify a source using a
-%different telescope or observing frequency, except in the case of FRB121102
-%which is known to repeat. Thus, it is necessary to provide reasonable evidence
-%for an astrophysical origin when reporting a detection. 
-%
-%As the size and number of \gls{frb} surveys continues to increase, one expects
-%an increase in the number of false-positive detections, even as rejection models
-%are improved. There is a narrow line between true, astrophysical \glspl{frb} and
-%false-positive events. Ancillary evidence of the telescope state and observation
-%provide robust evidence for a true-positive detection. 
-%
-%Reporting of false-positive events, even if the source is not explained, helps
-%to improve the robustness of search pipelines against systematics and \gls{rfi}.
-%Reporting these events also help improve the case for \glspl{frb} being of
-%astrophysical origin, just as the explanation for Perytons
-%\citep{2015MNRAS.451.3933P} removed doubt about detections using Parkes.
-%
+% TODO: follow text
+%This creates a challenge of automating the triggering of follow-up with other
+%telescopes. Either there will be an excess of false-positive triggers but with a
+%short delay between detection and triggering.  Or, a non-automated, expert
+%examination of the event is required to verify, creating a delay in any
+%follow-up. Automated follow-up should be triggered when there is high confidence
+%in the likelihood of a true-positive.
+
+From an observational point of view, \glspl{frb} are unique astronomical sources
+as so far no follow-up observations have been able to verify a source using a
+different telescope or observing frequency, except in the case of FRB121102
+which is known to repeat. Thus, it is necessary to provide evidence for an
+astrophysical origin when reporting a detection.
+
+In Section \ref{sec:verify_crit} we have presented a set of criteria which can
+be used to verify an \gls{frb} detection relative to a prototypical \gls{frb}
+and observation. Some of the criteria are more essential to verification than
+others.  For example, the strongest evidence for an event being of astrophysical
+origin is a multi-site detection.  In combination these criteria become stronger
+evidence for the origin of a detected \gls{frb}.
+
+As the number of \gls{frb} surveys continues to increase in sensitivity, sampled
+parameter space, and time, there will be an increase in the number of
+false-positive detections, even as rejection models are improved.
+Differentiating between true, astrophysical \glspl{frb} and false-positive
+events will become more difficult.  Further, it could be that most astrophysical
+\glspl{frb} are not prototypical as it is defined now, such as in the case of
+FRB121102. Which would indicate that some of the criteria must be relaxed,
+making the differentiation more difficult still.  This should warrant the drive
+towards interferometric and multi-site observations, complex-voltage data
+recorders, and standard verification of the observing system.
+
+Reporting of false-positive events, even if the source is not explained, helps
+to improve the robustness of search pipelines against systematics and \gls{rfi}.
+Reporting these events also help improve the case for \glspl{frb} being of
+astrophysical origin, just as the explanation for Perytons
+\citep{2015MNRAS.451.3933P} removed doubt about detections using Parkes.
+
 %Though many previously reported \gls{frb} detections have provided sufficient
 %data and telescope information, more can be provided to present a stronger case
 %for the astrophysical nature of the detection. Any reported detection at the
@@ -1373,15 +1396,14 @@ network that can have the same pointing are needed at a time.
 %Current and future surveys which search across large fractional bandwidths, and
 %localize with interferometric observations will provide further evidence to
 %associate an \gls{frb} detection with an astrophysical source.
-%
-%Jupyter notebooks and the filterbanks files are hosted on our
-%public git
-%repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
 
-% TODO: state that multi-site detection is the strongest evidence of
-% astrophysical detection
+Jupyter notebooks of the verification tests and terrestrial \glspl{frb} are
+hosted on our public git
+repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
+
 % TODO: make XAO, ALFA gain, LOFAR RADAR, ALFA S/N, pulsar data available
 % TODO: sent to simon, jon, leon oostrum (apertif confidence)
+% TODO: additional authors: Aris Karastergiou, KJ Lee, FRBurst, BL
 
 %\subsubsection{Low-\gls{snr} Follow-up Search}
 %
