@@ -129,19 +129,19 @@ $^{5}$Center for Gravitational Waves and Cosmology, West Virginia University, Ch
 % What can be said about these results, and how does this affect future work?
 The one-off nature of most Fast Radio Bursts (FRBs) requires extra scrutiny when
 reporting such detections as astrophysical.  The prototypical FRB is a broadband
-signal, appearing to occur over a frequency range wider than the receiver
-bandwidth, narrow-in-time, and highly dispersed, following a $\nu^{-2}$
+signal, \cM{\sout{appearing to occur} that occurs} over a frequency range wider than the receiver
+bandwidth, \cM{is} narrow-in-time, and highly dispersed, following a $\nu^{-2}$
 relation.  But, some FRBs appear band-limited, show apparent scintillation,
 complex frequency-dependent structure, or multi-component pulse shapes.  In a
 search for rare signals in a noisy data set, the number of false-positive
-detections is based on the detection threshold and signal filters.  Such
+detections is based on \cM{\sout{the}} detection thresholds and signal filters.  Such
 searches should find a number of false-positive events.  We present examples of
 false-positive events that occur in multiple searches, which on initial
 inspection appear to be FRB-like, but are found to be due to instrumental
-variations, noise, and radio frequency interference (RFI).  Differentiating
+variations, noise, and radio frequency interference (RFI) \cM{elsewhere radio-freq, with dash}.  Differentiating
 these false-positive detections from astrophysical events, requires knowledge
 and tests beyond performing a thresholded single-pulse detection.  We discuss
-post-detection analysis, verification tests, and data sets which should be
+post-detection \cM{analyses} (plural?), verification tests, and data sets which should be
 provided when reporting an FRB detection.
 \end{abstract}
 
@@ -190,28 +190,28 @@ radio continuum: transients -- methods: observational
 
 The origin of \glspl{frb} continues to be a mystery since they were first
 reported \citep{2007Sci...318..777L}. The \gls{dm} associated with the reported
-events indicate they are occur well beyond our galaxy, possibly at cosmological
-distances. They appear to be extremely bright, short duration events yet their
+events indicate they \cM{\sout{are}} occur well beyond our galaxy, possibly at cosmological
+distances. They appear to be extremely bright, short duration events \cM{--} yet their
 emission mechanism is not known.  This consensus has developed from the
 reporting of detections with multiple telescopes, at different frequencies,
 using different instrumentation. \glspl{frb} are difficult to detect as they
 require high-gain telescopes which typically have a small beam size, such that
-despite many thousands of observing hours only, a few dozen have been reported
+despite many thousands of observing hours\cM{,} only\sout{,} a few dozen have been reported
 as of this writing \citep{2016PASA...33...45P}.
 
 The prototypical \gls{frb} is broad-band, appearing to be broader than most
 receivers used in surveys. The pulse is narrow-in-time, on the order of a few
 milliseconds in width, with a single component structure. The pulse is highly
 dispersed, following a $\nu^{-2}$ relation and appears to be a one-off event
-(only FRB121102 is known to repeat \citep{2016Natur.531..202S}).  Though, not
+(only FRB121102 is known to repeat\cM{,} \citealt{2016Natur.531..202S}).  \sout{Though,} \cM{Not}
 all reported detections appear to follow this prototypical form. Many show
-complex frequency-dependent structure and are possibly band limited. The pulse
+complex frequency-dependent structure and are possibly \cM{band-limited}. The pulse
 width varies due to either the emission process or propagation effects such as
 scattering from the \gls{ism} and \gls{igm}.
 
 These rare events are detected by automated GPU-accelerated software pipelines
 that extensively search a broad range of \gls{dm} trials, pulse widths, and
-starting times.  The de-dispersed time series is then thresholded, any
+starting times.  The de-dispersed time series is then thresholded -- any
 peaks above a minimum \gls{snr} are reported as potential detections. The number
 of potential detections is usually overwhelming due to \gls{rfi} and system gain
 variations. Initially, potential detections were reviewed manually. But, with
@@ -232,9 +232,9 @@ accepting a number of false-positives (type-I errors).  But, given the large
 sampling of the parameter search space it can be difficult, if not impossible to
 differentiate between a true, astrophysical \gls{frb} (true-positive) and a
 `terrestrial' \gls{frb} (false-positive) due to \gls{rfi}, systematics, or other
-local effects. As the survey time increase the likelihood of detecting such a
+local effects. As the survey time \cM{increases,} the likelihood of detecting such a
 false-positive will increase. To counter false detection of `terrestrial'
-\glspl{frb}, verification criteria can be tested when reporting a detection.
+\glspl{frb}, verification criteria can be tested \cM{used?utilised?} when reporting a detection.
 
 In this paper, we present other examples of FRB-like sources which, after
 further investigation, we show to be non-astrophysical. Using these and
@@ -737,17 +737,13 @@ detections.
 \section{FRB Verification}
 \label{sec:verify_crit}
 
-Before reporting an \gls{frb} detection there are a set of criteria a group will
-check through. This could include looking at the dynamic spectrum for \gls{rfi},
-checking a DM-time space plot to see the event is compact, look at the telescope
-pointing, see if the event appears in multiple beams in a multi-beam feed, etc.
-There is no formal criteria, rather a set of community standards which vary
-between groups and instruments. These standards are usually set in order to
-compare a new detection in reference to a prototypical \gls{frb} which is broad
-band, dispersed following a $\nu^{-2}$ relation in excess of the Galactic line
-of sight, and narrow in pulse width such as FRB130626
-\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This follows the
-prototype theory of categorization \citep{ROSCH1976382} which follows that
+Our ability to discover \glspl{frb} depends on how well we can describe what an FRB is. There is currently no formal definition, rather a set of community standards. These vary
+between groups and instruments, but usually include information drawn from images of power in the time-frequency plane and the time-DM plane, information about the telescope state, information related to the presence of the signal in one or more beams.
+These standards are set in order to
+compare each new detection to an \gls{frb} archetype: a broad
+band signal, excessively dispersed for its Galactic line of sight, following a $\nu^{-2}$ dispersion relation, and narrow in pulse width, such as FRB130626
+\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This process of comparison follows the
+prototype theory of categorization \citep{ROSCH1976382} which suggests that
 certain examples of a category are more prototypical than others. A category
 will contain examples which deviate from the prototypical as the prototype is an
 exaggeration of features deemed characteristic to the category.
@@ -763,67 +759,48 @@ exaggeration of features deemed characteristic to the category.
     \label{fig:FRB130626}
 \end{figure}
 
-An \gls{frb} verification would not only contain criteria which compare an new
-detection to a prototypical \gls{frb}, but would also contain criteria to
-discount the event as terrestrial. We attempt to enumerate a set of criteria
-which can be used when stating the confidence of an astrophysical \gls{frb}
-detection. Of course, this will not be a complete set. As new events are
-discovered, both astrophysical and terrestrial, new tests can be included. And,
-as new telescopes are used for surveys a new range of tests can be designed.
-This list of criteria has primarily developed for single dish surveys.  Use of
-interferometric and beamformed arrays are leading to new survey and
-observational modes. These arrays will provide further tests in for confidence
-in a detection that single dishes can not.
+For verification of new FRBs, we propose a list of criteria of two types: the first type tests similarity between new detections and the archetype, and the second type is used to preclude terrestrial origins of the signal. Together, these two sets provide a framework,
+which should be used to state the confidence of any new \gls{frb}
+discovery. This list of criteria will improve with time; as new events are
+discovered, both astrophysical and terrestrial, new tests can be included. The criteria we propose here have been primarily developed from single dish surveys.  Use of
+interferometric arrays will provide powerful further criteria, particularly relevant to localization of signals in the sky.
 
 Included in the criteria are tests to verify the telescope was functioning as
-expected. This is to say that there is a prototypical observation for each
-telescope and receiver system which the observing system during a detection can
-be compared against. The prototypical \gls{frb} defines a telescope-independent
-category which events can be compared against. But, verification of an
-observation requires the expert knowledge of the observer and telescope
-operators. This is a difficult set of criteria to verify independently, and
-should be done explicitly when reporting on a detection.
-
-No reported \gls{frb} thus far reported based on the available evidence can be
-categorized as terrestrial, though multiple \glspl{frb} deviate significantly
-from the prototypical. All reported \glspl{frb} except FRB 121102 have not been
-checked against all available criteria tests. With more complete information
-each of the reported \glspl{frb} would be better categorized.
+expected. This is to say that there is a prototypical status for each
+telescope and receiver system, parametrized by observable quantities, which the data obtained during a detection can
+be compared against.  This comparison requires the availability of the necessary data and expert knowledge of the observer and telescope operators. However, it should be done explicitly when reporting a new detection.
 
 \subsection{Criteria}
 
-The verification criteria can be separated in groups relating to the detected
-pulse shape and dispersion characteristics, data quality around the time of the
-detected pulse, and telescope state.
+As stated above, the verification criteria are of two types, which we define as "Similarity to the archetype" and "Terrestrial origin". For each criterion, we propose 6 possible answers, which we colour-code in our own categorization below. Answer 1 to 4 encapsulate the responses: "Identical", "Similar", "Not similar", "Completely different", while 5 and 6 are used for the responses "Test not performed" and "Data not available" respectively. 
 
-\subsubsection{Pulse Shape}
+In the following, we provide a set of questions to help assign a numerical response of 1-6 for each criterion. We have also gone through this process ourselves for a number of published FRBs and other spurious detections, thus providing reference responses for each criterion.  
+
+\subsubsection{Similarity to the archetype}
 
 \paragraph{Signal to Noise:}
 
-What is the measured \gls{snr} of the dedispersed, and frequency-collapsed pulse?
-Is this \gls{snr} above the minimum survey threshold? The actual \gls{snr} could
-be different from the reported \gls{snr} as in the Section \ref{sec:low_snr}
-detection because of differences in the noise statistics time-scale.
+What is the measured \gls{snr} of the dedispersed, and frequency-collapsed pulse? Can this \gls{snr} be verified? The actual \gls{snr} could
+be different from the reported \gls{snr} (see Section \ref{sec:low_snr}).
 
 \paragraph{Boresight Flux:}
 
 What is the implied flux based on the detection \gls{snr} and telescope
-sensitivity assuming the detection occurred at boresight? Is this within the
+sensitivity, assuming the detection occurred at boresight? Is this within the
 range of previously reported fluxes? The majority of reported \glspl{frb} have
-an implied boresight flux between $0.2-2$~Jy, there is a tail of bright
+an implied boresight flux between $0.2-2$~Jy, although there is a tail of bright
 \glspl{frb} up to 128~Jy (FRB150807). Extremely bright \glspl{frb} (>~kJy) are
 not expected based on the extensive previous non-detection results from low
-sensitivity, large sky coverage surveys. Though, extremely bright \glspl{frb}
+sensitivity, large sky coverage surveys. However, extremely bright \glspl{frb}
 can not be completely discounted.
 
 \paragraph{Pulse Width:}
 
-What is the pulse width of the dedispersed, and frequency-collapsed pulse? Is it
+What is the pulse width of the dedispersed and frequency-collapsed pulse? Is it
 within the range of previously reported widths? Reported widths range from
-hundreds of microseconds (FRB150807, FRB170827) up to tens of milliseconds
+hundreds of microseconds (FRB150807, FRB170827) down to tens of milliseconds
 (FRB170922, FRB160317). The lower pulse width limit is based on the time
-resolution of the instrumentation, and the pulses may indeed by more narrow than
-the reported width. There maybe astrophysical \glspl{frb} with wider pulse
+resolution of the instrumentation, and the pulses may indeed be unresolved. There may be astrophysical \glspl{frb} with wider pulse
 widths, but most historical surveys have had a maximum time-binning scale on the
 order of tens of milliseconds. FRB121102 shows a wide range of pulse shapes and
 widths \citep{2018Natur.553..182M,atel10675}.
@@ -832,46 +809,37 @@ widths \citep{2018Natur.553..182M,atel10675}.
 
 \paragraph{High-resolution Structure:}
 
-Search pipelines report detection based on an optimal time width after the
-dynamic spectrum has been summed in frequency. This hides any potential high
-time and frequency structure that maybe present as in the case of RADAR (Section
+Search pipelines identify candidates by applying a filter to the dedispersed data. This hides any potential high
+time and frequency structure that may be present, as in the case of RADAR (Section
 \ref{sec:LOFAR_RADAR}). The dynamic spectrum should be checked at both the
 highest time and frequency resolution to look for structure. Complex voltages
-would allow for coherent dedispersion and flexibility in channelization and
-integration which would provide further sensitivity in searching for structure.
+allow for coherent dedispersion and flexibility in channelization and
+integration, which provides further sensitivity in searching for structure.
 
 \paragraph{Multi-component:}
 
 Are there multiple components to the pulse? How many components are there? Does
-this differ by changing the dedispersion DM? Most \glspl{frb} appear as single
+this differ by dedispersing with different DMs? Most \glspl{frb} appear as single
 component pulses. But, a few, such as FRB130729 and some bursts from FRB121102,
-show multiple components which can lead to differences in the `optimal' DM
+show multiple components, which can lead to differences in the `optimal' DM
 \citep{2018Natur.553..182M}. Pulses from FRB121102 often contain multiple
-components, as such it deviates from the prototypical. But, as FRB121102 is
-known to be astrophysical, this criteria can not invalidate a detection.
+components. As such it deviates from the prototypical. As FRB121102 is
+known to be astrophysical, this criterion can not invalidate a detection.
 
 \paragraph{Broad-band:}
 
-Does the pulse appear to go beyond the observing band? At both the high and low
-frequency edges? A pulse which extends across the full observing band fits the
-prototypical \gls{frb} model. If the receiver has a significant fractional
-observing bandwidth then a pulse which extends across the band is evidence for
-an astrophysical origin compared as opposed to band-limited \gls{rfi} such as
-RADAR (Sections \ref{sec:LOFAR_RADAR}, \ref{sec:xao_event}). Though, an
-astrophysical \gls{frb} could be band limited, as bursts from FRB121102 appear
-to be. Or, the steep spectral index of the pulse and the limited sensitivity of
-the receive mean that pulse flux drops below the system noise.
+Does the pulse extend in frequency to the edges of the observing band, bottom edge, top edge, both, or neither? A pulse that extends across the full observing band fits the
+prototypical \gls{frb} model. There are now examples of narrow-band (within the observing band) FRBs (such as FRB121102), as well as narrow-band terrestrial signals, such as
+RADAR (Sections \ref{sec:LOFAR_RADAR}, \ref{sec:xao_event}), so not having a broad-band signature does not entirely rule out an FRB. We expect this criterion to be improved by future telescope backends offering broader bandwidths. 
 
 \paragraph{Spectral Index:}
 
-Is there a measurable apparent spectral index? Decomposing the instrumental
-response from the astrophysical spectral response is difficult.  As the position
+Is there a measurable apparent spectral slope? Decomposing the instrumental
+response from the astrophysical spectral response is difficult.  Depending on the (mostly unknown) position
 of a detected pulse within the primary beam, there will be a frequency-dependent
-response which will induce spectral colorization in a broadband source, leading
-to a wide range of apparent spectral indices beyond that of a astrophysical
-source. If the pulse appears band-limited with a steep spectral index this could
+sensitivity response, which will induce spectral colorization in a broadband source. If the pulse appears band-limited with a steep spectral index, this could
 indicate the pulse flux drops below the system noise in parts of the band. If a
-shallow spectral index is fit to a band-limited pulse this could indicate the
+shallow spectral index is fit to a band-limited pulse, this could indicate the
 pulse is intrinsically band-limited.
 
 \paragraph{Scattering:}
@@ -1503,5 +1471,12 @@ repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
 \bsp	% typesetting comment
 \label{lastpage}
 \end{document}
+
+No reported \gls{frb} thus far reported based on the available evidence can be
+categorized as terrestrial, though multiple \glspl{frb} deviate significantly
+from the prototypical. All reported \glspl{frb} except FRB 121102 have not been
+checked against all available criteria tests. With more complete information
+each of the reported \glspl{frb} would be better categorized.
+
 
 % End of mnras_template.tex
