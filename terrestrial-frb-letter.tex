@@ -782,7 +782,7 @@ the availability of the necessary data and expert knowledge of the observer and
 telescope operators. However, it should be done explicitly when reporting a new
 detection.
 
-\subsection{Criteria}
+\subsection{Criteria}\label{sec:criteria}
 
 As stated above, the verification criteria are of two types, which we define as
 "Similarity to the archetype" and "Terrestrial origin". For each criterion, we
@@ -1035,7 +1035,7 @@ for a pulse being astrophysical. Experiments to detect rare, transient events,
 such as \gls{ligo}, use multi-site observations to completely remove local
 systematics.
 
-\subsection{Previous Detections}
+\section{Application of FRB criteria to previous detections}
 
 % aslxlap07:terrestrial-frb-letter/verification/HeatMap.ipynb
 \begin{figure*}
@@ -1055,22 +1055,10 @@ systematics.
     }
     \label{fig:heat_map}
 \end{figure*}
+\subsection{FRB signals}
+Having provided the FRB verification criteria above, we 
+have re-analyzed the previous reported \glspl{frb} based on the available literature and public data. This analysis provides examples of answers 1-6 from Section \ref{sec:criteria} for a number of sources. Figure \ref{fig:heat_map} captures the results in a colour coded table. 
 
-For reference, we have re-analyzed the previous reported \glspl{frb} (Figure
-\ref{fig:heat_map}) based on the available literature and public data. The left
-columns of Figure \ref{fig:heat_map} indicate the criteria test result, and the
-right columns are the availability of public data.
-
-Included in Figure \ref{fig:heat_map} is the results for the various detections
-discussed in Section \ref{sec:false-pos} and a pulsar (B1859+03). In all these
-case there is at least one failure.  The LOFAR RADAR event shows artificial
-high-resolution structure.  Perytons and the XAO repeater fail the dispersion
-relation test and repeat at different telescope pointings. The ALFA gain
-variation has multiple negative test results relating to the system response
-compared to the expected response.  The low \gls{snr} event does not have a
-single critical test failure but an accumulation of negative results.  No single
-test is sufficient to decide that an event is terrestrial. But, given enough
-tests a strong case can be made to classify all these events as terrestrial.
 
 % TODO:
 % cases:
@@ -1176,6 +1164,20 @@ known to be astrophysical. %ref: spitler et al, vishal
 % truly known astrophysical frb
 % reference varying shapes of FRB121102
 % what would happen if an odd pulse was first seen from 121102?
+\subsection{Terrestrial signals}
+
+Also included in Figure \ref{fig:heat_map} are the results for the various detections
+discussed in Section \ref{sec:false-pos}. We also include PSR~B1859+03 as an example of single pulses from a pulsar during the ALFABURST surveys.
+
+In all these
+cases there is at least one failure.  The LOFAR RADAR event shows artificial
+high-resolution structure.  Perytons and the XAO repeater fail the dispersion
+relation test and repeat at different telescope pointings. The ALFA gain
+variation has multiple negative test results relating to the system response
+compared to the expected response.  The low \gls{snr} event does not have a
+single critical test failure but fares poorly in several tests.  No single
+test is sufficient to decide that an event is terrestrial. Figure \ref{fig:heat_map} demonstrates how, given enough
+tests, a strong case can be made to classify all these events as terrestrial.
 
 \section{Detection Reporting}
 \label{sec:detect_report}
