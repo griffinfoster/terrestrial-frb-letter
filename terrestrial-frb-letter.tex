@@ -826,8 +826,6 @@ There may be astrophysical \glspl{frb} with wider pulse widths, but most
 historical surveys have had a maximum time-binning scale on the order of tens of
 milliseconds. FRB121102 shows a wide range of pulse shapes and widths
 \citep{2018Natur.553..182M,atel10675}.
-% TODO: is there an coherency timescale argument for an upper limit? scattering
-% can expand the width but would expect to see a tail then
 
 \paragraph{High-resolution Structure:}
 
@@ -882,7 +880,6 @@ fitted to the data? Most ISM models predict high spectral indices with $\alpha
 =4$ or $4.4$, (e.g. \citealt{Rickett1977}). Frequency-dependent scattering is
 strong evidence for the propagation of radio waves through an inhomogenous ISM,
 and hence for sources to be astrophysical. 
-
 % TODO: reference FRB
 
 \paragraph{Scintillation:}
@@ -906,38 +903,34 @@ be linearly polarized once the extreme \gls{rm} is corrected for
 characteristics, such as Phase-shift keying, as a way of encoding information.
 These encodings schemes will appear different from polarized astrophysical
 sources.
-% TODO: was the GBT one circularlly polarized? FRB140514 i think
+% TODO: was the GBT one circularlly polarized? FRB140514 was
 
-\subsubsection{Dispersion}
-
-\paragraph{\gls{snr}-maximized DM Fit:}
+\paragraph{DM Excess:}
 
 What is the \gls{snr}-maximized \gls{dm}? How does this compare to Galactic DM
 model along the line of sight? Is it well in excess of the Galactic
 contribution? This is a standard test to differentiate between a Galactic and
 extragalactic source. If the ratio of measured \gls{dm} to Galactic model
 \gls{dm} is at least a factor of two then the source is likely extragalactic.
-Otherwise the source is likely a pulsar or \gls{rrat} within the Galaxy.
-
-\paragraph{Component-optimized DM Fit:}
-
-If there are multiple components, what is the `component-optimized' DM, how does
-it differ from the \gls{snr}-maximized DM? When there are multiple components to
-a pulse the choice of DM can results in different frequency-averaged pulses such
+Otherwise the source is likely a pulsar or \gls{rrat} within the Galaxy.  If
+there are multiple components, what is the `component-optimized' DM, how does it
+differ from the \gls{snr}-maximized DM? When there are multiple components to a
+pulse the choice of DM can results in different frequency-averaged pulses such
 as in FRB130729 in which the choice of DM can result in a single component or
 multi-component pulse profile. 
 
+\subsubsection{Terrestrial Origins}
+
 \paragraph{Dispersion Relation:}
 
-Does the pulse follow a cold plasma $\nu^{-2}$ dispersion relation? This is a
-important criterion. If there is sufficient \gls{snr} in individual
-time-frequency bins across a significant fractional bandwidth of the dynamic
-spectrum then a dispersion relation fit showing a $\nu^{-2}$ relation is
-evidence for a dispersed, nature source. Conversely, a fit that diverges from
-$\nu^{-2}$ is good evidence for a artificial source (Section
-\ref{sec:xao_event}). An F-test between a $\nu^{-2}$ relation model and
-other models is a statistically significant method to compare models.
-%TODO: models: -1, -2, -3
+Does the pulse follow a cold plasma $\nu^{-2}$ dispersion relation? If there is
+sufficient \gls{snr} in individual time-frequency bins across a significant
+fractional bandwidth of the dynamic spectrum then a dispersion relation fit
+showing a $\nu^{-2}$ relation is evidence for a dispersed, nature source.
+Conversely, a fit that diverges from $\nu^{-2}$ is good evidence for a
+artificial source (Section \ref{sec:xao_event}). An F-test between a $\nu^{-2}$
+relation model and other models is a statistically significant method to compare
+models.
 
 \paragraph{DM Space:}
 
@@ -948,8 +941,6 @@ detection. But, if there are events seen at similar \gls{snr}, especially in a
 negative DM space search, then it could be that the \gls{rfi} environment has
 changed leading to an increase in false-positive events.
 
-\subsubsection{Extended Timescale Observations}
-
 \paragraph{Repeating Events:}
 
 Does the pulse repeat at different times? Were follow-up observations performed?
@@ -958,7 +949,7 @@ survey data? If the source does repeat, what was the time scale? And, did it
 occur at different telescope pointings? Most \glspl{frb} appear to be one-off
 events, but if the source does repeat this it can be localized or verified with
 another telescope. If the source repeats at different points like the \gls{xao}
-event then the source can be labelled as terrestrial.
+event then the source is terrestrial.
 
 \paragraph{RFI Environment:}
 
@@ -970,11 +961,6 @@ likely seen in the DM-space trial test. Or, the reduced bandwidth can limit a
 $\nu^{-2}$ dispersion relation fit. An excess in \gls{rfi} during a detection
 compared to the typical \gls{rfi} environment reduces the confidence in an
 astrophysical detection.
-
-\paragraph{Follow-up Observations:}
-% TODO: where they performed?
-
-\subsubsection{Telescope Characteristics}
 
 \paragraph{Telescope State:}
 
