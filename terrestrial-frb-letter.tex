@@ -60,6 +60,8 @@
 \newcommand{\GSF}[1]{\noindent\textcolor{blue}{GSF:#1}}
 %comments by Marisa
 \newcommand{\cM}[1]{\textcolor{magenta}{ #1 --M}}
+%comments by Mayuresh
+\newcommand{\cMay}[1]{\textcolor{blue}{ #1 --M}}
 
 %glossary
 \newacronym{alfa}{ALFA}{Arecibo L-Band Feed Array}
@@ -139,7 +141,7 @@ based on detection thresholds and signal filters.  Such searches should find a
 number of false-positive events.  We present examples of false-positive events
 that occur in multiple searches, which on initial inspection appear to be
 FRB-like, but are found to be due to instrumental variations, noise, and
-radio-frequency interference \sout{(RFI)}.  Differentiating these false-positive
+radio-frequency interference \cMay{\sout{(RFI)}}.  Differentiating these false-positive
 detections from astrophysical events, requires knowledge and tests beyond
 performing a thresholded single-pulse detection.  We discuss post-detection
 analyses, verification tests, and data sets which should be provided when
@@ -166,7 +168,7 @@ radio continuum: transients -- methods: observational
         \includegraphics[width=1.0\textwidth]{figures/D20161204_buf23_Beam0.pdf}
         \caption{Detected FRB-like event in Beam 0 of ALFA. The characteristic
         dip before and after the event is due to zero-DM removal which is part
-        of the ALFABURST RFI exciser. The strong, narrowband source at 1480~MHz
+        of the ALFABURST RFI exciser. The strong, narrow band source at 1480~MHz
         around 100~ms is due to a local RFI source.}
         \label{fig:beam0_dynamic_spec}
     \end{subfigure}
@@ -181,7 +183,7 @@ radio continuum: transients -- methods: observational
         \label{fig:beam5_dynamic_spec}
     \end{subfigure}
     \caption{
-    Dynamic spectrum (top) and \gls{snr}-maximized dedispersed time series
+    Dynamic spectrum (top) and \gls{snr}-maximized de-dispersed time series
     (bottom) of an FRB-like event that was detected simultaneously in Beam 0 and
     5 of the ALFA receiver on December 4, 2016. The dynamic spectrum has been
     bandpass normalized.
@@ -216,7 +218,7 @@ varies due to either the emission process or propagation effects such as
 scattering from the \gls{ism} and \gls{igm}.
 
 These rare events are detected by automated GPU-accelerated software pipelines
-that extensively search a broad range of \gls{dm} trials, pulse widths, and
+that extensively search a broad range of trial \glspl{dm}, pulse widths, and
 starting times.  The de-dispersed time series is then thresholded -- any
 peaks above a minimum \gls{snr} are reported as potential detections. The number
 of potential detections is usually overwhelming due to \gls{rfi} and system gain
@@ -224,7 +226,7 @@ variations. Initially, potential detections were reviewed manually. But, with
 the amount of data acquired in recent surveys, it has become a significant time
 effort to do so. Further, our understanding of the expected signal properties
 has allowed the development of filters and models to select and prioritize
-individual events \citep{2018MNRAS.474.3847F}.
+individual events \citep[e.g.][]{2018MNRAS.474.3847F}.
 
 As these sources are rare and generally appear not to repeat (except FRB121102),
 there is an issue of verifiability. There is significant \gls{rfi} detectable at
@@ -232,7 +234,7 @@ all radio observatories, and there are known anthropogenic sources that appear
 FRB-like \citep{2011ApJ...727...18B}.  Given the significant number of \gls{dm}
 trials and high-time resolution of the spectra in a typical survey, there are a
 large number of false-positives which pass the automated post-processing
-detection tests.  This is by design, as we would like to severely limit the
+detection thresholds.  This is by design, as we would like to severely limit the
 potential for false-negatives (type-II errors) in our detection pipelines by
 accepting a number of false-positives (type-I errors).  But, given the large
 sampling of the parameter search space it can be difficult, if not impossible to
@@ -240,7 +242,7 @@ differentiate between a true, astrophysical \gls{frb} (true-positive) and a
 `terrestrial' \gls{frb} (false-positive) due to \gls{rfi}, systematics, or other
 local effects. As the survey time increases, the likelihood of detecting such a
 false-positive will increase. To counter false detection of `terrestrial'
-\glspl{frb}, verification criteria can be tested when reporting a detection.
+\glspl{frb}, some verification criteria can be tested when reporting a detection.
 
 In this paper, we present other examples of FRB-like sources which, after
 further investigation, we show to be non-astrophysical. Using these and
@@ -261,15 +263,15 @@ signals from within the solar system.
 Most potential false-positive events are flagged using filters and classifier
 models.  The remaining events are commonly examined by eye as expert human
 knowledge appears to be the best way to classify a detection. However, time
-constraints do not allow for all events to classified in this way. On
+constraints do not allow for all events to be classified in this way. On
 inspection, true astrophysical events and terrestrial events can be difficult to
-differentiate between, even by the expert.  These terrestrial events, indeed,
+differentiate between, even by the expert eye.  These terrestrial events, indeed,
 should appear like astrophysical \glspl{frb} as they have passed the detection
-pipeline tests. 
+pipeline thresholds. 
 
 Studies of the telescope state during detection, can often assist in determining
 the origin of an event. Nonetheless, ambiguities can remain, leading to the
-precarious natureof reporting an \gls{frb} as astrophysical.  In this section we
+precarious nature of reporting an \gls{frb} as astrophysical.  In this section we
 present examples of such events -- which on initial inspection appear to be
 astrophysical, but after further investigation prove to be terrestrial in
 origin.
@@ -287,45 +289,45 @@ based on the likelihood of the event being a pulse.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
 ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 (09:31:06 Arecibo
-local time) in Beam 0 (the central beam) of the \gls{alfa}
+local time on 2016, December 4) in Beam 0 (the central beam) of the \gls{alfa}
 receiver\footnote{http://www.naic.edu/alfa/} (Figure
-\ref{fig:beam0_dynamic_spec}) which we label the D20161204 event for this
+\ref{fig:beam0_dynamic_spec}) which we label as the D20161204 event for this
 discussion. ALFABURST was processing 56~MHz of bandwidth between 1457~MHz and
-1513~MHz. The \gls{snr} of this pulse is maximized when the pulse is dedispersed
-with a \gls{dm} of 293~pc~cm$^{-3}$, and the 256~$\mu$s resolution is decimated
-by a factor of 16 to a time resolution of 4~ms. The dedispersed time series shows
+1513~MHz. The \gls{snr} of this pulse is maximized when the pulse is de-dispersed
+with a \gls{dm} of 293~pc~cm$^{-3}$, and the 256~$\mu$s time resolution is decimated
+by a factor of 16 to a time resolution of 4~ms. The de-dispersed time series shows
 an approximately 20~ms \gls{fwhm} pulse.  The dip before and after the pulse is
-due to the zero-DM filtering (i.e. the moving average is subtracted) during
+due to the zero-DM filtering (i.e. the moving channel average is subtracted) before
 pulse detection \citep{2009MNRAS.395..410E}. This is a simple way to remove a
 drifting gain baseline at the cost of removing some of the overall pulse power,
 particularly at low DM trials.
 
 On initial inspection, this event looks like a promising new astrophysical
-\gls{frb}. The flux density of the event can be computed with the radiometer
+\gls{frb}. The flux density of the event can be computed using the radiometer
 equation,
 %
 $$
 S = \textrm{SEFD} \frac{\textrm{S/N}}{\sqrt{D \; \Delta \tau \;
-\Delta \nu}},
+\Delta \nu}}
 $$
 %
-using a \gls{sefd} of 3~Jy for the \gls{alfa} receiver. This results in a  flux
-density of \mbox{$S = 66$}~mJy from Beam 0, which would be lower than for any
+using a \gls{sefd} of 3~Jy for the \gls{alfa} receiver. This results in a flux
+density of \mbox{$S = 66$}~mJy from Beam 0, which would be lower than what is observed for any
 previously detected \gls{frb} \citep{2016PASA...33...45P}. However, this flux
-estimate is a lower limit, as we are assuming the source is at the centre of the
-beam. The width is large for an \gls{frb} but within the range of those
+estimate is a lower limit, as we are assuming the source is at the center of the
+beam. The pulse width is large for an \gls{frb} but within the range of those
 previously reported.
 
-Of the six other \gls{alfa} beams the event only appears in Beam 5 (Figure
+Of the six other \gls{alfa} beams, the event only appears in Beam 5 (Figure
 \ref{fig:beam5_dynamic_spec}), which is adjacent to Beam 0.  This pulse lines up
-with the Beam 0 event in time exactly, but the \gls{frb} was maximized
-($S/N=16$) for a DM of 829~pc~cm$^{-3}$. By testing a range of DM values we
+with the Beam 0 event in time exactly, but the event \gls{snr} was maximized
+($S/N=16$) for a DM of 829~pc~cm$^{-3}$. By testing a range of DM values, we
 found that this event appeared to decrease in width for lower DM trials.
 \gls{rfi} clipping was applied during this event which is known to introduce a
-bias, resulting in a maximized \gls{snr} at a different DM trial.  We conclude
-the Beam 0 and Beam 5 event are the same event.
+bias, resulting in a maximized \gls{snr} at a different DM trial.  We thus conclude
+that the Beam 0 and Beam 5 event are the same event.
 
-In the immediate period before and after the pulse there are no similar events
+In the immediate period before and after the pulse, there are no similar events
 (Figure \ref{fig:dm_time}). The event appears to be isolated in time, with a
 fairly compact representation in DM-space (Figure \ref{fig:dm_time_event})
 similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
