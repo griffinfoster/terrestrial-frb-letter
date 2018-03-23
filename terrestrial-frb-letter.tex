@@ -141,7 +141,7 @@ based on detection thresholds and signal filters.  Such searches should find a
 number of false-positive events.  We present examples of false-positive events
 that occur in multiple searches, which on initial inspection appear to be
 FRB-like, but are found to be due to instrumental variations, noise, and
-radio-frequency interference \cMay{\sout{(RFI)}}.  Differentiating these false-positive
+radio-frequency interference.  Differentiating these false-positive
 detections from astrophysical events, requires knowledge and tests beyond
 performing a thresholded single-pulse detection.  We discuss post-detection
 analyses, verification tests, and data sets which should be provided when
@@ -388,7 +388,7 @@ typical observations (Figure \ref{fig:bandpass_response}).  Beam 0 and 5
 bandpasses appear similar and have overlapping narrow-band RFI features during
 the recorded time window.  The system noise appears to be higher during the
 event, which leads to smoother bandpasses than what is typical.  In the
-detection pipeline the data is normalized \cMay{to what?}, which removes all absolute scaling in
+detection pipeline the data is normalized, which removes all absolute scaling in
 the process. This indicates that the \gls{sefd} is too low in our flux
 calibration.  This increase in system noise is due to the change in turret
 position, causing the \gls{alfa} feed to pick up reflections from other
@@ -401,7 +401,7 @@ noise.
     \includegraphics[width=1.0\linewidth]{figures/bandpass_response.pdf}
     \caption{Average bandpass response during the December 4, 2016 event for
     Beam 0 (green) and Beam 5 (blue). A typical bandpass (red) is plotted for
-    reference. These bandpasses have been normalized \cMay{to what?} in the detection pipeline.
+    reference. These bandpasses have been normalized in the detection pipeline.
     }
     \label{fig:bandpass_response}
 \end{figure}
@@ -453,21 +453,22 @@ around the event, we can confidently classify this event as terrestrial.
 
 While the D20161204 event (Section \ref{sec:D20161204}) is a rare false-positive
 detection based on a unique telescope state, other false-positive events occur
-regularly.  As automated search pipelines are set up to carry out an extensive search
-in trial \glspl{dm}, pulse width, and starting time, it is reasonable to expect a
-large number of low-\gls{snr} false-positive detections \cMay{due to non-Gaussian noise
-characteristics?}. A minimum \gls{snr} cut-off (usually 6-10) is set to limit the number 
-of these false-positives.
+regularly.  As automated search pipelines are set up to carry out an extensive
+search in trial \glspl{dm}, pulse width, and starting time, it is reasonable to
+expect a large number of low-\gls{snr} false-positive detections. A minimum
+\gls{snr} cut-off (usually 6-10) is set to limit the number of these
+false-positives.
 
 For example, on July 30, 2015 an apparently 10-$\sigma$ event with a DM of
-1370~pc~cm$^{-3}$ was detected (Figure \ref{fig:D20150730}) by the ALFABURST pipeline \cMay{which 
-beam?}. The pulse can barely be seen in the dynamic spectrum, but in the DM-time plot, there is a
-compact peak centred at a DM of 1370~pc~cm$^{-3}$ with no other similar events
-apparent.  After re-analysis of the dynamic spectrum noise, this event only has an
-\gls{snr}$\sim$6, but was reported as a higher \gls{snr} because of the data
-window size used to calculate the system noise.  Locally in time, there is an
-increase in system noise, leading to a reduced \gls{snr}.  This is not an
-uncommon event and many of these events have no immediate explanation.
+1370~pc~cm$^{-3}$ was detected (Figure \ref{fig:D20150730}) by the ALFABURST
+pipeline in Beam 5. The pulse can barely be seen in the dynamic spectrum, but in
+the DM-time plot, there is a compact peak centred at a DM of 1370~pc~cm$^{-3}$
+with no other similar events apparent.  After re-analysis of the dynamic
+spectrum noise, this event only has an \gls{snr}$\sim$6, but was reported as a
+higher \gls{snr} because of the data window size used to calculate the system
+noise.  Locally in time, there is an increase in system noise, leading to a
+reduced \gls{snr}.  This is not an uncommon event and many of these events have
+no immediate explanation.
 
 % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
 \begin{figure}
@@ -878,7 +879,7 @@ could indicate the pulse is intrinsically band-limited.
 
 Accurate scattering and scintillation measurements are concrete evidence for radio waves having passed through an inhomogeneous ISM, and can help infer properties of either the host galaxy of the FRB,  the media surrounding it or the Intergalactic Medium (IGM).
 
-Scattering timescales are estimated, as e.g. in the case of FRB130626 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened pulse. The characteristic timescale is expected to have a strong frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting spectral indices $\alpha =4$ and $4.4$ (e.g. \citealt{Rickett1977}). Spectral indices computed from broad band FRBs, should be compared to these expected values. Comparing obtained $\tau$ values to values predicted by current electron density models for the Milky Way \cite{NE2001, Yao} provides further proof for its extra galactic nature.
+Scattering timescales are estimated, as e.g. in the case of FRB130626 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened pulse. The characteristic timescale is expected to have a strong frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting spectral indices $\alpha =4$ and $4.4$ (e.g. \citealt{Rickett1977}). Spectral indices computed from broad band FRBs, should be compared to these expected values. Comparing obtained $\tau$ values to values predicted by current electron density models for the Milky Way \cite{2002astro.ph..7156C,2017ApJ...835...29Y} provides further proof for its extra galactic nature.
 
 Similarly, pulse scintillation is evidence for passage through an inhomogenous medium, and therefore counts in favour of an astrophysical source. Though, as seen
 in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear similar to scintillation. Scintillation estimates are obtained by first computing the auto-covariance function of the burst's spectrum, and then the  decorrelation bandwidth ($\Delta \nu_d$) defined as the FWHM of this function. The $\Delta \nu_d$ measurement corresponds to a broadening (scattering) timescale of $\sim 1/(2\pi\Delta \nu_d)$.
