@@ -141,11 +141,11 @@ based on detection thresholds and signal filters.  Such searches should find a
 number of false-positive events.  We present examples of false-positive events
 that occur in multiple searches, which on initial inspection appear to be
 FRB-like, but are found to be due to instrumental variations, noise, and
-radio-frequency interference.  Differentiating these false-positive detections
-from astrophysical events, requires knowledge and tests beyond performing a
-thresholded single-pulse detection.  We discuss post-detection analyses,
-verification tests, and data sets which should be provided when reporting an FRB
-detection.
+radio-frequency interference.  Differentiating these false-positive
+detections from astrophysical events, requires knowledge and tests beyond
+performing a thresholded single-pulse detection.  We discuss post-detection
+analyses, verification tests, and data sets which should be provided when
+reporting an FRB detection.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -303,7 +303,7 @@ drifting gain baseline at the cost of removing some of the overall pulse power,
 particularly at low DM trials.
 
 On initial inspection, this event looks like a promising new astrophysical
-\gls{frb}. The flux density of the event can be computed using the radiometer
+\gls{frb}. The flux density of the pulse can be computed using the radiometer
 equation,
 %
 $$
@@ -329,7 +329,7 @@ that the Beam 0 and Beam 5 event are the same event.
 
 In the immediate period before and after the pulse, there are no similar events
 (Figure \ref{fig:dm_time}). The event appears to be isolated in time, with a
-fairly compact representation in DM-space (Figure \ref{fig:dm_time_event})
+fairly compact representation in DM-time space (Figure \ref{fig:dm_time_event})
 similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
 (Figure \ref{fig:dm_time_B1859}).
 
@@ -350,14 +350,14 @@ similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
     \begin{subfigure}[t]{0.5\textwidth}
         \centering\captionsetup{width=.95\linewidth}
         \includegraphics[width=1.0\textwidth]{figures/B1859_dmtrials.pdf}
-        \caption{DM vs. time plot of a bright single pulse from B1859+03 which
+        \caption{DM vs. time plot of a bright single pulse from PSR B1859+03 which
         has a DM of 402~pc~cm$^{-3}$ and pulse width of 11~ms (W50).
         }
         \label{fig:dm_time_B1859}
     \end{subfigure}
     \caption{DM-space plot shows the characteristic butterfly pattern of the
     narrow-in-time, dispersed pulse detected by ALFABURST. A single pulse
-    detection of B1859+03 is shown for reference.
+    detection of PSR B1859+03 is shown for reference.
     }
     \label{fig:dm_time}
 \end{figure}
@@ -369,7 +369,7 @@ primary lobe of this pointing.
 
 The telescope logs provide the first indication that this event is due to a
 local source. As ALFABURST is a commensal observation survey the search pipeline
-regularly checks the status of the receiver turret and \gls{if}. \gls{alfa} was
+regularly checks the status of the receiver turret and the \gls{if}. \gls{alfa} was
 logged as active and the \gls{if} remained unchanged during this time, but the
 turret was in a different position than where ALFA should be if it were at the
 secondary focus.
@@ -406,8 +406,8 @@ noise.
     \label{fig:bandpass_response}
 \end{figure}
 
-Evidence for analogue gain variations is further justified by considering data
-over a larger time window.  Approximately 80 seconds earlier large structures
+Evidence for analogue gain variations is further justified by considering the data
+over a larger time window.  Approximately 80 seconds before the event, large structures
 across the band are present (Figure \ref{fig:beam0_dynamic_spec_80s}). Though
 not as narrow-in-time as the event, they appear related to the same phenomenon.
 The DM$-$time plot (Figure \ref{fig:beam0_dmtrials_80s}) shows that much of the
@@ -445,28 +445,30 @@ search space to narrow-in-time width pulses and positive \glspl{dm}.
 
 In isolation, and taking into account the one-off, transient nature of FRBs, the
 initial Beam 0 detection reasonably appear to be astrophysical. But, after
-studying the telescope state and examining data across a larger time window around
-the event, we can confidently classify this even as terrestrial.
+studying the telescope state and examining data across a larger time window (several seconds) 
+around the event, we can confidently classify this event as terrestrial.
 
 \subsection{Low-S/N False-Positive Detections}
 \label{sec:low_snr}
 
 While the D20161204 event (Section \ref{sec:D20161204}) is a rare false-positive
 detection based on a unique telescope state, other false-positive events occur
-regularly.  As automated search pipelines are set up to do an extensive search
-in \gls{dm} trails, pulse width, and starting time it is reasonable to expect a
-large number of low-\gls{snr} false-detections. A survey minimum \gls{snr}
-cut-off (usually 6-10) is set to limit the number of these false-positives.
+regularly.  As automated search pipelines are set up to carry out an extensive
+search in trial \glspl{dm}, pulse width, and starting time, it is reasonable to
+expect a large number of low-\gls{snr} false-positive detections. A minimum
+\gls{snr} cut-off (usually 6-10) is set to limit the number of these
+false-positives.
 
 For example, on July 30, 2015 an apparently 10-$\sigma$ event with a DM of
-1370~pc~cm$^{-3}$ was detected (Figure \ref{fig:D20150730}). The pulse can
-barely be seen in the dynamic spectrum, but in the DM-space plot there is a
-compact peak centred at a DM of 1370~pc~cm$^{-3}$ with no other similar events
-apparent.  After re-analysis of the dynamic spectrum noise this event only has a
-\gls{snr}$\sim$6, but was reported as a higher \gls{snr} because of the data
-window size used to calculate the system noise.  Locally in time there is an
-increase in system noise, leading to a reduced \gls{snr}.  This is not an
-uncommon event and many of these events have no immediate explanation.
+1370~pc~cm$^{-3}$ was detected (Figure \ref{fig:D20150730}) by the ALFABURST
+pipeline in Beam 5. The pulse can barely be seen in the dynamic spectrum, but in
+the DM-time plot, there is a compact peak centred at a DM of 1370~pc~cm$^{-3}$
+with no other similar events apparent.  After re-analysis of the dynamic
+spectrum noise, this event only has an \gls{snr}$\sim$6, but was reported as a
+higher \gls{snr} because of the data window size used to calculate the system
+noise.  Locally in time, there is an increase in system noise, leading to a
+reduced \gls{snr}.  This is not an uncommon event and many of these events have
+no immediate explanation.
 
 % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
 \begin{figure}
@@ -479,17 +481,17 @@ uncommon event and many of these events have no immediate explanation.
     \label{fig:D20150730}
 \end{figure}
 
-These types of events prove to be difficult to validate as astrophysical or
-terrestrial. If sufficient data are not recorded during a detection, evidence to
-be confident about the event's origin. The choice of minimum \gls{snr} is set
+These types of events prove to be difficult to validate as either astrophysical or
+terrestrial if sufficient data are not recorded during a detection, providing with an 
+evidence to be confident about the event's origin. The choice of minimum \gls{snr} is set
 based on the willingness of the observers to sort through false-positive events.
 There are likely many low-\gls{snr} \glspl{frb} that are labelled as
 false-positive events.  The reported detection of a pulse from FRB121102 with
-APERTIF \citep{atel10693} had a \gls{snr}$\approx 4$. In a blind survey across
-different sky positions and DM trials this would not be a significant detection.
+APERTIF \citep{atel10693} had an \gls{snr}$\approx 4$. In a blind survey across
+different sky positions and trial \glspl{dm}, this would not be a significant detection.
 But, the sky position and \gls{snr}-maximized DM of the repeating FRB121102 is
-known, thus a lower \gls{snr} detection may be reasonable to report.  We require
-a large \gls{snr} to validate a detection.  As the parameter space (DM trials,
+known, thus a lower \gls{snr} detection may be reasonable to report.  We usually require
+a large \gls{snr} to validate a detection.  As the parameter space (trial \glspl{dm},
 pulse width range) and number of observations grow we expect to see an increase
 in the number of high-\gls{snr}, false-positive events.
 
@@ -502,16 +504,16 @@ similar fractional bandwidth ($\sim 0.04$) to ALFABURST, but is centred at
 145~MHz.  In this survey, known pulsars regularly transit the beams that are
 fixed in local coordinates, and single pulses are routinely observed.  An
 \gls{rfi} exciser has been developed for this survey that successfully removes
-the majority of false-positive events. Over many thousand of observing hours
+the majority of false-positive events. Over many thousands of observing hours,
 rare events occasionally pass this filter.
 
 A particularly interesting event for which the \gls{snr} was maximized at a
-\gls{dm}$= 85$~pc~cm$^{-3}$ is shown in Figure \ref{fig:lofar_dynamic}. Though
-this is a low DM compared to reported \glspl{frb}, this still proves to be a
+\gls{dm} of 85~pc~cm$^{-3}$ is shown in Figure \ref{fig:lofar_dynamic}. Though
+this event has a low DM compared to the reported \glspl{frb}, this still proves to be a
 relevant example as discussed later in this section.  The narrow-in-time pulse
 can be seen in the dynamic spectrum at frequencies above 146 MHz, but not at
 lower frequencies where it could be hidden by narrow band \gls{rfi}.  The
-dedispersed time series shows a high-\gls{snr} detection of a pulse of
+de-dispersed time series shows a high-\gls{snr} detection of a pulse of
 approximately 20~ms in width.  The beam pointing during the time of the event is
 not associated with any known pulsar or RRAT around a DM$\sim$85~pc~cm$^{-3}$.
 
@@ -520,13 +522,13 @@ not associated with any known pulsar or RRAT around a DM$\sim$85~pc~cm$^{-3}$.
     \includegraphics[width=1.0\linewidth]{figures/LOFAR_dynamic.pdf}
     \caption{A dispersed pulse detected by the automated ARTEMIS search pipeline
     at the LOFAR-UK station. The \gls{snr} is maximized when the signal is
-    dedispersed by a DM of 85~pc~cm$^{-3}$. The dynamic spectrum has a time
+    dedispersed to a DM of 85~pc~cm$^{-3}$. The dynamic spectrum has a time
     resolution of 20~ms and frequency resolution of 3~kHz.
     }
     \label{fig:lofar_dynamic}
 \end{figure}
 
-Plotting the event in DM-space across the ARTEMIS DM range
+Plotting the event in DM-time space across the ARTEMIS DM range
 ($0-320$~pc~cm$^{-3}$, Figure \ref{fig:lofar_dm_time}) shows a strong, compact
 detection as expected of a dispersed pulse. But, the apparent limited bandwidth
 of the pulse means that the pulse does not necessarily follow a $\nu^{-2}$
@@ -547,10 +549,10 @@ The ARTEMIS search pipeline, like most \gls{frb} search pipelines, decimates the
 dynamic spectrum in time to search over a range of pulse widths. The \gls{snr}
 of the event shown in Figure \ref{fig:lofar_dynamic} is maximized for a time
 decimation factor of 64. With a native resolution of $327.68~\mu s$, this
-results in a decimated time resolution of 20~ms. At this resolution the pulse
+results in a decimated time resolution of 20~ms. At this resolution, the pulse
 appears to be a continuous broadband pulse. When an event is detected in the
-pipeline the undecimated dynamic spectrum is saved. Plotting at 1~ms time
-resolution (Figure \ref{fig:lofar_dynamic_high}) the repeating nature of a
+pipeline, the un-decimated dynamic spectrum is saved. Plotting at 1~ms time
+resolution (Figure \ref{fig:lofar_dynamic_high}), the repeating nature of a
 linear frequency-modulated signal used for pulse compression in RADAR can be
 seen.
 
@@ -583,7 +585,7 @@ determine the exact origin of the RADAR pulse, since RADAR is used for
 commercial and military purposes, most of these signal specifications,
 modulations, and source locations are proprietary.
 
-As the RADAR signal is a dispersed pulse we expect to detect such signals with
+As the RADAR signal is a dispersed pulse, we expect to detect such signals with
 \gls{frb} pipelines.  Verification of this event is straightforward when the
 high-time and frequency resolution data is available to reveal the narrow-band,
 pulsed nature of the event.
@@ -619,7 +621,7 @@ portion of the band.
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/XAO_pulse_dynamic.pdf}
     \caption{Example of a detected pulse with the Nanshan Radio Telescope at XAO
-    which is \gls{snr} maximized at a dedispersion of $531.8$~pc~cm$^{-3}$.
+    which is \gls{snr} maximized at a \gls{dm} of $531.8$~pc~cm$^{-3}$.
     Hundreds of such pulses were detected over a period of a few hours. The
     orange bars represent regions that have had significant constant-in-time
     \gls{rfi} replaced by noise.
@@ -633,11 +635,11 @@ search.  Further, the pulses were seen at different pointings across the sky.
 Most were detected at a low altitude pointing angle, but some were detected
 close to zenith.  This rules out a pulsar, or an astronomical source in general.
 
-Figure \ref{fig:xao_summed} shows the sum of the dedispersed (using DM
+Figure \ref{fig:xao_summed} shows the sum of the de-dispersed (using a DM of
 531.8~pc~cm$^{-3}$) phase-aligned pulses.  This `folded' spectrum shows an
 S-shaped broadband pulse which covers most of the observing band. There is also
 regular, narrow-band frequency modulation ($\sim4$~MHz) in the pulse structure.
-The structure is likely due to non-linearly frequency modulation, used in
+The structure is likely due to non-linear frequency modulation, used in
 chirped RADAR systems, similar to the linear frequency-modulated signal observed
 in Section \ref{sec:LOFAR_RADAR}.
 
@@ -647,7 +649,7 @@ in Section \ref{sec:LOFAR_RADAR}.
     \caption{The `folded' dynamic spectrum of 182 high-\gls{snr} pulses detected
     with the Nanshan Radio Telescope.  The low-level, non-linear frequency
     modulation can be seen across the band. The orange bars represent regions
-    that have had significant constant-in-time RFI \gls{rfi} replaced by noise.
+    that have had significant constant-in-time \gls{rfi} replaced by noise.
     }
     \label{fig:xao_summed}
 \end{figure}
@@ -668,13 +670,13 @@ the telescope was only sensitive to the highest \gls{snr} event, it would be
 difficult to show that the event was due to \gls{rfi}.  Multiple reported
 \glspl{frb}, including the repeater FRB121102, do not cover the entire observing
 band. This has been explained by various intrinsic or intermediate effects
-(scintillation, plasma lenses). In the case of a single detected pulse, it would
+(scintillation, plasma lensing). In the case of a single detected pulse, it would
 be reasonable to report it as an astronomical \gls{frb}.
 
 A dispersion relation parameter estimation of the individual pulses was found to
 deviate from a $\nu^{-2}$ relation by $1.5 \sigma$. A dispersed astrophysical
 source should always follow a cold plasma $\nu^{-2}$ relation. As shown, sources
-which approximately fit this relation will still be detected with dedispersion
+which approximately fit this relation will still be detected with de-dispersion
 algorithms.
 
 The \gls{snr}-maximized DM of the XAO events is due to the frequency structure
@@ -689,7 +691,7 @@ $\nu_{\textrm{p,0}} = 1350$~MHz to $\nu_{\textrm{p,1}} = 1750$~MHz (Figure
 t_{\textrm{pulse}}$ is fixed such that central frequency range of the pulse has
 an \gls{snr}-maximized DM of approximately 530~pc~cm$^{-3}$. The pulse is given
 a width ($\Delta t_{\textrm{width}}$) by convolving the logistic function with a
-3~ms wide Gaussian. The amplitude pulse is set to unity across the extent of the
+3~ms wide Gaussian. The amplitude of the pulse is set to unity across the extent of the
 band.
 
 % figures/simulation_digram.odg
@@ -725,14 +727,14 @@ frequencies and receiver bandwidths (Figure \ref{fig:xao_simulated_dm}). The
 observing frequency is near the centre of the pulse the apparent DM of
 $\sim530$~pc~cm$^{-3}$ maximizes the detection \gls{snr}. However, when the
 central observing frequency is shifted relative to the pulse centre frequency a
-range of \gls{snr}-maximized DM's are reported, depending on the receiver
+range of \gls{snr}-maximized \glspl{dm} are reported, depending on the receiver
 bandwidth. This model can be used to approximate an astrophysical \gls{frb}
 signal at any frequency and bandwidth for a given receiver.
 
 Since the initial detection of the pulses in November 2016 the pulses have not
-be re-detected. While the source is terrestrial in origin, these pulses present a
+been re-detected. While the source is terrestrial in origin, these pulses present a
 situation where terrestrial sources can easily be misidentified as one-off
-astrophysical events. This event, along with the other events presented in this
+astronomical events. This event, along with the other events presented in this
 section should present a case for developing common criteria, observing
 strategies, and data recording to improve the confidence in \gls{frb}
 detections.
@@ -873,25 +875,44 @@ index, this could indicate the pulse flux drops below the system noise in parts
 of the band. If a shallow spectral index is fit to a band-limited pulse, this
 could indicate the pulse is intrinsically band-limited.
 
-\paragraph{Scattering:}
+\paragraph{Scattering and Scintillation:}
 
-Does the pulse appear to be scatter broadened by the ISM, as in the case of e.g
-FRB130626 \cite{2016MNRAS.460L..30C}? If so, can the scatter broadening be
-modeled with an exponential tail ($\propto e^{-t/\tau}$) typical of a thin
-screen model (e.g. \citealt{Williamson1972})? In particular, if the pulse is
-broadband, can a scattering spectral index ($\tau \propto \nu^{-\alpha}$) be fit
-to the data? Most ISM models predict high spectral indices with $\alpha =4$ or
-$4.4$, (e.g. \citealt{Rickett1977}). Frequency-dependent scattering is strong
-evidence for the propagation of radio waves through an inhomogenous ISM, and
-hence for sources to be astrophysical. 
+Accurate scattering and scintillation measurements are concrete evidence for radio waves having passed through an inhomogeneous \gls{ism}, and can help infer properties of either the host galaxy of the FRB,  the media surrounding it or the \gls{igm}.
 
-\paragraph{Scintillation:}
+Scattering timescales are estimated, as e.g. in the case of FRB130626 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened pulse. The characteristic timescale, $\tau$, is expected to have a strong frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}). Spectral indices computed from broad band FRBs, should be compared to these expected values. Comparing obtained $\tau$ values to values predicted by current electron density models for the Milky Way (e.g. \citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) provides further proof for its extra galactic nature.
 
-Does the dynamic spectrum show apparent scintillation as in the case of
-FRB110523 \cite{2015Natur.528..523M}?  Similar to scattering, apparent
-scintillation is evidence in favour of an astrophysical source. Though, as seen
-in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear
-similar to scintillation.
+Similarly, pulse scintillation is evidence for passage through an inhomogenous medium. Though, as seen
+in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear similar to scintillation. Scintillation estimates are obtained by first computing the auto-covariance function of the burst's spectrum, and then the  decorrelation bandwidth ($\Delta \nu_d$) defined as the FWHM of this function. The $\Delta \nu_d$ measurement corresponds to a broadening (scattering) timescale of $\sim 1/(2\pi\Delta \nu_d)$.
+
+In the cases of e.g. FRB110523 and FRB170827, measurements of both scattering and scintillation have led to significant insights \citep{2015Natur.528..523M,2018arXiv180305697F}. 
+
+In both cases the $\tau$ values, obtained through exponential fits to the broadened pulse shapes, were much larger than the timescales associated with the scintillation ($\Delta\nu_d$) measurements. In the case of FRB110523, the $\Delta\nu_d$ value ($\sim$1 MHz) was found to be similar to a nearby pulsar, suggesting that the scintillation is produced in the Milky Way. \cM{Strength of nearby pulsar to observe, make sure to mention elsewhere} The two timescales are modeled using two distinct scattering screens: a Galactic screen and one close to the FRB. In a two-screen model, scintillation is only observed if the extra-galactic screen is sufficiently far away to be unresolved by the Galactic scattering surface. As such, the authors concluded that FRB110523 is likely surrounded by a magnetized plasma. 
+
+Similarly, two distinct scattering timescales were calculated for FRB170827 and interpreted to be associated with 1) the Milky Way, and 2) either a host galaxy or the IGM. This FRB is the first to be discovered by the machine-learning detection algorithm implemented at the Molonglo Observatory Synthesis Radio Telescope (MOST). The system triggers voltage data capture (at the native time and frequency resolution), allowing for offline coherent dedispersion. \cM{This last info should possibly live somewhere else.}
+
+
+
+
+
+
+%If the pulse is broad band
+
+%Does the pulse appear to be scatter broadened by the ISM, as in the case of e.g
+%FRB130626 \cite{2016MNRAS.460L..30C}? If so, can the scatter broadening be
+%modeled with an exponential tail ($\propto e^{-t/\tau}$) typical of a thin
+%screen model (e.g. \citealt{Williamson1972})? In particular, if the pulse is
+%broadband, can a scattering spectral index ($\tau \propto \nu^{-\alpha}$) be fit
+%to the data? Most ISM models predict high spectral indices with $\alpha =4$ or
+%$4.4$, (e.g. \citealt{Rickett1977}). Frequency-dependent scattering is strong
+%evidence for the propagation of radio waves through an inhomogenous ISM, and
+%hence for sources to be astrophysical. 
+
+%\paragraph{Scintillation:}
+
+%Does the dynamic spectrum show apparent scintillation as in the case of
+%FRB110523 \cite{2015Natur.528..523M}?  
+
+
 
 \paragraph{Polarization Characteristics:}
 
@@ -899,7 +920,9 @@ Were full Stokes parameters measured for the pulse? Does the pulse show
 polarization characteristics? Can a rotation measure be fit to the pulse?
 Multiple \glspl{frb} have been reported to be polarized.  FRB121102 appears to
 be linearly polarized after the extreme \gls{rm} is corrected for
-\citep{2018Natur.553..182M}.  \gls{rfi} has complex polarization
+\citep{2018Natur.553..182M}. \cM{Also, FRB110523, is measured to have a high  fraction ($\sim$ 44\%) of linear polarization. The best RM fit to this data ($\sim$ -186.1 rad m$^{-2}$), is more than a hundred times higher than the predicted Galactic value from RM models for this line of sight. Where possible it is insightful to compare RM values to RM measurements of nearby pulsars. The RM estimate for FRB110523 was compared to an observation of PSR B2319+60, less than 2 degrees away on the sky, using the same pipeline.}
+
+\gls{rfi} has complex polarization
 characteristics, such as Phase-shift keying, as a way of encoding information.
 These encodings schemes will appear different from polarized astrophysical
 sources.
@@ -1074,7 +1097,7 @@ colour coded table.
 
 % FRB 090625: prototypical with potential scattering
 
-% FRB 110523: No GBT public data?
+% FRB 110523: No GBT public data? Data is available. I have fits file - Marisa.
 
 % FRB 110703: dodgy filterbank
 
@@ -1186,9 +1209,10 @@ The scintillation de-correlation bandwidth calculated for FRB110523 is found to 
 
 The scattering observed through pulse broadening however, is much larger - on the order of milliseconds. This leads the authors to model the multipath propagation of the radio waves using two distinct scattering screens: one associated with the Milky Way and one close to the source. 
 
-(Scintillation should only occur if the first scattering screen is unresolved by the second 
+(Scintillation should only occur if the first scattering screen is unresolved by the second.This allows them to estimate the host screen position)
 
-\citet{} also claims that the scattering observed for this source is too strong to be associated with a host galaxy, and that it is more likely caused by dense nebula surrounding the source. The data are fit across three subbands with a two screen scattering model.
+In their model the Galactic screen then produces micro-second scintillation while the host screen produce the larger millisecond scattering tail timescale. Best fit scattering spectral index is -3.6. 
+
 
 
 
