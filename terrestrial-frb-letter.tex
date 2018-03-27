@@ -877,23 +877,18 @@ could indicate the pulse is intrinsically band-limited.
 
 \paragraph{Scattering and Scintillation:}
 
-Accurate scattering and scintillation measurements are concrete evidence for radio waves having passed through an inhomogeneous ISM, and can help infer properties of either the host galaxy of the FRB,  the media surrounding it or the Intergalactic Medium (IGM).
+Accurate scattering and scintillation measurements are concrete evidence for radio waves having passed through an inhomogeneous \gls{ism}, and can help infer properties of either the host galaxy of the FRB,  the media surrounding it or the \gls{igm}.
 
-Scattering timescales are estimated, as e.g. in the case of FRB130626 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened pulse. The characteristic timescale is expected to have a strong frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting spectral indices $\alpha =4$ and $4.4$ (e.g. \citealt{Rickett1977}). Spectral indices computed from broad band FRBs, should be compared to these expected values. Comparing obtained $\tau$ values to values predicted by current electron density models for the Milky Way \cite{2002astro.ph..7156C,2017ApJ...835...29Y} provides further proof for its extra galactic nature.
+Scattering timescales are estimated, as e.g. in the case of FRB130626 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened pulse. The characteristic timescale, $\tau$, is expected to have a strong frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}). Spectral indices computed from broad band FRBs, should be compared to these expected values. Comparing obtained $\tau$ values to values predicted by current electron density models for the Milky Way (e.g. \citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) provides further proof for its extra galactic nature.
 
-Similarly, pulse scintillation is evidence for passage through an inhomogenous medium, and therefore counts in favour of an astrophysical source. Though, as seen
+Similarly, pulse scintillation is evidence for passage through an inhomogenous medium. Though, as seen
 in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear similar to scintillation. Scintillation estimates are obtained by first computing the auto-covariance function of the burst's spectrum, and then the  decorrelation bandwidth ($\Delta \nu_d$) defined as the FWHM of this function. The $\Delta \nu_d$ measurement corresponds to a broadening (scattering) timescale of $\sim 1/(2\pi\Delta \nu_d)$.
 
 In the cases of e.g. FRB110523 and FRB170827, measurements of both scattering and scintillation have led to significant insights \citep{2015Natur.528..523M,2018arXiv180305697F}. 
 
-In both cases the $\tau$ values, obtained through exponential fits to the broadened pulses, were much larger than the timescales associated with the scintillation ($\Delta\nu_d$) measurements. In the case of FRB110523, the $\Delta\nu_d$ value ($\sim$1 MHz) was found to be similar to a nearby pulsar, suggesting that the scintillation timescale is produced in the Milky Way. The two timescales are modeled by using two distinct scattering screens: a Galactic scattering screen and one close to the FRB. In a two-screen model, scintillation is only observed if the extra-galactic screen is sufficiently far away to be unresolved by the Galactic scattering surface. The authors concluded that FRB110523 is likely surrounded by a magnetized plasma. 
+In both cases the $\tau$ values, obtained through exponential fits to the broadened pulse shapes, were much larger than the timescales associated with the scintillation ($\Delta\nu_d$) measurements. In the case of FRB110523, the $\Delta\nu_d$ value ($\sim$1 MHz) was found to be similar to a nearby pulsar, suggesting that the scintillation is produced in the Milky Way. \cM{Strength of nearby pulsar to observe, make sure to mention elsewhere} The presence of two timescales lead to two-screen scattering models: a Galactic screen and a screen close to the FRB. Since scintillation will only be observed if the extra-galactic screen is sufficiently far away to be unresolved by the Galactic scattering surface, the authors concluded that FRB110523 is likely surrounded by a magnetized plasma. 
 
-Similarly, two distinct scattering timescales were calculated for FRB170827 and interpreted to be associated with 1) the Milky Way, and 2) either a host galaxy or the IGM. This FRB was recently discovered by the machine-learning detection algorithm running at the Molonglo Observatory Synthesis Radio Telescope (MOST). The system triggers voltage data capture (at the native time and frequency resolution), allowing for offline coherent dedispersion. 
-
-
-
-
-
+Similarly, two distinct scattering timescales were calculated for FRB170827 and interpreted to be associated with 1) the Milky Way, and 2) either a host galaxy or the IGM. This FRB is the first to be discovered by the machine-learning detection algorithm implemented at the Molonglo Observatory Synthesis Radio Telescope (MOST). The system triggers voltage data capture (at the native time and frequency resolution), allowing for offline coherent dedispersion. \cM{This last info should possibly live somewhere else.}
 
 
 
@@ -1102,7 +1097,7 @@ colour coded table.
 
 % FRB 090625: prototypical with potential scattering
 
-% FRB 110523: No GBT public data?
+% FRB 110523: No GBT public data? Data is available. I have fits file - Marisa.
 
 % FRB 110703: dodgy filterbank
 
@@ -1144,6 +1139,7 @@ show which model is correct from the available data.
 
 % FRB130729
 % aslxlap07:/local/griffin/data/FRB/FRB130729/FRB130729.ipynb
+% TODO: 861 dedispersion time series
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB130729.pdf}
     \caption{FRB130729 dedispersed with a DM of 852~pc~cm$^{-3}$ (black), this
