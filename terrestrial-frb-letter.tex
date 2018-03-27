@@ -594,7 +594,7 @@ pulsed nature of the event.
 \label{sec:xao_event}
 
 % Likely answer:
-% RADAR for tracking a space re-entry?
+% RADAR for tracking a space re-entry
 % repeating nature to keep constant track
 % once-off nature means it happened only once
 % Jiuquan Satellite Launch Center not far from XAO.
@@ -877,42 +877,30 @@ could indicate the pulse is intrinsically band-limited.
 
 \paragraph{Scattering and Scintillation:}
 
-Accurate scattering and scintillation measurements are concrete evidence for radio waves having passed through an inhomogeneous \gls{ism}, and can help infer properties of either the host galaxy of the FRB,  the media surrounding it or the \gls{igm}.
+Does the pulse appear to be scattered and or scintillating?  Accurate scattering
+and scintillation measurements are concrete evidence for radio waves having
+passed through an inhomogeneous \gls{ism}, and can help infer properties of
+either the host galaxy of the FRB,  the media surrounding it or the \gls{igm}.
 
-Scattering timescales are estimated, as e.g. in the case of FRB130626 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened pulse. The characteristic timescale, $\tau$, is expected to have a strong frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}). Spectral indices computed from broad band FRBs, should be compared to these expected values. Comparing obtained $\tau$ values to values predicted by current electron density models for the Milky Way (e.g. \citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) provides further proof for its extra galactic nature.
+Scattering timescales are estimated, as in the case of FRB130626
+\citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto
+e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened
+pulse. The characteristic timescale, $\tau$, is expected to have a strong
+frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting
+a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}).
+Spectral indices computed from broad band FRBs, should be compared to these
+expected values. Comparing obtained $\tau$ values to values predicted by current
+electron density models for the Milky Way (e.g.
+\citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) provides further proof for
+its extra galactic nature.
 
-Similarly, pulse scintillation is evidence for passage through an inhomogenous medium. Though, as seen
-in the XAO event (Section \ref{sec:xao_event}), frequency modulation can appear similar to scintillation. Scintillation estimates are obtained by first computing the auto-covariance function of the burst's spectrum, and then the  decorrelation bandwidth ($\Delta \nu_d$) defined as the FWHM of this function. The $\Delta \nu_d$ measurement corresponds to a broadening (scattering) timescale of $\sim 1/(2\pi\Delta \nu_d)$.
-
-In the cases of e.g. FRB110523 and FRB170827, measurements of both scattering and scintillation have led to significant insights \citep{2015Natur.528..523M,2018arXiv180305697F}. 
-
-In both cases the $\tau$ values, obtained through exponential fits to the broadened pulse shapes, were much larger than the timescales associated with the scintillation ($\Delta\nu_d$) measurements. In the case of FRB110523, the $\Delta\nu_d$ value ($\sim$1 MHz) was found to be similar to a nearby pulsar, suggesting that the scintillation is produced in the Milky Way. \cM{Strength of nearby pulsar to observe, make sure to mention elsewhere} The presence of two timescales lead to two-screen scattering models: a Galactic screen and a screen close to the FRB. Since scintillation will only be observed if the extra-galactic screen is sufficiently far away to be unresolved by the Galactic scattering surface, the authors concluded that FRB110523 is likely surrounded by a magnetized plasma. 
-
-Similarly, two distinct scattering timescales were calculated for FRB170827 and interpreted to be associated with 1) the Milky Way, and 2) either a host galaxy or the IGM. This FRB is the first to be discovered by the machine-learning detection algorithm implemented at the Molonglo Observatory Synthesis Radio Telescope (MOST). The system triggers voltage data capture (at the native time and frequency resolution), allowing for offline coherent dedispersion. \cM{This last info should possibly live somewhere else.}
-
-
-
-
-
-
-%If the pulse is broad band
-
-%Does the pulse appear to be scatter broadened by the ISM, as in the case of e.g
-%FRB130626 \cite{2016MNRAS.460L..30C}? If so, can the scatter broadening be
-%modeled with an exponential tail ($\propto e^{-t/\tau}$) typical of a thin
-%screen model (e.g. \citealt{Williamson1972})? In particular, if the pulse is
-%broadband, can a scattering spectral index ($\tau \propto \nu^{-\alpha}$) be fit
-%to the data? Most ISM models predict high spectral indices with $\alpha =4$ or
-%$4.4$, (e.g. \citealt{Rickett1977}). Frequency-dependent scattering is strong
-%evidence for the propagation of radio waves through an inhomogenous ISM, and
-%hence for sources to be astrophysical. 
-
-%\paragraph{Scintillation:}
-
-%Does the dynamic spectrum show apparent scintillation as in the case of
-%FRB110523 \cite{2015Natur.528..523M}?  
-
-
+Similarly, pulse scintillation is evidence for passage through an inhomogenous
+medium.  Scintillation estimates are obtained by first computing the
+auto-covariance function of the burst's spectrum, and then the  decorrelation
+bandwidth ($\Delta \nu_d$) defined as the FWHM of this function.  The $\Delta
+\nu_d$ measurement corresponds to a broadening (scattering) timescale of $\sim
+1/(2\pi\Delta \nu_d)$.  Though, as seen in the XAO event (Section
+\ref{sec:xao_event}), frequency modulation can appear similar to scintillation.
 
 \paragraph{Polarization Characteristics:}
 
@@ -920,12 +908,16 @@ Were full Stokes parameters measured for the pulse? Does the pulse show
 polarization characteristics? Can a rotation measure be fit to the pulse?
 Multiple \glspl{frb} have been reported to be polarized.  FRB121102 appears to
 be linearly polarized after the extreme \gls{rm} is corrected for
-\citep{2018Natur.553..182M}. \cM{Also, FRB110523, is measured to have a high  fraction ($\sim$ 44\%) of linear polarization. The best RM fit to this data ($\sim$ -186.1 rad m$^{-2}$), is more than a hundred times higher than the predicted Galactic value from RM models for this line of sight. Where possible it is insightful to compare RM values to RM measurements of nearby pulsars. The RM estimate for FRB110523 was compared to an observation of PSR B2319+60, less than 2 degrees away on the sky, using the same pipeline.}
-
-\gls{rfi} has complex polarization
-characteristics, such as Phase-shift keying, as a way of encoding information.
-These encodings schemes will appear different from polarized astrophysical
-sources.
+\citep{2018Natur.553..182M}. FRB110523 is measured to have a high fraction
+($\sim$ 44\%) of linear polarization. The best RM fit to this data ($\sim$
+-186.1 rad m$^{-2}$) is more than a hundred times higher than the predicted
+Galactic value from RM models for this line of sight. Where possible it is
+insightful to compare RM values to RM measurements of nearby pulsars. The RM
+estimate for FRB110523 was compared to an observation of PSR B2319+60, less than
+2 degrees away on the sky, using the same pipeline.  \gls{rfi} has complex
+polarization characteristics, such as Phase-shift keying, as a way of encoding
+information.  These encodings schemes will appear different from polarized
+astrophysical sources, and will not be well fit by a Faraday rotation model.
 
 \paragraph{DM Excess:}
 
@@ -1213,7 +1205,11 @@ The scattering observed through pulse broadening however, is much larger - on th
 
 In their model the Galactic screen then produces micro-second scintillation while the host screen produce the larger millisecond scattering tail timescale. Best fit scattering spectral index is -3.6. 
 
+% scatter and scintil
+In the cases of e.g. FRB110523 and FRB170827, measurements of both scattering and scintillation have led to significant insights \citep{2015Natur.528..523M,2018arXiv180305697F}. 
+In both cases the $\tau$ values, obtained through exponential fits to the broadened pulse shapes, were much larger than the timescales associated with the scintillation ($\Delta\nu_d$) measurements. In the case of FRB110523, the $\Delta\nu_d$ value ($\sim$1 MHz) was found to be similar to a nearby pulsar, suggesting that the scintillation is produced in the Milky Way. \cM{Strength of nearby pulsar to observe, make sure to mention elsewhere} The presence of two timescales lead to two-screen scattering models: a Galactic screen and a screen close to the FRB. Since scintillation will only be observed if the extra-galactic screen is sufficiently far away to be unresolved by the Galactic scattering surface, the authors concluded that FRB110523 is likely surrounded by a magnetized plasma. 
 
+Similarly, two distinct scattering timescales were calculated for FRB170827 and interpreted to be associated with 1) the Milky Way, and 2) either a host galaxy or the IGM. This FRB is the first to be discovered by the machine-learning detection algorithm implemented at the Molonglo Observatory Synthesis Radio Telescope (MOST). The system triggers voltage data capture (at the native time and frequency resolution), allowing for offline coherent dedispersion. \cM{This last info should possibly live somewhere else.}
 
 
 %ref: spitler et al, vishal
