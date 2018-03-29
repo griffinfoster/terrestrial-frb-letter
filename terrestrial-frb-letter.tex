@@ -101,7 +101,7 @@ Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
 Marisa Geyer$^{3}$,
 Aris Karastergiou$^{1}$,
 Kaustubh Rajwade$^{4}$, 
-Mayuresh Surnis$^{5,6}$
+\and Mayuresh Surnis$^{5,6}$
 \\
 % List of institutions
 $^{1}$University of Oxford, Sub-Department of Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, United Kingdom\\
@@ -1248,29 +1248,12 @@ Telescope (MOST). The system triggers voltage data capture (at the native time
 and frequency resolution), allowing for offline coherent dedispersion. \cM{This
 last info should possibly live somewhere else.}
 
-
 %ref: spitler et al, vishal
 % TODO
 % FRB 121102: based on the complete observation including follow-ups. the only
 % truly known astrophysical frb
 % reference varying shapes of FRB121102
 % what would happen if an odd pulse was first seen from 121102?
-\subsection{Terrestrial signals}
-
-Also included in Figure \ref{fig:heat_map} are the results for the various
-detections discussed in Section \ref{sec:false-pos}. We also include
-PSR~B1859+03 as an example of single pulses from a pulsar during the ALFABURST
-surveys.
-
-In all these cases there is at least one failure.  The LOFAR RADAR event shows
-artificial high-resolution structure.  Perytons and the XAO repeater fail the
-dispersion relation test and repeat at different telescope pointings. The ALFA
-gain variation has multiple negative test results relating to the system
-response compared to the expected response.  The low \gls{snr} event does not
-have a single critical test failure but fares poorly in several tests.  No
-single test is sufficient to decide that an event is terrestrial. Figure
-\ref{fig:heat_map} demonstrates how, given enough tests, a strong case can be
-made to classify all these events as terrestrial.
 
 %\subsubsection{Low-\gls{snr} Follow-up Search}
 %
@@ -1363,6 +1346,21 @@ made to classify all these events as terrestrial.
 %this test which provides strong evidence for the astrophysical nature of a
 %pulse.
 
+\subsection{Terrestrial signals}
+
+Also included in Figure \ref{fig:heat_map} are the results for the various
+detections discussed in Section \ref{sec:false-pos}. We also include
+PSR~B1859+03 as an example of single pulses from a pulsar during the ALFABURST
+surveys.  In all these cases there is at least one failure.  The LOFAR RADAR
+event shows artificial high-resolution structure.  Perytons and the XAO repeater
+fail the dispersion relation test and repeat at different telescope pointings.
+The ALFA gain variation has multiple negative test results relating to the
+system response compared to the expected response.  The low \gls{snr} event does
+not have a single critical test failure but fares poorly in several tests.  No
+single test is sufficient to decide that an event is terrestrial. Figure
+\ref{fig:heat_map} demonstrates how, given enough tests, a strong case can be
+made to classify all these events as terrestrial.
+
 \section{Detection Reporting}
 \label{sec:detect_report}
 
@@ -1374,10 +1372,10 @@ filter for dispersed pulses. As discussed in Section \ref{sec:verify_crit} there
 are numerous additional tests that can be performed to verify a detection as
 astrophysical. The basic criteria can be fulfilled using the dynamic spectrum
 from the search pipeline. But, many of these criteria require capturing more
-extensive data. It is not always possible to sufficient data to text every
-criteria, nor is it possible with every observational setup. But, being able to
-test more criteria will lead to higher confidence in reporting an event as
-astrophysical.
+extensive data. It is not always possible to caputre sufficient data to test
+every criteria, nor is it possible with every observational setup. But, being
+able to test more criteria will lead to higher confidence in reporting an event
+as astrophysical.
 
 \subsection{Minimum Reporting}
 
@@ -1408,18 +1406,20 @@ independent pipelines.  A minimum reporting should include:
 
 These requirements are typically met in previously reported \gls{frb}
 detections. Though, often the public data has been normalized, which is useful
-for studying the event but hides any instrumentational effects.  The last point,
-a guide on which software was used is often not reported.  Difference in
-software and data formats can have slightly different results, such as the
-reported \gls{snr} or time definition. For most of the Parkes detections
-filterbank data is publicly available and FRBCAT \citep{2016PASA...33...45P}
-provides a well-curated repository for information and links to data sources.
+for studying the event but can hide instrumentational effects.  The last point,
+a guide on which software was used is often not reported.  Differences in
+software and data formats can produce different results, such as the reported
+\gls{snr} or time definition. For most of the Parkes detections filterbank data
+is publicly available and FRBCAT \citep{2016PASA...33...45P} provides a
+well-curated repository for information and links to data sources.
 
 \subsection{Desirable Reporting}
 
 To allow for a more complete set of criteria tests and further improve the
 evidence of an astrophysical detection more data can be captured and reported.
 More desirable reporting includes:
+
+% TODO: test observation of known pulsar near by in sky and time
 
 \begin{enumerate}
     \item Dynamic spectra which not only encompasses the detected pulse, but
@@ -1447,16 +1447,17 @@ are used the signals can be correlated for coincidence detection and
 localization.
 
 Not all verification criteria need to be or can even be checked, but an effort
-should be made in to do so. In the VOEvent trigger standard for \glspl{frb}
+should be made to do so. In the VOEvent trigger standard for \glspl{frb}
 \citep{2017arXiv171008155P} there is an `importance' parameter which indicates
 the confidence in a detection. It is not possible to combine all the
 verification criteria into a single metric in general. But, some combination of
 checks can be done on an individual telescope or experiment basis to form a
 metric that can be reported in VOEvent. As further checks are done, those that
-take more time and effort, updates and retraction events can be sent.
+take more time and effort, updates and retraction event triggers can be sent.
 
 \subsection{False-Positive Reporting}
 
+% TODO: update after 4.1 is done
 During a search for anomalous signals it should be expected that there are a
 number of events reported which are false-positives such as Perytons
 \citep{2011ApJ...727...18B} and the events reported in Section
