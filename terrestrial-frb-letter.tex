@@ -877,37 +877,40 @@ index, this could indicate the pulse flux drops below the system noise in parts
 of the band. If a shallow spectral index is fit to a band-limited pulse, this
 could indicate the pulse is intrinsically band-limited.
 
-\paragraph{Scattering and Scintillation:}
+\paragraph{Scattering}
 
 Does the pulse appear to be scattered and or scintillating?  Accurate scattering
-and scintillation measurements are concrete evidence for radio waves having
+and scintillation measurements are evidence for radio waves having
 passed through an inhomogeneous \gls{ism}, and can help infer properties of
-either the host galaxy of the FRB,  the media surrounding it or the \gls{igm}.
+either the host galaxy of the FRB,  the media surrounding it, or the \gls{igm}.
 
 Scattering timescales are estimated, as in the case of FRB130626
 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto
 e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened
 pulse. The characteristic timescale, $\tau$, is expected to have a strong
 frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting
-a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}).
+a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}), and observations of pulsars often showing $\alpha < 4$.
 Spectral indices computed from broad band FRBs, should be compared to these
-expected values. Comparing obtained $\tau$ values to values predicted by current
-electron density models for the Milky Way (e.g.
-\citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) provides further proof for
-its extra galactic nature.
+expected values. Measurement of a scattering tail with a spectral index in the range mentioned above warrants the designation of "Identical", while gradual departure from this picture should be described using the other responses. 
 
-Similarly, pulse scintillation is evidence for passage through an inhomogenous
-medium.  Scintillation estimates are obtained by first computing the
-auto-covariance function of the burst's spectrum, and then the  decorrelation
-bandwidth ($\Delta \nu_d$) defined as the FWHM of this function.  The $\Delta
+Comparing obtained $\tau$ values to values predicted by current
+electron density models for the Milky Way (e.g.
+\citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) also provides a test for the extra galactic nature of a detected signal.
+
+\paragraph{Scintillation}
+
+As with scattering, scintillation may also occur due to passage through an inhomogeneous medium. Scintillation in pulsars manifests itself as an organized pattern of time and frequency modulation of the total intensity. For FRBs, the scintillation timescale may be longer than the duration of the pulse, hence not sampled. The scintillation bandwidth on the other hand may be observable due to the broad band systems used for searching.  Scintillation bandwidth ($\Delta \nu_d$) estimates are obtained by computing the FWHM of the 
+auto-covariance function of the spectrum.  The $\Delta
 \nu_d$ measurement corresponds to a broadening (scattering) timescale of $\sim
-1/(2\pi\Delta \nu_d)$.  Though, as seen in the XAO event (Section
-\ref{sec:xao_event}), frequency modulation can appear similar to scintillation.
+1/(2\pi\Delta \nu_d)$.  
+
+The highest score should be attributed to sources whose scintillation bandwidth is consistent with a measurement of scatter-broadening, and lower scores for lower consistency. As seen in the XAO event (Section
+\ref{sec:xao_event}), frequency modulation can appear similar to scintillation, hence this criterion should be used with care and in conjunction with scattering measurements. 
 
 \paragraph{Polarization Characteristics:}
 
 Were full Stokes parameters measured for the pulse? Does the pulse show
-polarization characteristics? Can a rotation measure be fit to the pulse?
+polarization characteristics? Can a rotation measure be fit to the pulse? Positive answers to these questions should result in a high score. 
 Multiple \glspl{frb} have been reported to be polarized.  FRB121102 appears to
 be linearly polarized after the extreme \gls{rm} is corrected for
 \citep{2018Natur.553..182M}. FRB110523 is measured to have a high fraction
@@ -918,7 +921,7 @@ insightful to compare RM values to RM measurements of nearby pulsars. The RM
 estimate for FRB110523 was compared to an observation of PSR B2319+60, less than
 2 degrees away on the sky, using the same pipeline.  \gls{rfi} has complex
 polarization characteristics, such as Phase-shift keying, as a way of encoding
-information.  These encodings schemes will appear different from polarized
+information.  These encoding schemes will appear different from polarized
 astrophysical sources, and will not be well fit by a Faraday rotation model.
 
 \paragraph{DM Excess:}
@@ -1078,6 +1081,22 @@ previous reported \glspl{frb} based on the available literature and public data.
 This analysis provides examples of answers 1-6 from Section \ref{sec:criteria}
 for a number of sources. Figure \ref{fig:heat_map} captures the results in a
 colour coded table. 
+
+Overall, it is clear that the detections reported in the literature score well against the prescribed criteria.
+
+Starting from the lowest scores (orange boxes), we note that FRB... DESCRIPTION THAT LED TO SCORE.
+
+Continue with BLUE and confirm you prototypical ranges in a short statement about GREEN. 
+
+Finally, discuss YELLOW and how verification is complicated and dependent on available data. 
+
+
+
+
+
+
+
+
 
 % TODO:
 % cases:
@@ -1368,12 +1387,12 @@ The one-off nature of \glspl{frb} makes it essential to do sufficient
 due-dilligence when reporting on a detection or triggering a follow-up
 observation to verify a true-positive detection. Over the past decade of
 \gls{frb} surveys a number of techniques have been developed to efficiently
-filter for dispersed pulses. As discussed in Section, \ref{sec:verify_crit}
+filter for dispersed pulses. As discussed in Section \ref{sec:verify_crit},
 numerous additional tests can be performed to verify a detection as
 astrophysical. The basic criteria can be tested using the dynamic spectrum from
 the search pipeline. But, many of these criteria require capturing more
 extensive data. It is not always possible to capture sufficient data to test
-every criterium, nor is it possible with every observational setup.  But, being
+every criterion, nor is it possible with every observational setup.  But, being
 able to test more criteria will lead to higher confidence in reporting an event
 as astrophysical.
 
@@ -1382,7 +1401,7 @@ as astrophysical.
 If most \glspl{frb} are indeed one-off events, then the detection data are the
 only data that will be available.  At a minimum, a reasonable detection should
 be reported with data made publicly available.  This allows independent
-verification, and can be used as input data sets to test on independent
+verification, and can be used as input to test independent
 pipelines. Minimum reporting should include:
 
 \begin{enumerate}
@@ -1406,7 +1425,7 @@ pipelines. Minimum reporting should include:
 
 These requirements are typically met in previously reported \gls{frb}
 detections. Though, often the public data has been normalized, which is useful
-for studying the event but can hide instrumentational effects.  The last point,
+for studying the event but can hide instrumental effects.  The last point,
 a guide on which software was used is often not reported.  Differences in
 software and data formats can produce different results, such as the reported
 \gls{snr} or time definition. For most of the Parkes detections filterbank data
