@@ -1366,26 +1366,26 @@ made to classify all these events as terrestrial.
 \section{Detection Reporting}
 \label{sec:detect_report}
 
-The one-off nature of \glspl{frb} makes it essential that when reporting on a
-detection or triggering a follow-up observation that significant due-diligence
-is done in order to verify a true-positive detection. Over the past decade of
+\cM{The one-off nature of \glspl{frb} makes it essential to do sufficient due-dilligence \sout{that} when reporting on a
+detection or triggering a follow-up observation \sout{that significant due-diligence
+is done in order} to verify a true-positive detection.} Over the past decade of
 \gls{frb} surveys a number of techniques have been developed to efficiently
-filter for dispersed pulses. As discussed in Section \ref{sec:verify_crit} there
-are numerous additional tests that can be performed to verify a detection as
-astrophysical. The basic criteria can be fulfilled using the dynamic spectrum
+filter for dispersed pulses. As discussed in Section, \ref{sec:verify_crit} \sout{there
+are} numerous additional tests \sout{that} can be performed to verify a detection as
+astrophysical. The basic criteria can be fulfilled \cM{met?} using the dynamic spectrum
 from the search pipeline. But, many of these criteria require capturing more
-extensive data. It is not always possible to sufficient data to text every
-criteria, nor is it possible with every observational setup. But, being able to
+extensive data. It is not always possible to \cM{capture} sufficient data to \cM{test} every
+\cM{criterium}, nor is it possible with every observational setup. \sout{But, being able to
 test more criteria will lead to higher confidence in reporting an event as
-astrophysical.
+astrophysical.} \cM{Obvious?}
 
 \subsection{Minimum Reporting}
 
-If most \glspl{frb} are indeed one-off events, then the detection data is the
-only data that will ever be available.  At a minimum, a reasonable detection
-should be reported with the observed data made publicly available.  This allows
+If most \glspl{frb} are indeed one-off events, then the detection data \cM{are \sout{is}} the
+only data that will \sout{ever} be available.  At a minimum, a reasonable detection
+should be reported with \sout{the observed} data made publicly available.  This allows
 independent verification, and can be used as input data sets to test on
-independent pipelines.  A minimum reporting should include:
+independent pipelines.  \sout{A} Minimum reporting should include:
 
 \begin{enumerate}
     \item A dynamic spectrum which fully encompasses the extent of the dispersed
@@ -1397,7 +1397,7 @@ independent pipelines.  A minimum reporting should include:
     observing parameters.
     \item For a multi-beam system, dynamic spectra of each beam covering the
     extent of the pulse. Similarly for a \gls{tab} or interferometric detection.
-    \item A list (or guide) of software (including version) and parameters used
+    \item A list (or guide) of software (including the versions) and parameters used
     to generate detections.
 \end{enumerate}
 
@@ -1417,15 +1417,15 @@ provides a well-curated repository for information and links to data sources.
 
 \subsection{Desirable Reporting}
 
-To allow for a more complete set of criteria tests and further improve the
-evidence of an astrophysical detection more data can be captured and reported.
-More desirable reporting includes:
+To allow for a more complete set of criteria tests and to further improve the
+evidence of an astrophysical detection, more data can be captured and reported.
+\sout{More} Desirable reporting includes:
 
 \begin{enumerate}
     \item Dynamic spectra which not only encompasses the detected pulse, but
     include data over a longer time spans, e.g. a few minutes before and after
     the detection. Similarly for multiple feeds, additional \glspl{tab}, and
-    interferometric baselines.
+    interferometric baselines. \cM{Where will all the acronyms be defined? In a glossary at the end?}
     \item Raw voltage or complex spectral data before power detection and
     integration that retains time and frequency resolution, and phase
     information.
@@ -1433,21 +1433,24 @@ More desirable reporting includes:
     \ref{sec:verify_crit}.
 \end{enumerate}
 
-An extended time duration of dynamic spectrum can be used to look for gain and
-band pass variations. Low-\gls{snr} pulse searches can be performed to see if
+\cM{A dynamic spectrum extended in time,}
+\sout{An extended time duration of dynamic spectrum} can be used to \sout{look for} \cM{find} gain and
+band pass variations. Low-\gls{snr} pulse searches can be performed to \sout{see} \cM{test} if
 the source repeats or if there is an anomalously high number of events at
 different DMs.
 
 Complex voltages, though difficult to capture, provide valuable insight.
-Coherent dedispersion can be done to increase the detection sensitivity as in
-the case of FRB180301 \citep{atel11376} which revealed an apparently narrow-band
-detection to have low-level flux across a larger band. The time and frequency
+\cM{It allows for} coherent dedispersion \sout{can be done to} \cM{which} increases the detection sensitivity as in
+\sout{the case of} FRB180301 \citep{atel11376} \sout{which} where \sout{revealed} an apparently narrow-band
+detection \cM{was revealed} to have low-level flux across a larger band. The time and frequency
 resolution can be adjusted to look for structure. If multiple sites or elements
 are used the signals can be correlated for coincidence detection and
 localization.
 
 Not all verification criteria need to be or can even be checked, but an effort
-should be made in to do so. In the VOEvent trigger standard for \glspl{frb}
+should be made \sout{in} to do so. \cM{I think it's contradictory to say all criteria don't need to be checked, but then to say an effort should be made to do so. I would just say not all can be checked, but an effort should be made to check as many as possible.}
+
+In the VOEvent trigger standard for \glspl{frb}
 \citep{2017arXiv171008155P} there is an `importance' parameter which indicates
 the confidence in a detection. It is not possible to combine all the
 verification criteria into a single metric in general. But, some combination of
@@ -1457,13 +1460,13 @@ take more time and effort, updates and retraction events can be sent.
 
 \subsection{False-Positive Reporting}
 
-During a search for anomalous signals it should be expected that there are a
-number of events reported which are false-positives such as Perytons
-\citep{2011ApJ...727...18B} and the events reported in Section
+During a search for anomalous signals \sout{it should be expected that there are} \cM{we expect} a
+number of \sout{events} reported \sout{which are} false-positives events, such as Perytons
+\citep{2011ApJ...727...18B} and the events presented \sout{reported} in Section
 \ref{sec:false-pos}.  Events such as FRB130729 and FRB140514 fail a number of
 criteria. They do not fit the classic \gls{frb} model but given the available
 observing and system information, and lack of an external, anthropogenic
-explanation they are hard to discount as not being of astrophysical origin. It
+explanation they are hard to discount as \textit{not} being of astrophysical origin. It
 is necessary to report all of these events and to provide as much evidence as
 possible to explain the origin of such events.
 
