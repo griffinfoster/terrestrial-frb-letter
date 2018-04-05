@@ -387,7 +387,7 @@ typical observations (Figure \ref{fig:bandpass_response}).  Beam 0 and 5
 bandpasses appear similar and have overlapping narrow-band RFI features during
 the recorded time window.  The system noise appears to be higher during the
 event, which leads to smoother bandpasses than what is typical.  In the
-detection pipeline the data is normalized, which removes all absolute scaling in
+detection pipeline the data are normalized, which removes all absolute scaling in
 the process. This indicates that the \gls{sefd} is too low in our flux
 calibration.  This increase in system noise is due to the change in turret
 position, causing the \gls{alfa} feed to pick up reflections from other
@@ -589,7 +589,7 @@ modulations, and source locations are proprietary.
 
 As the RADAR signal is a dispersed pulse, we expect to detect such signals with
 \gls{frb} pipelines.  Verification of this event is straightforward when the
-high-time and frequency resolution data is available to reveal the narrow-band,
+high-time and frequency resolution data are available to reveal the narrow-band,
 pulsed nature of the event.
 
 \subsection{XAO Repeating Event}
@@ -745,7 +745,7 @@ detections.
 \label{sec:verify_crit}
 
 Our ability to discover \glspl{frb} depends on how well we can describe what an
-FRB is. There is currently no formal definition, rather a set of community
+FRB is, and on having available the data to search for and verify events. There is currently no formal definition, rather a set of community
 standards. These vary between groups and instruments, but usually include
 information drawn from images of power in the time-frequency plane and the
 time-DM plane, information about the telescope state, information related to the
@@ -770,6 +770,84 @@ category.
     }
     \label{fig:FRB130626}
 \end{figure}
+\subsection{Data}
+%\section{Detection Reporting}
+\label{sec:detect_report}
+
+The one-off nature of \glspl{frb} makes it essential to do sufficient
+due-diligence when reporting on a detection or triggering a follow-up
+observation to verify a true-positive detection. Over the past decade of
+\gls{frb} surveys a number of techniques have been developed to efficiently
+filter the total power, time-frequency data for dispersed pulses. Additional and important tests require capturing more data. It is not always possible to capture sufficient data for every desired test, nor is it possible with every observational setup.  The effort is, however, justified, as questioning a detection from many possible angles will lead to higher confidence in reporting an event as astrophysical or rejecting it as not interesting. 
+
+If most \glspl{frb} are indeed one-off events, then the detection data are the
+only data that will be available. Publication of the detection data allow independent
+verification, and can be used as input to test independent
+pipelines. The following should at least be available:
+
+\begin{enumerate}
+    \item A dynamic spectrum which fully encompasses the extent of the dispersed
+    pulse. Preferably, both the raw dynamic spectrum and the \gls{rfi} flagged
+    and/or normalized spectrum computed in the detection pipeline would be available.
+    \item Technical data such as time and frequency information, telescope pointing, and other telescope
+    observing parameters.
+    \item For a multi-beam system, dynamic spectra of each beam covering the
+    extent of the pulse. Similarly for a \gls{tab} or interferometric detection.
+    \item The detection parameters such as peak \gls{snr}, best DM, pulse width, and others.
+    \item A list (or guide) of software (including the versions) and parameters used
+    to generate diagnostic plots.
+\end{enumerate}
+
+These requirements are typically met in previously reported \gls{frb}
+detections. Often the public data have been normalized, which is useful
+for studying the event but can hide instrumental effects.  The last point,
+a guide on which software was used is often not reported.  Differences in
+software and data formats can produce different results, such as the reported
+\gls{snr} or time definition. For most of the Parkes detections filterbank data
+are publicly available and FRBCAT \citep{2016PASA...33...45P} provides a
+well-curated repository for information and links to data sources.
+
+To allow for a more complete set of criteria tests and to further improve the
+evidence of an astrophysical detection, and
+in addition to the list above, we propose capturing the following:
+
+\begin{enumerate}
+    \item Dynamic spectra which not only encompass the detected pulse, but
+    include data over a longer time spans, e.g. a few minutes before and after
+    the detection. Similarly for multiple feeds, additional \glspl{tab}, and
+    interferometric baselines.
+    \item Raw voltage or complex spectral data before power detection and
+    integration that retains time and frequency resolution, and phase
+    information.
+\end{enumerate}
+
+A dynamic spectrum extended in time, can be used to find gain and band pass
+variations. Low-\gls{snr} pulse searches can be performed to test if the source
+repeats or if there is an anomalously high number of events at different DMs.  A
+test observation of a known pulsar nearby in position and time to the detection,
+perhaps in the beam during the detection, is a useful method to provide a
+verification of the system state during a detection.
+
+Complex voltages, though costly to capture and store, provide valuable insight.  They
+allow for coherent dedispersion which reduces smearing, and increases the
+detection sensitivity as in FRB180301 \citep{atel11376} where an apparently
+narrow-band detection was revealed to have low-level flux across a larger band.
+The time and frequency resolution can be adjusted to look for structure. If
+multiple sites or elements are used the signals can be correlated for
+coincidence detection and localization.
+
+% Not all verification criteria can be checked, but an effort
+% should be made to check as many as possible given time and data constraints.
+% In the VOEvent trigger standard for \glspl{frb}
+% \citep{2017arXiv171008155P} there is an `importance' parameter which indicates
+% the confidence in a detection. It is not possible to combine all the
+% verification criteria into a single metric in general. But, some combination of
+% checks can be done on an individual telescope or experiment basis to form a
+% metric that can be reported in VOEvent. As further checks are done, those that
+% take more time and effort, updates and retraction event triggers can be sent.
+
+\subsection{Criteria}
+\label{sec:criteria}
 
 For verification of new FRBs, we propose a list of criteria of two types: the
 first type tests similarity between new detections and the archetype, and the
@@ -789,13 +867,12 @@ the availability of the necessary data and expert knowledge of the observer and
 telescope operators. However, it should be done explicitly when reporting a new
 detection.
 
-\subsection{Criteria}
-\label{sec:criteria}
 
-As stated above, the verification criteria are of two types, which we define as
+\subsubsection{Criteria and scoring suggestions}
+We define the two types of verification criteria stated above as
 ``Similarity to the archetype" and ``Terrestrial in origin". For each criterion,
 we propose 6 possible answers, which we colour-code in our own categorization
-below. Answer 1 to 4 encapsulate the responses: ``Identical", ``Similar", ``Not
+below. Answers 1 to 4 are used for the responses: ``Identical", ``Similar", ``Not
 similar", ``Completely different", while 5 and 6 are used for the responses
 ``Data not available" and ``Test not performed" respectively.
 
@@ -803,8 +880,6 @@ In the following, we provide a set of questions to help assign a numerical
 response of 1-6 for each criterion. We have also gone through this process
 ourselves for a number of published FRBs and other spurious detections, thus
 providing reference responses for each criterion.  
-
-\subsubsection{Similarity to the archetype}
 
 \paragraph{Signal to Noise:}
 
@@ -1046,7 +1121,7 @@ Was the pulse detected with a \gls{tab} using an array of elements? If so, was
 the pulse seen in individual elements? Were multiple \glspl{tab} active during
 the observation? If so, was the pulse seen in multiple beams? This is a similar
 criterion to the multi-beam criterion to indicate if the source can be localized
-to a position on the sky. If the individual element data is available, then
+to a position on the sky. If the individual element data are available, then
 subsets of elements can be combined to show the source was detected in most
 elements rather than just in one or a few.
 
@@ -1115,7 +1190,7 @@ terrestrial \gls{rfi}, which is made clear in the low criteria scores.
     \caption{FRB130729 dedispersed with a DM of 852~pc~cm$^{-3}$ (black), this
     is different from the DM of 861~pc~cm$^{-3}$ (red) reported in
     \protect\cite{2016MNRAS.460L..30C}.  The detected FRB has two distinct
-    components separated by approximately 10~ms. Data is presented at the native
+    components separated by approximately 10~ms. data are presented at the native
     recorded resolution of 64~$\mu$s, 390~kHz convolved with a Gaussian
     smoothing filter of size 512~$\mu$s, 3.125~MHz.}
     \label{fig:FRB130729}
@@ -1139,7 +1214,7 @@ verify a detection as astrophysical.
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB140514.pdf}
     \caption{Dynamic spectrum of FRB140514 dedispersed with a DM of
-    563~pc~cm$^{-3}$.  Data is presented at the native recorded resolution of
+    563~pc~cm$^{-3}$.  data are presented at the native recorded resolution of
     64~$\mu$s, 390~kHz convolved with a Gaussian smoothing filter of size
     512~$\mu$s, 3.125~MHz.
     }
@@ -1151,7 +1226,7 @@ verify a detection as astrophysical.
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB180301.pdf}
     \caption{Dynamic spectrum of FRB180301 dedispersed with a DM of
-    521~pc~cm$^{-3}$.  Data is presented at the native recorded resolution of
+    521~pc~cm$^{-3}$.  data are presented at the native recorded resolution of
     292.57~$\mu$s, 437.5~kHz convolved with a Gaussian smoothing filter of size
     29.2~$\mu$s, 875~kHz.
     }
@@ -1172,12 +1247,12 @@ tests such as checking the gain and bandpass response, and the \gls{rfi}
 environment which increases the overall scoring of this detection.
 
 In most cases detections do not report on the telescope state and environment
-during the time of detection. Though data is made public in many of the
-detections, this data has all ready been normalized or calibrated so it is not
+during the time of detection. Though data are made public in many of the
+detections, this data have all ready been normalized or calibrated so it is not
 possible to verify the telescope state.  More recent detections are often
 lacking in data or analysis. For example, very little information on FRB171209
 has been reported, thus almost none of the criteria can be tested.  Providing
-public data not only allows for independent verification, but also allows for
+public data not only allow for independent verification, but also allow for
 new tests to be run on previous detections.  For example, the lack of public
 data of FRB170107 means that criteria not reported in the initial detection
 
@@ -1195,7 +1270,7 @@ data of FRB170107 means that criteria not reported in the initial detection
 %Galactic contribution, leading to a maximum redshift of 0.5 for the source.
 %
 %The authors also measure high fraction of linear polarization for this source of
-%$\sim$ 44\%. The best RM fit to their data is $\sim$ -186.1 rad m$^{-2}$, much
+%$\sim$ 44\%. The best RM fit to their data are $\sim$ -186.1 rad m$^{-2}$, much
 %higher than the Galactic value of $\sim 18$ rad m$^{-2}$ that models predict for
 %this line of sight.
 %
@@ -1259,102 +1334,8 @@ single test is sufficient to decide that an event is terrestrial. Figure
 \ref{fig:heat_map} demonstrates how, given enough tests, a strong case can be
 made to classify all these events as terrestrial.
 
-\section{Detection Reporting}
-\label{sec:detect_report}
-
-The one-off nature of \glspl{frb} makes it essential to do sufficient
-due-diligence when reporting on a detection or triggering a follow-up
-observation to verify a true-positive detection. Over the past decade of
-\gls{frb} surveys a number of techniques have been developed to efficiently
-filter for dispersed pulses. As discussed in Section \ref{sec:verify_crit},
-numerous additional tests can be performed to verify a detection as
-astrophysical. The basic criteria can be tested using the dynamic spectrum from
-the search pipeline. But, many of these criteria require capturing more
-extensive data. It is not always possible to capture sufficient data to test
-every criterion, nor is it possible with every observational setup.  But, being
-able to test more criteria will lead to higher confidence in reporting an event
-as astrophysical.
-
-\subsection{Minimum Reporting}
-
-If most \glspl{frb} are indeed one-off events, then the detection data are the
-only data that will be available.  At a minimum, a reasonable detection should
-be reported with data made publicly available.  This allows independent
-verification, and can be used as input to test independent
-pipelines. Minimum reporting should include:
-
-\begin{enumerate}
-    \item A dynamic spectrum which fully encompasses the extent of the dispersed
-    pulse. Preferably, both the raw dynamic spectrum and the \gls{rfi} flagged
-    and/or normalized spectrum computed in the detection pipeline.
-    \item Time and frequency resolutions, DM, and start time of detection with a
-    dedispered time series.
-    \item Astronomical pointing, observing frequency, and other telescope
-    observing parameters.
-    \item For a multi-beam system, dynamic spectra of each beam covering the
-    extent of the pulse. Similarly for a \gls{tab} or interferometric detection.
-    \item A list (or guide) of software (including the versions) and parameters used
-    to generate detections.
-\end{enumerate}
-
-These requirements are typically met in previously reported \gls{frb}
-detections. Though, often the public data has been normalized, which is useful
-for studying the event but can hide instrumental effects.  The last point,
-a guide on which software was used is often not reported.  Differences in
-software and data formats can produce different results, such as the reported
-\gls{snr} or time definition. For most of the Parkes detections filterbank data
-is publicly available and FRBCAT \citep{2016PASA...33...45P} provides a
-well-curated repository for information and links to data sources.
-
-\subsection{Desirable Reporting}
-
-To allow for a more complete set of criteria tests and to further improve the
-evidence of an astrophysical detection, more data can be captured and reported.
-Desirable reporting includes:
-
-\begin{enumerate}
-    \item Dynamic spectra which not only encompasses the detected pulse, but
-    include data over a longer time spans, e.g. a few minutes before and after
-    the detection. Similarly for multiple feeds, additional \glspl{tab}, and
-    interferometric baselines.
-    \item Raw voltage or complex spectral data before power detection and
-    integration that retains time and frequency resolution, and phase
-    information.
-    \item A check of the verification criteria enumerated in Section
-    \ref{sec:verify_crit}.
-\end{enumerate}
-
-A dynamic spectrum extended in time, can be used to find gain and band pass
-variations. Low-\gls{snr} pulse searches can be performed to test if the source
-repeats or if there is an anomalously high number of events at different DMs.  A
-test observation of a known pulsar nearby in position and time to the detection,
-perhaps in the beam during the detection, is a useful method to provide a
-verification of the system state during a detection.
-
-Complex voltages, though difficult to capture, provide valuable insight.  They
-allow for coherent dedispersion which reduces smearing, and increases the
-detection sensitivity as in FRB180301 \citep{atel11376} where an apparently
-narrow-band detection was revealed to have low-level flux across a larger band.
-The time and frequency resolution can be adjusted to look for structure. If
-multiple sites or elements are used the signals can be correlated for
-coincidence detection and localization.
-
-Not all verification criteria can be checked, but an effort
-should be made to check as many as possible given time and data constraints.
-In the VOEvent trigger standard for \glspl{frb}
-\citep{2017arXiv171008155P} there is an `importance' parameter which indicates
-the confidence in a detection. It is not possible to combine all the
-verification criteria into a single metric in general. But, some combination of
-checks can be done on an individual telescope or experiment basis to form a
-metric that can be reported in VOEvent. As further checks are done, those that
-take more time and effort, updates and retraction event triggers can be sent.
-
 \subsection{False-Positive Reporting}
-
-During a search for anomalous signals it should be expected that there are a
-number of events reported which are false-positives such as Perytons
-\citep{2011ApJ...727...18B} and the events reported in Section During a search
-for anomalous signals we expect a number of reported false-positives events,
+During a search for anomalous signals we expect a number of reported false-positives events,
 such as Perytons \citep{2011ApJ...727...18B} and the events presented in Section
 \ref{sec:false-pos}. FRB130729 and FRB140514 have low scores on some of the
 criteria tests, they do not fit the classic \gls{frb} model but given the
