@@ -98,8 +98,8 @@
 
 \author[G. Foster et al.]{
 Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
+Aris Karastergiou$^{1,3,4}$,
 Marisa Geyer$^{3}$,
-Aris Karastergiou$^{1}$,
 Kaustubh Rajwade$^{4}$, 
 \and Mayuresh Surnis$^{5,6}$
 \\
@@ -107,10 +107,14 @@ Kaustubh Rajwade$^{4}$,
 $^{1}$University of Oxford, Sub-Department of Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, United Kingdom\\
 $^{2}$Department of Astronomy, University of California, Berkeley, 501 Campbell
 Hall \#3411, Berkeley, CA, 94720, USA\\
-$^{3}$SKA-SA, 3rd Floor, The Park, Park Road, Pinelands, South Africa\\
-$^{4}$Jodrell Bank Centre for Astrophysics, University of Manchester, Oxford Road, Manchester M13 9PL, United Kingdom\\
-$^{5}$Department of Physics and Astronomy, West Virginia University, Morgantown, WV 26505, USA\\
-$^{6}$Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown,\\ WV 26505, USA\\
+$^3$Department of Physics and Electronics, Rhodes University,
+    PO Box 94, Grahamstown 6140, South Africa\\
+$^4$Physics Department, University of the Western Cape,
+    Cape Town 7535, South Africa
+$^{5}$SKA-SA, 3rd Floor, The Park, Park Road, Pinelands, South Africa\\
+$^{6}$Jodrell Bank Centre for Astrophysics, University of Manchester, Oxford Road, Manchester M13 9PL, United Kingdom\\
+$^{7}$Department of Physics and Astronomy, West Virginia University, Morgantown, WV 26505, USA\\
+$^{8}$Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown,\\ WV 26505, USA\\
 }
 
 % These dates will be filled out by the publisher
@@ -199,14 +203,14 @@ events indicate they occur well beyond our galaxy, possibly at cosmological
 distances. They appear to be extremely bright, short duration events -- yet
 their emission mechanism is not known.  This consensus has developed from the
 reporting of detections with multiple telescopes, at different frequencies,
-using different instrumentation. \glspl{frb} are difficult to detect as they
-require high-gain telescopes which typically have a small beam size, such that
+using different instruments. \glspl{frb} are difficult to detect as they
+require high-gain telescopes which typically have a small field of view, such that
 despite many thousands of observing hours, only a few dozen have been reported
 as of this writing \citep{2016PASA...33...45P}.
 
-The prototypical \gls{frb} is broad-band, appearing to be broader than most
-receivers used in surveys. The pulse is narrow-in-time, on the order of a few
-milliseconds in width, with a single component structure. The pulse is highly
+The prototypical \gls{frb} is broad-band across the observable bandwidth of the  
+receivers used. The pulse is narrow-in-time, on the order of a few
+milliseconds in width, with a simple shape. It is also highly
 dispersed, following a $\nu^{-2}$ relation and appears to be a one-off event
 (only FRB121102 is known to repeat, \citealt{2016Natur.531..202S}). Not all
 reported detections appear to follow this prototypical form. Many show complex
@@ -214,12 +218,11 @@ frequency-dependent structure and are possibly band-limited. The pulse width
 varies due to either the emission process or propagation effects such as
 scattering from the \gls{ism} and \gls{igm}.
 
-These rare events are detected by automated GPU-accelerated software pipelines
-that extensively search a broad range of trial \glspl{dm}, pulse widths, and
-starting times.  The de-dispersed time series is then thresholded -- any
-peaks above a minimum \gls{snr} are reported as potential detections. The number
-of potential detections is usually overwhelming due to \gls{rfi} and system gain
-variations. Initially, potential detections were reviewed manually. But, with
+These rare events are detected by automated, and often GPU-accelerated, software pipelines
+that extensively search a broad range of trial \glspl{dm} and pulse widths.  The de-dispersed time series is then thresholded -- any
+peaks above a minimum \gls{snr} are reported as candidates. The number
+of candidates is usually overwhelming due to \gls{rfi} and system gain
+variations. Initially, candidates were reviewed manually. But, with
 the amount of data acquired in recent surveys, it has become a significant time
 effort to do so. Further, our understanding of the expected signal properties
 has allowed the development of filters and models to select and prioritize
@@ -230,17 +233,16 @@ there is an issue of verifiability. There is significant \gls{rfi} detectable at
 all radio observatories, and there are known anthropogenic sources that appear
 FRB-like \citep{2011ApJ...727...18B}.  Given the significant number of \gls{dm}
 trials and high-time resolution of the spectra in a typical survey, there are a
-large number of false-positives which pass the automated post-processing
+large number of false-positives (type-I errors) that pass the automated post-processing
 detection thresholds.  This is by design, as we would like to severely limit the
 potential for false-negatives (type-II errors) in our detection pipelines by
-accepting a number of false-positives (type-I errors).  But, given the large
+accepting a number of false-positives.  But, given the large
 sampling of the parameter search space it can be difficult, if not impossible to
 differentiate between a true, astrophysical \gls{frb} (true-positive) and a
 `terrestrial' \gls{frb} (false-positive) due to \gls{rfi}, systematics, or other
 local effects. As the survey time increases, the likelihood of detecting such a
 false-positive will increase. To counter false detection of `terrestrial'
-\glspl{frb}, some verification criteria can be tested when reporting a
-detection.
+\glspl{frb}, it is essential to define verification criteria, which can be tested post facto on recorded data.
 
 In this paper, we present other examples of FRB-like sources which, after
 further investigation, we show to be non-astrophysical. Using these and
@@ -251,8 +253,7 @@ can be reported to provide a robust statement about an \gls{frb} detection.
 \section{False-Positive FRB Detections}
 \label{sec:false-pos}
 
-During an \gls{frb} search survey there will be a significant number of
-false-positive detections. The rate of these detections is set by the minimum
+The rate of false-positive detections is set by the minimum
 \gls{snr} threshold, the parameter search space, and the terrestrial environment
 of the observatory. We use the term `terrestrial' to encompass multiple effects:
 anthropogenic radio signals, variations in the observing system, and natural
@@ -263,26 +264,22 @@ models.  The remaining events are commonly examined by eye as expert human
 knowledge appears to be the best way to classify a detection. However, time
 constraints do not allow for all events to be classified in this way. On
 inspection, true astrophysical events and terrestrial events can be difficult to
-differentiate between, even by the expert eye.  These terrestrial events,
-indeed, should appear like astrophysical \glspl{frb} as they have passed the
+differentiate between, even by the expert eye.  This is not surprising, as they have passed the
 detection pipeline thresholds. 
 
 Studies of the telescope state during detection, can often assist in determining
-the origin of an event. Nonetheless, ambiguities can remain, leading to the
-precarious nature of reporting an \gls{frb} as astrophysical.  In this section
-we present examples of such events -- which on initial inspection appear to be
-astrophysical, but after further investigation prove to be terrestrial in
-origin.
+the origin of an event. Nonetheless, ambiguities can remain.  In this section
+we present examples of such events -- which on initial inspection appear astrophysical, but after further investigation prove terrestrial in origin.
 
 \subsection{ALFA Terrestrial FRB}
 \label{sec:D20161204}
 
 In the two years of the initial ALFABURST survey \citep{2017ApJS..228...21C,
 2018MNRAS.474.3847F}, over 200k 8.4-second data windows were recorded in which
-the \gls{frb} search pipeline detected events using a minimum \gls{snr}
+the \gls{frb} search pipeline detected candidates using a minimum \gls{snr}
 detection threshold of 10. The vast majority of these events were due to
 \gls{rfi} and instrumental variations, while others were due to bright single
-pulses of known pulsars.  The classifier model outputs an ordered list of events
+pulses of known pulsars.  The classifier model (AK: which classifier model?) outputs an ordered list of events
 based on the likelihood of the event being a pulse.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
@@ -292,8 +289,8 @@ receiver\footnote{http://www.naic.edu/alfa/} (Figure
 \ref{fig:beam0_dynamic_spec}) which we label as the D20161204 event for this
 discussion. ALFABURST was processing 56~MHz of bandwidth between 1457~MHz and
 1513~MHz. The \gls{snr} of this pulse is maximized when the pulse is
-de-dispersed with a \gls{dm} of 293~pc~cm$^{-3}$, and the 256~$\mu$s time
-resolution is decimated by a factor of 16 to a time resolution of 4~ms. The
+de-dispersed with a \gls{dm} of 293~pc~cm$^{-3}$, and the native 256~$\mu$s time
+resolution is decimated by a factor of 16 to a time resolution of 4.096~ms. The
 de-dispersed time series shows an approximately 20~ms \gls{fwhm} pulse.  The dip
 before and after the pulse is due to the zero-DM filtering (i.e. the moving
 channel average is subtracted) before pulse detection
@@ -301,8 +298,7 @@ channel average is subtracted) before pulse detection
 baseline at the cost of removing some of the overall pulse power, particularly
 at low DM trials.
 
-On initial inspection, this event looks like a promising new astrophysical
-\gls{frb}. The flux density of the pulse can be computed using the radiometer
+On initial inspection, this event looks astrophysical. The flux density of the pulse can be computed using the radiometer
 equation,
 %
 $$
@@ -313,7 +309,7 @@ $$
 using a \gls{sefd} of 3~Jy for the \gls{alfa} receiver. This results in a flux
 density of \mbox{$S = 66$}~mJy from Beam 0, which would be lower than what is
 observed for any previously detected \gls{frb} \citep{2016PASA...33...45P}.
-However, this flux estimate is a lower limit, as we are assuming the source is
+However, this flux estimate is a lower limit, assuming the source is
 at the center of the beam. The pulse width is large for an \gls{frb} but within
 the range of those previously reported.
 
@@ -322,7 +318,7 @@ Of the six other \gls{alfa} beams, the event only appears in Beam 5 (Figure
 with the Beam 0 event in time exactly, but the event \gls{snr} was maximized
 ($S/N=16$) for a DM of 829~pc~cm$^{-3}$. By testing a range of DM values, we
 found that this event appeared to decrease in width for lower DM trials.
-\gls{rfi} clipping was applied during this event which is known to introduce a
+\gls{rfi} clipping was applied during this event, which is known to introduce a
 bias, resulting in a maximized \gls{snr} at a different DM trial.  We thus
 conclude that the Beam 0 and Beam 5 event are the same event.
 
@@ -361,13 +357,10 @@ similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
     \label{fig:dm_time}
 \end{figure}
 
-The telescope was pointed at a fixed Dec (+15:11:28.34) and drifting in RA
-(event detected at RA=14:42:26.18), i.e. a fixed (alt, az)-pointing during the
-event. No known pulsar or \gls{rrat} with a similar DM lies within the beam
-primary lobe of this pointing.
+The telescope pointing was fixed in azimuth and elevation, corresponding to a fixed Dec (+15:11:28.34) and drifting in RA
+(event detected at RA=14:42:26.18). No known pulsar or \gls{rrat} with a similar DM lies within the beam primary lobe of this pointing.
 
-The telescope logs provide the first indication that this event is due to a
-local source. As ALFABURST is a commensal observation survey the search pipeline
+The telescope logs provide the first indication that this event is spurious. As ALFABURST is a commensal observation survey the search pipeline
 regularly checks the status of the receiver turret and the \gls{if}. \gls{alfa}
 was logged as active and the \gls{if} remained unchanged during this time, but
 the turret was in a different position than where ALFA should be if it were at
@@ -382,16 +375,15 @@ an S-Band RADAR observation.  The event occurred during a time of no active
 observation with \gls{alfa} active but in the wrong turret position.
 
 The average bandpass of Beam 0 and Beam 5 during the time of the event shows
-that the shape and system noise appear different to what is expected during
-typical observations (Figure \ref{fig:bandpass_response}).  Beam 0 and 5
+that the shape and system noise appear atypical compared to 
+normal observations (Figure \ref{fig:bandpass_response}).  Beam 0 and 5
 bandpasses appear similar and have overlapping narrow-band RFI features during
-the recorded time window.  The system noise appears to be higher during the
-event, which leads to smoother bandpasses than what is typical.  In the
-detection pipeline the data are normalized, which removes all absolute scaling in
-the process. This indicates that the \gls{sefd} is too low in our flux
+the recorded time window.  The system noise appears higher during the
+event, which leads to smoother bandpasses than typical.  In the
+detection pipeline the data are normalized, which removes all absolute scaling. This indicates that the \gls{sefd} is too low in our flux
 calibration.  This increase in system noise is due to the change in turret
 position, causing the \gls{alfa} feed to pick up reflections from other
-equipment in the dome, and the dome as a warm source.  This event is most likely
+equipment in the dome, and the dome itself as a warm source.  This event is most likely
 due to the analogue electronics becoming non-linear from this increase in system
 noise.
 
@@ -413,9 +405,7 @@ they appear related to the same phenomenon.  The DM$-$time plot (Figure
 \ref{fig:beam0_dmtrials_80s}) shows that much of the structure would be detected
 as dispersed pulses.  In particular, the structure around 4 seconds would be
 detected as a wide-in-time, highly dispersed pulse.  And the structure
-immediately proceeding it would be detected as a negatively dispersed pulse.  We
-do not detect these as pulses because we have limited our search space to
-narrow-in-time width pulses and positive \glspl{dm}.
+immediately proceeding it would be detected as a negatively dispersed pulse.  Only positive \gls{dm} candidates are recorded.
 
 \begin{figure*}
     \centering
@@ -444,7 +434,7 @@ narrow-in-time width pulses and positive \glspl{dm}.
 \end{figure*}
 
 In isolation, and taking into account the one-off, transient nature of FRBs, the
-initial Beam 0 detection reasonably appear to be astrophysical. But, after
+initial Beam 0 detection reasonably appears astrophysical. But, after
 studying the telescope state and examining data across a larger time window
 (several seconds) around the event, we can confidently classify this event as
 terrestrial.
@@ -453,17 +443,13 @@ terrestrial.
 \label{sec:low_snr}
 
 While the D20161204 event (Section \ref{sec:D20161204}) is a rare false-positive
-detection based on a unique telescope state, other false-positive events occur
-regularly.  As automated search pipelines are set up to carry out an extensive
-search in trial \glspl{dm}, pulse width, and starting time, it is reasonable to
-expect a large number of low-\gls{snr} false-positive detections. A minimum
-\gls{snr} cut-off (usually 6-10) is set to limit the number of these
-false-positives.
+detection based on a unique telescope state, low-\gls{snr} false-positive candidates occur regularly. A minimum
+\gls{snr} cut-off (usually 6-10) is set to limit their occurrence.  
 
 For example, on July 30, 2015 an apparently 10-$\sigma$ event with a DM of
 1370~pc~cm$^{-3}$ was detected (Figure \ref{fig:D20150730}) by the ALFABURST
 pipeline in Beam 5. The pulse can barely be seen in the dynamic spectrum, but in
-the DM-time plot, there is a compact peak centred at a DM of 1370~pc~cm$^{-3}$
+the DM-time plot, there is a compact peak centered at a DM of 1370~pc~cm$^{-3}$
 with no other similar events apparent.  After re-analysis of the dynamic
 spectrum noise, this event only has an \gls{snr}$\sim$6, but was reported as a
 higher \gls{snr} because of the data window size used to calculate the system
@@ -482,32 +468,25 @@ no immediate explanation.
     \label{fig:D20150730}
 \end{figure}
 
-These types of events prove to be difficult to validate as either astrophysical
-or terrestrial if sufficient data are not recorded during a detection, providing
-with an evidence to be confident about the event's origin. The choice of minimum
-\gls{snr} is set based on the willingness of the observers to sort through
+These types of events prove to be difficult to validate as either astrophysical or terrestrial. The choice of minimum
+\gls{snr} is partially set by the willingness of the observers to sort through
 false-positive events.  There are likely many low-\gls{snr} \glspl{frb} that are
-labelled as false-positive events.  The reported detection of a pulse from
+either not detected at all or labelled as false-positive events.  The reported detection of a pulse from
 FRB121102 with APERTIF \citep{atel10693} had an \gls{snr}$\approx 4$. In a blind
 survey across different sky positions and trial \glspl{dm}, this would not be a
 significant detection.  But, the sky position and \gls{snr}-maximized DM of the
-repeating FRB121102 is known, thus a lower \gls{snr} detection may be reasonable
-to report.  We usually require a large \gls{snr} to validate a detection.  As
-the parameter space (trial \glspl{dm}, pulse width range) and number of
-observations grow we expect to see an increase in the number of high-\gls{snr},
-false-positive events.
+repeating FRB121102 is known, thus a lower \gls{snr} detection may be sufficient.
 
 \subsection{ARTEMIS RADAR Detection}
 \label{sec:LOFAR_RADAR}
 
 ARTEMIS \citep{2015MNRAS.452.1254K} is a low-frequency \gls{frb} search survey
-run on the LOFAR-UK station at the Chilbolton Observatory.  The survey uses a
-similar fractional bandwidth ($\sim 0.04$) to ALFABURST, but is centred at
+run on the Rawlings Array, the LOFAR-UK station at Chilbolton Observatory.  The survey uses a
+similar fractional bandwidth ($\sim 0.04$) to ALFABURST, but is centered at
 145~MHz.  In this survey, known pulsars regularly transit the beams that are
-fixed in local coordinates, and single pulses are routinely observed.  An
-\gls{rfi} exciser has been developed for this survey that successfully removes
-the majority of false-positive events. Over many thousands of observing hours,
-rare events occasionally pass this filter.
+fixed in azimuth and elevation, and single pulses are routinely observed.  An
+\gls{rfi} excision algorithm has been developed for this survey that successfully removes
+the majority of false-positive events. Over many thousands of observing hours, rare events occasionally pass this filter.
 
 A particularly interesting event for which the \gls{snr} was maximized at a
 \gls{dm} of 85~pc~cm$^{-3}$ is shown in Figure \ref{fig:lofar_dynamic}. Though
@@ -534,8 +513,7 @@ Plotting the event in DM-time space across the ARTEMIS DM range
 ($0-320$~pc~cm$^{-3}$, Figure \ref{fig:lofar_dm_time}) shows a strong, compact
 detection as expected of a dispersed pulse. But, the apparent limited bandwidth
 of the pulse means that the pulse does not necessarily follow a $\nu^{-2}$
-dispersion relation. For example, with a limited fractional bandwidth a linearly
-dispersed pulse can be approximately modelled with such a relation.
+dispersion relation.
 
 % watermark:terrestrial-frb-letter/notebooks/LOFAR_RADAR.ipynb
 \begin{figure}
@@ -553,7 +531,7 @@ of the event shown in Figure \ref{fig:lofar_dynamic} is maximized for a time
 decimation factor of 64. With a native resolution of $327.68~\mu s$, this
 results in a decimated time resolution of 20~ms. At this resolution, the pulse
 appears to be a continuous broadband pulse. When an event is detected in the
-pipeline, the un-decimated dynamic spectrum is saved. Plotting at 1~ms time
+pipeline, the dynamic spectrum is saved at the original resolution. Plotting at 1~ms time
 resolution (Figure \ref{fig:lofar_dynamic_high}), the repeating nature of a
 linear frequency-modulated signal used for pulse compression in RADAR can be
 seen.
@@ -568,7 +546,7 @@ seen.
     \label{fig:lofar_dynamic_high}
 \end{figure}
 
-In RADAR observations, the bandwidth of the transmitter provides information on
+In RADAR signals, the bandwidth of the transmitter provides information on
 the range and direction of a target. A narrow-band RADAR transmitter can be used
 to approximate a larger bandwidth by modulating the frequency of the transmitted
 pulse. The narrow-band (in frequency) pulse is stepped in frequency across a
@@ -579,7 +557,7 @@ wide-band pulse that appears more dispersed.
 
 Linear frequency-modulation is the most typical form of chirp compression, but
 non-linear methods are also used. Such a modulation technique may be the origin
-of the detections in the next section.  There are a number of allocated RADAR
+of other detected signals (see next section).  There are a number of allocated RADAR
 usages in the LOFAR observing band which could be the source of the observed
 RADAR pulse \citep{ofcom2017}.  RADAR is used from UHF to C-band, covering a
 wide range of frequencies at which \gls{frb} surveys operate. We could not
@@ -587,7 +565,7 @@ determine the exact origin of the RADAR pulse, since RADAR is used for
 commercial and military purposes, most of these signal specifications,
 modulations, and source locations are proprietary.
 
-As the RADAR signal is a dispersed pulse, we expect to detect such signals with
+As the RADAR signal can resemble a dispersed pulse, we expect to detect such signals with
 \gls{frb} pipelines.  Verification of this event is straightforward when the
 high-time and frequency resolution data are available to reveal the narrow-band,
 pulsed nature of the event.
@@ -633,7 +611,7 @@ portion of the band.
 
 A periodicity search revealed a periodicity of $\sim 1.7$~s, but the residuals
 were orders of magnitude higher than that of a typical pulsar periodicity
-search.  Further, the pulses were seen at different pointings across the sky.
+search (AK: I am not sure what you mean here).  Further, the pulses were seen at different pointings across the sky.
 Most were detected at a low altitude pointing angle, but some were detected
 close to zenith.  This rules out a pulsar, or an astronomical source in general.
 
@@ -675,7 +653,7 @@ band. This has been explained by various intrinsic or intermediate effects
 (scintillation, plasma lensing). In the case of a single detected pulse, it would
 be reasonable to report it as an astronomical \gls{frb}.
 
-A dispersion relation parameter estimation of the individual pulses was found to
+Dispersion in these pulses was found to
 deviate from a $\nu^{-2}$ relation by $1.5 \sigma$. A dispersed astrophysical
 source should always follow a cold plasma $\nu^{-2}$ relation. As shown, sources
 which approximately fit this relation will still be detected with de-dispersion
@@ -867,6 +845,14 @@ the availability of the necessary data and expert knowledge of the observer and
 telescope operators. However, it should be done explicitly when reporting a new
 detection.
 
+During a search for anomalous signals we expect a number of reported false-positives events,
+such as Perytons \citep{2011ApJ...727...18B} and the events presented in Section \ref{sec:false-pos}. 
+%As we describe in the following, FRB130729 and FRB140514 have low scores on some of the
+% criteria tests, they do not fit the classic \gls{frb} model but given the
+% available observing and system information, and lack of an external,
+% anthropogenic explanation they are hard to discount as \textit{not} being of
+% astrophysical origin.
+Public datasets for events that are confirmed as false positives is also extremely useful in defining criteria for classification. 
 
 \subsubsection{Criteria and scoring suggestions}
 We define the two types of verification criteria stated above as
@@ -1206,7 +1192,7 @@ not discount FRB140514 and FRB180301 as astrophysical, they indicate that
 FRB140514 and FRB180301 diverge from the prototypical \gls{frb} model.  We note
 that FRB121102 diverges significantly from the prototype model as individual
 pulses vary in bandwidth, apparent scattering, spectral index, and structure.
-This is a useful example to show that the highest tests scores are not needed to
+This is a useful example to show that the highest test scores are not needed to
 verify a detection as astrophysical.
 
 % FRB140514
@@ -1248,13 +1234,13 @@ environment which increases the overall scoring of this detection.
 
 In most cases detections do not report on the telescope state and environment
 during the time of detection. Though data are made public in many of the
-detections, this data have all ready been normalized or calibrated so it is not
+detections, these data have all ready been normalized or calibrated so it is not
 possible to verify the telescope state.  More recent detections are often
 lacking in data or analysis. For example, very little information on FRB171209
 has been reported, thus almost none of the criteria can be tested.  Providing
-public data not only allow for independent verification, but also allow for
-new tests to be run on previous detections.  For example, the lack of public
-data of FRB170107 means that criteria not reported in the initial detection
+public data not only allows for independent verification, but also for
+new tests on previous detections.  For example, the lack of public
+data of FRB170107 means that criteria not reported in the initial detection (AK: something is missing at the end of this sentence)
 
 %\subsubsection{FRB 110523}
 %
@@ -1334,16 +1320,6 @@ single test is sufficient to decide that an event is terrestrial. Figure
 \ref{fig:heat_map} demonstrates how, given enough tests, a strong case can be
 made to classify all these events as terrestrial.
 
-\subsection{False-Positive Reporting}
-During a search for anomalous signals we expect a number of reported false-positives events,
-such as Perytons \citep{2011ApJ...727...18B} and the events presented in Section
-\ref{sec:false-pos}. FRB130729 and FRB140514 have low scores on some of the
-criteria tests, they do not fit the classic \gls{frb} model but given the
-available observing and system information, and lack of an external,
-anthropogenic explanation they are hard to discount as \textit{not} being of
-astrophysical origin. It is necessary to report all of these events and to
-provide as much evidence as possible to explain the origin of such events.
-
 \section{Future Observational Methods}
 
 Beyond detection of more \glspl{frb}, the goals of current surveys are to
@@ -1352,8 +1328,8 @@ bandwidths and different frequencies in the radio spectrum. Verifiability should
 also be considered in these surveys. This means capturing additional data as
 discussed in Section \ref{sec:detect_report} and additional observing methods.
 
-The simultaneous detection of signal with telescopes at multiple sites is
-clear evidence for an astrophysical \gls{frb}.  Multi-site detectors, such as in
+The simultaneous detection of a signal with telescopes at multiple sites is
+clear evidence for an astrophysical \gls{frb}.  Multi-site detectors, such as 
 \gls{ligo}, are essential for false-positive rejection. Coordinating telescope
 observations in logistically difficult, for example many FRB surveys run
 commensally during targeted observations, but would prove invaluable in
@@ -1372,7 +1348,7 @@ telescopes.
 Detection of \glspl{frb} at multiple frequencies not only adds to the scientific
 understanding of the sources, but also help to verify that they are
 astrophysical.  Due to historical development of receivers for pulsar searches,
-most \glspl{frb} have been detected at L-band frequencies. Though, FRB110523
+most \glspl{frb} have been detected at L-band frequencies. FRB110523
 detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
 at UHF frequencies.  Only FRB121102 has been detected above L-band
 \citep{atel10675}.  Such wide bands show the pulse structure goes beyond the
