@@ -673,7 +673,7 @@ the telescope was only sensitive to the highest \gls{snr} event, it would be
 difficult to show that the event was due to \gls{rfi}.  Multiple reported
 \glspl{frb}, including the repeater FRB121102, do not cover the entire observing
 band. This has been explained by various intrinsic or intermediate effects
-(scintillation, plasma lensing). In the case of a single detected pulse, it would
+(scintillation, plasma lensing \cMay{Need a reference here}). In the case of a single detected pulse, it would
 be reasonable to report it as an astronomical \gls{frb}.
 
 Since the initial detection of the pulses in November 2016 the pulses have not
@@ -777,8 +777,8 @@ features deemed characteristic to the category.
 The one-off nature of \glspl{frb} makes it essential to do sufficient
 due-diligence when reporting on a detection or triggering a follow-up
 observation to verify a true-positive detection. Over the past decade of
-\gls{frb} surveys a number of techniques have been developed to efficiently
-filter the total power, time-frequency data for dispersed pulses. Additional and
+\gls{frb} surveys, a number of techniques have been developed to efficiently
+filter the total power, time-frequency data to look for dispersed pulses. Additional and
 important tests require capturing more data. It is not always possible to
 capture sufficient data for every desired test, nor is it possible with every
 observational setup.  The effort is, however, justified, as questioning a
@@ -793,7 +793,7 @@ pipelines. The following should at least be available:
 \begin{enumerate}
     \item A dynamic spectrum which fully encompasses the extent of the dispersed
     pulse. Preferably, both the raw dynamic spectrum and the \gls{rfi} flagged
-    and/or normalized spectrum computed in the detection pipeline would be available.
+    and/or normalized spectrum computed in the detection pipeline.
     \item Technical data such as time and frequency information, telescope
     pointing, and other telescope observing parameters.
     \item For a multi-beam system, dynamic spectra of each beam covering the
@@ -809,7 +809,7 @@ detections. Often the public data have been normalized, which is useful for
 studying the event but can hide instrumental effects.  The last point, a guide
 on which software was used is often not reported.  Differences in software and
 data formats can produce different results, such as the reported \gls{snr} or
-time definition. For most of the Parkes detections filterbank data are publicly
+time definition. For most of the Parkes detections, filterbank data are publicly
 available and FRBCAT \citep{2016PASA...33...45P} provides a well-curated
 repository for information and links to data sources.
 
@@ -839,7 +839,7 @@ They allow for coherent dedispersion which reduces smearing, and increases the
 detection sensitivity as in FRB180301 \citep{atel11376} where an apparently
 narrow-band detection was revealed to have low-level flux across a larger band.
 The time and frequency resolution can be adjusted to look for structure. If
-multiple sites or elements are used the signals can be correlated for
+multiple sites or elements are used, the signals can be correlated for
 coincidence detection and localization.
 
 % Not all verification criteria can be checked, but an effort
@@ -856,7 +856,7 @@ coincidence detection and localization.
 \label{sec:criteria}
 
 For verification of new FRBs, we propose a list of criteria of two types: the
-first type tests similarity between new detections and the archetype, and the
+first type tests the similarity between new detections and the archetype, and the
 second type is used to preclude terrestrial origins of the signal. Together,
 these two sets provide a framework, which should be used to state the confidence
 of any new \gls{frb} discovery. This list of criteria will improve with time; as
@@ -865,7 +865,7 @@ included. The criteria we propose here have been primarily developed from single
 dish surveys.  Use of interferometric arrays will provide powerful further
 criteria, particularly relevant to localization of signals in the sky.
 
-Included in the criteria are tests to verify the telescope was functioning as
+Included in the criteria are tests to verify whether the telescope was functioning as
 expected. This is to say that there is a prototypical status for each telescope
 and receiver system, parametrized by observable quantities, which the data
 obtained during a detection can be compared against.  This comparison requires
@@ -943,7 +943,7 @@ change when dedispersing with different DMs? Most \glspl{frb} appear as single
 component pulses. But, a few, such as FRB130729 and some bursts from FRB121102,
 show multiple components, which can lead to differences in the `optimal' DM
 \citep{2018Natur.553..182M}. Pulses from FRB121102 often contain multiple
-components. As such it deviates from the prototypical. As FRB121102 is known to
+components. As such, it deviates from the prototype. As FRB121102 is known to
 be astrophysical, this criterion can not invalidate a detection.
 
 \paragraph{Broad band}
@@ -953,9 +953,10 @@ edge, top edge, both, or neither? A pulse that extends across the full observing
 band fits the prototypical \gls{frb} model. There are now examples of
 narrow-band (within the observing band) FRBs (such as FRB121102), as well as
 narrow-band terrestrial signals, such as RADAR (Section \ref{sec:LOFAR_RADAR}),
-so not having a broad-band signature does not entirely rule out an FRB. We
-expect this criterion to be improved by future telescope backends offering
-broader bandwidths. 
+so not having a broad-band signature does not entirely rule out an FRB. 
+\cMay{In addition, what would be called a broad-band signal, also depends on the
+observation frequency.} We expect this criterion to be improved by future telescope 
+backends offering broader bandwidths. 
 
 \paragraph{Spectral Index}
 
