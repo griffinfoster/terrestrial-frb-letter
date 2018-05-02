@@ -262,10 +262,7 @@ general.
 The rate of false-positive detections is set by the minimum \gls{snr} threshold,
 the parameter search space, and the terrestrial environment of the observatory.
 We use the term `terrestrial' to encompass multiple effects: anthropogenic radio
-signals, variations in the observing system, and natural signals from within the
-solar system.
-{\bf DRL: is terrestrial really a 
-good descriptor for solar system? I think it's best to say `local'}
+signals and variations in the observing system.
 
 Most potential false-positive events are flagged using filters and classifier
 models.  The remaining events are commonly examined by eye as expert human
@@ -288,12 +285,11 @@ In the two years of the initial ALFABURST survey \citep{2017ApJS..228...21C,
 the \gls{frb} search pipeline detected candidates using a minimum \gls{snr}
 detection threshold of 10. The vast majority of these events were due to
 \gls{rfi} and instrumental variations, while others were due to bright single
-pulses of known pulsars.  A random forest-based classifier model (REF??) outputs an
+pulses of known pulsars.  The random forest-based classifier model outputs an
 ordered list of events based on the likelihood of the event being a pulse.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
-ALFABURST system at MJD 57726.563263913 / Unix time 1480858266 {\bf DRL: Why all
-this detail of the time in the text?} (09:31:06 Arecibo local time on 2016,
+ALFABURST system at MJD 57726.563263913 (09:31:06 Arecibo local time on 2016,
 December 4) in Beam 0 (the central beam) of the \gls{alfa}
 receiver\footnote{http://www.naic.edu/alfa/} (Figure
 \ref{fig:beam0_dynamic_spec}) which we label as the D20161204 event for this
@@ -368,10 +364,9 @@ similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
 \end{figure}
 
 The telescope pointing was fixed in azimuth and elevation, corresponding to a
-fixed declination (+15:11:28.34) and drifting in RA (event detected at
-RA=14:42:26.18).  {\bf DRL: why are the RA/DEC numbers needed here?} No known
-pulsar or \gls{rrat} with a similar DM lies within the beam primary lobe of this
-pointing.
+fixed declination (+15:11) and drifting in RA (event detected at RA=14:42). No
+known pulsar or \gls{rrat} with a similar DM lies within the beam primary lobe
+of this pointing.
 
 The telescope logs provide the first indication that this event is spurious. As
 ALFABURST is a commensal observation survey the search pipeline regularly checks
@@ -517,7 +512,8 @@ not associated with any known pulsar or RRAT around a DM$\sim$85~pc~cm$^{-3}$.
 
 % watermark:terrestrial-frb-letter/notebooks/LOFAR_RADAR.ipynb
 \begin{figure}
-    \includegraphics[width=1.0\linewidth]{figures/LOFAR_dynamic.pdf}
+    %\includegraphics[width=1.0\linewidth]{figures/LOFAR_dynamic.pdf}
+    \includegraphics[width=1.0\linewidth]{figures/LOFAR_dynamic_dedisp.pdf}
     \caption{A dispersed pulse detected by the automated ARTEMIS search pipeline
     at the LOFAR-UK station. The \gls{snr} is maximized when the signal is
     dedispersed to a DM of 85~pc~cm$^{-3}$. The dynamic spectrum has a time
@@ -590,22 +586,6 @@ narrow-band, pulsed nature of the event.
 \subsection{XAO Repeating Event}
 \label{sec:xao_event}
 
-% Likely answer:
-% RADAR for tracking a space re-entry
-% repeating nature to keep constant track
-% once-off nature means it happened only once
-% Jiuquan Satellite Launch Center not far from XAO.
-% shenzhou 11 landed in inner mongolia on november 2018, around 2:15 pm china
-% time
-% first pulse: 2016-11-18 02:24:24.958 UTC
-% last pulse: 2016-11-18 03:31:56.592 UTC
-% china time is +8 UTC
-% https://en.wikipedia.org/wiki/Shenzhou_11
-% https://spaceflight101.com/shenzhou-11-undocking-set-for-landing/
-%
-% http://www.radartutorial.eu/01.basics/Distance-determination.en.html
-% http://www.radartutorial.eu/08.transmitters/Intrapulse%20Modulation.en.html
-
 The 25-m Nanshan Telescope at \gls{xao} is currently running an FRB survey which
 covers over 300~MHz at L-band, sampling at $64 \; \mu s$ resolution. On November
 18, 2016 hundreds of bright, dispersed pulses were detected. The pulses varied
@@ -673,7 +653,7 @@ the telescope was only sensitive to the highest \gls{snr} event, it would be
 difficult to show that the event was due to \gls{rfi}.  Multiple reported
 \glspl{frb}, including the repeater FRB121102, do not cover the entire observing
 band. This has been explained by various intrinsic or intermediate effects
-(scintillation, plasma lensing \cMay{Need a reference here}). In the case of a single detected pulse, it would
+(scintillation, plasma lensing). In the case of a single detected pulse, it would
 be reasonable to report it as an astronomical \gls{frb}.
 
 Since the initial detection of the pulses in November 2016 the pulses have not
@@ -683,6 +663,9 @@ one-off astronomical events. This event, along with the other events presented
 in this section should present a case for developing common criteria, observing
 strategies, and data recording to improve the confidence in \gls{frb}
 detections.
+
+\subsection{Simulated Pulses}
+\label{sec:sim_pulses}
 
 %%%%%%%%%
 
@@ -953,10 +936,9 @@ edge, top edge, both, or neither? A pulse that extends across the full observing
 band fits the prototypical \gls{frb} model. There are now examples of
 narrow-band (within the observing band) FRBs (such as FRB121102), as well as
 narrow-band terrestrial signals, such as RADAR (Section \ref{sec:LOFAR_RADAR}),
-so not having a broad-band signature does not entirely rule out an FRB. 
-\cMay{In addition, what would be called a broad-band signal, also depends on the
-observation frequency.} We expect this criterion to be improved by future telescope 
-backends offering broader bandwidths. 
+so not having a broad-band signature does not entirely rule out an FRB.  We
+expect this criterion to be improved by future telescope backends offering
+broader bandwidths. 
 
 \paragraph{Spectral Index}
 
