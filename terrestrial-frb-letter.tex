@@ -103,6 +103,7 @@ Marisa Geyer$^{5}$,
 Mayuresh Surnis$^{6,7},$
 \and
 Kaustubh Rajwade$^{8}$, 
+Golnoosh Golpayegani$^{6,7},$
 \textbf{Others?}
 % Dunc, Kj, Golnoosh
 \\
@@ -999,9 +1000,10 @@ Scattering timescales are estimated, as in the case of FRB130626
 e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened
 pulse. The characteristic timescale, $\tau$, is expected to have a strong
 frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting
-a power law spectral index $\alpha =4$ or $4.4$ (e.g. \citealt{Rickett1977}),
-and observations of pulsars often showing $\alpha < 4$.  Spectral indices
-computed from broad band FRBs, should be compared to these expected values.
+a power law spectral index \cMay{should we put frequency scaling index to avoid
+confusion with the flux density spectral index?} $\alpha =4$ or $4.4$ (e.g. 
+\citealt{Rickett1977}), and observations of pulsars often showing $\alpha < 4$.  
+Spectral indices computed from broad band FRBs, should be compared to these expected values.
 Measurement of a scattering tail with a spectral index in the range mentioned
 above warrants the designation of "Identical", while gradual departure from this
 picture should be described using the other responses. 
@@ -1009,7 +1011,7 @@ picture should be described using the other responses.
 Comparing obtained $\tau$ values to values predicted by current electron density
 models for the Milky Way (e.g.
 \citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) also provides a test for the
-extra galactic nature of a detected signal.
+extragalactic nature of a detected signal.
 
 \paragraph{Scintillation}
 
@@ -1039,7 +1041,7 @@ linearly polarized after the extreme \gls{rm} is corrected for
 \citep{2018Natur.553..182M}. FRB110523 is measured to have a high fraction
 ($\sim$ 44\%) of linear polarization. The best RM fit to this data ($\sim$
 -186.1 rad m$^{-2}$) is more than a hundred times higher than the predicted
-Galactic value from RM models for this line of sight. Where possible it is
+Galactic value from RM models for this line of sight. Where possible, it is
 insightful to compare RM values to RM measurements of nearby pulsars. The RM
 estimate for FRB110523 was compared to an observation of PSR B2319+60, less than
 2 degrees away on the sky, using the same pipeline.  \gls{rfi} has complex
@@ -1049,17 +1051,17 @@ astrophysical sources, and will not be well fit by a Faraday rotation model.
 
 \paragraph{DM Excess}
 
-What is the \gls{snr}-maximized \gls{dm}? How does this compare to the Galactic
-DM model along the line of sight? Is it well in excess of the Galactic
+What is the \gls{snr}-maximized \gls{dm}? How does this compare to the modeled Galactic
+DM along the line of sight? Is it well in excess of the Galactic
 contribution? This is a standard test to differentiate between a Galactic and
 extragalactic source. If the ratio of measured \gls{dm} to Galactic model
 \gls{dm} is at least a factor of two then the source is likely extragalactic.
 Otherwise the source is likely a pulsar or \gls{rrat} within the Galaxy.  If
 there are multiple components, what is the `component-optimized' DM, how does it
 differ from the \gls{snr}-maximized DM? When there are multiple components to a
-pulse the choice of DM can results in different frequency-averaged pulses such
+pulse, the choice of DM can result in different frequency-averaged pulses such
 as in FRB130729 in which the choice of DM can result in a single component or
-multi-component pulse profile. 
+multi-component pulse profile \cMay{need reference here}. 
 
 \subsubsection{Terrestrial Origins}
 
@@ -1069,7 +1071,7 @@ Does the pulse follow a cold plasma $\nu^{-2}$ dispersion relation? If there is
 sufficient \gls{snr} in individual time-frequency bins across a significant
 fractional bandwidth of the dynamic spectrum then a dispersion relation fit
 showing a $\nu^{-2}$ relation is evidence for a dispersed, natural source.
-Conversely, a fit that diverges from $\nu^{-2}$ is good evidence for a
+Conversely, a fit that diverges from $\nu^{-2}$ is good evidence for an
 artificial source (Section \ref{sec:xao_event}). An F-test between a $\nu^{-2}$
 relation model and other models is a statistically significant method to compare
 models.
@@ -1106,7 +1108,7 @@ fit.
 
 \paragraph{Telescope State}
 
-Was the telescope in a valid state? I.e. were the correct electronics active,
+Was the telescope in a valid state? i.e. were the correct electronics active,
 was the feed in the correct position, was other equipment active that could
 cause local interference? This is a site and telescope-dependent criterion,
 which requires expert knowledge of the system in order to test this criterion
@@ -1234,11 +1236,11 @@ terrestrial \gls{rfi}, which is made clear in the low criteria scores.
 FRB140514 (Figure \ref{fig:FRB140514}) and FRB180301 (Figure
 \ref{fig:FRB180301}) both score poorly in the broad-band criteria as the
 majority of the detected flux is concentrated into narrow regions of the band.
-This low score effects the dispersion relation criteria test as there is not
+This low score affects the dispersion relation criteria test as there is not
 sufficient fractional bandwidth to perform a good fit. The frequency structure
-of both of these detections could be due to scintillation. These low scores do
-not discount FRB140514 and FRB180301 as astrophysical, they indicate that
-FRB140514 and FRB180301 diverge from the prototypical \gls{frb} model.  We note
+of both of these detections could be due to scintillation \cMay{or plasma lensing?}. 
+These low scores do not discount FRB140514 and FRB180301 as astrophysical, they indicate
+that FRB140514 and FRB180301 diverge from the prototypical \gls{frb} model.  We note
 that FRB121102 diverges significantly from the prototype model as individual
 pulses vary in bandwidth, apparent scattering, spectral index, and structure.
 This is a useful example to show that the highest test scores are not needed to
@@ -1279,16 +1281,16 @@ FRB150807 shows a drop in flux at the high end of the observing band due to a
 steep apparent spectral index which is either intrinsic to the source or due to
 the beam response. The reported detection included a number of system state
 tests such as checking the gain and bandpass response, and the \gls{rfi}
-environment which increases the overall scoring of this detection.
+environment which increases the overall score of this detection.
 
 In most cases, detections do not report on the telescope state and environment
 during the time of detection. Though data are made public in many of the
-detections, these data have all ready been normalized or calibrated so it is not
-possible to verify the telescope state.  More recent detections are often
-lacking in data or analysis. For example, very little information on FRB171209
-has been reported, thus almost none of the criteria can be tested.  Providing
+detections, these data have already been normalized or calibrated so it is not
+possible to verify the telescope state. More recent detections are often
+lacking in data or \cMay{detailed?} analysis. For example, very little information on
+FRB171209 has been reported, thus almost none of the criteria can be tested.  Providing
 public data not only allows for independent verification, but also for new tests
-on previous detections.  For example, the lack of public data of FRB170107 means
+on previous detections. For example, the lack of public data of FRB170107 means
 that criteria not reported in the initial detection can not be tested.
 
 %\subsubsection{FRB 110523}
@@ -1395,18 +1397,18 @@ confidence as the source is localized with multiple geographically isolated
 telescopes.
 
 Detection of \glspl{frb} at multiple frequencies not only adds to the scientific
-understanding of the sources, but also help to verify that they are
+understanding of the sources, but also helps to verify that they are
 astrophysical.  Due to historical development of receivers for pulsar searches,
 most \glspl{frb} have been detected at L-band frequencies. FRB110523
 detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
 at UHF frequencies.  Only FRB121102 has been detected above L-band
 \citep{atel10675}.  Such wide bands show the pulse structure goes beyond the
-bandwidth of known source of \gls{rfi} (e.g. modulated RADAR). 
+bandwidth of known sources of \gls{rfi} (e.g. modulated RADAR). 
 
 Multiple \glspl{frb} (e.g. FBR121102, FRB140514, FRB180301) have now been
 detected which are not broad band, possibly due to the pulse progenitor,
 lensing, or scintillation. It is likely that further narrow-band \glspl{frb}
-exist is past survey data but do not pass the detection threshold. A pulse
+exist in past survey data but do not pass the detection threshold. A pulse
 search over subbands could reveal further detections as the \gls{snr} would
 increase.
 
@@ -1423,7 +1425,7 @@ Though this idealized experiment does not exist, it is currently possible to
 make experiments that are close to it. LOFAR stations, though very low-frequency
 compared to previous detections, can be configured to operate in a similar mode.
 Telescopes that are part of \gls{vlbi} networks use the same back-ends and
-contain complex voltage recorders can be used. Only a few telescopes in the
+contain complex voltage recorders, can be used. Only a few telescopes in the
 network that can have the same pointing are needed at a time.
 
 \section{Conclusion}
@@ -1474,7 +1476,15 @@ testing on search pipelines.
 
 Jupyter notebooks of the verification tests and terrestrial \glspl{frb} are
 hosted on our public git
-repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
+repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.\\
+\vspace{1pt}
+
+\noindent \textbf{ACKNOWLEDGMENTS} \\
+
+\vspace{1pt}
+\noindent  ALFABURST  activities  are  supported  by  a
+National  Science  Foundation  (NSF)  award  AST-1616042. MPS and DRL acknowledge support from NSF RII Track I award number OIA--1458952.
+
 
 \bibliographystyle{mnras}
 \bibliography{frb-detections} 
