@@ -104,6 +104,7 @@ Mayuresh Surnis$^{6,7},$
 \and
 Kaustubh Rajwade$^{8}$, 
 \textbf{Others?}
+% Dunc, Kj, Golnoosh
 \\
 % List of institutions
 $^{1}$University of Oxford, Sub-Department of Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, United Kingdom\\
@@ -667,48 +668,82 @@ detections.
 \subsection{Simulated Pulses}
 \label{sec:sim_pulses}
 
+All the examples of false-positive detections presented in this section do not
+follow a cold plasma dispersion relation. But, as has been shown, pulses with a
+range of frequency modulations will still be detected in an \gls{frb} search
+pipeline.
+% TODO: why is this section here? what is the point?
+
+The \gls{snr}-maximized DM of a detected pulse is due to not just its frequency
+structure, but also the receiver system.  Knowing the broadband structure of the
+source, we can build a simple model to show that different dispersion relations
+can produce a range of apparent \gls{snr}-maximized events depending on the
+observing band compared to the pulse transmission band.
+
+Pulses are modelled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$), cubic
+($\nu^{-3}$), and logistic function which covers a bandwidth from
+$\nu_{\textrm{p,0}} = 1350$~MHz to $\nu_{\textrm{p,1}} = 1750$~MHz, example
+pulses are shown in Figure \ref{fig:sim_pulse_spectra}. The time duration of the
+pulse $\Delta t_{\textrm{pulse}}$ is fixed such that central frequency range of
+the pulse has an \gls{snr}-maximized DM of approximately 1000~pc~cm$^{-3}$. The
+pulse is given a width ($\Delta t_{\textrm{width}}$) by convolving the logistic
+function with a 3~ms wide Gaussian. The amplitude of the pulse is set to unity
+across the extent of the band.
+
+% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/sim_pulse_spectra.pdf}
+    \caption{Examples of simulated pulses with different dispersion relations:
+    linear (top-left), quadratic (top-right), cubic (bottom-left), logistic
+    (bottom-right).
+    }
+    \label{fig:sim_pulse_spectra}
+\end{figure}
+
+A receiver model is used to simulate the observation. This model is
+parameterized by a central observing frequency $\nu_{\textrm{obs,c}}$, bandwidth
+$\Delta \nu_{\textrm{obs}}$, number of observing frequency channels
+$n_{\textrm{freqs}}$, and per channel noise $\sigma_{\textrm{chan}}$. The
+bandpass is modelled as a Gaussian. A schematic of the pulse and receiver model
+is shown in Figure \ref{fig:simulation_diagram}.
+
+% figures/simulation_digram.odg
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/simulation_diagram.pdf}
+    \caption{Logistic function pulse and receiver model used to simulate the
+    response and \gls{snr}-maximized DM search.
+    }
+    \label{fig:simulation_diagram}
+\end{figure}
+
+A \gls{dm} search of these simulated pulses result in significant detections in
+compact regions of the DM trial space (Figure \ref{fig:sim_dmtrials}). 
+
+% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/sim_dmtrials.pdf}
+    \caption{DM-space plots of the example pulses shown in Figure
+    \ref{fig:sim_pulse_spectra}.
+    }
+    \label{fig:sim_dmtrials}
+\end{figure}
+
+% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
+\begin{figure}
+    \includegraphics[width=1.0\linewidth]{figures/simulatedPulseDM.pdf}
+    \caption{\gls{snr}-maximized DM trial for the simulation of pulses centred
+    at 1550~MHz over a range of central observing frequencies. Pulses with
+    linear (green), quadratic (orange), cubic (teal), logistic (purple)
+    dispersion relations are simulated using a detection receiver with a
+    bandwidth of 50~MHz (dotted), 100~MHz (dashed), 200~MHz (solid). The point
+    size scales are the detection \gls{snr} relative to the quadratic pulse
+    detection \gls{snr}.
+    }
+    \label{fig:sim_snr_max_dm}
+\end{figure}
+
 %%%%%%%%%
 
-%The \gls{snr}-maximized DM of the XAO events is due to the frequency structure
-%of the pulse, but also the receiver system.  Knowing the broadband structure of
-%the source, we can build a simple model to show that a non-linear modulation
-%scheme can produce a range of apparent \gls{snr}-maximized events depending on
-%the observing band compared to the pulse transmission band.
-%
-%The pulse can be modelled using a logistic function which covers a bandwidth
-%from $\nu_{\textrm{p,0}} = 1350$~MHz to $\nu_{\textrm{p,1}} = 1750$~MHz (Figure
-%\ref{fig:xao_simulation_diagram}). The time duration of the pulse $\Delta
-%t_{\textrm{pulse}}$ is fixed such that central frequency range of the pulse has
-%an \gls{snr}-maximized DM of approximately 530~pc~cm$^{-3}$. The pulse is given
-%a width ($\Delta t_{\textrm{width}}$) by convolving the logistic function with a
-%3~ms wide Gaussian. The amplitude of the pulse is set to unity across the extent
-%of the band.
-%
-%% figures/simulation_digram.odg
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/simulation_diagram.pdf}
-%    \caption{Non-linearly modulated pulse (logistic function) and receiver model
-%    used to simulate the response and \gls{snr}-maximized DM fit to a pulse
-%    similar to the one detected at XAO.
-%    }
-%    \label{fig:xao_simulation_diagram}
-%\end{figure}
-%
-%A receiver model is used to simulate the observation. This model is
-%parameterized by a central observing frequency $\nu_{\textrm{obs,c}}$, bandwidth
-%$\Delta \nu_{\textrm{obs}}$, number of observing frequency channels
-%$n_{\textrm{freqs}}$, and per channel noise $\sigma_{\textrm{chan}}$. The
-%bandpass is modelled as a Gaussian.
-%
-%% watermark:/home/griffin/data/XAO/Non-Linear-Pulse-Simulation.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/simulatedRADARdm.pdf}
-%    \caption{\gls{snr}-maximized DM trials for a simulation of the XAO
-%    non-linearly modulated pulse centred at 1550~MHz over a range of central
-%    observing frequencies, and receiver bandwidths.
-%    }
-%    \label{fig:xao_simulated_dm}
-%\end{figure}
 %
 %Detection of the pulse is simulated across a range of central observing
 %frequencies and receiver bandwidths (Figure \ref{fig:xao_simulated_dm}). The
@@ -733,23 +768,23 @@ vary between groups and instruments, but usually include information drawn from
 images of power in the time-frequency plane and the time-DM plane, information
 about the telescope state, information related to the presence of the signal in
 one or more beams.  These standards are set in order to compare each new
-detection to an \gls{frb} archetype: a broad band signal, excessively dispersed compared
-to a Galactic source along 
-this line of sight, following a $\nu^{-2}$ dispersion relation, and
-narrow in pulse width, such as FRB~130626 \citep{2016MNRAS.460L..30C} (Figure
-\ref{fig:FRB130626}). This process of comparison follows the prototype theory of
-categorization \citep{ROSCH1976382} which suggests that certain examples of a
-category are more prototypical than others. A category will contain examples
-which deviate from the prototypical as the prototype is an exaggeration of
-features deemed characteristic to the category.
+detection to an \gls{frb} archetype: a broad band signal, excessively dispersed
+compared to a Galactic source along this line of sight, following a $\nu^{-2}$
+dispersion relation, and narrow in pulse width, such as FRB~130626
+\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This process of
+comparison follows the prototype theory of categorization \citep{ROSCH1976382}
+which suggests that certain examples of a category are more prototypical than
+others. A category will contain examples which deviate from the prototypical as
+the prototype is an exaggeration of features deemed characteristic to the
+category.
 
 % FRB130626
 % aslxlap07:/local/griffin/data/FRB/FRB130626/FRB130626.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB130626.pdf}
     \caption{FRB130626 is a prototypical FRB with a broad-in-frequency,
-    narrow-in-time, single component pulse at a DM of 952~pc~cm$^{-3}$ which is well in
-    excess of the Galactic DM contribution in that line of sight.
+    narrow-in-time, single component pulse at a DM of 952~pc~cm$^{-3}$ which is
+    well in excess of the Galactic DM contribution in that line of sight.
     }
     \label{fig:FRB130626}
 \end{figure}
@@ -761,16 +796,16 @@ The one-off nature of \glspl{frb} makes it essential to do sufficient
 due-diligence when reporting on a detection or triggering a follow-up
 observation to verify a true-positive detection. Over the past decade of
 \gls{frb} surveys, a number of techniques have been developed to efficiently
-filter the total power, time-frequency data to look for dispersed pulses. Additional and
-important tests require capturing more data. It is not always possible to
-capture sufficient data for every desired test, nor is it possible with every
-observational setup.  The effort is, however, justified, as questioning a
-detection from many possible angles will lead to higher confidence in reporting
-an event as astrophysical or rejecting it as not interesting. 
+filter the total power, time-frequency data to look for dispersed pulses.
+Additional and important tests require capturing more data. It is not always
+possible to capture sufficient data for every desired test, nor is it possible
+with every observational setup.  The effort is, however, justified, as
+questioning a detection from many possible angles will lead to higher confidence
+in reporting an event as astrophysical or rejecting it as not interesting. 
 
 If most \glspl{frb} are indeed one-off events, then the detection data are the
-only data that will be available. Publication of the detection data allow independent
-verification, and can be used as input to test independent
+only data that will be available. Publication of the detection data allow
+independent verification, and can be used as input to test independent
 pipelines. The following should at least be available:
 
 \begin{enumerate}
@@ -783,8 +818,8 @@ pipelines. The following should at least be available:
     extent of the pulse. Similarly for a \gls{tab} or interferometric detection.
     \item The detection parameters such as peak \gls{snr}, best DM, pulse width,
     and others.
-    \item A list (or guide) of software (including the versions) and parameters used
-    to generate diagnostic plots.
+    \item A list (or guide) of software (including the versions) and parameters
+    used to generate diagnostic plots.
 \end{enumerate}
 
 These requirements are typically met in previously reported \gls{frb}
@@ -848,13 +883,13 @@ included. The criteria we propose here have been primarily developed from single
 dish surveys.  Use of interferometric arrays will provide powerful further
 criteria, particularly relevant to localization of signals in the sky.
 
-Included in the criteria are tests to verify whether the telescope was functioning as
-expected. This is to say that there is a prototypical status for each telescope
-and receiver system, parametrized by observable quantities, which the data
-obtained during a detection can be compared against.  This comparison requires
-the availability of the necessary data and expert knowledge of the observer and
-telescope operators. However, it should be done explicitly when reporting a new
-detection.
+Included in the criteria are tests to verify whether the telescope was
+functioning as expected. This is to say that there is a prototypical status for
+each telescope and receiver system, parametrized by observable quantities, which
+the data obtained during a detection can be compared against.  This comparison
+requires the availability of the necessary data and expert knowledge of the
+observer and telescope operators. However, it should be done explicitly when
+reporting a new detection.
 
 During a search for anomalous signals we expect a number of reported
 false-positives events, such as Perytons \citep{2011ApJ...727...18B} and the
@@ -868,12 +903,13 @@ Public datasets for events that are confirmed as false positives is also
 extremely useful in defining criteria for classification. 
 
 \subsubsection{Criteria and scoring suggestions}
-We define the two types of verification criteria stated above as
-``Similarity to the archetype" and ``Terrestrial in origin". For each criterion,
-we propose 6 possible answers, which we colour-code in our own categorization
-below. Answers 1 to 4 are used for the responses: ``Identical", ``Similar", ``Not
-similar", ``Completely different", while 5 and 6 are used for the responses
-``Data not available" and ``Test not performed" respectively.
+
+We define the two types of verification criteria stated above as ``Similarity to
+the archetype" and ``Terrestrial in origin". For each criterion, we propose 6
+possible answers, which we colour-code in our own categorization below. Answers
+1 to 4 are used for the responses: ``Identical", ``Similar", ``Not similar",
+``Completely different", while 5 and 6 are used for the responses ``Data not
+available" and ``Test not performed" respectively.
 
 In the following, we provide a set of questions to help assign a numerical
 response of 1-6 for each criterion. We have also gone through this process
