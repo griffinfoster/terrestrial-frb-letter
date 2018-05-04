@@ -92,20 +92,18 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-%\title[FRB Detections and Verification Tests]{Reporting FRB Detections
-%and Verification Tests}
 \title[FRB Verification]{Verifying and Reporting Fast Radio Bursts}
 
 \author[G. Foster et al.]{
 Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
 Aris Karastergiou$^{1,3,4,5}$,
 Marisa Geyer$^{5}$,
-Mayuresh Surnis$^{6,7},$
+Mayuresh Surnis$^{6,7}$,
 \and
 Kaustubh Rajwade$^{8}$, 
-Golnoosh Golpayegani$^{6,7},$
+Golnoosh Golpayegani$^{6,7}$,
+Duncan Lorimer$^{6,7}$,
 \textbf{Others?}
-% Dunc, Kj, Golnoosh
 \\
 % List of institutions
 $^{1}$University of Oxford, Sub-Department of Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, United Kingdom\\
@@ -666,30 +664,24 @@ in this section should present a case for developing common criteria, observing
 strategies, and data recording to improve the confidence in \gls{frb}
 detections.
 
-\subsection{Simulated Pulses}
+\subsection{Simulated False-Positive Pulses}
 \label{sec:sim_pulses}
 
-All the examples of false-positive detections presented in this section do not
-follow a cold plasma dispersion relation. But, as has been shown, pulses with a
-range of frequency modulations will still be detected in an \gls{frb} search
-pipeline.
-% TODO: why is this section here? what is the point?
-
-The \gls{snr}-maximized DM of a detected pulse is due to not just its frequency
-structure, but also the receiver system.  Knowing the broadband structure of the
-source, we can build a simple model to show that different dispersion relations
-can produce a range of apparent \gls{snr}-maximized events depending on the
-observing band compared to the pulse transmission band.
-
-Pulses are modelled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$), cubic
-($\nu^{-3}$), and logistic function which covers a bandwidth from
-$\nu_{\textrm{p,0}} = 1350$~MHz to $\nu_{\textrm{p,1}} = 1750$~MHz, example
-pulses are shown in Figure \ref{fig:sim_pulse_spectra}. The time duration of the
-pulse $\Delta t_{\textrm{pulse}}$ is fixed such that central frequency range of
-the pulse has an \gls{snr}-maximized DM of approximately 1000~pc~cm$^{-3}$. The
-pulse is given a width ($\Delta t_{\textrm{width}}$) by convolving the logistic
-function with a 3~ms wide Gaussian. The amplitude of the pulse is set to unity
-across the extent of the band.
+For a pulse which does not follow a $\nu^{-2}$ dispersion relation (such as the
+examples previous in this section), the \gls{snr}-maximized DM of the detection
+is due to the pulse dispersion relation and the receiver system. A pulse with a
+dispersion relation similar to that of cold plasma will still be detected in an
+\gls{frb} search pipeline with a significant \gls{snr}.  We model this effect by
+simulating a number of dispersion and receiver models at L-band.  Pulses are
+modelled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$), cubic ($\nu^{-3}$),
+and logistic function which covers a bandwidth from $\nu_{\textrm{p,0}} =
+1300$~MHz to $\nu_{\textrm{p,1}} = 1800$~MHz, example pulses are shown in Figure
+\ref{fig:sim_pulse_spectra}. The time duration of the pulse $\Delta
+t_{\textrm{pulse}}$ is fixed such that central frequency range of the pulse has
+an \gls{snr}-maximized DM of approximately 1000~pc~cm$^{-3}$. The pulse is given
+a width $\Delta t_{\textrm{width}}$ by convolving the function with a 3~ms wide
+Gaussian. The amplitude of the pulse is set to unity across the extent of the
+band.
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
 \begin{figure}
@@ -705,26 +697,46 @@ A receiver model is used to simulate the observation. This model is
 parameterized by a central observing frequency $\nu_{\textrm{obs,c}}$, bandwidth
 $\Delta \nu_{\textrm{obs}}$, number of observing frequency channels
 $n_{\textrm{freqs}}$, and per channel noise $\sigma_{\textrm{chan}}$. The
-bandpass is modelled as a Gaussian. A schematic of the pulse and receiver model
-is shown in Figure \ref{fig:simulation_diagram}.
+bandpass is modelled as a Gaussian. A schematic of a simulated pulse and
+receiver model is shown in Figure \ref{fig:simulation_diagram}. For the
+simulation we sampled centre observing frequencies from 1400~MHz to 1700~MHz in
+20~MHz steps and receiver bandwidths of 50, 100, and 200~MHz.
 
 % figures/simulation_digram.odg
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/simulation_diagram.pdf}
     \caption{Logistic function pulse and receiver model used to simulate the
-    response and \gls{snr}-maximized DM search.
+    response and \gls{snr}-maximized DM search. The pulse is modelled as a pulse
+    of width $\Delta t_{\textrm{width}}$ that extends of a time period $\Delta
+    t_{\textrm{pulse}}$, with a start $\nu_{p,0}$ and stop $\nu_{p,1}$ frequency
+    beyond the bandwidth $\Delta \nu_{\textrm{obs}}$ of the receiver system
+    centred at $\nu_{\textrm{obs,c}}$. An similar model was used for the linear,
+    quadratic, and cubic function dispersed pulse models.
     }
     \label{fig:simulation_diagram}
 \end{figure}
 
 A \gls{dm} search of these simulated pulses result in significant detections in
-compact regions of the DM trial space (Figure \ref{fig:sim_dmtrials}). 
+compact regions of the DM trial space (Figure \ref{fig:sim_dmtrials}). Each
+pulse was detected with similar \gls{snr} to that of the quadratically dispersed
+pulse using the same simulation parameters, but at different \glspl{dm} (Figure
+\ref{fig:sim_snr_max_dm}). The \gls{snr}-maximized \gls{dm} of quadratically
+dispersed pulse stays fixed across the choice of observing frequency as
+expected. Though, smaller observing bandwidths result in an increase in the
+\gls{snr}-maximized \gls{dm} at lower frequencies due to the pulse width. The
+The cubically dispersed pulse shows a similar response to the quadratically
+dispersed pulse, but at a lower \gls{dm}. The \gls{snr}-maximized \gls{dm} of
+the linearly dispersed pulse has a linear response as a function observing
+frequency, independent of observing bandwidth. The \gls{snr}-maximized \gls{dm}
+of the logistically dispersed pulse varies significantly as a function of
+observing bandwidth and frequency.
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/sim_dmtrials.pdf}
     \caption{DM-space plots of the example pulses shown in Figure
-    \ref{fig:sim_pulse_spectra}.
+    \ref{fig:sim_pulse_spectra} for a receiver model of $\Delta
+    \nu_{\textrm{obs}} = 200$~MHz centred at $\nu_{\textrm{obs,c}} = 1550$~MHz.
     }
     \label{fig:sim_dmtrials}
 \end{figure}
@@ -743,21 +755,14 @@ compact regions of the DM trial space (Figure \ref{fig:sim_dmtrials}).
     \label{fig:sim_snr_max_dm}
 \end{figure}
 
-%%%%%%%%%
-
-%
-%Detection of the pulse is simulated across a range of central observing
-%frequencies and receiver bandwidths (Figure \ref{fig:xao_simulated_dm}). The
-%\gls{snr}-maximized DM is determined by performing a trial DM search from 0 to
-%4000~pc~cm$^{-3}$ in integer increments.  For all bandwidths, when the central
-%observing frequency is near the centre of the pulse the apparent DM of
-%$\sim530$~pc~cm$^{-3}$ maximizes the detection \gls{snr}. However, when the
-%central observing frequency is shifted relative to the pulse centre frequency a
-%range of \gls{snr}-maximized \glspl{dm} are reported, depending on the receiver
-%bandwidth. This model can be used to approximate an astrophysical \gls{frb}
-%signal at any frequency and bandwidth for a given receiver.
-
-%%%%%%%%%
+If these pulses are detected with a high \gls{snr} across a broad bandwidth then
+a dispersion relation can be fit to the pulse to show that it follows a cold
+plasma relation. But, in the case of a low \gls{snr} detection, or a
+band-limited signal it is difficult to determine the dispersion relation. A
+terrestrial source can be generated with a range of dispersion relations
+resulting in a false-positive detection. Beyond using the test of a high
+\gls{snr} detection in an \gls{frb} pipeline a number of additional tests can be
+done to verify a source as astrophysical.
 
 \section{FRB Verification}
 \label{sec:verify_crit}
@@ -1000,8 +1005,7 @@ Scattering timescales are estimated, as in the case of FRB130626
 e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened
 pulse. The characteristic timescale, $\tau$, is expected to have a strong
 frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting
-a power law spectral index \cMay{should we put frequency scaling index to avoid
-confusion with the flux density spectral index?} $\alpha =4$ or $4.4$ (e.g.
+a power law frequency scaling index $\alpha =4$ or $4.4$ (e.g.
 \citealt{Rickett1977}), and observations of pulsars often showing $\alpha < 4$.
 Spectral indices computed from broad band FRBs, should be compared to these
 expected values.  Measurement of a scattering tail with a spectral index in the
@@ -1061,7 +1065,7 @@ there are multiple components, what is the `component-optimized' DM, how does it
 differ from the \gls{snr}-maximized DM? When there are multiple components to a
 pulse, the choice of DM can result in different frequency-averaged pulses such
 as in FRB130729 in which the choice of DM can result in a single component or
-multi-component pulse profile \cMay{need reference here}. 
+multi-component pulse profile (see Section \ref{sec:frb_signals}).
 
 \subsubsection{Terrestrial Origins}
 
@@ -1108,7 +1112,7 @@ fit.
 
 \paragraph{Telescope State}
 
-Was the telescope in a valid state? i.e. were the correct electronics active,
+Was the telescope in a valid state? I.e. were the correct electronics active,
 was the feed in the correct position, was other equipment active that could
 cause local interference? This is a site and telescope-dependent criterion,
 which requires expert knowledge of the system in order to test this criterion
@@ -1200,6 +1204,7 @@ such as \gls{ligo}, use multi-site observations to remove local systematics.
 \end{figure*}
 
 \subsection{FRB signals}
+\label{sec:frb_signals}
 
 Having provided the FRB verification criteria above, we have re-analyzed the
 previous reported \glspl{frb} based on the available literature and public data.
@@ -1227,7 +1232,7 @@ terrestrial \gls{rfi}, which is made clear in the low criteria scores.
     \caption{FRB130729 dedispersed with a DM of 852~pc~cm$^{-3}$ (black), this
     is different from the DM of 861~pc~cm$^{-3}$ (red) reported in
     \protect\cite{2016MNRAS.460L..30C}.  The detected FRB has two distinct
-    components separated by approximately 10~ms. data are presented at the native
+    components separated by approximately 10~ms. Data are presented at the native
     recorded resolution of 64~$\mu$s, 390~kHz convolved with a Gaussian
     smoothing filter of size 512~$\mu$s, 3.125~MHz.}
     \label{fig:FRB130729}
@@ -1238,21 +1243,20 @@ FRB140514 (Figure \ref{fig:FRB140514}) and FRB180301 (Figure
 majority of the detected flux is concentrated into narrow regions of the band.
 This low score affects the dispersion relation criteria test as there is not
 sufficient fractional bandwidth to perform a good fit. The frequency structure
-of both of these detections could be due to scintillation \cMay{or plasma
-lensing?}.  These low scores do not discount FRB140514 and FRB180301 as
-astrophysical, they indicate that FRB140514 and FRB180301 diverge from the
-prototypical \gls{frb} model.  We note that FRB121102 diverges significantly
-from the prototype model as individual pulses vary in bandwidth, apparent
-scattering, spectral index, and structure.  This is a useful example to show
-that the highest test scores are not needed to verify a detection as
-astrophysical.
+of both of these detections could be due to scintillation or plasma lensing.
+These low scores do not discount FRB140514 and FRB180301 as astrophysical, they
+indicate that FRB140514 and FRB180301 diverge from the prototypical \gls{frb}
+model.  We note that FRB121102 diverges significantly from the prototype model
+as individual pulses vary in bandwidth, apparent scattering, spectral index, and
+structure.  This is a useful example to show that the highest test scores are
+not needed to verify a detection as astrophysical.
 
 % FRB140514
 % aslxlap07:/local/griffin/data/FRB/FRB140514/FRB140514.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB140514.pdf}
     \caption{Dynamic spectrum of FRB140514 dedispersed with a DM of
-    563~pc~cm$^{-3}$.  data are presented at the native recorded resolution of
+    563~pc~cm$^{-3}$.  Data are presented at the native recorded resolution of
     64~$\mu$s, 390~kHz convolved with a Gaussian smoothing filter of size
     512~$\mu$s, 3.125~MHz.
     }
@@ -1288,7 +1292,7 @@ In most cases, detections do not report on the telescope state and environment
 during the time of detection. Though data are made public in many of the
 detections, these data have already been normalized or calibrated so it is not
 possible to verify the telescope state. More recent detections are often lacking
-in data or \cMay{detailed?} analysis. For example, very little information on
+in data or detailed analysis. For example, very little information on
 FRB171209 has been reported, thus almost none of the criteria can be tested.
 Providing public data not only allows for independent verification, but also for
 new tests on previous detections. For example, the lack of public data of
@@ -1478,16 +1482,13 @@ testing on search pipelines.
 
 Jupyter notebooks of the verification tests and terrestrial \glspl{frb} are
 hosted on our public git
-repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.\\
-\vspace{1pt}
+repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
 
-\noindent \textbf{ACKNOWLEDGMENTS} \\
+\section*{Acknowledgements}
 
-\vspace{1pt}
-\noindent ALFABURST activities are supported by a National Science Foundation
+ALFABURST activities are supported by a National Science Foundation
 (NSF) award AST-1616042. MPS and DRL acknowledge support from NSF RII Track I
 award number OIA--1458952.
-
 
 \bibliographystyle{mnras}
 \bibliography{frb-detections} 
