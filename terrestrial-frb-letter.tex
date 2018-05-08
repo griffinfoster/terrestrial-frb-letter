@@ -58,7 +58,7 @@
 % overwriting existing commands. Example:
 %\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
 
-\newcommand{\GSF}[1]{\noindent\textcolor{blue}{GSF:#1}}
+\newcommand{\GSF}[1]{\noindent\textcolor{green}{GSF:#1}}
 %comments by Marisa
 \newcommand{\cM}[1]{\textcolor{magenta}{ #1 --M}}
 %comments by Mayuresh
@@ -100,8 +100,7 @@
 % Keep the title short and informative.
 \title[FRB Verification]{Verifying and Reporting Fast Radio Bursts}
 
-\author[G. Foster et al.]{
-Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
+\author[G. Foster et al.]{Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
 Aris Karastergiou$^{1,3,4}$,
 Marisa Geyer$^{5}$,
 Mayuresh Surnis$^{6,7}$,
@@ -109,9 +108,9 @@ Mayuresh Surnis$^{6,7}$,
 Golnoosh Golpayegani$^{6,7}$,
 Kejia Lee$^{8}$,
 Duncan Lorimer$^{6,7}$,
-Kaustubh Rajwade$^{9}$,
+Danny C. Price$^{9,2}$,
 \and
-Danny C. Price$^{10,11}$,
+Kaustubh Rajwade$^{10}$,
 \textbf{Others?}
 \\
 % List of institutions
@@ -126,9 +125,8 @@ $^{5}$SKA-SA, 3rd Floor, The Park, Park Road, Pinelands, South Africa\\
 $^{6}$Department of Physics and Astronomy, West Virginia University, Morgantown, WV 26505, USA\\
 $^{7}$Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown,\\ WV 26505, USA\\
 $^{8}$Department of Astronomy \& Kavli Institute for Astronomy and Astrophysics, Peking University\\
-$^{9}$Jodrell Bank Centre for Astrophysics, University of Manchester, Oxford Road, Manchester M13 9PL, United Kingdom\\
-$^{10}$\SWIN \\
-$^{11}$\UCB \\
+$^{9}$\SWIN \\
+$^{10}$Jodrell Bank Centre for Astrophysics, University of Manchester, Oxford Road, Manchester M13 9PL, United Kingdom\\
 }
 
 % These dates will be filled out by the publisher
@@ -150,16 +148,24 @@ $^{11}$\UCB \\
 % How was the study done?
 % What is the main take away message?
 % What can be said about these results, and how does this affect future work?
-\dcp{Fast Radio Bursts (FRBs) are a class of short-duration transients at radio wavelengths with inferred astrophysical origin.}
-The prototypical FRB is a
-broadband signal that occurs over the extent of the receiver frequency range,
-is narrow-in-time, and is highly dispersed, following a $\nu^{-2}$ relation.
+Fast Radio Bursts (FRBs) are a class of short-duration transients at radio
+wavelengths with inferred astrophysical origin.  The prototypical FRB is a
+broadband signal that occurs over the extent of the receiver frequency range, is
+narrow-in-time, and is highly dispersed, following a $\nu^{-2}$ relation.
 However, some FRBs appear band-limited, and show apparent scintillation, complex
-frequency-dependent structure, or multi-component pulse shapes.
-\dcp{While there is sufficient evidence that FRBs are indeed astrophysical, their one-off nature necessitates extra scrutiny when reporting a detection as \emph{bona~fide} and not a false positive. Currently, there is currently no formal validation framework for FRBs, rather a set of community practices. In this article, we discuss potential sources of false positives, and suggest a framework in which FRB-like events can be evaluated as real or otherwise.
-} 
-We present examples of false-positive events in data from the Arecibo, LOFAR, and Nanshan telescopes, which while FRB-like, are found to be due to instrumental variations, noise, and radio-frequency interference.  Differentiating these false-positive detections
-from astrophysical events requires knowledge and tests beyond thresholded single-pulse detection.  We discuss post-detection analyses, verification tests, and data sets which should be provided when reporting a \dcp{purported} FRB detection.
+frequency-dependent structure, or multi-component pulse shapes.  While there is
+sufficient evidence that FRBs are indeed astrophysical, their one-off nature
+necessitates extra scrutiny when reporting a detection as \emph{bona~fide} and
+not a false positive. Currently, there is currently no formal validation
+framework for FRBs, rather a set of community practices. In this article, we
+discuss potential sources of false positives, and suggest a framework in which
+FRB-like events can be evaluated as real or otherwise.  We present examples of
+false-positive events in data from the Arecibo, LOFAR, and Nanshan telescopes,
+which while FRB-like, are found to be due to instrumental variations, noise, and
+radio-frequency interference.  Differentiating these false-positive detections
+from astrophysical events requires knowledge and tests beyond thresholded
+single-pulse detection.  We discuss post-detection analyses, verification tests,
+and data sets which should be provided when reporting an FRB detection.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -205,54 +211,69 @@ radio continuum: transients -- methods: observational
     \label{fig:dynamic_spec}
 \end{figure*}
 
-The \dcp{astrophysical} origins of \glspl{frb} \dcp{has been} a mystery since they were first
-reported \citep{2007Sci...318..777L}. The \gls{dm} associated with the reported
-events indicate they occur well beyond our Galaxy, possibly at cosmological
-distances. 
-\dcp{Given their extragalactic distance, observed fluxes suggest extremely energetic progenitors; however, their emission mechanism remains unknown.}
-The consensus \dcp{that \gls{frb} are astrophysical events}  developed from  detections with multiple telescopes, over \dcp{multiple wavelengths},
-using different \dcp{receiver systems}. \glspl{frb} are difficult to detect as they require
-high-gain telescopes which typically have a small field of view, such that
-despite many thousands of observing hours, only a few dozen have been reported
-as of this writing \citep{2016PASA...33...45P}.
+The astrophysical origins of \glspl{frb} has been a mystery since they were
+first reported \citep{2007Sci...318..777L}. The \gls{dm} associated with the
+reported events indicate they occur well beyond our Galaxy, possibly at
+cosmological distances.  Given their extragalactic distance, observed fluxes
+suggest extremely energetic progenitors; however, their emission mechanism
+remains unknown.  The consensus that \gls{frb} are astrophysical events
+developed from  detections with multiple telescopes, over multiple wavelengths,
+using different receiver systems. \glspl{frb} are difficult to detect as they
+require high-gain telescopes which typically have a small field of view, such
+that despite many thousands of observing hours, only a few dozen have been
+reported as of this writing \citep{2016PASA...33...45P}.
 
 The prototypical \gls{frb} is broad-band across the observable bandwidth of the
-receivers used. \dcp{The pulse is narrow-in-time---on the order of a few milliseconds
-in width---and highly dispersed, exhibiting a simple $\nu^{-2}$ relation 
-with frequency. }
-Despite follow-up observations in the direction of FRB events, only FRB~121102 has been shown
-to repeat \citep{2016Natur.531..202S}. \dcp{Several reported detections deviate from this prototypical form, exhibiting} complex frequency-dependent structure
-and are possibly band-limited. The pulse width also varies, due to either the emission process or propagation effects such as scattering from the \gls{ism} and
-\gls{igm}.
+receivers used. The pulse is narrow-in-time---on the order of a few milliseconds
+in width---and highly dispersed, exhibiting a $\nu^{-2}$ relation with
+frequency.  Despite follow-up observations in the direction of FRB events, only
+FRB~121102 has been shown to repeat \citep{2016Natur.531..202S}. Several
+reported detections deviate from this prototypical form, exhibiting complex
+frequency-dependent structure and are possibly band-limited. The pulse width
+also varies, due to either the emission process or propagation effects such as
+scattering from the \gls{ism} and \gls{igm}.
 
-These rare events are detected by automated\dcp{\sout{, and often GPU-accelerated,} high-performance} software
-pipelines that extensively search a broad range of trial \glspl{dm} and pulse
-widths \dcp{\citep{Barsdell2012, 2015MNRAS.452.1254K, Bannister2017, Chime2018}.} Each de-dispersed time series is then thresholded -- any peaks above a
-minimum \gls{snr} are reported as candidates. The number of candidates is
-usually overwhelming due to radio frequency interference (\gls{rfi}) and system
-gain variations. Initially, candidates were reviewed manually; however, with the
+These rare events are detected by automated, high-performance software pipelines
+that extensively search a broad range of trial \glspl{dm} and pulse widths
+\citep{Barsdell2012, 2015MNRAS.452.1254K, Bannister2017, Chime2018}. Each
+de-dispersed time series is then thresholded -- any peaks above a minimum
+\gls{snr} are reported as candidates. The number of candidates is usually
+overwhelming due to radio frequency interference (\gls{rfi}) and system gain
+variations. Initially, candidates were reviewed manually; however, with the
 amount of data acquired in recent surveys, it has become a significant time
-effort to do so. \dcp{As such, and as our understanding of the expected signal properties has grown, so too has the use of machine-learning-based classifiers of candidate events \citep[e.g.][]{Wagstaff2016, 2018MNRAS.474.3847F, Farah2018, Connor2018}.} 
+effort to do so. As such, and as our understanding of the expected signal
+properties has grown, so too has the use of machine-learning-based classifiers
+of candidate events \citep[e.g.][]{Wagstaff2016, 2018MNRAS.474.3847F, Farah2018,
+Connor2018}.
 
-As FRBs are rare and appear not to repeat (with the notable exception of FRB~121102),
-being able to confidently verify them is an important issue. There is
-significant \gls{rfi} detectable at all radio observatories, and there are known
-anthropogenic sources that appear FRB-like \citep{2011ApJ...727...18B}.  Given
-the significant number of \gls{dm} trials and high-time resolution of the
+As FRBs are rare and appear not to repeat (with the notable exception of
+FRB~121102), being able to confidently verify them is an important issue. There
+is significant \gls{rfi} detectable at all radio observatories, and there are
+known anthropogenic sources that appear FRB-like \citep{2011ApJ...727...18B}.
+Given the significant number of \gls{dm} trials and high-time resolution of the
 spectra in a typical survey, there are a large number of false-positives (type-I
 errors) that pass the automated post-processing detection thresholds.  This is
 by design, as we would like to severely limit the potential for false-negatives
 (type-II errors) in our detection pipelines by accepting a number of
-false-positives \dcp{during automated searches and manually discarding them later}. But, given the large sampling of the parameter search space it
-can be difficult---if not impossible---to differentiate between a true,
-astrophysical \gls{frb} (true-positive) and a `terrestrial' \gls{frb}
-(false-positive) due to \gls{rfi}, systematics, or other local effects. As the
-survey time increases, the likelihood of detecting such a false-positive will
-increase. 
+false-positives during automated searches and manually discarding them later.
+But, given the large sampling of the parameter search space it can be
+difficult---if not impossible---to differentiate between a true, astrophysical
+\gls{frb} (true-positive) and a `terrestrial' \gls{frb} (false-positive) due to
+\gls{rfi}, systematics, or other local effects. As the survey time increases,
+the likelihood of detecting such a false-positive will increase. 
 
-\dcp{[MOVE PARA BREAK] In this paper, we present a list of verification criteria to counter false detection of `terrestrial' \glspl{frb}, that can be applied \emph{post facto} to recorded data. We firstly} discuss examples of FRB-like sources, which after investigation, were shown to be non-astrophysical \dcp{(Sec.~\ref{sec:false-pos})}. Using these and
-previously reported \glspl{frb}, we develop a set of criteria to test detections
-against \dcp{(Sec.~\ref{sec:verify_crit})}.  \dcp{We then apply these criteria to previously reported detections (Sec.~\ref{sec:appln_to_previous_detections})}, then discuss \dcp{future observational methods to reduce ambiguity (Sec.~\ref{sec:future_methods})}. We conclude with suggestions as to what data, in addition to the detected dynamic spectrum, should be reported to provide a robust statement about \gls{frb} detections in general.
+In this paper, we present a list of verification criteria to counter false
+detection of `terrestrial' \glspl{frb}, that can be applied \emph{post facto} to
+recorded data. We firstly discuss examples of FRB-like sources, which after
+investigation, were shown to be non-astrophysical (\S~\ref{sec:false-pos}).
+Using these and previously reported \glspl{frb}, we develop a set of criteria to
+test detections against (\S~\ref{sec:verify_crit}). We then apply these criteria
+to some of the previously reported detections
+(\S~\ref{sec:appln_to_previous_detections}) as examples of usage, then discuss
+future observational methods to reduce ambiguity (\S~\ref{sec:future_methods}).
+We conclude with suggestions as to what data, in addition to the detected
+dynamic spectrum, should be reported to provide a robust statement about
+\gls{frb} detections in general.
 
 \section{False-Positive FRB Detections}
 \label{sec:false-pos}
@@ -302,21 +323,23 @@ channel average is subtracted) before pulse detection
 baseline at the cost of removing some of the overall pulse power, particularly
 at low DM trials.
 
-On initial inspection, this event looks astrophysical. From radiometer noise
-considerations, the flux density of the pulse \dcp{? this bit trails off...}
+On initial inspection, this event appears astrophysical. From radiometer noise
+considerations, the flux density of the pulse is
 %
 $$
 S = \textrm{SEFD} \frac{\textrm{S/N}}{\sqrt{D \; \Delta \tau \;
 \Delta \nu}}.
 $$
 %
-\dcp{introduce $\Delta\nu$, $\Delta\tau$, ...}
-Adopting a \gls{sefd} of 3~Jy for the \gls{alfa} receiver (REF??),  results in
-\mbox{$S = 66$}~mJy from beam 0, which would be lower than what is observed for
-any previously detected \gls{frb} \citep{2016PASA...33...45P}.  However, this
-flux estimate is a lower limit, assuming the source is at the center of the
-beam. The pulse width is large for an \gls{frb} but within the range of those
-previously reported.
+where SEFD is the system-equivalent flux density of the telescope, $\Delta \tau$
+is the time resolution of the spectra, $\Delta \nu$ is the channel resolution of
+the spectra, and $D$ is the time decimation factor which maximizes the \gls{snr}
+of the detections.  Adopting a \gls{sefd} of 3~Jy for the \gls{alfa} receiver
+\GSF{ref},  results in \mbox{$S = 66$}~mJy from beam 0, which would be lower
+than what is observed for any previously detected \gls{frb}
+\citep{2016PASA...33...45P}.  However, this flux estimate is a lower limit,
+assuming the source is at the center of the beam. The pulse width is large for
+an \gls{frb} but within the range of those previously reported.
 
 Of the six other \gls{alfa} beams, the event only appears in beam 5 (Figure
 \ref{fig:beam5_dynamic_spec}), which is adjacent to beam 0.  This pulse lines up
@@ -643,7 +666,9 @@ illuminating the feed.
 %because of the complex frequency modulation but rather due to a local
 %transmitter.
 
-The Nanshan L-band receiver is a single pixel system. \dcp{\sout{It could be that a} A multi-beam system, such as the Parkes 13-beam or ALFA 7-beam receivers, would likely have detected these events in several beams, which would indicate a terrestrial origin to the event.}
+The Nanshan L-band receiver is a single pixel system. A multi-beam system, such
+as the Parkes 13-beam or ALFA 7-beam receivers, would likely have detected these
+events in several beams, which would indicate a terrestrial origin to the event.
 
 Had only a single pulse been detected, for example if the source was weaker, or
 the telescope was only sensitive to the highest \gls{snr} event, it would be
@@ -663,11 +688,15 @@ detections.
 
 \subsection{\dcp{Parkes Perytons}}
 
-\dcp{I think a short summary of Perytons at Parkes would be valuable here. Two refs are already in text, Petroff: \citep{2015MNRAS.451.3933P} 
-and Burke-Spolaor: \citep{2011ApJ...727...18B}. Example text:
-A class of non-astrophysical yet FRB-like signals were discovered in high time resolution data around 1.4\,GHz with the Parkes telescope. These signals, dubbed `Perytons',are swept in frequency like FRBs, but do not obey the $\nu^{-2}$ cold plasma relation.  Ultimately, these were found to be a form of RFI generated by microwave ovens.
-[mention which diagnostics are useful for discerning them, e.g. time of day dependence, coincidence with 2.3--2.5\,GHz transmission.
-}
+\dcp{I think a short summary of Perytons at Parkes would be valuable here. Two
+refs are already in text, Petroff: \citep{2015MNRAS.451.3933P} and
+Burke-Spolaor: \citep{2011ApJ...727...18B}. Example text: A class of
+non-astrophysical yet FRB-like signals were discovered in high time resolution
+data around 1.4\,GHz with the Parkes telescope. These signals, dubbed
+`Perytons',are swept in frequency like FRBs, but do not obey the $\nu^{-2}$ cold
+plasma relation. Ultimately, these were found to be a form of RFI generated by
+microwave ovens. mention which diagnostics are useful for discerning them,
+e.g. time of day dependence, coincidence with 2.3--2.5\,GHz transmission.}
 
 \subsection{Simulated False-Positive Pulses}
 \label{sec:sim_pulses}
@@ -885,8 +914,6 @@ coincidence detection and localization.
 \subsection{Criteria}
 \label{sec:criteria}
 
-\dcp{Is it possible to somehow collapse a sublevel? The A.B.C.D seems a bit too much hierarchy. Maybe make Sec 3.2 into Sec 4 for example?}
-
 For verification of new FRBs, we propose a list of criteria of two types: the
 first type tests the similarity between new detections and the archetype, and the
 second type is used to preclude terrestrial origins of the signal. Together,
@@ -969,8 +996,6 @@ dynamic spectrum should be checked for sub-structure at both the highest time
 and frequency resolution. Complex voltages allow for coherent dedispersion and
 flexibility in channelization and integration, which provides further
 sensitivity in searching for structure.
-
-\dcp{Not sure where this could be discussed, but conversion to 2-bit data limits dynamic range and could hide underlying structure.}
 
 \paragraph{Multiple components}
 
