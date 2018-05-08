@@ -156,14 +156,14 @@ However, some FRBs appear band-limited, and show apparent scintillation, complex
 frequency-dependent structure, or multi-component pulse shapes.  While there is
 sufficient evidence that FRBs are indeed astrophysical, their one-off nature
 necessitates extra scrutiny when reporting a detection as \emph{bona~fide} and
-not a false positive. Currently, there is currently no formal validation
-framework for FRBs, rather a set of community practices. In this article, we
-discuss potential sources of false positives, and suggest a framework in which
-FRB-like events can be evaluated as real or otherwise.  We present examples of
-false-positive events in data from the Arecibo, LOFAR, and Nanshan telescopes,
-which while FRB-like, are found to be due to instrumental variations, noise, and
-radio-frequency interference.  Differentiating these false-positive detections
-from astrophysical events requires knowledge and tests beyond thresholded
+not a false positive. Currently, there is no formal validation framework for
+FRBs, rather a set of community practices. In this article, we discuss potential
+sources of false positives, and suggest a framework in which FRB-like events can
+be evaluated as real or otherwise.  We present examples of false-positive events
+in data from the Arecibo, LOFAR, and Nanshan telescopes, which while FRB-like,
+are found to be due to instrumental variations, noise, and radio-frequency
+interference.  Differentiating these false-positive detections from
+astrophysical events requires knowledge and tests beyond thresholded
 single-pulse detection.  We discuss post-detection analyses, verification tests,
 and data sets which should be provided when reporting an FRB detection.
 \end{abstract}
@@ -701,21 +701,25 @@ e.g. time of day dependence, coincidence with 2.3--2.5\,GHz transmission.}
 \subsection{Simulated False-Positive Pulses}
 \label{sec:sim_pulses}
 
-For a pulse which does not follow a $\nu^{-2}$ dispersion relation (such as the
-examples previous in this section), the \gls{snr}-maximized DM of the detection
-is \cM{the result of/a combination of} \sout{due to} the pulse dispersion relation and the \cM{response of the} receiver system. A pulse with a
-dispersion relation similar to \cM{dispersion by a} cold plasma will still be detected in an
-\gls{frb} search pipeline with a significant \gls{snr}.  We model this effect by
+\cM{The computed DM value which maximizes the \gls{snr} of a burst detection, is a function of both the pulse dispersion relation and the response of the receiver system. A pulse with a dispersion relation different from the dispersion by a cold plasma ($\nu^{-2}$), can therefore still be detected by the search pipeline with a significant \gls{snr}.}
+
+%For a pulse which does not follow a $\nu^{-2}$ dispersion relation (such as the
+%examples previous in this section), the \gls{snr}-maximized DM of the detection
+%is \cM{the result of/a combination of} \sout{due to} the pulse dispersion relation and the \cM{response of the} receiver system. A pulse with a dispersion relation similar to \cM{dispersion by a} cold plasma will still be detected in an
+%\gls{frb} search pipeline with a significant \gls{snr}.
+
+We model this effect by
 simulating a number of dispersion and receiver models at L-band.  Pulses are
-modelled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$), cubic ($\nu^{-3}$),
+modeled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$), cubic ($\nu^{-3}$),
 and logistic function which covers a bandwidth from $\nu_{\textrm{p,0}} =
-1300$~MHz to $\nu_{\textrm{p,1}} = 1800$~MHz, example pulses are shown in Figure
+1300$~MHz to $\nu_{\textrm{p,1}} = 1800$~MHz. \cM{Example} pulses are shown in Figure
 \ref{fig:sim_pulse_spectra}. The time duration of the pulse $\Delta
 t_{\textrm{pulse}}$ is fixed such that central frequency range of the pulse has
 an \gls{snr}-maximized DM of approximately 1000~pc~cm$^{-3}$. The pulse is given
 a width $\Delta t_{\textrm{width}}$ by convolving the function with a 3~ms wide
 Gaussian. The amplitude of the pulse is set to unity across the extent of the
 band.
+
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
 \begin{figure}
@@ -913,6 +917,9 @@ coincidence detection and localization.
 
 \subsection{Criteria}
 \label{sec:criteria}
+
+\dcp{Is it possible to somehow collapse a sublevel? The A.B.C.D seems a bit too much hierarchy. Maybe make Sec 3.2 into Sec 4 for example?}
+\cM{I suggest dropping the 4-depth heading numbering altogether and just leaving boldface font.}
 
 For verification of new FRBs, we propose a list of criteria of two types: the
 first type tests the similarity between new detections and the archetype, and the
