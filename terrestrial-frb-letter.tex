@@ -91,6 +91,9 @@
 \newacronym{vlbi}{VLBI}{Very-Long Baseline Interferometry}
 \newacronym{xao}{XAO}{Xinjiang Astronomical Observatory}
 
+\newcommand{\UCB}{Department of Astronomy,  University of California Berkeley, Berkeley CA 94720}
+\newcommand{\SWIN}{Centre for Astrophysics \& Supercomputing, Swinburne University of Technology, Hawthorn, VIC 3122, Australia}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Title of the paper, and the short title which is used in the headers.
@@ -101,12 +104,14 @@
 Griffin Foster$^{1,2}$\thanks{E-mail: griffin.foster@physics.ox.ac.uk},
 Aris Karastergiou$^{1,3,4}$,
 Marisa Geyer$^{5}$,
-Golnoosh Golpayegani$^{6,7}$,
+Mayuresh Surnis$^{6,7}$,
 \and
-Kejia Lee$^{6}$,
-Duncan Lorimer$^{7,8}$,
+Golnoosh Golpayegani$^{6,7}$,
+Kejia Lee$^{8}$,
+Duncan Lorimer$^{6,7}$,
 Kaustubh Rajwade$^{9}$,
-Mayuresh Surnis$^{7,8}$,
+\and
+Danny C. Price$^{10,11}$,
 \textbf{Others?}
 \\
 % List of institutions
@@ -118,11 +123,12 @@ $^{3}$Department of Physics and Electronics, Rhodes University,
 $^{4}$Physics Department, University of the Western Cape,
     Cape Town 7535, South Africa\\
 $^{5}$SKA-SA, 3rd Floor, The Park, Park Road, Pinelands, South Africa\\
-$^{6}$Department of Astronomy \& Kavli Institute for Astronomy and Astrophysics, Peking University\\
-$^{7}$Department of Physics and Astronomy, West Virginia University, Morgantown, WV 26505, USA\\
-$^{8}$Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown,\\ WV 26505, USA\\
+$^{6}$Department of Physics and Astronomy, West Virginia University, Morgantown, WV 26505, USA\\
+$^{7}$Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown,\\ WV 26505, USA\\
+$^{8}$Department of Astronomy \& Kavli Institute for Astronomy and Astrophysics, Peking University\\
 $^{9}$Jodrell Bank Centre for Astrophysics, University of Manchester, Oxford Road, Manchester M13 9PL, United Kingdom\\
-$^{10}$University of California, Berkeley
+$^{10}$\SWIN \\
+$^{11}$\UCB \\
 }
 
 % These dates will be filled out by the publisher
@@ -688,6 +694,7 @@ band.
     \caption{Examples of simulated pulses with different dispersion relations:
     linear (top-left), quadratic (top-right), cubic (bottom-left), logistic
     (bottom-right).
+    \dcp{Can this figure be combined with Fig 12 with 4 rows (lin, cubic, quadratic, logistic), and 2 cols (freq and DM space)?}
     }
     \label{fig:sim_pulse_spectra}
 \end{figure}
@@ -911,12 +918,12 @@ extremely useful in defining criteria for classification.
 
 \subsubsection{Criteria and scoring suggestions}
 
-We define the two types of verification criteria stated above as ``Similarity to
-the archetype" and ``Terrestrial in origin". For each criterion, we propose 6
+We define the two types of verification criteria stated above as `Similarity to
+the archetype' and `Terrestrial in origin'. For each criterion, we propose 6
 possible answers, which we colour-code in our own categorization below. Answers
-1 to 4 are used for the responses: ``Identical", ``Similar", ``Not similar",
-``Completely different", while 5 and 6 are used for the responses ``Data not
-available" and ``Test not performed" respectively.
+1 to 4 are used for the responses: `Identical', `Similar', `Not similar',
+`Completely different', while 5 and 6 are used for the responses `Data not
+available' and `Test not performed' respectively.
 
 In the following, we provide a set of questions to help assign a numerical
 response of 1-6 for each criterion. We have also gone through this process
@@ -1013,7 +1020,7 @@ a power law frequency scaling index $\alpha =4$ or $4.4$ (e.g.
 \citealt{Rickett1977}), and observations of pulsars often showing $\alpha < 4$.
 Spectral indices computed from broad band FRBs, should be compared to these
 expected values.  Measurement of a scattering tail with a spectral index in the
-range mentioned above warrants the designation of "Identical", while gradual
+range mentioned above warrants the designation of `Identical', while gradual
 departure from this picture should be described using the other responses. 
 
 Comparing obtained $\tau$ values to values predicted by current electron density
