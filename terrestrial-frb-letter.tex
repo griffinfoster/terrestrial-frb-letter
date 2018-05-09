@@ -710,29 +710,38 @@ ovens \citep{2015MNRAS.451.3933P}.
 %is \cM{the result of/a combination of} \sout{due to} the pulse dispersion relation and the \cM{response of the} receiver system. A pulse with a dispersion relation similar to \cM{dispersion by a} cold plasma will still be detected in an
 %\gls{frb} search pipeline with a significant \gls{snr}.
 
-We model this effect by
-simulating a number of dispersion and receiver models at L-band.  Pulses are
-modeled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$), cubic ($\nu^{-3}$),
-and logistic function which covers a bandwidth from $\nu_{\textrm{p,0}} =
-1300$~MHz to $\nu_{\textrm{p,1}} = 1800$~MHz. \cM{Example} pulses are shown in Figure
-\ref{fig:sim_pulse_spectra}. The time duration of the pulse $\Delta
-t_{\textrm{pulse}}$ is fixed such that central frequency range of the pulse has
-an \gls{snr}-maximized DM of approximately 1000~pc~cm$^{-3}$. The pulse is given
-a width $\Delta t_{\textrm{width}}$ by convolving the function with a 3~ms wide
-Gaussian. The amplitude of the pulse is set to unity across the extent of the
-band.
-
+We model this effect by simulating a number of dispersion and receiver models at
+L-band.  Pulses are modeled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$),
+cubic ($\nu^{-3}$), and logistic function which covers a bandwidth from
+$\nu_{\textrm{p,0}} = 1300$~MHz to $\nu_{\textrm{p,1}} = 1800$~MHz. Example
+pulses are shown in the top row of Figure \ref{fig:sim_pulse_spectra_dm}. The
+time duration of the pulse $\Delta t_{\textrm{pulse}}$ is fixed such that
+central frequency range of the pulse has an \gls{snr}-maximized DM of
+approximately 1000~pc~cm$^{-3}$. The pulse is given a width $\Delta
+t_{\textrm{width}}$ by convolving the function with a 3~ms wide Gaussian. The
+amplitude of the pulse is set to unity across the extent of the band.
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
-\begin{figure}
-    \includegraphics[width=1.0\linewidth]{figures/sim_pulse_spectra.pdf}
-    \caption{Examples of simulated pulses with different dispersion relations:
-    linear (top-left), quadratic (top-right), cubic (bottom-left), logistic
-    (bottom-right).
-    \dcp{Can this figure be combined with Fig 12 with 4 rows (lin, cubic, quadratic, logistic), and 2 cols (freq and DM space)?}
+\begin{figure*}
+    \includegraphics[width=1.0\linewidth]{figures/sim_pulse_spectra_dm.pdf}
+    \caption{Top row: examples of simulated pulses with different dispersion
+    relations: linear, quadratic, cubic, logistic (left to right). Bottom row:
+    DM-space plots of the simulated pulses for a receiver model of $\Delta
+    nu_{\textrm{obs}} = 200$~MHz centred at $\nu_{\textrm{obs,c}} = 1550$~MHz.
+    Initial starting time is arbitrary and different between plots.
     }
-    \label{fig:sim_pulse_spectra}
-\end{figure}
+    \label{fig:sim_pulse_spectra_dm}
+\end{figure*}
+
+%% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
+%\begin{figure}
+%    \includegraphics[width=1.0\linewidth]{figures/sim_pulse_spectra.pdf}
+%    \caption{Examples of simulated pulses with different dispersion relations:
+%    linear (top-left), quadratic (top-right), cubic (bottom-left), logistic
+%    (bottom-right).
+%    }
+%    \label{fig:sim_pulse_spectra}
+%\end{figure}
 
 A receiver model is used to simulate the observation. This model is
 parameterized by a central observing frequency $\nu_{\textrm{obs,c}}$, bandwidth
@@ -758,29 +767,29 @@ simulation we sampled centre observing frequencies from 1400~MHz to 1700~MHz in
 \end{figure}
 
 A \gls{dm} search of these simulated pulses result in significant detections in
-compact regions of the DM trial space (Figure \ref{fig:sim_dmtrials}). Each
-pulse was detected with similar \gls{snr} to that of the quadratically dispersed
-pulse using the same simulation parameters, but at different \glspl{dm} (Figure
-\ref{fig:sim_snr_max_dm}). The \gls{snr}-maximized \gls{dm} of quadratically
-dispersed pulse stays fixed across the choice of observing frequency as
-expected. Though, smaller observing bandwidths result in an increase in the
-\gls{snr}-maximized \gls{dm} at lower frequencies due to the pulse width. The
-The cubically dispersed pulse shows a similar response to the quadratically
-dispersed pulse, but at a lower \gls{dm}. The \gls{snr}-maximized \gls{dm} of
-the linearly dispersed pulse has a linear response as a function observing
-frequency, independent of observing bandwidth. The \gls{snr}-maximized \gls{dm}
-of the logistically dispersed pulse varies significantly as a function of
-observing bandwidth and frequency.
+compact regions of the DM trial space (bottom row of Figure
+\ref{fig:sim_spectra_dm}). Each pulse was detected with similar \gls{snr} to
+that of the quadratically dispersed pulse using the same simulation parameters,
+but at different \glspl{dm} (Figure \ref{fig:sim_snr_max_dm}). The
+\gls{snr}-maximized \gls{dm} of quadratically dispersed pulse stays fixed across
+the choice of observing frequency as expected. Though, smaller observing
+bandwidths result in an increase in the \gls{snr}-maximized \gls{dm} at lower
+frequencies due to the pulse width. The The cubically dispersed pulse shows a
+similar response to the quadratically dispersed pulse, but at a lower \gls{dm}.
+The \gls{snr}-maximized \gls{dm} of the linearly dispersed pulse has a linear
+response as a function observing frequency, independent of observing bandwidth.
+The \gls{snr}-maximized \gls{dm} of the logistically dispersed pulse varies
+significantly as a function of observing bandwidth and frequency.
 
-% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
-\begin{figure}
-    \includegraphics[width=1.0\linewidth]{figures/sim_dmtrials.pdf}
-    \caption{DM-space plots of the example pulses shown in Figure
-    \ref{fig:sim_pulse_spectra} for a receiver model of $\Delta
-    \nu_{\textrm{obs}} = 200$~MHz centred at $\nu_{\textrm{obs,c}} = 1550$~MHz.
-    }
-    \label{fig:sim_dmtrials}
-\end{figure}
+%% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
+%\begin{figure}
+%    \includegraphics[width=1.0\linewidth]{figures/sim_dmtrials.pdf}
+%    \caption{DM-space plots of the example pulses shown in Figure
+%    \ref{fig:sim_pulse_spectra} for a receiver model of $\Delta
+%    \nu_{\textrm{obs}} = 200$~MHz centred at $\nu_{\textrm{obs,c}} = 1550$~MHz.
+%    }
+%    \label{fig:sim_dmtrials}
+%\end{figure}
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
 \begin{figure}
@@ -1491,11 +1500,11 @@ elements such as those planned with HERA \citep{2017PASP..129d5001D} would
 provide an improvement in spatial resolution.
 TRAPUM\footnote{http://www.trapum.org/}, one of the MeerKAT legacy science
 projects,  and MeerTRAP, a commensal transient search program on MeerKAT, will
-perform single pulse surveys to find \glspl{frb} in beamformed data and capture
-complex voltage data for post-detection localization.  Telescopes that are part
-of \gls{vlbi} networks use the same back-ends and contain complex voltage
-recorders, can be used \citep{2018arXiv180401904W}. Only a few telescopes in the
-network that can have the same pointing are needed at a time for localization.
+perform single pulse surveys in beamformed data and capture complex voltage data
+for post-detection localization.  Telescopes that are part of \gls{vlbi}
+networks use the same back-ends and contain complex voltage recorders, can be
+used \citep{2018arXiv180401904W}. Only a few telescopes in the network that can
+have the same pointing are needed at a time for localization.
 
 \section{Conclusion}
 
@@ -1549,9 +1558,14 @@ repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
 
 \section*{Acknowledgements}
 
-ALFABURST activities are supported by a National Science Foundation
-(NSF) award AST-1616042. MPS and DRL acknowledge support from NSF RII Track I
-award number OIA--1458952. KR acknowledges funding from the European Research Council grant under the European Union’s Horizon 2020 research and innovation programme (grant agreement No. 694745).
+A.K. and G.F. would like to thank the Leverhulme Trust for supporting this work.
+G.F. and D.C.P. acknowledges support from the Breakthrough Listen Initiative.
+Breakthrough Listen is managed by the Breakthrough Initiatives, sponsored by the
+Breakthrough Prize Foundation.  ALFABURST activities are supported by a National
+Science Foundation (NSF) award AST-1616042. M.P.S. and D.R.L. acknowledge
+support from NSF RII Track I award number OIA--1458952. K.R. acknowledges
+funding from the European Research Council grant under the European Union’s
+Horizon 2020 research and innovation programme (grant agreement No. 694745).
 
 \bibliographystyle{mnras}
 \bibliography{frb-detections} 
