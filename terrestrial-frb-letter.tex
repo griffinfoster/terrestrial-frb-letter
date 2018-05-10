@@ -634,37 +634,13 @@ pulsar periodicity. Further, the pulses were seen at different pointings across
 the sky.  Most were detected at a low altitude pointing angle, but some were
 detected close to zenith.  Dispersion in these pulses was found to deviate from
 a $\nu^{-2}$ relation by $1.5 \sigma$. A dispersed astrophysical source should
-always follow a cold plasma $\nu^{-2}$ relation.
-%As shown, sources which approximately fit this
-%relation will still be detected with de-dispersion algorithms.
-This rules out a pulsar, or an astronomical source in general.
-
-%Figure \ref{fig:xao_summed} shows the sum of the de-dispersed (using a DM of
-%531.8~pc~cm$^{-3}$) phase-aligned pulses.  This `folded' spectrum shows an
-%S-shaped broadband pulse which covers most of the observing band. There is also
-%regular, narrow-band frequency modulation ($\sim4$~MHz) in the pulse structure.
-%The structure is likely due to non-linear frequency modulation, used in
-%chirped RADAR systems, similar to the linear frequency-modulated signal observed
-%in Section \ref{sec:LOFAR_RADAR}.
-%
-%% watermark:/home/griffin/data/XAO/coadd_pulses.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/XAO_summed_dynamic.pdf}
-%    \caption{The `folded' dynamic spectrum of 182 high-\gls{snr} pulses detected
-%    with the Nanshan Radio Telescope.  The low-level, non-linear frequency
-%    modulation can be seen across the band. The orange bars represent regions
-%    that have had significant constant-in-time \gls{rfi} replaced by noise.
-%    }
-%    \label{fig:xao_summed}
-%\end{figure}
+always follow a cold plasma $\nu^{-2}$ relation.  This rules out a pulsar, or an
+astronomical source in general.
 
 A thorough search of possible local sources, such as new equipment, vehicles,
 and aircraft was performed, with no obvious candidate being found. Detection of
 multiple pulses at different beam pointings indicates the source may be directly
 illuminating the feed.
-%The source is likely not due to system electronics
-%because of the complex frequency modulation but rather due to a local
-%transmitter.
 
 The Nanshan L-band receiver is a single pixel system. A multi-beam system, such
 as the Parkes 13-beam or ALFA 7-beam receivers, would likely have detected these
@@ -703,23 +679,42 @@ ovens \citep{2015MNRAS.451.3933P}.
 \subsection{Simulated False-Positive Pulses}
 \label{sec:sim_pulses}
 
-\cM{The computed DM value which maximizes the \gls{snr} of a burst detection, is a function of both the pulse dispersion relation and the response of the receiver system. A pulse with a dispersion relation different from the dispersion by a cold plasma ($\nu^{-2}$), can therefore still be detected by the search pipeline with a significant \gls{snr}.}
+As shown in the examples of this section, narrow-in-time pulses from terrestrial
+origins can take multiple forms which follow an approximately $\nu^{-2}$
+dispersion relation. This can be due to instrumentation variation effects, or as
+anthropogenically created signals such as chirps with frequency-modulated
+structure.  An \gls{frb} dedispersion pipeline acts as an approximate matched
+filter to a subset of these signals leading them to be detected with high
+\gls{snr}. By simulating a simple receiver and dispersed pulse model we can show
+that \gls{frb} pipeline false-positive detections can be produced over a broad
+range of \glspl{dm} and \glspl{snr}.
+
+%The computed DM value which maximizes the \gls{snr} of a burst detection, is a
+%function of both the pulse dispersion relation and the response of the receiver
+%system. A pulse with a dispersion relation different from the dispersion by a
+%cold plasma ($\nu^{-2}$), can therefore still be detected by the search pipeline
+%with a significant \gls{snr}.
 
 %For a pulse which does not follow a $\nu^{-2}$ dispersion relation (such as the
 %examples previous in this section), the \gls{snr}-maximized DM of the detection
-%is \cM{the result of/a combination of} \sout{due to} the pulse dispersion relation and the \cM{response of the} receiver system. A pulse with a dispersion relation similar to \cM{dispersion by a} cold plasma will still be detected in an
-%\gls{frb} search pipeline with a significant \gls{snr}.
+%is the result of the pulse dispersion relation and the response of the receiver
+%system. A pulse with a dispersion relation similar to dispersion by a cold
+%plasma will still be detected in an \gls{frb} search pipeline with a significant
+%\gls{snr}.
 
 We model this effect by simulating a number of dispersion and receiver models at
-L-band.  Pulses are modeled with a linear ($\nu^{-1}$), quadratic ($\nu^{-2}$),
-cubic ($\nu^{-3}$), and logistic function which covers a bandwidth from
-$\nu_{\textrm{p,0}} = 1300$~MHz to $\nu_{\textrm{p,1}} = 1800$~MHz. Example
-pulses are shown in the top row of Figure \ref{fig:sim_pulse_spectra_dm}. The
-time duration of the pulse $\Delta t_{\textrm{pulse}}$ is fixed such that
-central frequency range of the pulse has an \gls{snr}-maximized DM of
-approximately 1000~pc~cm$^{-3}$. The pulse is given a width $\Delta
-t_{\textrm{width}}$ by convolving the function with a 3~ms wide Gaussian. The
-amplitude of the pulse is set to unity across the extent of the band.
+L-band.  Pulses are modeled with linear ($\nu^{-1}$), quadratic ($\nu^{-2}$),
+cubic ($\nu^{-3}$), and logistic ($\frac{1}{1+e^{-\nu}}$) functions which covers
+a bandwidth from $\nu_{\textrm{p,0}} = 1300$~MHz to $\nu_{\textrm{p,1}} =
+1800$~MHz.  The quadratic dispersion model is used as reference, while the other
+dispersion models are simulated as they are similar to anthropogenic signals of
+known and unknown origin.  Example pulses are shown in the top row of Figure
+\ref{fig:sim_pulse_spectra_dm}. The time duration of the pulse $\Delta
+t_{\textrm{pulse}}$ is fixed such that the quadratically dispersed pulse has an
+\gls{snr}-maximized DM of approximately 1000~pc~cm$^{-3}$. The pulse is
+convolved with a Gaussian function to give a pulse width $\Delta
+t_{\textrm{width}}$ of 3~ms. The amplitude of the pulse is set to unity across
+the extent of the band.
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
 \begin{figure*}
@@ -733,24 +728,18 @@ amplitude of the pulse is set to unity across the extent of the band.
     \label{fig:sim_pulse_spectra_dm}
 \end{figure*}
 
-%% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/sim_pulse_spectra.pdf}
-%    \caption{Examples of simulated pulses with different dispersion relations:
-%    linear (top-left), quadratic (top-right), cubic (bottom-left), logistic
-%    (bottom-right).
-%    }
-%    \label{fig:sim_pulse_spectra}
-%\end{figure}
-
 A receiver model is used to simulate the observation. This model is
 parameterized by a central observing frequency $\nu_{\textrm{obs,c}}$, bandwidth
-$\Delta \nu_{\textrm{obs}}$, number of observing frequency channels
-$n_{\textrm{freqs}}$, and per channel noise $\sigma_{\textrm{chan}}$. The
-bandpass is modelled as a Gaussian. A schematic of a simulated pulse and
-receiver model is shown in Figure \ref{fig:simulation_diagram}. For the
-simulation we sampled centre observing frequencies from 1400~MHz to 1700~MHz in
-20~MHz steps and receiver bandwidths of 50, 100, and 200~MHz.
+$\Delta \nu_{\textrm{obs}}$, frequency resolution $\Delta \nu_{\rm chan}$, time
+resolution $\tau_{\rm int}$, and per channel noise $\sigma_{\textrm{chan}}$. The
+bandpass response is modelled as a Gaussian with width $\Delta
+\nu_{\textrm{obs}}$. A schematic of a simulated pulse and receiver model is
+shown in Figure \ref{fig:simulation_diagram}. For the simulation we sampled
+centre observing frequencies from 1400~MHz to 1700~MHz in 20~MHz steps and
+receiver bandwidths of 50, 100, and 200~MHz. The quadratically dedispersed
+pulses ranged in \gls{snr} from approximately 20--40 depending on $\Delta
+\nu_{\textrm{obs}}$. The time and frequency resolution of the data was
+$\tau_{\rm int} = 256\,\mu \textrm{s}$ and $\Delta \nu_{\rm chan} = 360$~kHz.
 
 % figures/simulation_digram.odg
 \begin{figure}
@@ -760,36 +749,30 @@ simulation we sampled centre observing frequencies from 1400~MHz to 1700~MHz in
     of width $\Delta t_{\textrm{width}}$ that extends of a time period $\Delta
     t_{\textrm{pulse}}$, with a start $\nu_{p,0}$ and stop $\nu_{p,1}$ frequency
     beyond the bandwidth $\Delta \nu_{\textrm{obs}}$ of the receiver system
-    centred at $\nu_{\textrm{obs,c}}$. An similar model was used for the linear,
-    quadratic, and cubic function dispersed pulse models.
+    centred at $\nu_{\textrm{obs,c}}$. An similar model was used for the
+    linearly, quadratically, and cubically dispersed pulse models.
     }
     \label{fig:simulation_diagram}
 \end{figure}
 
 A \gls{dm} search of these simulated pulses result in significant detections in
 compact regions of the DM trial space (bottom row of Figure
-\ref{fig:sim_spectra_dm}). Each pulse was detected with similar \gls{snr} to
-that of the quadratically dispersed pulse using the same simulation parameters,
-but at different \glspl{dm} (Figure \ref{fig:sim_snr_max_dm}). The
+\ref{fig:sim_pulse_spectra_dm}). Each pulse was detected with similar \gls{snr}
+to that of the quadratically dispersed pulse using the same simulation
+parameters, but at different \glspl{dm} (Figure \ref{fig:sim_snr_max_dm}). The
 \gls{snr}-maximized \gls{dm} of quadratically dispersed pulse stays fixed across
 the choice of observing frequency as expected. Though, smaller observing
 bandwidths result in an increase in the \gls{snr}-maximized \gls{dm} at lower
-frequencies due to the pulse width. The The cubically dispersed pulse shows a
-similar response to the quadratically dispersed pulse, but at a lower \gls{dm}.
-The \gls{snr}-maximized \gls{dm} of the linearly dispersed pulse has a linear
-response as a function observing frequency, independent of observing bandwidth.
-The \gls{snr}-maximized \gls{dm} of the logistically dispersed pulse varies
-significantly as a function of observing bandwidth and frequency.
-
-%% watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
-%\begin{figure}
-%    \includegraphics[width=1.0\linewidth]{figures/sim_dmtrials.pdf}
-%    \caption{DM-space plots of the example pulses shown in Figure
-%    \ref{fig:sim_pulse_spectra} for a receiver model of $\Delta
-%    \nu_{\textrm{obs}} = 200$~MHz centred at $\nu_{\textrm{obs,c}} = 1550$~MHz.
-%    }
-%    \label{fig:sim_dmtrials}
-%\end{figure}
+frequencies due to the pulse width. The cubically dispersed pulse shows a
+similar flat response as the quadratically dispersed pulse but with a faster
+upturn in \gls{dm} at lower $\nu_{\textrm{obs,c}}$.  The \gls{snr}-maximized
+\gls{dm} of the linearly dispersed pulse has a linear response as a function
+observing frequency, independent of observing bandwidth.  The
+\gls{snr}-maximized \gls{dm} of the logistically dispersed pulse varies
+significantly as a function of observing bandwidth and frequency. This is only a
+small set of simulated parameters and dispersion models, but a wide range of
+\gls{snr}-maximized \glspl{dm} can be produced which appear similar to the
+quadratically dispersed pulse.
 
 % watermark:/home/griffin/data/XAO/Pulse-Simulation.ipynb
 \begin{figure}
@@ -806,13 +789,14 @@ significantly as a function of observing bandwidth and frequency.
 \end{figure}
 
 If these pulses are detected with a high \gls{snr} across a broad bandwidth then
-a dispersion relation can be fit to the pulse to show that it follows a cold
+a dispersion relation can be fit to the pulse to show if it follows a cold
 plasma relation. But, in the case of a low \gls{snr} detection, or a
 band-limited signal it is difficult to determine the dispersion relation. A
-terrestrial source can be generated with a range of dispersion relations
-resulting in a false-positive detection. Beyond using the test of a high
-\gls{snr} detection in an \gls{frb} pipeline a number of additional tests can be
-done to verify a source as astrophysical.
+terrestrial pulse can be generated with a range of dispersion relations
+resulting in a detection which can be difficult to differentiate from an
+astrophysical source. Beyond using the test of a high \gls{snr} detection in an
+\gls{frb} pipeline a number of additional tests can be done to verify a source
+as astrophysical.
 
 \section{FRB Verification}
 \label{sec:verify_crit}
@@ -1559,7 +1543,7 @@ repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
 \section*{Acknowledgements}
 
 A.K. and G.F. would like to thank the Leverhulme Trust for supporting this work.
-G.F. and D.C.P. acknowledges support from the Breakthrough Listen Initiative.
+G.F. and D.C.P. acknowledge support from the Breakthrough Listen Initiative.
 Breakthrough Listen is managed by the Breakthrough Initiatives, sponsored by the
 Breakthrough Prize Foundation.  ALFABURST activities are supported by a National
 Science Foundation (NSF) award AST-1616042. M.P.S. and D.R.L. acknowledge
