@@ -703,10 +703,10 @@ range of \glspl{dm} and \glspl{snr}.
 %\gls{snr}.
 
 We model this effect by simulating a number of dispersion and receiver models at
-L-band.  Pulses are modeled with linear ($\nu^{-1}$), quadratic ($\nu^{-2}$),
-cubic ($\nu^{-3}$), and logistic ($\frac{1}{1+e^{-\nu}}$) functions which covers
-a bandwidth from $\nu_{\textrm{p,0}} = 1300$~MHz to $\nu_{\textrm{p,1}} =
-1800$~MHz.  The quadratic dispersion model is used as reference, while the other
+L-band.  Pulses are modelled with linear ($\nu^{-1}$), quadratic ($\nu^{-2}$),
+cubic ($\nu^{-3}$), and logistic ($\frac{1}{1+e^{-\nu}}$) functions which
+cover a bandwidth from $\nu_{\textrm{p,0}} = 1300$~MHz to $\nu_{\textrm{p,1}} =
+1800$~MHz.  The quadratic dispersion model is used as the reference, while the other
 dispersion models are simulated as they are similar to anthropogenic signals of
 known and unknown origin.  Example pulses are shown in the top row of Figure
 \ref{fig:sim_pulse_spectra_dm}. The time duration of the pulse $\Delta
@@ -734,7 +734,7 @@ $\Delta \nu_{\textrm{obs}}$, frequency resolution $\Delta \nu_{\rm chan}$, time
 resolution $\tau_{\rm int}$, and per channel noise $\sigma_{\textrm{chan}}$. The
 bandpass response is modelled as a Gaussian with width $\Delta
 \nu_{\textrm{obs}}$. A schematic of a simulated pulse and receiver model is
-shown in Figure \ref{fig:simulation_diagram}. For the simulation we sampled
+shown in Figure \ref{fig:simulation_diagram}. For the simulation, we sampled
 centre observing frequencies from 1400~MHz to 1700~MHz in 20~MHz steps and
 receiver bandwidths of 50, 100, and 200~MHz. The quadratically dedispersed
 pulses ranged in \gls{snr} from approximately 20--40 depending on $\Delta
@@ -755,7 +755,7 @@ $\tau_{\rm int} = 256\,\mu \textrm{s}$ and $\Delta \nu_{\rm chan} = 360$~kHz.
     \label{fig:simulation_diagram}
 \end{figure}
 
-A \gls{dm} search of these simulated pulses result in significant detections in
+A \gls{dm} search of these simulated pulses results in significant detections in
 compact regions of the DM trial space (bottom row of Figure
 \ref{fig:sim_pulse_spectra_dm}). Each pulse was detected with similar \gls{snr}
 to that of the quadratically dispersed pulse using the same simulation
