@@ -211,16 +211,18 @@ radio continuum: transients -- methods: observational
 \end{figure*}
 
 The astrophysical origins of \glspl{frb} has been a mystery since they were
-first reported \citep{2007Sci...318..777L}. The \gls{dm} associated with the
-reported events indicate they occur well beyond our Galaxy, possibly at
-cosmological distances.  Given their extragalactic distance, observed fluxes
-suggest extremely energetic progenitors; however, their emission mechanism
-remains unknown.  The consensus that \gls{frb} are astrophysical events
-developed from  detections with multiple telescopes, over multiple wavelengths,
-using different receiver systems. \glspl{frb} are difficult to detect as they
-require high-gain telescopes which typically have a small field of view, such
-that despite many thousands of observing hours, only a few dozen have been
-reported as of this writing \citep{2016PASA...33...45P}.
+first reported \citep{2007Sci...318..777L}.  Though, the detection of multiple
+\glspl{frb} in \cite{2013Sci...341...53T} put forth a convincing case for their
+astrophysical nature and, subsequent detections have re-enforced this case.  The
+\gls{dm} associated with the reported events indicate they occur well beyond our
+Galaxy, possibly at cosmological distances.  Given their extragalactic distance,
+observed fluxes suggest extremely energetic progenitors; however, their emission
+mechanism remains unknown.  The consensus that \gls{frb} are astrophysical
+events developed from  detections with multiple telescopes, over multiple
+wavelengths, using different receiver systems.  \glspl{frb} are difficult to
+detect as they require high-gain telescopes which typically have a small field
+of view, such that despite many thousands of observing hours, only a few dozen
+have been reported as of this writing \citep{2016PASA...33...45P}.
 
 The prototypical \gls{frb} is broad-band across the observable bandwidth of the
 receivers used. The pulse is narrow-in-time---on the order of a few milliseconds
@@ -343,11 +345,11 @@ is large for an \gls{frb} but within the range of those previously reported.
 Of the six other \gls{alfa} beams, the event only appears in beam 5 (Figure
 \ref{fig:beam5_dynamic_spec}), which is adjacent to beam 0.  This pulse lines up
 with the beam 0 event in time exactly, but the event \gls{snr} was maximized
-($S/N=16$) for a DM of 829~pc~cm$^{-3}$. By testing a range of DM values, we
-found that this event appeared to decrease in width for lower DM trials.
-\gls{rfi} clipping was applied during this event, which is known to introduce a
-bias, resulting in a maximized \gls{snr} at a different DM trial.  We thus
-conclude that the Beam 0 and Beam 5 event are the same event.
+($S/N=16$) for a DM of 829~pc~cm$^{-3}$.  By testing a range of DM values, we
+found that this event decreased in width for lower DM trials.  Our \gls{rfi}
+clipping method was applied during this event which is known to affect the pulse
+shape, and generally results in a maximized \gls{snr} at a higher DM trial than
+expected.  We thus conclude that the Beam 0 and Beam 5 event are the same event.
 
 In the immediate period before and after the pulse, there are no similar events
 (Figure \ref{fig:dm_time}). The event appears to be isolated in time, with a
@@ -628,13 +630,13 @@ portion of the band.
 \end{figure}
 
 A periodicity search revealed a periodicity of $\sim 1.7$~s, but the timing
-residuals were orders of magnitude higher \mbox{($\sim 0.01$~s)} than that of a typical
-pulsar periodicity. Further, the pulses were seen at different pointings across
-the sky.  Most were detected at a low altitude pointing angle, but some were
-detected close to zenith.  Dispersion in these pulses was found to deviate from
-a $\nu^{-2}$ relation by $1.5 \sigma$. A dispersed astrophysical source should
-always follow a cold plasma $\nu^{-2}$ relation.  This rules out a pulsar, or an
-astronomical source in general.
+residuals were orders of magnitude higher \mbox{($\sim 0.01$~s)} than that of a
+typical pulsar periodicity. Further, the pulses were seen at different pointings
+across the sky.  Most were detected at a low altitude pointing angle, but some
+were detected close to zenith.  Dispersion in these pulses was found to deviate
+from a $\nu^{-2}$ relation by $1.5 \sigma$. A dispersed astrophysical source
+should always follow a cold plasma $\nu^{-2}$ relation.  This rules out a
+pulsar, or an astronomical source in general.
 
 A thorough search of possible local sources, such as new equipment, vehicles,
 and aircraft was performed, with no obvious candidate being found. Detection of
@@ -662,6 +664,7 @@ strategies, and data recording to improve the confidence in \gls{frb}
 detections.
 
 \subsection{Parkes Perytons}
+\label{sec:perytons}
 
 A class of non-astrophysical, yet FRB-like signals are found in high-time
 resolution data around 1.4\,GHz with the Parkes Telescope
@@ -687,19 +690,6 @@ filter to a subset of these signals leading them to be detected with high
 \gls{snr}. By simulating a simple receiver and dispersed pulse model we can show
 that \gls{frb} pipeline false-positive detections can be produced over a broad
 range of \glspl{dm} and \glspl{snr}.
-
-%The computed DM value which maximizes the \gls{snr} of a burst detection, is a
-%function of both the pulse dispersion relation and the response of the receiver
-%system. A pulse with a dispersion relation different from the dispersion by a
-%cold plasma ($\nu^{-2}$), can therefore still be detected by the search pipeline
-%with a significant \gls{snr}.
-
-%For a pulse which does not follow a $\nu^{-2}$ dispersion relation (such as the
-%examples previous in this section), the \gls{snr}-maximized DM of the detection
-%is the result of the pulse dispersion relation and the response of the receiver
-%system. A pulse with a dispersion relation similar to dispersion by a cold
-%plasma will still be detected in an \gls{frb} search pipeline with a significant
-%\gls{snr}.
 
 We model this effect by simulating a number of dispersion and receiver models at
 L-band.  Pulses are modelled with linear ($\nu^{-1}$), quadratic ($\nu^{-2}$),
@@ -809,7 +799,8 @@ about the telescope state, information related to the presence of the signal in
 one or more beams.  These standards are set in order to compare each new
 detection to an \gls{frb} archetype: a broad band signal, excessively dispersed
 compared to a Galactic source along this line of sight, following a $\nu^{-2}$
-dispersion relation, and narrow in pulse width, such as FRB~130626
+dispersion relation, possibly scattered following an approximately $\nu^{-4}$
+relation, and narrow in pulse width, such as FRB~130626
 \citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This process of
 comparison follows the prototype theory of categorization \citep{ROSCH1976382}
 which suggests that certain examples of a category are more prototypical than
@@ -827,8 +818,8 @@ category.
     }
     \label{fig:FRB130626}
 \end{figure}
+
 \subsection{Data}
-%\section{Detection Reporting}
 \label{sec:detect_report}
 
 The one-off nature of \glspl{frb} makes it essential to do sufficient
@@ -862,13 +853,16 @@ pipelines. The following should at least be available:
 \end{enumerate}
 
 These requirements are typically met in previously reported \gls{frb}
-detections. Often the public data have been normalized, which is useful for
-studying the event but can hide instrumental effects.  The last point, a guide
-on which software was used is often not reported.  Differences in software and
-data formats can produce different results, such as the reported \gls{snr} or
-time definition. For most of the Parkes detections, filterbank data are publicly
-available and FRBCAT \citep{2016PASA...33...45P} provides a well-curated
-repository for information and links to data sources.
+detections. Often the public data have been normalized and requantized to 2 bits
+for long-term archiving. This reduction in the dynamic range results in
+potential distortion of pulses, and normalization can hide instrumentational
+effects. Where possible, the data at the full bit depth, time, and frequency
+resolution should be stored.  The last point, a guide on which software was used
+is often not reported.  Differences in software and data formats can produce
+different results, such as the reported \gls{snr} or time definition. For most
+of the Parkes detections, filterbank data are publicly available and FRBCAT
+\citep{2016PASA...33...45P} provides a well-curated repository for information
+and links to data sources.
 
 To allow for a more complete set of criteria tests and to further improve the
 evidence of an astrophysical detection, and in addition to the list above, we
@@ -899,24 +893,15 @@ The time and frequency resolution can be adjusted to look for structure. If
 multiple sites or elements are used, the signals can be correlated for
 coincidence detection and localization.
 
-% Not all verification criteria can be checked, but an effort
-% should be made to check as many as possible given time and data constraints.
-% In the VOEvent trigger standard for \glspl{frb}
-% \citep{2017arXiv171008155P} there is an `importance' parameter which indicates
-% the confidence in a detection. It is not possible to combine all the
-% verification criteria into a single metric in general. But, some combination of
-% checks can be done on an individual telescope or experiment basis to form a
-% metric that can be reported in VOEvent. As further checks are done, those that
-% take more time and effort, updates and retraction event triggers can be sent.
-
 \subsection{Criteria}
 \label{sec:criteria}
 
-%\dcp{Is it possible to somehow collapse a sublevel? The A.B.C.D seems a bit too much hierarchy. Maybe make Sec 3.2 into Sec 4 for example?}
-%\cM{I suggest dropping the 4-depth heading numbering altogether and just leaving boldface font.}
-%\GSF{There is a bit of a structure to all this hierarchy, we have split the
-%tests into two groups (astrophysical criteria, terrestrial origin). The A.B.C.D
-%sectioning allows for a few references.}
+%\dcp{Is it possible to somehow collapse a sublevel? The A.B.C.D seems a bit too
+%much hierarchy. Maybe make Sec 3.2 into Sec 4 for example?} \cM{I suggest
+%dropping the 4-depth heading numbering altogether and just leaving boldface
+%font.} \GSF{There is a bit of a structure to all this hierarchy, we have split
+%the tests into two groups (astrophysical criteria, terrestrial origin). The
+%A.B.C.D sectioning allows for a few references.}
 
 For verification of new FRBs, we propose a list of criteria of two types: the
 first type tests the similarity between new detections and the archetype, and the
@@ -938,14 +923,9 @@ reporting a new detection.
 
 During a search for anomalous signals we expect a number of reported
 false-positives events, such as Perytons \citep{2011ApJ...727...18B} and the
-events presented in Section \ref{sec:false-pos}. 
-%As we describe in the following, FRB130729 and FRB140514 have low scores on
-%some of the criteria tests, they do not fit the classic \gls{frb} model but
-%given the available observing and system information, and lack of an external,
-%anthropogenic explanation they are hard to discount as \textit{not} being of
-%astrophysical origin.
-Public datasets for events that are confirmed as false positives is also
-extremely useful in defining criteria for classification. 
+events presented in Section \ref{sec:false-pos}.  Public datasets for events
+that are confirmed as false positives is also extremely useful in defining
+criteria for classification. 
 
 \subsubsection{Criteria and scoring suggestions}
 
@@ -1046,11 +1026,12 @@ e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened
 pulse. The characteristic timescale, $\tau$, is expected to have a strong
 frequency dependence ($\tau \propto \nu^{-\alpha}$), with most models predicting
 a power law frequency scaling index $\alpha =4$ or $4.4$ (e.g.
-\citealt{Rickett1977}), and observations of pulsars often showing $\alpha < 4$ (e.g. \citealt{Lewandowski2015,Geyer2017}).
-Spectral indices computed from broad band FRBs, should be compared to these
-expected values.  Measurement of a scattering tail with a spectral index in the
-range mentioned above warrants the designation of `Identical', while gradual
-departure from this picture should be described using the other responses. 
+\citealt{Rickett1977}), and observations of pulsars often showing $\alpha < 4$
+(e.g. \citealt{Lewandowski2015,Geyer2017}).  Spectral indices computed from
+broad band FRBs, should be compared to these expected values.  Measurement of a
+scattering tail with a spectral index in the range mentioned above warrants the
+designation of `Identical', while gradual departure from this picture should be
+described using the other responses. 
 
 Comparing obtained $\tau$ values to values predicted by current electron density
 models for the Milky Way (e.g.
@@ -1189,12 +1170,17 @@ directly illuminate the feed.
 \paragraph{Multi-beam}
 
 Is the receiver a multi-beam system? Was the pulse detected in multiple beams?
-If so, is there a difference in \gls{snr} between beams? FRB010724
-\citep{2007Sci...318..777L} was detected in multiple beams of the Parkes
-multi-beam receiver, but at different sensitivities indicating that the source,
-though extremely bright, was localized to a position in the sky. Perytons were
-also detected with the Parkes multi-beam receiver but in all beams at similar
-sensitivities indicating the source was local.
+If so, is there a difference in \gls{snr} between beams?  Multi-beam systems, in
+particular the Parkes multi-beam receiver, have been very successful in the
+detection of \glspl{frb} as they provide good evidence for an event occurring in
+the far-field (at astrophysical distances) versus in the near-field (local to
+the telescope).  A multi-beam system can be used to perform coincidence
+detection to significantly reduce the number of false-positive detections.
+FRB010724 \citep{2007Sci...318..777L} was detected in multiple beams of the
+Parkes multi-beam receiver, but at different sensitivities indicating that the
+source, though extremely bright, was localized to a position in the sky.
+Perytons were also detected with the Parkes multi-beam receiver but in all beams
+at similar sensitivities indicating the source was local.
 
 \paragraph{Tied-array Beam (\gls{tab})}
 
@@ -1240,7 +1226,9 @@ such as \gls{ligo}, use multi-site observations to remove local systematics.
     prototype, and the event is terrestrial in origin. Yellow indicates the
     criterion result could not be determined from the available data.  Grey
     indicates the criteria is not valid based on the observation.
-    %\dcp{DCP: I love this figure! But is there a different set of words for identical / similar / not similar? It feels a bit odd to have 'low-altitude pointing' green for 'identical', really it's green = good.}    
+    %\dcp{DCP: I love this figure! But is there a different set of words for
+    %identical / similar / not similar? It feels a bit odd to have 'low-altitude
+    %pointing' green for 'identical', really it's green = good.}    
     %\GSF{I know the identical / similar / not similar classifier doesn't work
     %for all the tests, but neither does good / neutral / bad. I think these
     %labels should be interpreted loosely, hopeful that is how it is read.}
@@ -1541,14 +1529,15 @@ repository\footnote{https://github.com/griffinfoster/terrestrial-frb-letter}.
 
 \section*{Acknowledgements}
 
-A.K. and G.F. would like to thank the Leverhulme Trust for supporting this work.
-G.F. and D.C.P. acknowledge support from the Breakthrough Listen Initiative.
-Breakthrough Listen is managed by the Breakthrough Initiatives, sponsored by the
-Breakthrough Prize Foundation.  ALFABURST activities are supported by a National
-Science Foundation (NSF) award AST-1616042. M.P.S. and D.R.L. acknowledge
-support from NSF RII Track I award number OIA--1458952. K.R. acknowledges
-funding from the European Research Council grant under the European Union’s
-Horizon 2020 research and innovation programme (grant agreement No. 694745).
+We thank Simon Johnston for his valuable comments.  A.K. and G.F. would like to
+thank the Leverhulme Trust for supporting this work.  G.F. and D.C.P.
+acknowledge support from the Breakthrough Listen Initiative.  Breakthrough
+Listen is managed by the Breakthrough Initiatives, sponsored by the Breakthrough
+Prize Foundation.  ALFABURST activities are supported by a National Science
+Foundation (NSF) award AST-1616042. M.P.S. and D.R.L. acknowledge support from
+NSF RII Track I award number OIA--1458952. K.R. acknowledges funding from the
+European Research Council grant under the European Union’s Horizon 2020 research
+and innovation programme (grant agreement No. 694745).
 
 \bibliographystyle{mnras}
 \bibliography{frb-detections} 
