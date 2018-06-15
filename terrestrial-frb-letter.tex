@@ -228,7 +228,7 @@ The prototypical \gls{frb} is broad-band across the observable bandwidth of the
 receivers used. The pulse is narrow-in-time---on the order of a few milliseconds
 in width---and highly dispersed, exhibiting a $\nu^{-2}$ relation with
 frequency.  Despite follow-up observations in the direction of FRB events, only
-FRB~121102 has been shown to repeat \citep{2016Natur.531..202S}. Several
+FRB\,~121102 has been shown to repeat \citep{2016Natur.531..202S}. Several
 reported detections deviate from this prototypical form, exhibiting complex
 frequency-dependent structure and are possibly band-limited. The pulse width
 also varies, due to either the emission process or propagation effects such as
@@ -248,7 +248,7 @@ of candidate events \citep[e.g.][]{Wagstaff2016, 2018MNRAS.474.3847F, Farah2018,
 Connor2018}.
 
 As FRBs are rare and appear not to repeat (with the notable exception of
-FRB~121102), being able to confidently verify them is an important issue. There
+FRB\,121102), being able to confidently verify them is an important issue. There
 is significant \gls{rfi} detectable at all radio observatories, and there are
 known anthropogenic sources that appear FRB-like \citep{2011ApJ...727...18B}.
 Given the significant number of \gls{dm} trials and high-time resolution of the
@@ -327,10 +327,10 @@ at low DM trials.
 On initial inspection, this event appears astrophysical. From radiometer noise
 considerations, the flux density of the pulse is
 %
-$$
+\begin{equation}
 S = \textrm{SEFD} \frac{\textrm{S/N}}{\sqrt{D \; \Delta \tau \;
 \Delta \nu}}
-$$
+\end{equation}
 %
 where SEFD is the system-equivalent flux density of the telescope, $\Delta \tau$
 is the time resolution of the spectra, $\Delta \nu$ is the channel resolution of
@@ -403,7 +403,7 @@ P3080\footnote{http://www.naic.edu/vscience/schedule/tpfiles/MichillitagP3080tp.
 using \gls{alfa} to perform an \gls{frb} survey of the Virgo cluster until 09:00
 local time, followed by Project
 R3037\footnote{http://www.naic.edu/vscience/schedule/tpfiles/TaylortagR3037tp.pdf},
-an S-Band RADAR observation.  The event occurred during a time of no active
+an S-Band radar observation.  The event occurred during a time of no active
 observation with \gls{alfa} active but in the wrong turret position.
 
 The average bandpass of Beam 0 and Beam 5 during the time of the event shows
@@ -505,13 +505,13 @@ or terrestrial. The choice of minimum \gls{snr} is partially set by the
 willingness of the observers to sort through false-positive events.  There are
 likely many low-\gls{snr} \glspl{frb} that are either not detected at all or
 labelled as false-positive events.  The reported detection of a pulse from
-FRB121102 with APERTIF \citep{atel10693} had an \gls{snr}$\approx 4$. In a blind
+FRB\,121102 with APERTIF \citep{atel10693} had an \gls{snr}$\approx 4$. In a blind
 survey across different sky positions and trial \glspl{dm}, this would not be a
 significant detection.  But, the sky position and \gls{snr}-maximized DM of the
-repeating FRB121102 is known, thus a lower \gls{snr} detection may be
+repeating FRB\,121102 is known, thus a lower \gls{snr} detection may be
 sufficient.
 
-\subsection{ARTEMIS RADAR Detection}
+\subsection{ARTEMIS Radar Detection}
 \label{sec:LOFAR_RADAR}
 
 ARTEMIS \citep{2015MNRAS.452.1254K} is a low-frequency \gls{frb} survey using
@@ -569,7 +569,7 @@ results in a decimated time resolution of 20~ms. At this resolution, the pulse
 appears to be a continuous broadband pulse. When an event is detected in the
 pipeline, the dynamic spectrum is saved at the original resolution. Plotting at
 1~ms time resolution (Figure \ref{fig:lofar_dynamic_high}), the repeating nature
-of a linear frequency-modulated signal used for pulse compression in RADAR can
+of a linear frequency-modulated signal used for pulse compression in radar can
 be seen.
 
 % watermark:terrestrial-frb-letter/notebooks/LOFAR_RADAR.ipynb
@@ -577,13 +577,13 @@ be seen.
     \includegraphics[width=1.0\linewidth]{figures/LOFAR_dynamic_high_res.pdf}
     \caption{A zoomed in view of the event in Figure \ref{fig:lofar_dynamic} at
     high time (1~ms) and frequency (1.5~kHz) resolution shows the distinct
-    pattern of a linear frequency-modulated RADAR pulse.
+    pattern of a linear frequency-modulated radar pulse.
     }
     \label{fig:lofar_dynamic_high}
 \end{figure}
 
-In RADAR signals, the bandwidth of the transmitter provides information on
-the range and direction of a target. A narrow-band RADAR transmitter can be used
+In radar signals, the bandwidth of the transmitter provides information on
+the range and direction of a target. A narrow-band radar transmitter can be used
 to approximate a larger bandwidth by modulating the frequency of the transmitted
 pulse. The narrow-band (in frequency) pulse is stepped in frequency across a
 transmission band. Between each step the pulse is not transmitted, resulting in
@@ -594,14 +594,14 @@ wide-band pulse that appears more dispersed.
 Linear frequency-modulation is the most typical form of chirp compression, but
 non-linear methods are also used. Such a modulation technique may be the origin
 of other detected signals (see next section).  There are a number of allocated
-RADAR usages in the LOFAR observing band which could be the source of the
-observed RADAR pulse \citep{ofcom2017}.  RADAR is used from UHF to C-band,
-covering a wide range of frequencies at which \gls{frb} surveys operate. We
-could not determine the exact origin of the RADAR pulse, since RADAR is used for
-commercial and military purposes, most of these signal specifications,
-modulations, and source locations are proprietary.
+radar usages in the LOFAR observing band which could be the source of the
+observed radar pulse \citep{ofcom2017}.  Radar is used from UHF to C-band
+(300~MHz -- 8~GHz), covering a wide range of frequencies at which \gls{frb}
+surveys operate. We could not determine the exact origin of the radar pulse,
+since radar is used for commercial and military purposes, most of these signal
+specifications, modulations, and source locations are proprietary.
 
-As the RADAR signal can resemble a dispersed pulse, we expect to detect such
+As the radar signal can resemble a dispersed pulse, we expect to detect such
 signals with \gls{frb} pipelines.  Verification of this event is straightforward
 when the high-time and frequency resolution data are available to reveal the
 narrow-band, pulsed nature of the event.
@@ -610,12 +610,12 @@ narrow-band, pulsed nature of the event.
 \label{sec:xao_event}
 
 The 25-m Nanshan Telescope at \gls{xao} is currently running an FRB survey which
-covers over 300~MHz at L-band, sampling at $64 \; \mu s$ resolution. On November
-18, 2016 hundreds of bright, dispersed pulses were detected. The pulses varied
-in \gls{snr}, but had the same \gls{snr}-maximized DM of 531.8~pc~cm$^{-3}$. The
-pulses show a distinct double peak (each peak $\sim 2$~ms wide) separated by
-$\sim 3$~ms (Figure \ref{fig:xao_dynamic}). The pulses are only apparent in a
-portion of the band.
+covers over 300~MHz at L-band (1 -- 2~GHz), sampling at $64 \; \mu s$
+resolution. On November 18, 2016 hundreds of bright, dispersed pulses were
+detected. The pulses varied in \gls{snr}, but had the same \gls{snr}-maximized
+DM of 531.8~pc~cm$^{-3}$. The pulses show a distinct double peak (each peak
+$\sim 2$~ms wide) separated by $\sim 3$~ms (Figure \ref{fig:xao_dynamic}). The
+pulses are only apparent in a portion of the band.
 
 % watermark:/home/griffin/data/XAO/coadd_pulses.ipynb
 \begin{figure}
@@ -650,7 +650,7 @@ events in several beams, which would indicate a terrestrial origin to the event.
 Had only a single pulse been detected, for example if the source was weaker, or
 the telescope was only sensitive to the highest \gls{snr} event, it would be
 difficult to show that the event was due to \gls{rfi}.  Multiple reported
-\glspl{frb}, including the repeater FRB121102, do not cover the entire observing
+\glspl{frb}, including the repeater FRB\,121102, do not cover the entire observing
 band. This has been explained by various intrinsic or intermediate effects
 (scintillation, plasma lensing). In the case of a single detected pulse, it would
 be reasonable to report it as an astronomical \gls{frb}.
@@ -800,7 +800,7 @@ one or more beams.  These standards are set in order to compare each new
 detection to an \gls{frb} archetype: a broad band signal, excessively dispersed
 compared to a Galactic source along this line of sight, following a $\nu^{-2}$
 dispersion relation, possibly scattered following an approximately $\nu^{-4}$
-relation, and narrow in pulse width, such as FRB~130626
+relation, and narrow in pulse width, such as FRB\,130626
 \citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This process of
 comparison follows the prototype theory of categorization \citep{ROSCH1976382}
 which suggests that certain examples of a category are more prototypical than
@@ -812,7 +812,7 @@ category.
 % aslxlap07:/local/griffin/data/FRB/FRB130626/FRB130626.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB130626.pdf}
-    \caption{FRB130626 is a prototypical FRB with a broad-in-frequency,
+    \caption{FRB\,130626 is a prototypical FRB with a broad-in-frequency,
     narrow-in-time, single component pulse at a DM of 952~pc~cm$^{-3}$ which is
     well in excess of the Galactic DM contribution in that line of sight.
     }
@@ -887,7 +887,7 @@ verification of the system state during a detection.
 
 Complex voltages, though costly to capture and store, provide valuable insight.
 They allow for coherent dedispersion which reduces smearing, and increases the
-detection sensitivity as in FRB180301 \citep{atel11376} where an apparently
+detection sensitivity as in FRB\,180301 \citep{atel11376} where an apparently
 narrow-band detection was revealed to have low-level flux across a larger band.
 The time and frequency resolution can be adjusted to look for structure. If
 multiple sites or elements are used, the signals can be correlated for
@@ -954,7 +954,7 @@ What is the implied flux based on the detection \gls{snr} and telescope
 sensitivity, assuming the detection occurred at boresight? Is this within the
 range of previously reported fluxes? The majority of reported \glspl{frb} have
 an implied boresight flux between $0.2-2$~Jy, although there is a tail of bright
-\glspl{frb} up to 128~Jy (FRB150807). Extremely bright \glspl{frb} (>~kJy) are
+\glspl{frb} up to 128~Jy (FRB\,150807). Extremely bright \glspl{frb} (>~kJy) are
 not expected based on the extensive previous non-detection results from low
 sensitivity, large sky coverage surveys. However, extremely bright \glspl{frb}
 can not be completely discounted.
@@ -963,19 +963,19 @@ can not be completely discounted.
 
 What is the pulse width of the dedispersed and frequency-collapsed pulse? Is it
 within the range of previously reported widths? Reported widths range from
-hundreds of microseconds (FRB150807, FRB170827) up to tens of milliseconds
-(FRB170922, FRB160317). The lower pulse width limit is based on the time
+hundreds of microseconds (FRB\,150807, FRB\,170827) up to tens of milliseconds
+(FRB\,170922, FRB\,160317). The lower pulse width limit is based on the time
 resolution of the instrumentation, and the pulses may indeed be unresolved.
 There may be astrophysical \glspl{frb} with wider pulse widths, but most
 historical surveys have had a maximum time-binning scale on the order of tens of
-milliseconds. FRB121102 shows a wide range of pulse shapes and widths
+milliseconds. FRB\,121102 shows a wide range of pulse shapes and widths
 \citep{2018Natur.553..182M,atel10675}.
 
 \paragraph{High-resolution Structure}
 
 Search pipelines identify candidates by applying a filter to the dedispersed
 data. This hides any potential high time and frequency structure that may be
-present, as in the case of RADAR signals (Section \ref{sec:LOFAR_RADAR}). The
+present, as in the case of radar signals (Section \ref{sec:LOFAR_RADAR}). The
 dynamic spectrum should be checked for sub-structure at both the highest time
 and frequency resolution. Complex voltages allow for coherent dedispersion and
 flexibility in channelization and integration, which provides further
@@ -985,10 +985,10 @@ sensitivity in searching for structure.
 
 Are there multiple components to the pulse? And how many? Does this number
 change when dedispersing with different DMs? Most \glspl{frb} appear as single
-component pulses. But, a few, such as FRB130729 and some bursts from FRB121102,
+component pulses. But, a few, such as FRB\,130729 and some bursts from FRB\,121102,
 show multiple components, which can lead to differences in the `optimal' DM
-\citep{2018Natur.553..182M}. Pulses from FRB121102 often contain multiple
-components. As such, it deviates from the prototype. As FRB121102 is known to
+\citep{2018Natur.553..182M}. Pulses from FRB\,121102 often contain multiple
+components. As such, it deviates from the prototype. As FRB\,121102 is known to
 be astrophysical, this criterion can not invalidate a detection.
 
 \paragraph{Broad band}
@@ -996,8 +996,8 @@ be astrophysical, this criterion can not invalidate a detection.
 Does the pulse extend in frequency to the edges of the observing band, bottom
 edge, top edge, both, or neither? A pulse that extends across the full observing
 band fits the prototypical \gls{frb} model. There are now examples of
-narrow-band (within the observing band) FRBs (such as FRB121102), as well as
-narrow-band terrestrial signals, such as RADAR (Section \ref{sec:LOFAR_RADAR}),
+narrow-band (within the observing band) FRBs (such as FRB\,121102), as well as
+narrow-band terrestrial signals, such as radar (Section \ref{sec:LOFAR_RADAR}),
 so not having a broad-band signature does not entirely rule out an FRB.  We
 expect this criterion to be improved by future telescope backends offering
 broader bandwidths. 
@@ -1020,7 +1020,7 @@ and scintillation measurements are evidence for radio waves having passed
 through an inhomogeneous \gls{ism}, and can help infer properties of either the
 host galaxy of the FRB,  the media surrounding it, or the \gls{igm}.
 
-Scattering timescales are estimated, as in the case of FRB130626
+Scattering timescales are estimated, as in the case of FRB\,130626
 \citep{2016MNRAS.460L..30C}, by fitting an exponential tail ($\propto
 e^{-t/\tau}$, typical of a thin scattering screen) to the scatter-broadened
 pulse. The characteristic timescale, $\tau$, is expected to have a strong
@@ -1061,14 +1061,14 @@ should be used with care and in conjunction with scattering measurements.
 Were full Stokes parameters measured for the pulse? Does the pulse show
 polarization characteristics? Can a rotation measure be fit to the pulse?
 Positive answers to these questions should result in a high score.  Multiple
-\glspl{frb} have been reported to be polarized.  FRB121102 appears to be
+\glspl{frb} have been reported to be polarized.  FRB\,121102 appears to be
 linearly polarized after the extreme \gls{rm} is corrected for
-\citep{2018Natur.553..182M}. FRB110523 is measured to have a high fraction
+\citep{2018Natur.553..182M}. FRB\,110523 is measured to have a high fraction
 ($\sim$ 44\%) of linear polarization. The best RM fit to this data ($\sim$
 -186.1 rad m$^{-2}$) is more than a hundred times higher than the predicted
 Galactic value from RM models for this line of sight. Where possible, it is
 insightful to compare RM values to RM measurements of nearby pulsars. The RM
-estimate for FRB110523 was compared to an observation of PSR B2319+60, within
+estimate for FRB\,110523 was compared to an observation of PSR B2319+60, within
 2 degrees away on the sky, using the same pipeline.  \gls{rfi} has complex
 polarization characteristics, such as Phase-shift keying, as a way of encoding
 information.  These encoding schemes will appear different from polarized
@@ -1085,7 +1085,7 @@ Otherwise the source is likely a pulsar or \gls{rrat} within the Galaxy.  If
 there are multiple components, what is the `component-optimized' DM, how does it
 differ from the \gls{snr}-maximized DM? When there are multiple components to a
 pulse, the choice of DM can result in different frequency-averaged pulses such
-as in FRB130729 in which the choice of DM can result in a single component or
+as in FRB\,130729 in which the choice of DM can result in a single component or
 multi-component pulse profile (see Section \ref{sec:frb_signals}).
 
 \subsubsection{Terrestrial Origins}
@@ -1176,7 +1176,7 @@ detection of \glspl{frb} as they provide good evidence for an event occurring in
 the far-field (at astrophysical distances) versus in the near-field (local to
 the telescope).  A multi-beam system can be used to perform coincidence
 detection to significantly reduce the number of false-positive detections.
-FRB010724 \citep{2007Sci...318..777L} was detected in multiple beams of the
+FRB~010724 \citep{2007Sci...318..777L} was detected in multiple beams of the
 Parkes multi-beam receiver, but at different sensitivities indicating that the
 source, though extremely bright, was localized to a position in the sky.
 Perytons were also detected with the Parkes multi-beam receiver but in all beams
@@ -1249,20 +1249,20 @@ as many of these criteria are implicit to the observational definition of an
 \gls{frb} such as high \gls{snr} and a line of sight dispersion measure in
 excess of the Galactic contribution.
 
-Starting from the lowest scores in our sampled set, we note that FRB130729 is
+Starting from the lowest scores in our sampled set, we note that FRB\,130729 is
 band-limited to the lower half of the observing band, and there is a sharp
 decrease in flux around 1350~MHz (Figure \ref{fig:FRB130729}). We are using a
 dispersion measure of 852~pc~cm$^{-3}$ which is different from the originally
 reported dispersion measure of 861~pc~cm$^{-3}$. Using this new dispersion
 measure there are two distinct components. The original detection paper
-\citep{2016MNRAS.460L..30C} notes that FRB130729 is potentially due to
+\citep{2016MNRAS.460L..30C} notes that FRB\,130729 is potentially due to
 terrestrial \gls{rfi}, which is made clear in the low criteria scores.
 
 % FRB130729
 % aslxlap07:/local/griffin/data/FRB/FRB130729/FRB130729.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB130729.pdf}
-    \caption{FRB130729 dedispersed with a DM of 852~pc~cm$^{-3}$ (black), this
+    \caption{FRB\,130729 dedispersed with a DM of 852~pc~cm$^{-3}$ (black), this
     is different from the DM of 861~pc~cm$^{-3}$ (red) reported in
     \protect\cite{2016MNRAS.460L..30C}.  The detected FRB has two distinct
     components separated by approximately 10~ms. Data are presented at the native
@@ -1271,15 +1271,15 @@ terrestrial \gls{rfi}, which is made clear in the low criteria scores.
     \label{fig:FRB130729}
 \end{figure}
 
-FRB140514 (Figure \ref{fig:FRB140514}) and FRB180301 (Figure
+FRB\,140514 (Figure \ref{fig:FRB140514}) and FRB\,180301 (Figure
 \ref{fig:FRB180301}) both score poorly in the broad-band criteria as the
 majority of the detected flux is concentrated into narrow regions of the band.
 This low score affects the dispersion relation criteria test as there is not
 sufficient fractional bandwidth to perform a good fit. The frequency structure
 of both of these detections could be due to scintillation or plasma lensing.
-These low scores do not discount FRB140514 and FRB180301 as astrophysical, they
-indicate that FRB140514 and FRB180301 diverge from the prototypical \gls{frb}
-model.  We note that FRB121102 diverges significantly from the prototype model
+These low scores do not discount FRB\,140514 and FRB\,180301 as astrophysical, they
+indicate that FRB\,140514 and FRB\,180301 diverge from the prototypical \gls{frb}
+model.  We note that FRB\,121102 diverges significantly from the prototype model
 as individual pulses vary in bandwidth, apparent scattering, spectral index, and
 structure.  This is a useful example to show that the highest test scores are
 not needed to verify a detection as astrophysical.
@@ -1288,7 +1288,7 @@ not needed to verify a detection as astrophysical.
 % aslxlap07:/local/griffin/data/FRB/FRB140514/FRB140514.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB140514.pdf}
-    \caption{Dynamic spectrum of FRB140514 dedispersed with a DM of
+    \caption{Dynamic spectrum of FRB\,140514 dedispersed with a DM of
     563~pc~cm$^{-3}$.  Data are presented at the native recorded resolution of
     64~$\mu$s, 390~kHz convolved with a Gaussian smoothing filter of size
     512~$\mu$s, 3.125~MHz.
@@ -1300,7 +1300,7 @@ not needed to verify a detection as astrophysical.
 % verification/verification_FRB180301.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/FRB180301.pdf}
-    \caption{Dynamic spectrum of FRB180301 dedispersed with a DM of
+    \caption{Dynamic spectrum of FRB\,180301 dedispersed with a DM of
     521~pc~cm$^{-3}$.  data are presented at the native recorded resolution of
     292.57~$\mu$s, 437.5~kHz convolved with a Gaussian smoothing filter of size
     29.2~$\mu$s, 875~kHz.
@@ -1308,14 +1308,14 @@ not needed to verify a detection as astrophysical.
     \label{fig:FRB180301}
 \end{figure}
 
-FRB010724 \citep{2007Sci...318..777L}, being the first reported detection, fits
+FRB\,010724 \citep{2007Sci...318..777L}, being the first reported detection, fits
 the prototypical model well as many of the standard criteria we now use were
-initially decided in the detection report.  Similarly, FRB110523, FRB130626, and
-FRB130628 all well match the prototypical model, and thus show high scores in
-most of the tests. FRB090625 shows variation in flux across the band, possibly
+initially decided in the detection report.  Similarly, FRB\,110523, FRB\,130626, and
+FRB\,130628 all well match the prototypical model, and thus show high scores in
+most of the tests. FRB\,090625 shows variation in flux across the band, possibly
 due to beam colorization or scintillation.  This is indicated by the lower
-spectral index criteria score, but FRB090625 is otherwise also prototypical.
-FRB150807 shows a drop in flux at the high end of the observing band due to a
+spectral index criteria score, but FRB\,090625 is otherwise also prototypical.
+FRB\,150807 shows a drop in flux at the high end of the observing band due to a
 steep apparent spectral index which is either intrinsic to the source or due to
 the beam response. The reported detection included a number of system state
 tests such as checking the gain and bandpass response, and the \gls{rfi}
@@ -1326,10 +1326,10 @@ during the time of detection. Though data are made public in many of the
 detections, these data have already been normalized or calibrated so it is not
 possible to verify the telescope state. More recent detections are often lacking
 in data or detailed analysis. For example, very little information on
-FRB171209 has been reported, thus almost none of the criteria can be tested.
+FRB\,171209 has been reported, thus almost none of the criteria can be tested.
 Providing public data not only allows for independent verification, but also for
 new tests on previous detections. For example, the lack of public data of
-FRB170107 means that criteria not reported in the initial detection can not be
+FRB\,170107 means that criteria not reported in the initial detection can not be
 tested.
 
 %\subsubsection{FRB 110523}
@@ -1400,7 +1400,7 @@ tested.
 Also included in Figure \ref{fig:heat_map} are the results for the various
 detections discussed in Section \ref{sec:false-pos}. We also include
 PSR~B1859+03 as an example of single pulses from a pulsar during the ALFABURST
-surveys.  In all these cases there is at least one failure.  The LOFAR RADAR
+surveys.  In all these cases there is at least one failure.  The LOFAR radar
 event shows artificial high-resolution structure.  Perytons and the XAO repeater
 fail the dispersion relation test and repeat at different telescope pointings.
 The ALFA gain variation has multiple negative test results relating to the
@@ -1439,13 +1439,13 @@ telescopes.
 Detection of \glspl{frb} at multiple frequencies not only adds to the scientific
 understanding of the sources, but also helps to verify that they are
 astrophysical.  Due to historical development of receivers for pulsar searches,
-most \glspl{frb} have been detected at L-band frequencies. FRB110523
+most \glspl{frb} have been detected at L-band frequencies. FRB\,110523
 detected with the GBT and the multiple \glspl{frb} detected with UTMOST occurred
-at UHF frequencies.  Only FRB121102 has been detected above L-band
+at UHF frequencies.  Only FRB\,121102 has been detected above L-band
 \citep{atel10675}.  Such wide bands show the pulse structure goes beyond the
-bandwidth of known sources of \gls{rfi} (e.g. modulated RADAR). 
+bandwidth of known sources of \gls{rfi} (e.g. modulated radar). 
 
-Multiple \glspl{frb} (e.g. FBR121102, FRB140514, FRB180301) have now been
+Multiple \glspl{frb} (e.g. FRB\,121102, FRB\,140514, FRB\,180301) have now been
 detected which are not broad band, possibly due to the pulse progenitor,
 lensing, or scintillation. It is likely that further narrow-band \glspl{frb}
 exist in past survey data but do not pass the detection threshold. A pulse
@@ -1481,7 +1481,7 @@ have the same pointing are needed at a time for localization.
 
 From an observational point of view, \glspl{frb} are unique astronomical sources
 as, so far, no follow-up observations have been able to verify a source using a
-different telescope or observing frequency, except in the case of FRB121102
+different telescope or observing frequency, except in the case of FRB\,121102
 which is known to repeat. Thus, it is necessary to provide evidence for an
 astrophysical origin when reporting a detection.
 
@@ -1498,7 +1498,7 @@ false-positive detections, even as rejection models are improved.
 Differentiating between true, astrophysical \glspl{frb} and false-positive
 events will become more difficult.  Further, it could be that most astrophysical
 \glspl{frb} are not prototypical as it is defined now, such as in the case of
-FRB121102. Which indicate that some of the criteria must be relaxed,
+FRB\,121102. Which indicate that some of the criteria must be relaxed,
 making the differentiation more difficult still.  This should warrant the drive
 towards interferometric and multi-site observations, complex-voltage data
 recorders, subband pulse searches, and standard reporting of the observing
@@ -1511,8 +1511,8 @@ observations could reveal an unknown counterpart to the radio pulse. An initial
 detection will not be able to be verified against many of the criteria presented
 here. But basic tests such as \gls{snr}, dispersion relation, and telescope
 state can be automated to determine an initial detection `importance' in a
-VO-Event trigger. This importance factor can then be adjusted accordingly as
-more criteria are tested.
+VO-Event trigger \citep{2017arXiv171008155P}. This importance factor can then be
+adjusted accordingly as more criteria are tested.
 
 Reporting of false-positive events, even if the source is not explained, helps
 to improve the robustness of search pipelines against systematics and \gls{rfi}.
@@ -1536,7 +1536,7 @@ Listen is managed by the Breakthrough Initiatives, sponsored by the Breakthrough
 Prize Foundation.  ALFABURST activities are supported by a National Science
 Foundation (NSF) award AST-1616042. M.P.S. and D.R.L. acknowledge support from
 NSF RII Track I award number OIA--1458952. K.R. acknowledges funding from the
-European Research Council grant under the European Union’s Horizon 2020 research
+European Research Council grant under the European Union's Horizon 2020 research
 and innovation programme (grant agreement No. 694745).
 
 \bibliographystyle{mnras}
