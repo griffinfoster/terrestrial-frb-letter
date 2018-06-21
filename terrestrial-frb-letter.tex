@@ -76,7 +76,7 @@
 \newacronym{if}{IF}{Intermediate Frequency}
 \newacronym{igm}{IGM}{Intergalactic Medium}
 \newacronym{ism}{ISM}{Interstellar Medium}
-\newacronym{ligo}{LIGO}{Laser Interferometer Gravitational-Wave Observatory}
+\newacronym{ligo}{LIGO}{the Laser Interferometer Gravitational-Wave Observatory}
 \newacronym{lo}{LO}{Local Oscillator}
 \newacronym{nip}{NIP}{Non-image Processing}
 \newacronym{pll}{PLL}{Phased-locked Loop}
@@ -185,27 +185,25 @@ radio continuum: transients -- methods: observational -- methods: data analysis
     \begin{subfigure}[t]{0.45\textwidth}
         \centering\captionsetup{width=.95\linewidth}
         \includegraphics[width=1.0\textwidth]{figures/D20161204_buf23_Beam0.pdf}
-        \caption{Detected FRB-like event in Beam 0 of ALFA. The characteristic
-        dip before and after the event is due to zero-DM removal which is part
-        of the ALFABURST RFI exciser. The strong, narrow band source at 1480~MHz
-        around 100~ms is due to a local RFI source.}
+        \caption{}
         \label{fig:beam0_dynamic_spec}
     \end{subfigure}
     % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
     \begin{subfigure}[t]{0.45\textwidth}
         \centering\captionsetup{width=.95\linewidth}
         \includegraphics[width=1.0\textwidth]{figures/D20161204_buf4_Beam5.pdf}
-        \caption{Detected FRB-like event in Beam 5 of ALFA. The event width
-        appears wider than the Beam 0 event as the zero-DM dips are not as
-        prominent.
-        }
+        \caption{}
         \label{fig:beam5_dynamic_spec}
     \end{subfigure}
     \caption{
     Dynamic spectrum (top) and \gls{snr}-maximized de-dispersed time series
     (bottom) of an FRB-like event that was detected simultaneously in Beam 0 and
     5 of the ALFA receiver on December 4, 2016. The dynamic spectrum has been
-    bandpass normalized.
+    bandpass normalized. (a) Detected FRB-like event in Beam 0 of ALFA. The
+    characteristic dip before and after the event is due to zero-DM removal
+    which is part of the ALFABURST RFI exciser. The strong, narrow band source
+    at 1480~MHz around 100~ms is due to a local RFI source. (b) Same event
+    detected in Beam 5.
     }
     \label{fig:dynamic_spec}
 \end{figure*}
@@ -222,7 +220,8 @@ events developed from  detections with multiple telescopes, over multiple
 wavelengths, using different receiver systems.  \glspl{frb} are difficult to
 detect as they require high-gain telescopes which typically have a small field
 of view, such that despite many thousands of observing hours, only a few dozen
-have been reported as of this writing \citep{2016PASA...33...45P}.
+have been reported as of this writing
+\citep{2016PASA...33...45P}\footnote{http://frbcat.org/}.
 
 The prototypical \gls{frb} is broad-band across the observable bandwidth of the
 receivers used. The pulse is narrow-in-time---on the order of a few milliseconds
@@ -239,29 +238,28 @@ that extensively search a broad range of trial \glspl{dm} and pulse widths
 \citep{Barsdell2012, 2015MNRAS.452.1254K, Bannister2017, Chime2018}. Each
 de-dispersed time series is then thresholded -- any peaks above a minimum
 \gls{snr} are reported as candidates. The number of candidates is usually
-overwhelming due to radio frequency interference (\gls{rfi}) and system gain
-variations. Initially, candidates were reviewed manually; however, with the
-amount of data acquired in recent surveys, it has become a significant time
-effort to do so. As such, and as our understanding of the expected signal
-properties has grown, so too has the use of machine-learning-based classifiers
-of candidate events \citep[e.g.][]{Wagstaff2016, 2018MNRAS.474.3847F, Farah2018,
-Connor2018}.
+overwhelming due to \gls{rfi} and system gain variations. Initially, candidates
+were reviewed manually; however, with the amount of data acquired in recent
+surveys, it has become a significant time effort to do so. As such, and as our
+understanding of the expected signal properties has grown, so too has the use of
+machine-learning-based classifiers of candidate events
+\citep[e.g.][]{Wagstaff2016, 2018MNRAS.474.3847F, Farah2018, Connor2018}.
 
 As FRBs are rare and appear not to repeat (with the notable exception of
 FRB\,121102), being able to confidently verify them is an important issue. There
 is significant \gls{rfi} detectable at all radio observatories, and there are
-known anthropogenic sources that appear FRB-like \citep{2011ApJ...727...18B}.
+known anthropogenic sources that appear FRB-like \citep{2015MNRAS.451.3933P}.
 Given the significant number of \gls{dm} trials and high-time resolution of the
 spectra in a typical survey, there are a large number of false-positives (type-I
 errors) that pass the automated post-processing detection thresholds.  This is
 by design, as we would like to severely limit the potential for false-negatives
 (type-II errors) in our detection pipelines by accepting a number of
 false-positives during automated searches and manually discarding them later.
-But, given the large sampling of the parameter search space it can be
-difficult---if not impossible---to differentiate between a true, astrophysical
-\gls{frb} (true-positive) and a `terrestrial' \gls{frb} (false-positive) due to
-\gls{rfi}, systematics, or other local effects. As the survey time increases,
-the likelihood of detecting such a false-positive will increase. 
+But, given the large sampling of the parameter search space it can be difficult
+to differentiate between a true, astrophysical \gls{frb} (true-positive) and a
+`terrestrial \gls{frb}' (false-positive) due to \gls{rfi}, systematics, or other
+local effects. As the survey time increases, the likelihood of detecting such a
+false-positive will increase. 
 
 In this paper, we present a list of verification criteria to counter false
 detection of `terrestrial' \glspl{frb}, that can be applied \emph{post facto} to
@@ -1069,7 +1067,7 @@ linearly polarized after the extreme \gls{rm} is corrected for
 Galactic value from RM models for this line of sight. Where possible, it is
 insightful to compare RM values to RM measurements of nearby pulsars. The RM
 estimate for FRB\,110523 was compared to an observation of PSR B2319+60, within
-2 degrees away on the sky, using the same pipeline.  \gls{rfi} has complex
+2 degrees on the sky, using the same pipeline.  \gls{rfi} has complex
 polarization characteristics, such as Phase-shift keying, as a way of encoding
 information.  These encoding schemes will appear different from polarized
 astrophysical sources, and will not be well fit by a Faraday rotation model.
@@ -1180,7 +1178,8 @@ FRB~010724 \citep{2007Sci...318..777L} was detected in multiple beams of the
 Parkes multi-beam receiver, but at different sensitivities indicating that the
 source, though extremely bright, was localized to a position in the sky.
 Perytons were also detected with the Parkes multi-beam receiver but in all beams
-at similar sensitivities indicating the source was local.
+at similar sensitivities indicating the source was local
+\citep{2011ApJ...727...18B}.
 
 \paragraph{Tied-array Beam (\gls{tab})}
 
@@ -1203,7 +1202,7 @@ source.
 
 \paragraph{Multi-site Observations}
 
-Was the pulse detected on a multi-site observation campaign? If so, was the
+Was the pulse detected in a multi-site observation campaign? If so, was the
 pulse detected at multiple sites? Multi-site detection is very strong evidence
 for a pulse being astrophysical. Experiments to detect rare, transient events,
 such as \gls{ligo}, use multi-site observations to remove local systematics.
