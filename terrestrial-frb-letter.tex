@@ -295,7 +295,7 @@ the origin of an event. Nonetheless, ambiguities can remain.  In this section we
 present examples of such events---which on initial inspection appear
 astrophysical, but after further investigation prove terrestrial in origin.
 
-\subsection{ALFA Terrestrial FRB}
+\subsection{ALFA Terrestrial FRB Candidate}
 \label{sec:D20161204}
 
 In the two years of the initial ALFABURST survey \citep{2017ApJS..228...21C,
@@ -307,8 +307,8 @@ pulses of known pulsars.  The random forest-based classifier model outputs an
 ordered list of events based on the likelihood of the event being a pulse.
 
 A narrow-in-time, broad-in-frequency, millisecond pulse was detected with the
-ALFABURST system at MJD 57726.563263913 (09:31:06 Arecibo local time on 2016,
-December 4) in Beam 0 (the central beam) of the \gls{alfa}
+ALFABURST system at 09:31:06 Arecibo local time (UTC 13:31:06) on 2016, December
+4 in Beam 0 (the central beam) of the \gls{alfa}
 receiver\footnote{http://www.naic.edu/alfa/} (Figure
 \ref{fig:beam0_dynamic_spec}) which we label as the D20161204 event for this
 discussion. ALFABURST was processing 56~MHz of bandwidth between 1457~MHz and
@@ -331,29 +331,35 @@ S = \textrm{SEFD} \frac{\textrm{S/N}}{\sqrt{D \; \Delta \tau \;
 \end{equation}
 %
 where SEFD is the system-equivalent flux density of the telescope, $\Delta \tau$
-is the time resolution of the spectra, $\Delta \nu$ is the channel resolution of
-the spectra, and $D$ is the time decimation factor which maximizes the \gls{snr}
-of the detections.  Adopting a \gls{sefd} of 3~Jy for the \gls{alfa}
-receiver\footnote{http://www.naic.edu/alfa/},  results in \mbox{$S = 66$}~mJy
-from beam 0, which would be lower than what is observed for any previously
-detected \gls{frb} \citep{2016PASA...33...45P}.  However, this flux estimate is
-a lower limit, assuming the source is at the center of the beam. The pulse width
-is large for an \gls{frb} but within the range of those previously reported.
+is the time resolution of the spectra, $\Delta \nu$ is the total frequency
+bandwidth of the spectra, and $D$ is the time decimation factor which maximizes
+the \gls{snr} of the detections.  Adopting a \gls{sefd} of 3~Jy for the
+\gls{alfa} receiver\footnote{http://www.naic.edu/alfa/},  results in \mbox{$S =
+66$}~mJy from beam 0, which would be lower than has been observed for any
+previously detected \gls{frb} \citep{2016PASA...33...45P}.  However, this flux
+estimate is a lower limit, assuming the source is at the center of the beam. The
+pulse width is large for an \gls{frb} but within the range of those previously
+reported.
 
-Of the six other \gls{alfa} beams, the event only appears in beam 5 (Figure
-\ref{fig:beam5_dynamic_spec}), which is adjacent to beam 0.  This pulse lines up
-with the beam 0 event in time exactly, but the event \gls{snr} was maximized
-($S/N=16$) for a DM of 829~pc~cm$^{-3}$.  By testing a range of DM values, we
-found that this event decreased in width for lower DM trials.  Our \gls{rfi}
-clipping method was applied during this event which is known to affect the pulse
-shape, and generally results in a maximized \gls{snr} at a higher DM trial than
-expected.  We thus conclude that the Beam 0 and Beam 5 event are the same event.
+As ALFA is a multi-beam system, we checked if the event occurred in any other
+beams. Of the six other \gls{alfa} beams, the event also appears in beam 5
+(Figure \ref{fig:beam5_dynamic_spec}), which is adjacent to beam 0.  This pulse
+lines up with the beam 0 event in time exactly, but the event \gls{snr} was
+maximized ($S/N=16$) for a DM of 829~pc~cm$^{-3}$, but this higher \gls{dm} is
+due to a slope in the bandpass. Flattening the bandpass, and re-performing the
+DM-trial fit, resulted in a \gls{snr}-maximized \gls{dm} closer to that of beam
+0.  Our \gls{rfi} clipping method was applied during this event which is known
+to affect the pulse shape, and generally results in a maximized \gls{snr} at a
+higher DM trial than expected.  We thus conclude that the Beam 0 and Beam 5
+event are the same event.
 
-In the immediate period before and after the pulse, there are no similar events
-(Figure \ref{fig:dm_time}). The event appears to be isolated in time, with a
-fairly compact representation in DM-time space (Figure \ref{fig:dm_time_event})
-similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
-(Figure \ref{fig:dm_time_B1859}).
+We checked if any other events occurred with in a larger time window of the
+detection, as the event could be a high \gls{snr} detection of a series of
+\gls{rfi} events.  In the immediate period before and after the pulse, there are
+no similar events (Figure \ref{fig:dm_time}). The event appears to be isolated
+in time, with a fairly compact representation in DM-time space (Figure
+\ref{fig:dm_time_event}) similar to that of a single pulse from a high DM
+pulsar, such as PSR B1859+03 (Figure \ref{fig:dm_time_B1859}).
 
 \begin{figure}
     \centering
@@ -378,23 +384,24 @@ similar to that of a single pulse from a high DM pulsar, such as PSR B1859+03
         \label{fig:dm_time_B1859}
     \end{subfigure}
     \caption{DM-space plot shows the characteristic butterfly pattern of the
-    narrow-in-time, dispersed pulse detected by ALFABURST. A single pulse
-    detection of PSR B1859+03 is shown for reference.
+    narrow-in-time, dispersed pulse detected by ALFABURST at a different epoch.
+    A single pulse detection of PSR B1859+03 is shown for reference.
     }
     \label{fig:dm_time}
 \end{figure}
 
-The telescope pointing was fixed in azimuth and elevation, corresponding to a
-fixed declination (+15:11) and drifting in RA (event detected at RA=14:42). No
-known pulsar or \gls{rrat} with a similar DM lies within the beam primary lobe
-of this pointing.
+As ALFABURST is a commensal observing program we checked the telescope pointing,
+state, and receiver stability.  The telescope pointing was fixed in azimuth and
+elevation, corresponding to a fixed declination (+15:11) and drifting in RA
+(event detected at RA=14:42). No known pulsar or \gls{rrat} with a similar DM
+lies within the beam primary lobe of this pointing.
 
 The telescope logs provide the first indication that this event is spurious. As
 ALFABURST is a commensal observation survey the search pipeline regularly checks
-the status of the receiver turret and the \gls{if}. \gls{alfa} was logged as
-active and the \gls{if} remained unchanged during this time, but the turret was
-in a different position than where ALFA should be if it were at the secondary
-focus.
+the status of the receiver turret and the centre observing frequency. \gls{alfa}
+was logged as active and the centre observing frequency remained unchanged
+during this time, but the turret was in a different position than where ALFA
+should be if it were at the secondary focus.
 
 The observing schedule for the morning of December~4, was project
 P3080\footnote{http://www.naic.edu/vscience/schedule/tpfiles/MichillitagP3080tp.pdf}
@@ -404,8 +411,10 @@ R3037\footnote{http://www.naic.edu/vscience/schedule/tpfiles/TaylortagR3037tp.pd
 an S-Band radar observation.  The event occurred during a time of no active
 observation with \gls{alfa} active but in the wrong turret position.
 
-The average bandpass of Beam 0 and Beam 5 during the time of the event shows
-that the shape and system noise appear atypical compared to normal observations
+As the telescope was in an inactive observing state we checked if the
+electronics were operating as expected during normal ALFA observations.  The
+average bandpass of Beam 0 and Beam 5 during the time of the event shows that
+the shape and system noise appear atypical compared to normal observations
 (Figure \ref{fig:bandpass_response}).  Beam 0 and 5 bandpasses appear similar
 and have overlapping narrow-band RFI features during the recorded time window.
 The system noise appears higher during the event, which leads to smoother
@@ -429,46 +438,35 @@ increase in system noise.
 
 Evidence for analogue gain variations is further justified by considering the
 data over a larger time window.  Approximately 80 seconds before the event,
-large structures across the band are present (Figure
-\ref{fig:beam0_dynamic_spec_80s}). Though not as narrow-in-time as the event,
-they appear related to the same phenomenon.  The DM$-$time plot (Figure
-\ref{fig:beam0_dmtrials_80s}) shows that much of the structure would be detected
-as dispersed pulses.  In particular, the structure around 4 seconds would be
+large structures across the band are present (top of Figure
+\ref{fig:beam0_80s}). Though not as narrow-in-time as the event, they appear
+related to the same phenomenon.  The DM$-$time plot (bottom of Figure
+\ref{fig:beam0_80s}) shows that much of the structure would be detected as
+dispersed pulses.  In particular, the structure around 4 seconds would be
 detected as a wide-in-time, highly dispersed pulse.  And the structure
 immediately proceeding it would be detected as a negatively dispersed pulse.
 Only positive \gls{dm} candidates are recorded.
 
+% watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
 \begin{figure*}
-    \centering
-    % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
-    \begin{subfigure}[t]{1.0\textwidth}
-        \centering\captionsetup{width=.95\linewidth}
-        \includegraphics[width=1.0\textwidth]{figures/D20161204_spect_buf21_Beam0.pdf}
-        \caption{Dynamic spectrum shows frequency evolution of the bandpass as a
-        function of time with structures similar to the D20161204 event.
-        }
-        \label{fig:beam0_dynamic_spec_80s}
-    \end{subfigure}
-    % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
-    \begin{subfigure}[t]{1.0\textwidth}
-        \centering\captionsetup{width=.95\linewidth}
-        \includegraphics[width=1.0\textwidth]{figures/D20161204_dmtrials_buf21_Beam0.pdf}
-        \caption{DM trials from -1600 to 1600 show that there would be both
-        positive and negative pulse detections during this time window.
-        }
-        \label{fig:beam0_dmtrials_80s}
-    \end{subfigure}
-    \caption{Dynamic spectrum (top) and DM-time plot (bottom) of 6 seconds from
-    beam 0 approximately 80 seconds before the D20161204 event.
+    \includegraphics[width=1.0\linewidth]{figures/D20161204_spect_and_dm_buf21_Beam0.pdf}
+    \caption{
+    Dynamic spectrum (top) and and DM-time plot (bottom) of 6 seconds from beam
+    0 approximately 80 seconds before the D20161204 event.  The dynamic spectrum
+    shows frequency evolution of the bandpass as a function of time (e.g. around
+    4 seconds) results in significant detections across the trial DM range -1600
+    to 1600~pc~cm$^{-3}$.
     }
-    \label{fig:beamo0_80s}
+    \label{fig:beam0_80s}
 \end{figure*}
 
 In isolation, and taking into account the one-off, transient nature of FRBs, the
-initial beam 0 detection reasonably appears astrophysical. But, after
-studying the telescope state and examining data across a larger time window
+initial beam 0 detection reasonably appears astrophysical. But, after further
+checks on the telescope state and examining data across a larger time window
 (several seconds) around the event, we can confidently classify this event as
-terrestrial.
+terrestrial. This has motivated us to develop a set of tests to use in verifying
+an event as astrophysical, this is discussed in detail in Section
+\ref{sec:verify_crit}.
 
 \subsection{Low-S/N False-Positive Detections}
 \label{sec:low_snr}
@@ -580,14 +578,14 @@ be seen.
     \label{fig:lofar_dynamic_high}
 \end{figure}
 
-In radar signals, the bandwidth of the transmitter provides information on
-the range and direction of a target. A narrow-band radar transmitter can be used
-to approximate a larger bandwidth by modulating the frequency of the transmitted
-pulse. The narrow-band (in frequency) pulse is stepped in frequency across a
-transmission band. Between each step the pulse is not transmitted, resulting in
-the gaps in time between pulses, such as in Figure~\ref{fig:lofar_dynamic_high}.
-An increase in the delay between the narrow-band pulses will result in a
-wide-band pulse that appears more dispersed.
+In radar signals, the bandwidth of the transmitter provides information on the
+range and direction of a target. A narrow-band radar transmitter can be used to
+approximate a dispersed, wide-band pulse by modulating the frequency of the
+transmitted pulse. The narrow-band (in frequency) pulse is stepped in frequency
+across a transmission band. Between each step the pulse is not transmitted,
+resulting in the gaps in time between pulses, such as in
+Figure~\ref{fig:lofar_dynamic_high}.  An increase in the delay between the
+narrow-band pulses will result in a more dispersed wide-band pulse.
 
 Linear frequency-modulation is the most typical form of chirp compression, but
 non-linear methods are also used. Such a modulation technique may be the origin
@@ -664,7 +662,7 @@ detections.
 \subsection{Parkes Perytons}
 \label{sec:perytons}
 
-A class of non-astrophysical, yet FRB-like signals are found in high-time
+A class of non-astrophysical, yet FRB-like signals were found in high-time
 resolution data around 1.4\,GHz with the Parkes Telescope
 \citep{2011ApJ...727...18B}. These signals, dubbed `Perytons', are dispersed in
 frequency like \glspl{frb}, but do not obey the $\nu^{-2}$ cold plasma relation.
@@ -733,7 +731,7 @@ $\tau_{\rm int} = 256\,\mu \textrm{s}$ and $\Delta \nu_{\rm chan} = 360$~kHz.
     \includegraphics[width=1.0\linewidth]{figures/simulation_diagram.pdf}
     \caption{Logistic function pulse and receiver model used to simulate the
     response and \gls{snr}-maximized DM search. The pulse is modelled as a pulse
-    of width $\Delta t_{\textrm{width}}$ that extends of a time period $\Delta
+    of width $\Delta t_{\textrm{width}}$ that extends over a time period $\Delta
     t_{\textrm{pulse}}$, with a start $\nu_{p,0}$ and stop $\nu_{p,1}$ frequency
     beyond the bandwidth $\Delta \nu_{\textrm{obs}}$ of the receiver system
     centred at $\nu_{\textrm{obs,c}}$. An similar model was used for the
@@ -789,7 +787,7 @@ as astrophysical.
 \label{sec:verify_crit}
 
 Our ability to discover \glspl{frb} depends on how well we can describe what an
-FRB is, and on having available the data to search for and verify events. There
+FRB is, and on having the available data to search for and verify events. There
 is currently no formal definition, rather a set of community practices. These
 vary between groups and instruments, but usually include information drawn from
 images of power in the time-frequency plane and the time-DM plane, information
@@ -799,7 +797,7 @@ detection to an \gls{frb} archetype: a broad band signal, excessively dispersed
 compared to a Galactic source along this line of sight, following a $\nu^{-2}$
 dispersion relation, possibly scattered following an approximately $\nu^{-4}$
 relation, and narrow in pulse width, such as FRB\,130626
-\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This process of
+\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}) . This process of
 comparison follows the prototype theory of categorization \citep{ROSCH1976382}
 which suggests that certain examples of a category are more prototypical than
 others. A category will contain examples which deviate from the prototypical as
@@ -893,13 +891,6 @@ coincidence detection and localization.
 
 \subsection{Criteria}
 \label{sec:criteria}
-
-%\dcp{Is it possible to somehow collapse a sublevel? The A.B.C.D seems a bit too
-%much hierarchy. Maybe make Sec 3.2 into Sec 4 for example?} \cM{I suggest
-%dropping the 4-depth heading numbering altogether and just leaving boldface
-%font.} \GSF{There is a bit of a structure to all this hierarchy, we have split
-%the tests into two groups (astrophysical criteria, terrestrial origin). The
-%A.B.C.D sectioning allows for a few references.}
 
 For verification of new FRBs, we propose a list of criteria of two types: the
 first type tests the similarity between new detections and the archetype, and the
@@ -1109,6 +1100,7 @@ negative DM space, then it could be that the \gls{rfi} environment has
 increased the false-positive event rate.
 
 \paragraph{Repeating Events}
+%TODO: periodicity search
 
 Does the pulse repeat at different times? Were follow-up observations performed?
 Was a lower-\gls{snr} search performed around the detected \gls{dm} in the
@@ -1225,12 +1217,6 @@ such as \gls{ligo}, use multi-site observations to remove local systematics.
     prototype, and the event is terrestrial in origin. Yellow indicates the
     criterion result could not be determined from the available data.  Grey
     indicates the criteria is not valid based on the observation.
-    %\dcp{DCP: I love this figure! But is there a different set of words for
-    %identical / similar / not similar? It feels a bit odd to have 'low-altitude
-    %pointing' green for 'identical', really it's green = good.}    
-    %\GSF{I know the identical / similar / not similar classifier doesn't work
-    %for all the tests, but neither does good / neutral / bad. I think these
-    %labels should be interpreted loosely, hopeful that is how it is read.}
     }
     \label{fig:heat_map}
 \end{figure*}
