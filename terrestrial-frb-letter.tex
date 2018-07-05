@@ -788,23 +788,39 @@ as astrophysical.
 \section{FRB Verification}
 \label{sec:verify_crit}
 
-Our ability to discover \glspl{frb} depends on how well we can describe what an
-FRB is, and on having available the data to search for and verify events. There
-is currently no formal definition, rather a set of community practices. These
-vary between groups and instruments, but usually include information drawn from
-images of power in the time-frequency plane and the time-DM plane, information
-about the telescope state, information related to the presence of the signal in
-one or more beams.  These standards are set in order to compare each new
-detection to an \gls{frb} archetype: a broad band signal, excessively dispersed
-compared to a Galactic source along this line of sight, following a $\nu^{-2}$
-dispersion relation, possibly scattered following an approximately $\nu^{-4}$
-relation, and narrow in pulse width, such as FRB\,130626
-\citep{2016MNRAS.460L..30C} (Figure \ref{fig:FRB130626}). This process of
-comparison follows the prototype theory of categorization \citep{ROSCH1976382}
-which suggests that certain examples of a category are more prototypical than
-others. A category will contain examples which deviate from the prototypical as
-the prototype is an exaggeration of features deemed characteristic to the
-category.
+Our ability to discover \glspl{frb} depends on how well we can
+describe what an FRB is, and on having the data available to search
+for and verify events. There is currently no formal definition, rather
+a set of community practices. These vary between groups and
+instruments, but usually include information drawn from images of
+power in the time-frequency plane and the time-DM plane, information
+about the telescope state, information related to the presence of the
+signal in one or more beams.  These standards are set in order to
+compare each new detection to an \gls{frb} prototype: a broad band
+signal, excessively dispersed compared to a Galactic source along this
+line of sight, following a $\nu^{-2}$ dispersion relation, possibly
+scattered following an approximately $\nu^{-4}$ relation, and narrow
+in pulse width, such as FRB\,130626, as seen in Figure
+\ref{fig:FRB130626} and \citet{2016MNRAS.460L..30C}. To this set of
+characteristics it is important to add polarization, which is measured
+now in most surveys. Although a clear picture is yet to emerge
+regarding the prototypical polarization propertis of \glspl{frb},
+polarization can certainly help indicate non-astrophysical origin of
+certain signals.
+
+This process of comparison follows the prototype theory of
+categorization \citep{ROSCH1976382} which suggests that certain
+examples of a category are more prototypical than others. A category
+will contain examples which deviate from the prototypical as the
+prototype is an exaggeration of features deemed characteristic to the
+category. Providing a framework for assessing new discoveries is
+essential at this time, when automated large FRB surveys are starting
+to generate large numbers of candidates. Without an answer as yet as
+to the true origin and nature of FRBs, the best we can do at this
+stage is to understand which of the extremely varied, and by now quite
+populous, group of candidate signals detected belong to this category
+of astrophysical objects with potentially groundbraking astrophysical
+applications.
 
 % FRB130626
 % watermark:/home/griffin/data/FRB/FRB130626/FRB130626.ipynb
@@ -902,7 +918,7 @@ coincidence detection and localization.
 %A.B.C.D sectioning allows for a few references.}
 
 For verification of new FRBs, we propose a list of criteria of two types: the
-first type tests the similarity between new detections and the archetype, and the
+first type tests the similarity between new detections and the prototype, and the
 second type is used to preclude terrestrial origins of the signal. Together,
 these two sets provide a framework, which should be used to state the confidence
 of any new \gls{frb} discovery. This list of criteria will improve with time; as
@@ -928,7 +944,7 @@ criteria for classification.
 \subsubsection{Criteria and scoring suggestions}
 
 We define the two types of verification criteria stated above as `Similarity to
-the archetype' and `Terrestrial in origin'. For each criterion, we propose 6
+the prototype' and `Terrestrial in origin'. For each criterion, we propose 6
 possible answers, which we colour-code in our own categorization below. Answers
 1 to 4 are used for the responses: `Identical', `Similar', `Not similar',
 `Completely different', while 5 and 6 are used for the responses `Data not
@@ -937,83 +953,123 @@ available' and `Test not performed' respectively.
 In the following, we provide a set of questions to help assign a numerical
 response of 1-6 for each criterion. We have also gone through this process
 ourselves for a number of published FRBs and other spurious detections, thus
-providing reference responses for each criterion.  
+providing reference responses for each criterion.
+
+Although it would be tempting to prescribe a combined score, based on
+which a signal can be classified as an astrophysical FRB or not, the
+known population is not numerous enough to correctly express all
+possible true characteristics of the class. At this moment in time,
+the scores serve, as we demonstrate in the following, to assess
+individual sources. As the population increases, following this
+framework of scores should lead to more certain classification. In
+particular, we have considered carefully the effect of ascribing high
+scores to values of metrics that fall within the range of verified
+events. Our reasoning for doing this is that, if a source is scored
+low for some particular criterion in the following list, but scores
+highly overall, this only serves in expanding the definition of the
+prototype. If a source scores low in most criteria, and therefore also
+overall, it would be hard to objectively classify it as an FRB.
 
 \paragraph{Signal to Noise}
 
-What is the measured \gls{snr} of the dedispersed, and frequency-collapsed
-pulse? Can this \gls{snr} be verified? The actual \gls{snr} could be different
-from the reported \gls{snr} (see Section \ref{sec:low_snr}).
-
+What is the measured \gls{snr} of the dedispersed, and
+frequency-collapsed pulse? Can this \gls{snr} be verified? The actual
+\gls{snr} could be different from the reported \gls{snr} (see Section
+\ref{sec:low_snr}). The highest scores should be given for a reliably
+measured \gls{snr} that is both significantly high and within the
+expected range based on verified FRB detections. Progressively lower
+scores should be given if the \gls{snr} is too low, not verifiable,
+and/or significantly outside the expected range.
 
 \paragraph{Boresight Flux}
 
-What is the implied flux based on the detection \gls{snr} and telescope
-sensitivity, assuming the detection occurred at boresight? Is this within the
-range of previously reported fluxes? The majority of reported \glspl{frb} have
-an implied boresight flux between $0.2-2$~Jy, although there is a tail of bright
-\glspl{frb} up to 128~Jy (FRB\,150807). Extremely bright \glspl{frb} (>~kJy) are
-not expected based on the extensive previous non-detection results from low
-sensitivity, large sky coverage surveys. However, extremely bright \glspl{frb}
-can not be completely discounted.
+What is the implied flux based on the detection \gls{snr} and
+telescope sensitivity, assuming the detection occurred at boresight?
+Is this within the range of previously reported fluxes? The majority
+of reported \glspl{frb} have an implied boresight flux between
+$0.2-2$~Jy, although there is a tail of bright \glspl{frb} up to
+128~Jy (FRB\,150807). Extremely bright \glspl{frb} (>~kJy) are not
+expected based on the extensive previous non-detection results from
+low sensitivity, large sky coverage surveys. However, extremely bright
+\glspl{frb} can not be completely discounted. The highest score should
+be given to FRB candidates with fluxes within the range of known
+sources, and the lowest scores to FRB candidates with the greatest
+deviation from the known and verified population.
 
 \paragraph{Pulse Width}
 
-What is the pulse width of the dedispersed and frequency-collapsed pulse? Is it
-within the range of previously reported widths? Reported widths range from
-hundreds of microseconds (FRB\,150807, FRB\,170827) up to tens of milliseconds
-(FRB\,170922, FRB\,160317). The lower pulse width limit is based on the time
-resolution of the instrumentation, and the pulses may indeed be unresolved.
-There may be astrophysical \glspl{frb} with wider pulse widths, but most
-historical surveys have had a maximum time-binning scale on the order of tens of
-milliseconds. FRB\,121102 shows a wide range of pulse shapes and widths
-\citep{2018Natur.553..182M,atel10675}.
+What is the pulse width of the dedispersed and frequency-collapsed
+pulse? Is it within the range of previously reported widths? Reported
+widths range from tens and hundreds of microseconds (FRB\,150807, FRB\,170827)
+up to tens of milliseconds (FRB\,170922, FRB\,160317). The lower pulse
+width limit is based on the time resolution of the instrumentation,
+and the pulses may indeed be unresolved.  There may be astrophysical
+\glspl{frb} with wider pulse widths, but most historical surveys have
+had a maximum time-binning scale on the order of tens of
+milliseconds. FRB\,121102 shows a wide range of pulse shapes and
+widths \citep{2018Natur.553..182M,atel10675}. The highest scores
+should be given for signals with widths within the range of verified FRB detections.
 
 \paragraph{High-resolution Structure}
 
-Search pipelines identify candidates by applying a filter to the dedispersed
-data. This hides any potential high time and frequency structure that may be
-present, as in the case of radar signals (Section \ref{sec:LOFAR_RADAR}). The
-dynamic spectrum should be checked for sub-structure at both the highest time
-and frequency resolution. Complex voltages allow for coherent dedispersion and
+Search pipelines identify candidates by applying a filter to the
+dedispersed data. This hides any potential high time and frequency
+structure that may be present, as in the case of radar signals
+(Section \ref{sec:LOFAR_RADAR}). The dynamic spectrum should be
+checked for sub-structure at both the highest time and frequency
+resolution. Complex voltages allow for coherent dedispersion and
 flexibility in channelization and integration, which provides further
-sensitivity in searching for structure.
+sensitivity in searching for structure. The highest scores should be
+given to signals whose high-resolution structure can be explained by a
+natural process and resembles the structure of verified
+FRBs. Progressively lower scores should be given as the ``distance''
+from the norm increases.
 
 \paragraph{Multiple components}
 
-Are there multiple components to the pulse? And how many? Does this number
-change when dedispersing with different DMs? Most \glspl{frb} appear as single
-component pulses. But, a few, such as FRB\,130729 and some bursts from FRB\,121102,
-show multiple components, which can lead to differences in the `optimal' DM
-\citep{2018Natur.553..182M}. Pulses from FRB\,121102 often contain multiple
-components. As such, it deviates from the prototype. As FRB\,121102 is known to
-be astrophysical, this criterion can not invalidate a detection.
+Are there multiple components to the pulse? And how many? Does this
+number change when dedispersing with different DMs? Most \glspl{frb}
+appear as single component pulses. But, a few, such as FRB\,130729 and
+some bursts from FRB\,121102, show multiple components, which can lead
+to differences in the `optimal' DM \citep{2018Natur.553..182M}. Pulses
+from FRB\,121102 often contain multiple components. As such, it
+deviates from the prototype. As FRB\,121102 is known to be
+astrophysical, this criterion can not invalidate a detection. If the
+number of components resembles verified FRBs and other known
+astrophysical pulses, a high score should be given.
 
 \paragraph{Broad band}
 
-Does the pulse extend in frequency to the edges of the observing band, bottom
-edge, top edge, both, or neither? A pulse that extends across the full observing
-band fits the prototypical \gls{frb} model. There are now examples of
-narrow-band (within the observing band) FRBs (such as FRB\,121102), as well as
-narrow-band terrestrial signals, such as radar (Section \ref{sec:LOFAR_RADAR}),
-so not having a broad-band signature does not entirely rule out an FRB.  We
-expect this criterion to be improved by future telescope backends offering
-broader bandwidths. 
+Does the pulse extend in frequency to the edges of the observing band,
+bottom edge, top edge, both, or neither? A pulse that extends across
+the full observing band fits the prototypical \gls{frb} model. There
+are now examples of narrow-band (within the observing band) FRBs (such
+as FRB\,121102), as well as narrow-band terrestrial signals, such as
+radar (Section \ref{sec:LOFAR_RADAR}), so not having a broad-band
+signature does not entirely rule out an FRB.  We expect this criterion
+to be improved by future telescope backends offering broader
+bandwidths. Higher scores should be attributed to signals that cover
+greater extents of the band, in a way that can be explained by a
+physical process and resembles other verified signals.
 
 \paragraph{Spectral Index}
 
-Is there a measurable apparent spectral slope? Decomposing the instrumental
-response from the astrophysical spectral response is difficult.  Depending on
-the (mostly unknown) position of a detected pulse within the telescope beam,
-there will be a frequency-dependent sensitivity response, which will induce
-spectral colorization.  If the pulse appears band-limited with a steep spectral
-index, this could indicate the pulse flux drops below the system noise in parts
-of the band. If a shallow spectral index is fit to a band-limited pulse, this
-could indicate the pulse is intrinsically band-limited.
+Is there a measurable apparent spectral slope? Decomposing the
+instrumental response from the astrophysical spectral response is
+difficult.  Depending on the (mostly unknown) position of a detected
+pulse within the telescope beam, there will be a frequency-dependent
+sensitivity response, which will induce spectral colorization.  If the
+pulse appears band-limited with a steep spectral index, this could
+indicate the pulse flux drops below the system noise in parts of the
+band. If a shallow spectral index is fit to a band-limited pulse, this
+could indicate the pulse is intrinsically band-limited. Higher scores
+should be attributes to signals whose spectral slope falls within the
+range of possible spectral slopes of verified FRBs. Exceedingly steep,
+in both sense, spectra, should be attributed lower scores.
 
 \paragraph{Scattering}
 
-Does the pulse appear to be scattered and or scintillating?  Accurate scattering
+Does the pulse appear to be scattered and/or scintillating?  Accurate scattering
 and scintillation measurements are evidence for radio waves having passed
 through an inhomogeneous \gls{ism}, and can help infer properties of either the
 host galaxy of the FRB,  the media surrounding it, or the \gls{igm}.
@@ -1031,10 +1087,12 @@ scattering tail with a spectral index in the range mentioned above warrants the
 designation of `Identical', while gradual departure from this picture should be
 described using the other responses. 
 
-Comparing obtained $\tau$ values to values predicted by current electron density
-models for the Milky Way (e.g.
-\citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) also provides a test for the
-extragalactic nature of a detected signal.
+Comparing obtained $\tau$ values to values predicted by current
+electron density models for the Milky Way (e.g.
+\citealt{2002astro.ph..7156C,2017ApJ...835...29Y}) also provides a
+test for the extragalactic nature of a detected signal. The closer the
+scattering characteristics are to what is seen in the verified FRB
+population, the higher the score should be for this category.
 
 \paragraph{Scintillation}
 
@@ -1056,35 +1114,44 @@ should be used with care and in conjunction with scattering measurements.
 
 \paragraph{Polarization Characteristics}
 
-Were full Stokes parameters measured for the pulse? Does the pulse show
-polarization characteristics? Can a rotation measure be fit to the pulse?
-Positive answers to these questions should result in a high score.  Multiple
-\glspl{frb} have been reported to be polarized.  FRB\,121102 appears to be
-linearly polarized after the extreme \gls{rm} is corrected for
-\citep{2018Natur.553..182M}. FRB\,110523 is measured to have a high fraction
-($\sim$ 44\%) of linear polarization. The best RM fit to this data ($\sim$
--186.1 rad m$^{-2}$) is more than a hundred times higher than the predicted
-Galactic value from RM models for this line of sight. Where possible, it is
-insightful to compare RM values to RM measurements of nearby pulsars. The RM
-estimate for FRB\,110523 was compared to an observation of PSR B2319+60, within
-2 degrees on the sky, using the same pipeline.  \gls{rfi} has complex
-polarization characteristics, such as Phase-shift keying, as a way of encoding
-information.  These encoding schemes will appear different from polarized
-astrophysical sources, and will not be well fit by a Faraday rotation model.
+Were full Stokes parameters measured for the pulse? Does the pulse
+show polarization characteristics? Can a rotation measure be fit to
+the pulse?  Positive answers to these questions should result in a
+high score.  Multiple \glspl{frb} have been reported to be polarized.
+FRB\,121102 appears to be linearly polarized after the extreme
+\gls{rm} is corrected for \citep{2018Natur.553..182M}. FRB\,110523 is
+measured to have a high fraction ($\sim$ 44\%) of linear
+polarization. The best RM fit to this data ($\sim$ -186.1 rad
+m$^{-2}$) is more than a hundred times higher than the predicted
+Galactic value from RM models for this line of sight. Where possible,
+it is insightful to compare RM values to RM measurements of nearby
+pulsars. The RM estimate for FRB\,110523 was compared to an
+observation of PSR B2319+60, within 2 degrees on the sky, using the
+same pipeline.  \gls{rfi} has complex polarization characteristics,
+such as Phase-shift keying, as a way of encoding information.  These
+encoding schemes will appear different from polarized astrophysical
+sources, and will not be well fit by a Faraday rotation model. Low
+scores should be attributed to candidates with artificial looking
+polarization characteristics, and higher scores to candidates where
+the polarization can be understood by the aforementioned physical
+processes.
 
 \paragraph{DM Excess}
 
-What is the \gls{snr}-maximized \gls{dm}? How does this compare to the modeled
-Galactic DM along the line of sight? Is it well in excess of the Galactic
-contribution? This is a standard test to differentiate between a Galactic and
-extragalactic source. If the ratio of measured \gls{dm} to Galactic model
-\gls{dm} is at least a factor of two then the source is likely extragalactic.
-Otherwise the source is likely a pulsar or \gls{rrat} within the Galaxy.  If
-there are multiple components, what is the `component-optimized' DM, how does it
-differ from the \gls{snr}-maximized DM? When there are multiple components to a
-pulse, the choice of DM can result in different frequency-averaged pulses such
-as in FRB\,130729 in which the choice of DM can result in a single component or
-multi-component pulse profile (see Section \ref{sec:frb_signals}).
+What is the \gls{snr}-maximized \gls{dm}? How does this compare to the
+modeled Galactic DM along the line of sight? Is it well in excess of
+the Galactic contribution? This is a standard test to differentiate
+between a Galactic and extragalactic source. If the ratio of measured
+\gls{dm} to Galactic model \gls{dm} is at least a factor of two then
+the source is likely extragalactic.  Otherwise the source is likely a
+pulsar or \gls{rrat} within the Galaxy.  If there are multiple
+components, what is the `component-optimized' DM, how does it differ
+from the \gls{snr}-maximized DM? When there are multiple components to
+a pulse, the choice of DM can result in different frequency-averaged
+pulses such as in FRB\,130729 in which the choice of DM can result in
+a single component or multi-component pulse profile (see Section
+\ref{sec:frb_signals}). Lower scores should be attributed to
+candidates whose \gls{dm} could be explained as Galactic.
 
 \subsubsection{Terrestrial Origins}
 
