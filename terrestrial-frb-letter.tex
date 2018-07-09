@@ -409,43 +409,50 @@ using \gls{alfa} to perform an \gls{frb} survey of the Virgo cluster until 09:00
 local time, followed by Project
 R3037\footnote{http://www.naic.edu/vscience/schedule/tpfiles/TaylortagR3037tp.pdf},
 an S-Band radar observation.  The event occurred during a time of no active
-observation with \gls{alfa} active but in the wrong turret position.
+observation with \gls{alfa} active but in the wrong turret position. Thus,
+\gls{alfa} was at a significantly reduced sensitivity than expected when in the
+correct position.
 
 As the telescope was in an inactive observing state we checked if the
 electronics were operating as expected during normal ALFA observations.  The
 average bandpass of Beam 0 and Beam 5 during the time of the event shows that
 the shape and system noise appear atypical compared to normal observations
 (Figure \ref{fig:bandpass_response}).  Beam 0 and 5 bandpasses appear similar
-and have overlapping narrow-band RFI features during the recorded time window.
-The system noise appears higher during the event, which leads to smoother
-bandpasses than typical.  In the detection pipeline the data are normalized,
-which removes all absolute scaling. This indicates that the \gls{sefd} is too
-low in our flux calibration.  This increase in system noise is due to the change
-in turret position, causing the \gls{alfa} feed to pick up reflections from
-other equipment in the dome, and the dome itself as a warm source.  This event
-is most likely due to the analogue electronics becoming non-linear from this
-increase in system noise.
+and have overlapping narrow-band features at 1468, 1480, 1496, and 1504~MHz due
+to the settling of \gls{pll} in a local oscillator associated with an on-site
+\gls{rfi} monitor.  The system noise appears higher during the event, which
+leads to smoother bandpasses than typical.  In the detection pipeline the data
+are normalized, which removes all absolute scaling. This indicates that the
+\gls{sefd} is too low in our flux calibration.  This increase in system noise is
+due to the change in turret position, causing the \gls{alfa} feed to pick up
+reflections from other equipment in the dome, and the dome itself as a warm
+source.  This event is most likely due to the analogue electronics becoming
+non-linear from this increase in system noise.
 
 % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
 \begin{figure}
     \includegraphics[width=1.0\linewidth]{figures/bandpass_response.pdf}
     \caption{Average bandpass response during the December 4, 2016 event for
     Beam 0 (green) and Beam 5 (blue). A typical bandpass (red) is plotted for
-    reference. These bandpasses have been normalized in the detection pipeline.
+    reference. The narrow features at 1468, 1480, 1496, and 1504~MHz is due to
+    local \gls{rfi}. These bandpasses have been normalized in the detection
+    pipeline.
     }
     \label{fig:bandpass_response}
 \end{figure}
 
 Evidence for analogue gain variations is further justified by considering the
 data over a larger time window.  Approximately 80 seconds before the event,
-large structures across the band are present (top of Figure
-\ref{fig:beam0_80s}). Though not as narrow-in-time as the event, they appear
-related to the same phenomenon.  The DM$-$time plot (bottom of Figure
-\ref{fig:beam0_80s}) shows that much of the structure would be detected as
-dispersed pulses.  In particular, the structure around 4 seconds would be
-detected as a wide-in-time, highly dispersed pulse.  And the structure
-immediately proceeding it would be detected as a negatively dispersed pulse.
-Only positive \gls{dm} candidates are recorded.
+frequency-varying structure across the band (top of Figure \ref{fig:beam0_80s}).
+Though not as narrow-in-time as the event, they appear related to the same
+phenomenon.  The DM$-$time plot (bottom of Figure \ref{fig:beam0_80s}) shows
+that much of the structure would be detected as dispersed pulses.  In
+particular, at around the four second mark the structure would result in a
+wide-in-time, highly dispersed pulse detection.  The structure immediately
+proceeding it would be detected as a negatively dispersed pulse, but only
+positive \gls{dm} candidates are recorded.  The narrow-in-frequency, repeating
+feature present at 1467~MHz is the same feature as seen in the time-averaged
+bandpass (Figure~\ref{fig:bandpass_response}).
 
 % watermark:terrestrial-frb-letter/notebooks/ALFABURST_events.ipynb
 \begin{figure*}
@@ -453,9 +460,12 @@ Only positive \gls{dm} candidates are recorded.
     \caption{
     Dynamic spectrum (top) and and DM-time plot (bottom) of 6 seconds from beam
     0 approximately 80 seconds before the D20161204 event.  The dynamic spectrum
-    shows frequency evolution of the bandpass as a function of time (e.g. around
-    4 seconds) results in significant detections across the trial DM range -1600
-    to 1600~pc~cm$^{-3}$.
+    shows frequency evolution of the bandpass as a function of time (e.g. the
+    sinusoidal shape around the four second mark) results in significant
+    detections across the trial DM range -1600 to 1600~pc~cm$^{-3}$. The
+    narrow-band \gls{rfi} at 1467~MHz is due to a local \gls{rfi} source. The
+    broad-band pulse near the three second mark is an \gls{rfi} source which has
+    been partially removed.
     }
     \label{fig:beam0_80s}
 \end{figure*}
