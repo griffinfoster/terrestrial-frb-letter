@@ -42,6 +42,12 @@ def dynamicSpectrum(filfn, start_time, time_window, timeFactor=1, freqFactor=1, 
     """
     fil = filterbankio.Filterbank(filfn)
 
+ # take care of signed 8-bit data (if needed)  # Kaustubh Rajwade
+    for i in range(len(fil.data)):
+      for j in range(40):
+       if (fil.data[i,0][j] < 0.0):
+        fil.data[i,0][j] = fil.data[i,0][j] + 255
+
     tInt = fil.header['tsamp'] # get tInt
     freqsHz = fil.freqs * 1e6 # generate array of freqs in Hz
 
@@ -132,6 +138,11 @@ def dmSpace(filfn, start_time, time_window, minDM, maxDM, dmStep, timeFactor=1, 
     """
     fil = filterbankio.Filterbank(filfn)
 
+# Signed 8-bit data
+    for i in range(len(fil.data)):
+          for j in range(40):
+                 if (fil.data[i,0][j] < 0.0):
+                         fil.data[i,0][j] = fil.data[i,0][j] + 255
     tInt = fil.header['tsamp'] # get tInt
     freqsHz = fil.freqs * 1e6 # generate array of freqs in Hz
 
